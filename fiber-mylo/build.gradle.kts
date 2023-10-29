@@ -42,18 +42,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    afterEvaluate {
-        publishing {
-            publications {
-                create<MavenPublication>("release") {
-                    from(components["release"])
-                    groupId = "com.github.fiber-android"
-                    artifactId = "mylo"
 
-                }
-            }
-        }
-    }
 }
 
 dependencies {
@@ -75,4 +64,16 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation(project(":fiber-tokens"))
 
+}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.fiber-android"
+                artifactId = "mylo"
+
+            }
+        }
+    }
 }

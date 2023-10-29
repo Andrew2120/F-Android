@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-        id("maven-publish")
+    id("maven-publish")
 
 }
 
@@ -40,18 +40,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    afterEvaluate {
-        publishing {
-            publications {
-                create<MavenPublication>("release") {
-                    from(components["release"])
-                    groupId = "com.github.fiber-android"
-                    artifactId = "components"
 
-                }
-            }
-        }
-    }
 }
 
 dependencies {
@@ -72,4 +61,16 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation(project(":fiber-tokens"))
+}
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.fiber-android"
+                artifactId = "components"
+
+            }
+        }
+    }
 }
