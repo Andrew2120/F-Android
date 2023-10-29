@@ -1,1098 +1,1305 @@
-package com.b_labs.fiber_deel
-
+import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.Color
-import com.b_labs.fiber_tokens.ActionValuesContainer1
-import com.b_labs.fiber_tokens.AquamarineValuesContainer2
-import com.b_labs.fiber_tokens.AquamarineValuesContainer3
-import com.b_labs.fiber_tokens.BackgroundValuesContainer2
-import com.b_labs.fiber_tokens.BackgroundValuesContainer3
-import com.b_labs.fiber_tokens.BlueValuesContainer2
-import com.b_labs.fiber_tokens.BlueValuesContainer3
-import com.b_labs.fiber_tokens.BodyValuesContainer1
-import com.b_labs.fiber_tokens.BorderValuesContainer2
-import com.b_labs.fiber_tokens.BorderValuesContainer3
-import com.b_labs.fiber_tokens.BorderWidthValuesContainer1
-import com.b_labs.fiber_tokens.BottomValuesContainer1
-import com.b_labs.fiber_tokens.BoxShadow
-import com.b_labs.fiber_tokens.BrandValuesContainer1
-import com.b_labs.fiber_tokens.CodeValuesContainer1
-import com.b_labs.fiber_tokens.ColorValuesContainer1
-import com.b_labs.fiber_tokens.ContentValuesContainer1
-import com.b_labs.fiber_tokens.CoolGrayAlphaValuesContainer1
-import com.b_labs.fiber_tokens.CoolGrayValuesContainer1
-import com.b_labs.fiber_tokens.CyanValuesContainer2
-import com.b_labs.fiber_tokens.CyanValuesContainer3
-import com.b_labs.fiber_tokens.DangerValuesContainer3
-import com.b_labs.fiber_tokens.DangerValuesContainer4
-import com.b_labs.fiber_tokens.DangerValuesContainer5
-import com.b_labs.fiber_tokens.DefaultValuesContainer1
+import android.graphics.Color.parseColor
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalDensity
 import com.b_labs.fiber_tokens.DesignSystem
-import com.b_labs.fiber_tokens.DimensionValuesContainer1
-import com.b_labs.fiber_tokens.DisabledValuesContainer1
-import com.b_labs.fiber_tokens.DisplayValuesContainer1
-import com.b_labs.fiber_tokens.ElevationValuesContainer1
-import com.b_labs.fiber_tokens.FocusValuesContainer1
-import com.b_labs.fiber_tokens.FontFamilyValuesContainer1
-import com.b_labs.fiber_tokens.FontSizeValuesContainer1
-import com.b_labs.fiber_tokens.FontWeightValuesContainer1
-import com.b_labs.fiber_tokens.GapValuesContainer1
-import com.b_labs.fiber_tokens.GhostValuesContainer2
-import com.b_labs.fiber_tokens.GhostValuesContainer3
-import com.b_labs.fiber_tokens.GrayValuesContainer1
-import com.b_labs.fiber_tokens.GreenValuesContainer2
-import com.b_labs.fiber_tokens.GreenValuesContainer3
-import com.b_labs.fiber_tokens.HeadingValuesContainer1
-import com.b_labs.fiber_tokens.InfoValuesContainer1
-import com.b_labs.fiber_tokens.InteractionValuesContainer1
-import com.b_labs.fiber_tokens.InverseValuesContainer2
-import com.b_labs.fiber_tokens.InverseValuesContainer3
-import com.b_labs.fiber_tokens.LetterSpacingValuesContainer1
-import com.b_labs.fiber_tokens.LineHeightValuesContainer1
-import com.b_labs.fiber_tokens.MagentaValuesContainer2
-import com.b_labs.fiber_tokens.MagentaValuesContainer3
-import com.b_labs.fiber_tokens.NeutralAlphaValuesContainer1
-import com.b_labs.fiber_tokens.NeutralGrayAlphaValuesContainer1
-import com.b_labs.fiber_tokens.NeutralGrayValuesContainer1
-import com.b_labs.fiber_tokens.NeutralValuesContainer3
-import com.b_labs.fiber_tokens.NeutralValuesContainer4
-import com.b_labs.fiber_tokens.NeutralValuesContainer5
-import com.b_labs.fiber_tokens.NonSemanticValuesContainer1
-import com.b_labs.fiber_tokens.OpacityValuesContainer1
-import com.b_labs.fiber_tokens.OrangeValuesContainer2
-import com.b_labs.fiber_tokens.OrangeValuesContainer3
-import com.b_labs.fiber_tokens.OutlineValuesContainer1
-import com.b_labs.fiber_tokens.PaddingValuesContainer1
-import com.b_labs.fiber_tokens.PrimaryValuesContainer1
-import com.b_labs.fiber_tokens.PurpleValuesContainer2
-import com.b_labs.fiber_tokens.PurpleValuesContainer3
-import com.b_labs.fiber_tokens.RedValuesContainer2
-import com.b_labs.fiber_tokens.RedValuesContainer3
-import com.b_labs.fiber_tokens.ReverseInverseValuesContainer1
-import com.b_labs.fiber_tokens.SemanticValuesContainer1
-import com.b_labs.fiber_tokens.SizeValuesContainer1
-import com.b_labs.fiber_tokens.SpaceValuesContainer1
-import com.b_labs.fiber_tokens.SuccessValuesContainer2
-import com.b_labs.fiber_tokens.SuccessValuesContainer3
-import com.b_labs.fiber_tokens.TealValuesContainer2
-import com.b_labs.fiber_tokens.TealValuesContainer3
-import com.b_labs.fiber_tokens.TopValuesContainer1
-import com.b_labs.fiber_tokens.TransparentValuesContainer1
+import com.b_labs.fiber_tokens.ContentValuesContainer
+import com.b_labs.fiber_tokens.BorderValuesContainer
+import com.b_labs.fiber_tokens.BackgroundValuesContainer
+import com.b_labs.fiber_tokens.PrimaryValuesContainer
+import com.b_labs.fiber_tokens.NeutralValuesContainer
+import com.b_labs.fiber_tokens.SuccessValuesContainer
+import com.b_labs.fiber_tokens.DangerValuesContainer
+import com.b_labs.fiber_tokens.GhostValuesContainer
+import com.b_labs.fiber_tokens.OutlineValuesContainer
+import com.b_labs.fiber_tokens.InverseValuesContainer
+import com.b_labs.fiber_tokens.ReverseInverseValuesContainer
+import com.b_labs.fiber_tokens.ActionValuesContainer
+import com.b_labs.fiber_tokens.DefaultValuesContainer
+import com.b_labs.fiber_tokens.NeutralValuesContainer1
+import com.b_labs.fiber_tokens.DangerValuesContainer1
+import com.b_labs.fiber_tokens.GhostValuesContainer1
+import com.b_labs.fiber_tokens.DisabledValuesContainer
+import com.b_labs.fiber_tokens.BorderValuesContainer1
+import com.b_labs.fiber_tokens.BackgroundValuesContainer1
+import com.b_labs.fiber_tokens.InverseValuesContainer1
+import com.b_labs.fiber_tokens.FocusValuesContainer
+import com.b_labs.fiber_tokens.InteractionValuesContainer
+import com.b_labs.fiber_tokens.GrayValuesContainer
+import com.b_labs.fiber_tokens.WhiteValuesContainer
+import com.b_labs.fiber_tokens.RedValuesContainer
+import com.b_labs.fiber_tokens.MagentaValuesContainer
+import com.b_labs.fiber_tokens.PurpleValuesContainer
+import com.b_labs.fiber_tokens.VioletValuesContainer
+import com.b_labs.fiber_tokens.BlueValuesContainer
+import com.b_labs.fiber_tokens.CyanValuesContainer
+import com.b_labs.fiber_tokens.TealValuesContainer
+import com.b_labs.fiber_tokens.AquamarineValuesContainer
+import com.b_labs.fiber_tokens.GreenValuesContainer
+import com.b_labs.fiber_tokens.OrangeValuesContainer
+import com.b_labs.fiber_tokens.NonSemanticValuesContainer
+import com.b_labs.fiber_tokens.BrandValuesContainer
+import com.b_labs.fiber_tokens.NeutralValuesContainer2
+import com.b_labs.fiber_tokens.NeutralAlphaValuesContainer
+import com.b_labs.fiber_tokens.InfoValuesContainer
+import com.b_labs.fiber_tokens.SuccessValuesContainer1
+import com.b_labs.fiber_tokens.WarningValuesContainer
+import com.b_labs.fiber_tokens.DangerValuesContainer2
+import com.b_labs.fiber_tokens.SemanticValuesContainer
+import com.b_labs.fiber_tokens.CoolGrayValuesContainer
+import com.b_labs.fiber_tokens.CoolGrayAlphaValuesContainer
+import com.b_labs.fiber_tokens.NeutralGrayValuesContainer
+import com.b_labs.fiber_tokens.NeutralGrayAlphaValuesContainer
+import com.b_labs.fiber_tokens.WarmGrayValuesContainer
+import com.b_labs.fiber_tokens.WarmGrayAlphaValuesContainer
+import com.b_labs.fiber_tokens.WhiteAlphaValuesContainer
+import com.b_labs.fiber_tokens.RedValuesContainer1
+import com.b_labs.fiber_tokens.MagentaValuesContainer1
+import com.b_labs.fiber_tokens.PurpleValuesContainer1
+import com.b_labs.fiber_tokens.VioletValuesContainer1
+import com.b_labs.fiber_tokens.BlueValuesContainer1
+import com.b_labs.fiber_tokens.CyanValuesContainer1
+import com.b_labs.fiber_tokens.TealValuesContainer1
+import com.b_labs.fiber_tokens.AquamarineValuesContainer1
+import com.b_labs.fiber_tokens.GreenValuesContainer1
+import com.b_labs.fiber_tokens.OrangeValuesContainer1
+import com.b_labs.fiber_tokens.TransparentValuesContainer
+import com.b_labs.fiber_tokens.ColorValuesContainer
+import com.b_labs.fiber_tokens.BorderWidthValuesContainer
+import com.b_labs.fiber_tokens.BorderRadiusValuesContainer
+import com.b_labs.fiber_tokens.SizeValuesContainer
+import com.b_labs.fiber_tokens.PaddingValuesContainer
+import com.b_labs.fiber_tokens.GapValuesContainer
+import com.b_labs.fiber_tokens.SpaceValuesContainer
+import com.b_labs.fiber_tokens.OpacityValuesContainer
 import com.b_labs.fiber_tokens.Typography
-import com.b_labs.fiber_tokens.TypographyValuesContainer1
-import com.b_labs.fiber_tokens.UtilityValuesContainer1
-import com.b_labs.fiber_tokens.VioletValuesContainer2
-import com.b_labs.fiber_tokens.VioletValuesContainer3
-import com.b_labs.fiber_tokens.WarmGrayAlphaValuesContainer1
-import com.b_labs.fiber_tokens.WarmGrayValuesContainer1
-import com.b_labs.fiber_tokens.WarningValuesContainer1
-import com.b_labs.fiber_tokens.WhiteAlphaValuesContainer1
-import com.b_labs.fiber_tokens.WhiteValuesContainer1
+import com.b_labs.fiber_tokens.CodeValuesContainer
+import com.b_labs.fiber_tokens.UtilityValuesContainer
+import com.b_labs.fiber_tokens.BodyValuesContainer
+import com.b_labs.fiber_tokens.HeadingValuesContainer
+import com.b_labs.fiber_tokens.DisplayValuesContainer
+import com.b_labs.fiber_tokens.TypographyValuesContainer
+import com.b_labs.fiber_tokens.DimensionValuesContainer
+import com.b_labs.fiber_tokens.BoxShadow
+import com.b_labs.fiber_tokens.BottomValuesContainer
+import com.b_labs.fiber_tokens.TopValuesContainer
+import com.b_labs.fiber_tokens.ElevationValuesContainer
+import com.b_labs.fiber_tokens.FontFamilyValuesContainer
+import com.b_labs.fiber_tokens.FontSizeValuesContainer
+import com.b_labs.fiber_tokens.FontWeightValuesContainer
+import com.b_labs.fiber_tokens.LetterSpacingValuesContainer
+import com.b_labs.fiber_tokens.LineHeightValuesContainer
+
+
+
 
 val designSystem = DesignSystem(
-    color = ColorValuesContainer1(
-        content = ContentValuesContainer1(
-            primary = Color(0xFF3EBCDB),
-            secondary = Color(0xFF46C1D1),
-            tertiary = Color(0xFF119173),
-            disabled = Color(0xFF01579B),
-            primaryInverse = Color(0xFF006064),
-            secondaryInverse = Color(0xFF46D14D),
-            tertiaryInverse = Color(0xFFD14646),
-            disabledInverse = Color(0xFFD14646),
-            infoPrimary = Color(0xFFD14646),
-            infoSecondary = Color(0xFFD14646),
-            successPrimary = Color(0xFFD14646),
-            successSecondary = Color(0xFFD14646),
-            warningPrimary = Color(0xFFD14646),
-            warningSecondary = Color(0xFFD14646),
-            dangerPrimary = Color(0xFFD14646),
-            dangerSecondary = Color(0xFFD14646),
-            brandPrimary = Color(0xFFD14646),
-            brandSecondary = Color(0xFFD14646)
-
-
-
-        ), border = BorderValuesContainer2(
-            default = Color(0xFFD14646),
-            defaultA = Color(0xFFD14646),
-            inverse = Color(0xFFD14646),
-            neutralStrong = Color(0xFFD14646),
-            neutralSubtle = Color(0xFFD14646),
-            infoStrong = Color(0xFFD14646),
-            infoSubtle = Color(0xFFD14646),
-            successStrong = Color(0xFFD14646),
-            successSubtle = Color(0xFFD14646),
-            warningStrong = Color(0xFFD14646),
-            warningSubtle = Color(0xFFD14646),
-            dangerStrong = Color(0xFFD14646),
-            dangerSubtle = Color(0xFFD14646)
-        ), background = BackgroundValuesContainer2(
-            default = Color(0xFFD14646),
-            inverse = Color(0xFFD14646),
-            neutralStrong = Color(0xFFD14646),
-            neutralMuted = Color(0xFFD14646),
-            neutralOnSubtle = Color(0xFFD14646),
-            neutralSubtle = Color(0xFFD14646),
-            neutralSurface = Color(0xFFD14646),
-            infoStrong = Color(0xFFD14646),
-            infoMuted = Color(0xFFD14646),
-            infoOnSubtle = Color(0xFFD14646),
-            infoSubtle = Color(0xFFD14646),
-            infoSurface = Color(0xFFD14646),
-            successStrong = Color(0xFFD14646),
-            successMuted = Color(0xFFD14646),
-            successOnSubtle = Color(0xFFD14646),
-            successSubtle = Color(0xFFD14646),
-            successSurface = Color(0xFFD14646),
-            warningStrong = Color(0xFFD14646),
-            warningMuted = Color(0xFFD14646),
-            warningOnSubtle = Color(0xFFD14646),
-            warningSubtle = Color(0xFFD14646),
-            warningSurface = Color(0xFFD14646),
-            dangerStrong = Color(0xFFD14646),
-            dangerMuted = Color(0xFFD14646),
-            dangerOnSubtle = Color(0xFFD14646),
-            dangerSubtle = Color(0xFFD14646),
-            dangerSurface = Color(0xFFD14646),
-            brandStrong = Color(0xFFD14646),
-            brandMuted = Color(0xFFD14646),
-            brandOnSubtle = Color(0xFFD14646),
-            brandSurface = Color(0xFFD14646),
-            brandSubtle = Color(0xFFD14646)
-        ), action = ActionValuesContainer1(
-            primary = PrimaryValuesContainer1(
-                actionPrimaryNormal = Color(0xFFD14646),
-                actionPrimaryHover = Color(0xFFD14646),
-                actionPrimaryActive = Color(0xFFD14646),
-                actionPrimarySelected = Color(0xFFD14646),
-                actionPrimarySubtleNormal = Color(0xFFD14646),
-                actionPrimarySubtleHover = Color(0xFFD14646),
-                actionPrimarySubtleActive = Color(0xFFD14646),
-                actionPrimarySubtleSelected = Color(0xFFD14646)
-            ), neutral = NeutralValuesContainer3(
-                actionNeutralNormal = Color(0xFFD14646),
-                actionNeutralHover = Color(0xFFD14646),
-                actionNeutralActive = Color(0xFFD14646),
-                actionNeutralSelected = Color(0xFFD14646),
-                actionNeutralSubtleNormal = Color(0xFFD14646),
-                actionNeutralSubtleHover = Color(0xFFD14646),
-                actionNeutralSubtleActive = Color(0xFFD14646),
-                actionNeutralSubtleSelected = Color(0xFFD14646)
-            ), success = SuccessValuesContainer2(
-                actionSuccessNormal = Color(0xFFD14646),
-                actionSuccessHover = Color(0xFFD14646),
-                actionSuccessActive = Color(0xFFD14646),
-                actionSuccessSelected = Color(0xFFD14646),
-                actionSuccessSubtleNormal = Color(0xFFD14646),
-                actionSuccessSubtleHover = Color(0xFFD14646),
-                actionSuccessSubtleActive = Color(0xFFD14646),
-                actionSuccessSubtleSelected = Color(0xFFD14646)
-            ), danger = DangerValuesContainer3(
-                actionDangerNormal = Color(0xFFD14646),
-                actionDangerHover = Color(0xFFD14646),
-                actionDangerActive = Color(0xFFD14646),
-                actionDangerSelected = Color(0xFFD14646),
-                actionDangerSubtleNormal = Color(0xFFD14646),
-                actionDangerSubtleHover = Color(0xFFD14646),
-                actionDangerSubtleActive = Color(0xFFD14646),
-                actionDangerSubtleSelected = Color(0xFFD14646)
-            ), ghost = GhostValuesContainer2(
-                actionGhostNormal = Color(0xFFD14646),
-                actionGhostHover = Color(0xFFD14646),
-                actionGhostActive = Color(0xFFD14646),
-                actionGhostSelected = Color(0xFFD14646),
-                actionGhostInverseHover = Color(0xFFD14646),
-                actionGhostInverseActive = Color(0xFFD14646),
-                actionGhostInverseSelected = Color(0xFFD14646),
-                actionGhostDangerHover = Color(0xFFD14646),
-                actionGhostDangerActive = Color(0xFFD14646),
-                actionGhostDangerSelected = Color(0xFFD14646)
-            ), outline = OutlineValuesContainer1(
-                actionOutlineNormal = Color(0xFFD14646),
-                actionOutlineHover = Color(0xFFD14646),
-                actionOutlineActive = Color(0xFFD14646),
-                actionOutlineSelected = Color(0xFFD14646)
-            ), inverse = InverseValuesContainer2(
-                actionInverseNormal = Color(0xFFD14646),
-                actionInverseHover = Color(0xFFD14646),
-                actionInverseActive = Color(0xFFD14646),
-                actionInverseSelected = Color(0xFFD14646)
-            ), reverseInverse = ReverseInverseValuesContainer1(
-                actionReverseInverseNormal = Color(0xFFD14646),
-                actionReverseInverseHover = Color(0xFFD14646),
-                actionReverseInverseActive = Color(0xFFD14646),
-                actionReverseInverseSelected = Color(0xFFD14646)
-            )
-        ), interaction = InteractionValuesContainer1(
-            default = DefaultValuesContainer1(
-                interactionDefaultNormal = Color(0xFFD14646),
-                interactionDefaultHover = Color(0xFFD14646),
-                interactionDefaultActive = Color(0xFFD14646),
-                interactionDefaultSelected = Color(0xFFD14646),
-                interactionDefaultSubtleNormal = Color(0xFFD14646),
-                interactionDefaultSubtleHover = Color(0xFFD14646),
-                interactionDefaultSubtleActive = Color(0xFFD14646),
-                interactionDefaultSubtleSelected = Color(0xFFD14646)
-            ), neutral = NeutralValuesContainer4(
-                interactionNeutralNormal = Color(0xFFD14646),
-                interactionNeutralHover = Color(0xFFD14646),
-                interactionNeutralActive = Color(0xFFD14646),
-                interactionNeutralSelected = Color(0xFFD14646),
-                interactionNeutralSubtleNormal = Color(0xFFD14646),
-                interactionNeutralSubtleHover = Color(0xFFD14646),
-                interactionNeutralSubtleActive = Color(0xFFD14646),
-                interactionNeutralSubtleSelected = Color(0xFFD14646)
-            ), danger = DangerValuesContainer4(
-                interactionDangerNormal = Color(0xFFD14646),
-                interactionDangerHover = Color(0xFFD14646),
-                interactionDangerActive = Color(0xFFD14646),
-                interactionDangerSelected = Color(0xFFD14646),
-                interactionDangerSubtleNormal = Color(0xFFD14646),
-                interactionDangerSubtleHover = Color(0xFFD14646),
-                interactionDangerSubtleActive = Color(0xFFD14646),
-                interactionDangerSubtleSelected = Color(0xFFD14646)
-            ), ghost = GhostValuesContainer3(
-                interactionGhostNormal = Color(0xFFD14646),
-                interactionGhostHover = Color(0xFFD14646),
-                interactionGhostActive = Color(0xFFD14646),
-                interactionGhostSelected = Color(0xFFD14646),
-                interactionGhostInverseHover = Color(0xFFD14646),
-                interactionGhostInverseNormal = Color(0xFFD14646),
-                interactionGhostInverseSelected = Color(0xFFD14646),
-                interactionGhostDangerHover = Color(0xFFD14646),
-                interactionGhostDangerNormal = Color(0xFFD14646),
-                interactionGhostDangerSelected = Color(0xFFD14646)
-            ), disabled = DisabledValuesContainer1(
-                interactionDisabledNormal = Color(0xFFD14646),
-                interactionDisabledHover = Color(0xFFD14646),
-                interactionDisabledActive = Color(0xFFD14646),
-                interactionDisabledSubtleNormal = Color(0xFFD14646),
-                interactionDisabledSubtleHover = Color(0xFFD14646),
-                interactionDisabledSubtleActive = Color(0xFFD14646)
-            ), border = BorderValuesContainer3(
-                interactionBorderNormal = Color(0xFFD14646),
-                interactionBorderHover = Color(0xFFD14646),
-                interactionBorderActive = Color(0xFFD14646),
-                interactionBorderSelected = Color(0xFFD14646),
-                interactionBorderNeutralNormal = Color(0xFFD14646),
-                interactionBorderNeutralHover = Color(0xFFD14646),
-                interactionBorderNeutralActive = Color(0xFFD14646),
-                interactionBorderNeutralSelected = Color(0xFFD14646),
-                interactionBorderDanger = Color(0xFFD14646)
-            ), background = BackgroundValuesContainer3(
-                interactionBackgroundModal = Color(0xFFD14646),
-                interactionBackgroundModeless = Color(0xFFD14646),
-                interactionBackgroundModelessInverse = Color(0xFFD14646),
-                interactionBackgroundSidepanel = Color(0xFFD14646),
-                interactionBackgroundFormField = Color(0xFFD14646),
-                interactionBackgroundDimmer = Color(0xFFD14646)
-            ), inverse = InverseValuesContainer3(
-                interactionInverseNormal = Color(0xFFD14646),
-                interactionInverseHover = Color(0xFFD14646),
-                interactionInverseActive = Color(0xFFD14646),
-                interactionInverseSelected = Color(0xFFD14646)
-            ), focus = FocusValuesContainer1(interactionFocusDefault = Color(0xFFD14646))
-        ), nonSemantic = NonSemanticValuesContainer1(
-            gray = GrayValuesContainer1(
-                nonSemanticGrayContentPrimary = Color(0xFFD14646),
-                nonSemanticGrayContentSecondary = Color(0xFFD14646),
-                nonSemanticGrayBorderDefault = Color(0xFFD14646),
-                nonSemanticGrayBorderStrong = Color(0xFFD14646),
-                nonSemanticGrayBorderSubtle = Color(0xFFD14646),
-                nonSemanticGrayBackgroundStrong = Color(0xFFD14646),
-                nonSemanticGrayBackgroundMuted = Color(0xFFD14646),
-                nonSemanticGrayBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticGrayBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticGrayBackgroundSurface = Color(0xFFD14646)
-            ),
-            white = WhiteValuesContainer1(
-                nonSemanticWhiteContentPrimary = Color(0xFFD14646),
-                nonSemanticWhiteContentSecondary = Color(0xFFD14646),
-                nonSemanticWhiteBorderDefault = Color(0xFFD14646),
-                nonSemanticWhiteBorderStrong = Color(0xFFD14646),
-                nonSemanticWhiteBorderSubtle = Color(0xFFD14646),
-                nonSemanticWhiteBackgroundStrong = Color(0xFFD14646),
-                nonSemanticWhiteBackgroundMuted = Color(0xFFD14646),
-                nonSemanticWhiteBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticWhiteBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticWhiteBackgroundSurface = Color(0xFFD14646)
-            ), red = RedValuesContainer2(
-                nonSemanticRedContentPrimary = Color(0xFFD14646),
-                nonSemanticRedContentSecondary = Color(0xFFD14646),
-                nonSemanticRedBorderDefault = Color(0xFFD14646),
-                nonSemanticRedBorderStrong = Color(0xFFD14646),
-                nonSemanticRedBorderSubtle = Color(0xFFD14646),
-                nonSemanticRedBackgroundStrong = Color(0xFFD14646),
-                nonSemanticRedBackgroundMuted = Color(0xFFD14646),
-                nonSemanticRedBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticRedBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticRedBackgroundSurface = Color(0xFFD14646)
-            ), magenta = MagentaValuesContainer2(
-                nonSemanticMagentaContentPrimary = Color(0xFFD14646),
-                nonSemanticMagentaContentSecondary = Color(0xFFD14646),
-                nonSemanticMagentaBorderDefault = Color(0xFFD14646),
-                nonSemanticMagentaBorderStrong = Color(0xFFD14646),
-                nonSemanticMagentaBorderSubtle = Color(0xFFD14646),
-                nonSemanticMagentaBackgroundStrong = Color(0xFFD14646),
-                nonSemanticMagentaBackgroundMuted = Color(0xFFD14646),
-                nonSemanticMagentaBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticMagentaBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticMagentaBackgroundSurface = Color(0xFFD14646)
-            ), purple = PurpleValuesContainer2(
-                nonSemanticPurpleContentPrimary = Color(0xFFD14646),
-                nonSemanticPurpleContentSecondary = Color(0xFFD14646),
-                nonSemanticPurpleBorderDefault = Color(0xFFD14646),
-                nonSemanticPurpleBorderStrong = Color(0xFFD14646),
-                nonSemanticPurpleBorderSubtle = Color(0xFFD14646),
-                nonSemanticPurpleBackgroundStrong = Color(0xFFD14646),
-                nonSemanticPurpleBackgroundMuted = Color(0xFFD14646),
-                nonSemanticPurpleBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticPurpleBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticPurpleBackgroundSurface = Color(0xFFD14646)
-            ), violet = VioletValuesContainer2(
-                nonSemanticVioletContentPrimary = Color(0xFFD14646),
-                nonSemanticVioletContentSecondary = Color(0xFFD14646),
-                nonSemanticVioletBorderDefault = Color(0xFFD14646),
-                nonSemanticVioletBorderStrong = Color(0xFFD14646),
-                nonSemanticVioletBorderSubtle = Color(0xFFD14646),
-                nonSemanticVioletBackgroundStrong = Color(0xFFD14646),
-                nonSemanticVioletBackgroundMuted = Color(0xFFD14646),
-                nonSemanticVioletBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticVioletBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticVioletBackgroundSurface = Color(0xFFD14646)
-            ), blue = BlueValuesContainer2(
-                nonSemanticBlueContentPrimary = Color(0xFFD14646),
-                nonSemanticBlueContentSecondary = Color(0xFFD14646),
-                nonSemanticBlueBorderDefault = Color(0xFFD14646),
-                nonSemanticBlueBorderStrong = Color(0xFFD14646),
-                nonSemanticBlueBorderSubtle = Color(0xFFD14646),
-                nonSemanticBlueBackgroundStrong = Color(0xFFD14646),
-                nonSemanticBlueBackgroundMuted = Color(0xFFD14646),
-                nonSemanticBlueBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticBlueBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticBlueBackgroundSurface = Color(0xFFD14646)
-            ), cyan = CyanValuesContainer2(
-                nonSemanticCyanContentPrimary = Color(0xFFD14646),
-                nonSemanticCyanContentSecondary = Color(0xFFD14646),
-                nonSemanticCyanBorderDefault = Color(0xFFD14646),
-                nonSemanticCyanBorderStrong = Color(0xFFD14646),
-                nonSemanticCyanBorderSubtle = Color(0xFFD14646),
-                nonSemanticCyanBackgroundStrong = Color(0xFFD14646),
-                nonSemanticCyanBackgroundMuted = Color(0xFFD14646),
-                nonSemanticCyanBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticCyanBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticCyanBackgroundSurface = Color(0xFFD14646)
-            ), teal = TealValuesContainer2(
-                nonSemanticTealContentPrimary = Color(0xFFD14646),
-                nonSemanticTealContentSecondary = Color(0xFFD14646),
-                nonSemanticTealBorderDefault = Color(0xFFD14646),
-                nonSemanticTealBorderStrong = Color(0xFFD14646),
-                nonSemanticTealBorderSubtle = Color(0xFFD14646),
-                nonSemanticTealBackgroundStrong = Color(0xFFD14646),
-                nonSemanticTealBackgroundMuted = Color(0xFFD14646),
-                nonSemanticTealBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticTealBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticTealBackgroundSurface = Color(0xFFD14646)
-            ), aquamarine = AquamarineValuesContainer2(
-                nonSemanticAquamarineContentPrimary = Color(0xFFD14646),
-                nonSemanticAquamarineContentSecondary = Color(0xFFD14646),
-                nonSemanticAquamarineBorderDefault = Color(0xFFD14646),
-                nonSemanticAquamarineBorderStrong = Color(0xFFD14646),
-                nonSemanticAquamarineBorderSubtle = Color(0xFFD14646),
-                nonSemanticAquamarineBackgroundStrong = Color(0xFFD14646),
-                nonSemanticAquamarineBackgroundMuted = Color(0xFFD14646),
-                nonSemanticAquamarineBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticAquamarineBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticAquamarineBackgroundSurface = Color(0xFFD14646)
-            ), green = GreenValuesContainer2(
-                nonSemanticGreenContentPrimary = Color(0xFFD14646),
-                nonSemanticGreenContentSecondary = Color(0xFFD14646),
-                nonSemanticGreenBorderDefault = Color(0xFFD14646),
-                nonSemanticGreenBorderStrong = Color(0xFFD14646),
-                nonSemanticGreenBorderSubtle = Color(0xFFD14646),
-                nonSemanticGreenBackgroundStrong = Color(0xFFD14646),
-                nonSemanticGreenBackgroundMuted = Color(0xFFD14646),
-                nonSemanticGreenBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticGreenBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticGreenBackgroundSurface = Color(0xFFD14646)
-            ), orange = OrangeValuesContainer2(
-                nonSemanticOrangeContentPrimary = Color(0xFFD14646),
-                nonSemanticOrangeContentSecondary = Color(0xFFD14646),
-                nonSemanticOrangeBorderDefault = Color(0xFFD14646),
-                nonSemanticOrangeBorderStrong = Color(0xFFD14646),
-                nonSemanticOrangeBorderSubtle = Color(0xFFD14646),
-                nonSemanticOrangeBackgroundStrong = Color(0xFFD14646),
-                nonSemanticOrangeBackgroundMuted = Color(0xFFD14646),
-                nonSemanticOrangeBackgroundOnSubtle = Color(0xFFD14646),
-                nonSemanticOrangeBackgroundSubtle = Color(0xFFD14646),
-                nonSemanticOrangeBackgroundSurface = Color(0xFFD14646)
-            )
-        ), semantic = SemanticValuesContainer1(
-            brand = BrandValuesContainer1(
-                semanticBrandNegative4 = Color(0xFFD14646),
-                semanticBrandNegative3 = Color(0xFFD14646),
-                semanticBrandNegative2 = Color(0xFFD14646),
-                semanticBrandNegative1 = Color(0xFFD14646),
-                semanticBrand0 = Color(0xFFD14646),
-                semanticBrand1 = Color(0xFFD14646),
-                semanticBrand2 = Color(0xFFD14646),
-                semanticBrand3 = Color(0xFFD14646),
-                semanticBrand4 = Color(0xFFD14646),
-                semanticBrand5 = Color(0xFFD14646),
-                semanticBrand6 = Color(0xFFD14646),
-                semanticBrand7 = Color(0xFFD14646),
-                semanticBrand8 = Color(0xFFD14646)
-            ), neutral = NeutralValuesContainer5(
-                semanticNeutralNegative4 = Color(0xFFD14646),
-                semanticNeutralNegative3 = Color(0xFFD14646),
-                semanticNeutralNegative2 = Color(0xFFD14646),
-                semanticNeutralNegative1 = Color(0xFFD14646),
-                semanticNeutral0 = Color(0xFFD14646),
-                semanticNeutral1 = Color(0xFFD14646),
-                semanticNeutral2 = Color(0xFFD14646),
-                semanticNeutral3 = Color(0xFFD14646),
-                semanticNeutral4 = Color(0xFFD14646),
-                semanticNeutral5 = Color(0xFFD14646),
-                semanticNeutral6 = Color(0xFFD14646),
-                semanticNeutral7 = Color(0xFFD14646),
-                semanticNeutral8 = Color(0xFFD14646)
-            ), neutralAlpha = NeutralAlphaValuesContainer1(
-                semanticNeutralANegative4 = Color(0xFFD14646),
-                semanticNeutralANegative3 = Color(0xFFD14646),
-                semanticNeutralANegative2 = Color(0xFFD14646),
-                semanticNeutralANegative1 = Color(0xFFD14646),
-                semanticNeutralA0 = Color(0xFFD14646),
-                semanticNeutralA1 = Color(0xFFD14646),
-                semanticNeutralA2 = Color(0xFFD14646),
-                semanticNeutralA3 = Color(0xFFD14646),
-                semanticNeutralA4 = Color(0xFFD14646),
-                semanticNeutralA5 = Color(0xFFD14646),
-                semanticNeutralA6 = Color(0xFFD14646),
-                semanticNeutralA7 = Color(0xFFD14646),
-                semanticNeutralA8 = Color(0xFFD14646)
-            ), info = InfoValuesContainer1(
-                semanticInfoNegative4 = Color(0xFFD14646),
-                semanticInfoNegative3 = Color(0xFFD14646),
-                semanticInfoNegative2 = Color(0xFFD14646),
-                semanticInfoNegative1 = Color(0xFFD14646),
-                semanticInfo0 = Color(0xFFD14646),
-                semanticInfo1 = Color(0xFFD14646),
-                semanticInfo2 = Color(0xFFD14646),
-                semanticInfo3 = Color(0xFFD14646),
-                semanticInfo4 = Color(0xFFD14646),
-                semanticInfo5 = Color(0xFFD14646),
-                semanticInfo6 = Color(0xFFD14646),
-                semanticInfo7 = Color(0xFFD14646),
-                semanticInfo8 = Color(0xFFD14646)
-            ), success = SuccessValuesContainer3(
-                semanticSuccessNegative4 = Color(0xFFD14646),
-                semanticSuccessNegative3 = Color(0xFFD14646),
-                semanticSuccessNegative2 = Color(0xFFD14646),
-                semanticSuccessNegative1 = Color(0xFFD14646),
-                semanticSuccess0 = Color(0xFFD14646),
-                semanticSuccess1 = Color(0xFFD14646),
-                semanticSuccess2 = Color(0xFFD14646),
-                semanticSuccess3 = Color(0xFFD14646),
-                semanticSuccess4 = Color(0xFFD14646),
-                semanticSuccess5 = Color(0xFFD14646),
-                semanticSuccess6 = Color(0xFFD14646),
-                semanticSuccess7 = Color(0xFFD14646),
-                semanticSuccess8 = Color(0xFFD14646)
-            ), warning = WarningValuesContainer1(
-                semanticWarningNegative4 = Color(0xFFD14646),
-                semanticWarningNegative3 = Color(0xFFD14646),
-                semanticWarningNegative2 = Color(0xFFD14646),
-                semanticWarningNegative1 = Color(0xFFD14646),
-                semanticWarning0 = Color(0xFFD14646),
-                semanticWarning1 = Color(0xFFD14646),
-                semanticWarning2 = Color(0xFFD14646),
-                semanticWarning3 = Color(0xFFD14646),
-                semanticWarning4 = Color(0xFFD14646),
-                semanticWarning5 = Color(0xFFD14646),
-                semanticWarning6 = Color(0xFFD14646),
-                semanticWarning7 = Color(0xFFD14646),
-                semanticWarning8 = Color(0xFFD14646)
-            ), danger = DangerValuesContainer5(
-                semanticDangerNegative4 = Color(0xFFD14646),
-                semanticDangerNegative3 = Color(0xFFD14646),
-                semanticDangerNegative2 = Color(0xFFD14646),
-                semanticDangerNegative1 = Color(0xFFD14646),
-                semanticDanger0 = Color(0xFFD14646),
-                semanticDanger1 = Color(0xFFD14646),
-                semanticDanger2 = Color(0xFFD14646),
-                semanticDanger3 = Color(0xFFD14646),
-                semanticDanger4 = Color(0xFFD14646),
-                semanticDanger5 = Color(0xFFD14646),
-                semanticDanger6 = Color(0xFFD14646),
-                semanticDanger7 = Color(0xFFD14646),
-                semanticDanger8 = Color(0xFFD14646)
-            )
-        ), coolGray = CoolGrayValuesContainer1(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            coolGray0 = Color(0xFFD14646),
-            coolGray1 = Color(0xFFD14646),
-            coolGray2 = Color(0xFFD14646),
-            coolGray3 = Color(0xFFD14646),
-            coolGray4 = Color(0xFFD14646),
-            coolGray5 = Color(0xFFD14646),
-            coolGray6 = Color(0xFFD14646),
-            coolGray7 = Color(0xFFD14646),
-            coolGray8 = Color(0xFFD14646)
-        ), coolGrayAlpha = CoolGrayAlphaValuesContainer1(
-            coolGrayANegative4 = Color(0xFFD14646),
-            coolGrayANegative3 = Color(0xFFD14646),
-            coolGrayANegative2 = Color(0xFFD14646),
-            coolGrayANegative1 = Color(0xFFD14646),
-            coolGrayA0 = Color(0xFFD14646),
-            coolGrayA1 = Color(0xFFD14646),
-            coolGrayA2 = Color(0xFFD14646),
-            coolGrayA3 = Color(0xFFD14646),
-            coolGrayA4 = Color(0xFFD14646),
-            coolGrayA5 = Color(0xFFD14646),
-            coolGrayA6 = Color(0xFFD14646),
-            coolGrayA7 = Color(0xFFD14646),
-            coolGrayA8 = Color(0xFFD14646)
-        ), neutralGray = NeutralGrayValuesContainer1(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            neutralGray0 = Color(0xFFD14646),
-            neutralGray1 = Color(0xFFD14646),
-            neutralGray2 = Color(0xFFD14646),
-            neutralGray3 = Color(0xFFD14646),
-            neutralGray4 = Color(0xFFD14646),
-            neutralGray5 = Color(0xFFD14646),
-            neutralGray6 = Color(0xFFD14646),
-            neutralGray7 = Color(0xFFD14646),
-            neutralGray8 = Color(0xFFD14646)
-        ), neutralGrayAlpha = NeutralGrayAlphaValuesContainer1(
-            neutralGrayANegative4 = Color(0xFFD14646),
-            neutralGrayANegative3 = Color(0xFFD14646),
-            neutralGrayANegative2 = Color(0xFFD14646),
-            neutralGrayANegative1 = Color(0xFFD14646),
-            neutralGrayA0 = Color(0xFFD14646),
-            neutralGrayA1 = Color(0xFFD14646),
-            neutralGrayA2 = Color(0xFFD14646),
-            neutralGrayA3 = Color(0xFFD14646),
-            neutralGrayA4 = Color(0xFFD14646),
-            neutralGrayA5 = Color(0xFFD14646),
-            neutralGrayA6 = Color(0xFFD14646),
-            neutralGrayA7 = Color(0xFFD14646),
-            neutralGrayA8 = Color(0xFFD14646)
-        ), warmGray = WarmGrayValuesContainer1(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            warmGray0 = Color(0xFFD14646),
-            warmGray1 = Color(0xFFD14646),
-            warmGray2 = Color(0xFFD14646),
-            warmGray3 = Color(0xFFD14646),
-            warmGray4 = Color(0xFFD14646),
-            warmGray5 = Color(0xFFD14646),
-            warmGray6 = Color(0xFFD14646),
-            warmGray7 = Color(0xFFD14646),
-            warmGray8 = Color(0xFFD14646)
-        ), warmGrayAlpha = WarmGrayAlphaValuesContainer1(
-            warmGrayANegative4 = Color(0xFFD14646),
-            warmGrayANegative3 = Color(0xFFD14646),
-            warmGrayANegative2 = Color(0xFFD14646),
-            warmGrayANegative1 = Color(0xFFD14646),
-            warmGrayA0 = Color(0xFFD14646),
-            warmGrayA1 = Color(0xFFD14646),
-            warmGrayA2 = Color(0xFFD14646),
-            warmGrayA3 = Color(0xFFD14646),
-            warmGrayA4 = Color(0xFFD14646),
-            warmGrayA5 = Color(0xFFD14646),
-            warmGrayA6 = Color(0xFFD14646),
-            warmGrayA7 = Color(0xFFD14646),
-            warmGrayA8 = Color(0xFFD14646)
-        ), whiteAlpha = WhiteAlphaValuesContainer1(
-            whiteANegative12 = Color(0xFFD14646),
-            whiteANegative11 = Color(0xFFD14646),
-            whiteANegative10 = Color(0xFFD14646),
-            whiteANegative9 = Color(0xFFD14646),
-            whiteANegative8 = Color(0xFFD14646),
-            whiteANegative7 = Color(0xFFD14646),
-            whiteANegative6 = Color(0xFFD14646),
-            whiteANegative5 = Color(0xFFD14646),
-            whiteANegative4 = Color(0xFFD14646),
-            whiteANegative3 = Color(0xFFD14646),
-            whiteANegative2 = Color(0xFFD14646),
-            whiteANegative1 = Color(0xFFD14646),
-            whiteA0 = Color(0xFFD14646)
-        ), red = RedValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            red0 = Color(0xFFD14646),
-            red1 = Color(0xFFD14646),
-            red2 = Color(0xFFD14646),
-            red3 = Color(0xFFD14646),
-            red4 = Color(0xFFD14646),
-            red5 = Color(0xFFD14646),
-            red6 = Color(0xFFD14646),
-            red7 = Color(0xFFD14646),
-            red8 = Color(0xFFD14646)
-        ), magenta = MagentaValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            magenta0 = Color(0xFFD14646),
-            magenta1 = Color(0xFFD14646),
-            magenta2 = Color(0xFFD14646),
-            magenta3 = Color(0xFFD14646),
-            magenta4 = Color(0xFFD14646),
-            magenta5 = Color(0xFFD14646),
-            magenta6 = Color(0xFFD14646),
-            magenta7 = Color(0xFFD14646),
-            magenta8 = Color(0xFFD14646)
-        ), purple = PurpleValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            purple0 = Color(0xFFD14646),
-            purple1 = Color(0xFFD14646),
-            purple2 = Color(0xFFD14646),
-            purple3 = Color(0xFFD14646),
-            purple4 = Color(0xFFD14646),
-            purple5 = Color(0xFFD14646),
-            purple6 = Color(0xFFD14646),
-            purple7 = Color(0xFFD14646),
-            purple8 = Color(0xFFD14646)
-        ), violet = VioletValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            violet0 = Color(0xFFD14646),
-            violet1 = Color(0xFFD14646),
-            violet2 = Color(0xFFD14646),
-            violet3 = Color(0xFFD14646),
-            violet4 = Color(0xFFD14646),
-            violet5 = Color(0xFFD14646),
-            violet6 = Color(0xFFD14646),
-            violet7 = Color(0xFFD14646),
-            violet8 = Color(0xFFD14646)
-        ), blue = BlueValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            blue0 = Color(0xFFD14646),
-            blue1 = Color(0xFFD14646),
-            blue2 = Color(0xFFD14646),
-            blue3 = Color(0xFFD14646),
-            blue4 = Color(0xFFD14646),
-            blue5 = Color(0xFFD14646),
-            blue6 = Color(0xFFD14646),
-            blue7 = Color(0xFFD14646),
-            blue8 = Color(0xFFD14646)
-        ), cyan = CyanValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            cyan0 = Color(0xFFD14646),
-            cyan1 = Color(0xFFD14646),
-            cyan2 = Color(0xFFD14646),
-            cyan3 = Color(0xFFD14646),
-            cyan4 = Color(0xFFD14646),
-            cyan5 = Color(0xFFD14646),
-            cyan6 = Color(0xFFD14646),
-            cyan7 = Color(0xFFD14646),
-            cyan8 = Color(0xFFD14646)
-        ), teal = TealValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            teal0 = Color(0xFFD14646),
-            teal1 = Color(0xFFD14646),
-            teal2 = Color(0xFFD14646),
-            teal3 = Color(0xFFD14646),
-            teal4 = Color(0xFFD14646),
-            teal5 = Color(0xFFD14646),
-            teal6 = Color(0xFFD14646),
-            teal7 = Color(0xFFD14646),
-            teal8 = Color(0xFFD14646)
-        ), aquamarine = AquamarineValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            aquamarine0 = Color(0xFFD14646),
-            aquamarine1 = Color(0xFFD14646),
-            aquamarine2 = Color(0xFFD14646),
-            aquamarine3 = Color(0xFFD14646),
-            aquamarine4 = Color(0xFFD14646),
-            aquamarine5 = Color(0xFFD14646),
-            aquamarine6 = Color(0xFFD14646),
-            aquamarine7 = Color(0xFFD14646),
-            aquamarine8 = Color(0xFFD14646)
-        ), green = GreenValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            green0 = Color(0xFFD14646),
-            green1 = Color(0xFFD14646),
-            green2 = Color(0xFFD14646),
-            green3 = Color(0xFFD14646),
-            green4 = Color(0xFFD14646),
-            green5 = Color(0xFFD14646),
-            green6 = Color(0xFFD14646),
-            green7 = Color(0xFFD14646),
-            green8 = Color(0xFFD14646)
-        ), orange = OrangeValuesContainer3(
-            negative4 = Color(0xFFD14646),
-            negative3 = Color(0xFFD14646),
-            negative2 = Color(0xFFD14646),
-            negative1 = Color(0xFFD14646),
-            orange0 = Color(0xFFD14646),
-            orange1 = Color(0xFFD14646),
-            orange2 = Color(0xFFD14646),
-            orange3 = Color(0xFFD14646),
-            orange4 = Color(0xFFD14646),
-            orange5 = Color(0xFFD14646),
-            orange6 = Color(0xFFD14646),
-            orange7 = Color(0xFFD14646),
-            orange8 = Color(0xFFD14646)
+    color = ColorValuesContainer(
+        whiteAlpha = WhiteAlphaValuesContainer(
+            whiteANegative9 = Color(parseColor("#ffffff14")),
+            whiteANegative8 = Color(parseColor("#ffffff1a")),
+            whiteANegative7 = Color(parseColor("#ffffff1f")),
+            whiteANegative6 = Color(parseColor("#ffffff3d")),
+            whiteANegative5 = Color(parseColor("#ffffff66")),
+            whiteANegative4 = Color(parseColor("#ffffffa3")),
+            whiteANegative3 = Color(parseColor("#ffffffad")),
+            whiteANegative2 = Color(parseColor("#ffffffb8")),
+            whiteANegative12 = Color(parseColor("#ffffff05")),
+            whiteANegative11 = Color(parseColor("#ffffff08")),
+            whiteANegative10 = Color(parseColor("#ffffff0d")),
+            whiteANegative1 = Color(parseColor("#ffffffd1")),
+            whiteA0 = Color(parseColor("#ffffff"))
         ),
-        transparent = TransparentValuesContainer1(transparent = Color(0xFFD14646))
-    ), borderWidth = BorderWidthValuesContainer1(
-        focus = 0.1,
-        none = 2.3,
-        small = 4.5,
-        medium = 6.7,
-        large = 8.9,
-        xLarge = 10.11,
-        borderWidth0 = 12.13,
-        borderWidth100 = 14.15,
-        borderWidth200 = 16.17,
-        borderWidth400 = 18.19,
-        borderWidth800 = 20.21
-    ), size = SizeValuesContainer1(
-        size3xLarge = 22.23,
-        size2xLarge = 24.25,
-        xLarge = 26.27,
-        large = 28.29,
-        medium = 30.31,
-        small = 32.33,
-        xSmall = 34.35,
-        size2xSmall = 36.37,
-        size3xSmall = 38.39
-    ), space = SpaceValuesContainer1(
-        padding = PaddingValuesContainer1(
-            none = 40.41,
-            padding2xSmall = 42.43,
-            xSmall = 44.45,
-            small = 46.47,
-            medium = 48.49,
-            large = 50.51,
-            padding2xLarge = 52.53,
-            padding3xLarge = 54.55,
-            padding4xLarge = 56.57,
-            padding5xLarge = 58.59,
-            padding6xLarge = 60.61
-        ), gap = GapValuesContainer1(
-            none = 62.63,
-            gap2xSmall = 64.65,
-            xSmall = 66.67,
-            small = 68.69,
-            medium = 70.71,
-            large = 72.73,
-            xLarge = 74.75,
-            gap2xLarge = 76.77,
-            gap3xLarge = 78.79
-        )
-    ), opacity = OpacityValuesContainer1(
-        disabled = 80.81,
-        opacity0 = 82.83,
-        opacity50 = 84.85,
-        opacity100 = 86.87
-    ), typography = TypographyValuesContainer1(
-        code = CodeValuesContainer1(
-            typographyCodeSmall = Typography(
-                lineHeight = 88.89,
-                letterSpacing = 90.91,
-                fontWeight = 92.93,
-                fontSize = 94.95,
-                fontFamily = "novum"
-            ), typographyCodeMedium = Typography(
-                lineHeight = 96.97,
-                letterSpacing = 98.99,
-                fontWeight = 100.101,
-                fontSize = 102.103,
-                fontFamily = "sapientem"
-            ), typographyCodeLarge = Typography(
-                lineHeight = 104.105,
-                letterSpacing = 106.107,
-                fontWeight = 108.109,
-                fontSize = 110.111,
-                fontFamily = "labores"
-            )
-        ), utility = UtilityValuesContainer1(
-            typographyUtilitySmall = Typography(
-                lineHeight = 112.113,
-                letterSpacing = 114.115,
-                fontWeight = 116.117,
-                fontSize = 118.119,
-                fontFamily = "omittantur"
-            ), typographyUtilityMedium = Typography(
-                lineHeight = 120.121,
-                letterSpacing = 122.123,
-                fontWeight = 124.125,
-                fontSize = 126.127,
-                fontFamily = "praesent"
-            ), typographyUtilityLarge = Typography(
-                lineHeight = 128.129,
-                letterSpacing = 130.131,
-                fontWeight = 132.133,
-                fontSize = 134.135,
-                fontFamily = "liber"
-            )
-        ), body = BodyValuesContainer1(
-            typographyBodySmall = Typography(
-                lineHeight = 136.137,
-                letterSpacing = 138.139,
-                fontWeight = 140.141,
-                fontSize = 142.143,
-                fontFamily = "quas"
-            ), typographyBodyMedium = Typography(
-                lineHeight = 144.145,
-                letterSpacing = 146.147,
-                fontWeight = 148.149,
-                fontSize = 150.151,
-                fontFamily = "tractatos"
-            ), typographyBodyLarge = Typography(
-                lineHeight = 152.153,
-                letterSpacing = 154.155,
-                fontWeight = 156.157,
-                fontSize = 158.159,
-                fontFamily = "accumsan"
-            )
-        ), heading = HeadingValuesContainer1(
-            typographyHeadingSmall = Typography(
-                lineHeight = 160.161,
-                letterSpacing = 162.163,
-                fontWeight = 164.165,
-                fontSize = 166.167,
-                fontFamily = "dico"
-            ), typographyHeadingMedium = Typography(
-                lineHeight = 168.169,
-                letterSpacing = 170.171,
-                fontWeight = 172.173,
-                fontSize = 174.175,
-                fontFamily = "tale"
-            ), typographyHeadingLarge = Typography(
-                lineHeight = 176.177,
-                letterSpacing = 178.179,
-                fontWeight = 180.181,
-                fontSize = 182.183,
-                fontFamily = "adipisci"
-            ), typographyHeadingXLarge = Typography(
-                lineHeight = 184.185,
-                letterSpacing = 186.187,
-                fontWeight = 188.189,
-                fontSize = 190.191,
-                fontFamily = "idque"
-            ), typographyHeading2xLarge = Typography(
-                lineHeight = 192.193,
-                letterSpacing = 194.195,
-                fontWeight = 196.197,
-                fontSize = 198.199,
-                fontFamily = "habemus"
-            ), typographyHeading3xLarge = Typography(
-                lineHeight = 200.201,
-                letterSpacing = 202.203,
-                fontWeight = 204.205,
-                fontSize = 206.207,
-                fontFamily = "splendide"
-            ), typographyHeading4xLarge = Typography(
-                lineHeight = 208.209,
-                letterSpacing = 210.211,
-                fontWeight = 212.213,
-                fontSize = 214.215,
-                fontFamily = "quas"
-            ), typographyHeading5xLarge = Typography(
-                lineHeight = 216.217,
-                letterSpacing = 218.219,
-                fontWeight = 220.221,
-                fontSize = 222.223,
-                fontFamily = "repudiare"
-            ), typographyHeading6xLarge = Typography(
-                lineHeight = 224.225,
-                letterSpacing = 226.227,
-                fontWeight = 228.229,
-                fontSize = 230.231,
-                fontFamily = "laudem"
-            ), typographyHeading7xLarge = Typography(
-                lineHeight = 232.233,
-                letterSpacing = 234.235,
-                fontWeight = 236.237,
-                fontSize = 238.239,
-                fontFamily = "aperiri"
-            ), typographyHeading8xLarge = Typography(
-                lineHeight = 240.241,
-                letterSpacing = 242.243,
-                fontWeight = 244.245,
-                fontSize = 246.247,
-                fontFamily = "quam"
-            ), typographyHeading9xLarge = Typography(
-                lineHeight = 248.249,
-                letterSpacing = 250.251,
-                fontWeight = 252.253,
-                fontSize = 254.255,
-                fontFamily = "errem"
-            )
-        ), display = DisplayValuesContainer1(
-            typographyDisplaySmall = Typography(
-                lineHeight = 256.257,
-                letterSpacing = 258.259,
-                fontWeight = 260.261,
-                fontSize = 262.263,
-                fontFamily = "egestas"
-            ), typographyDisplayMedium = Typography(
-                lineHeight = 264.265,
-                letterSpacing = 266.267,
-                fontWeight = 268.269,
-                fontSize = 270.271,
-                fontFamily = "mnesarchum"
-            ), typographyDisplayLarge = Typography(
-                lineHeight = 272.273,
-                letterSpacing = 274.275,
-                fontWeight = 276.277,
-                fontSize = 278.279,
-                fontFamily = "delenit"
-            ), typographyDisplayXLarge = Typography(
-                lineHeight = 280.281,
-                letterSpacing = 282.283,
-                fontWeight = 284.285,
-                fontSize = 286.287,
-                fontFamily = "harum"
-            ), typographyDisplay2xLarge = Typography(
-                lineHeight = 288.289,
-                letterSpacing = 290.291,
-                fontWeight = 292.293,
-                fontSize = 294.295,
-                fontFamily = "tale"
-            ), typographyDisplay3xLarge = Typography(
-                lineHeight = 296.297,
-                letterSpacing = 298.299,
-                fontWeight = 300.301,
-                fontSize = 302.303,
-                fontFamily = "tempus"
-            )
-        )
-    ), dimension = DimensionValuesContainer1(
-        dimension0 = 304.305,
-        dimension25 = 306.307,
-        dimension50 = 308.309,
-        dimension100 = 310.311,
-        dimension150 = 312.313,
-        dimension200 = 314.315,
-        dimension250 = 316.317,
-        dimension300 = 318.319,
-        dimension400 = 320.321,
-        dimension500 = 322.323,
-        dimension550 = 324.325,
-        dimension600 = 326.327,
-        dimension700 = 328.329,
-        dimension800 = 330.331,
-        dimension900 = 332.333,
-        dimension1000 = 334.335,
-        dimension1200 = 336.337,
-        dimension1500 = 338.339,
-        dimension1600 = 340.341
-    ), elevation = ElevationValuesContainer1(
-        bottom = BottomValuesContainer1(
-            elevationBottom100 = BoxShadow(
-                y = 342.343,
-                x = 344.345,
-                type = "tristique",
-                spread = 346.347,
-                color = "suscipit",
-                blur = 348.349
+        warmGrayAlpha = WarmGrayAlphaValuesContainer(
+            warmGrayANegative4 = Color(parseColor("#131311ed")),
+            warmGrayANegative3 = Color(parseColor("#12120de0")),
+            warmGrayANegative2 = Color(parseColor("#22221bdb")),
+            warmGrayANegative1 = Color(parseColor("#272720cc")),
+            warmGrayA8 = Color(parseColor("#52525205")),
+            warmGrayA7 = Color(parseColor("#2f2f2d0a")),
+            warmGrayA6 = Color(parseColor("#2f2f0e0f")),
+            warmGrayA5 = Color(parseColor("#22220217")),
+            warmGrayA4 = Color(parseColor("#33331421")),
+            warmGrayA3 = Color(parseColor("#3e3e1d33")),
+            warmGrayA2 = Color(parseColor("#28281166")),
+            warmGrayA1 = Color(parseColor("#2f2f238f")),
+            warmGrayA0 = Color(parseColor("#26261cbd"))
+        ),
+        warmGray = WarmGrayValuesContainer(
+            warmGray8 = Color(parseColor("#fdfdfc")),
+            warmGray7 = Color(parseColor("#f8f8f7")),
+            warmGray6 = Color(parseColor("#f3f3f1")),
+            warmGray5 = Color(parseColor("#eaeae6")),
+            warmGray4 = Color(parseColor("#e5e5e1")),
+            warmGray3 = Color(parseColor("#d9d9d3")),
+            warmGray2 = Color(parseColor("#a8a89f")),
+            warmGray1 = Color(parseColor("#8b8b84")),
+            warmGray0 = Color(parseColor("#5f5f58")),
+            negative4 = Color(parseColor("#222220")),
+            negative3 = Color(parseColor("#30302c")),
+            negative2 = Color(parseColor("#40403a")),
+            negative1 = Color(parseColor("#52524c"))
+        ),
+        violet = VioletValuesContainer1(
+            violet8 = Color(parseColor("#fbfaff")),
+            violet7 = Color(parseColor("#f7f5ff")),
+            violet6 = Color(parseColor("#f3f0ff")),
+            violet5 = Color(parseColor("#eeebff")),
+            violet4 = Color(parseColor("#e3e0ff")),
+            violet3 = Color(parseColor("#dcd6ff")),
+            violet2 = Color(parseColor("#aba2fb")),
+            violet1 = Color(parseColor("#927ef1")),
+            violet0 = Color(parseColor("#634eca")),
+            negative4 = Color(parseColor("#201263")),
+            negative3 = Color(parseColor("#39288a")),
+            negative2 = Color(parseColor("#4e38bc")),
+            negative1 = Color(parseColor("#573fcf"))
+        ),
+        transparent = TransparentValuesContainer(
+            transparent = Color(parseColor("#ffffff00"))
+        ),
+        teal = TealValuesContainer1(
+            teal8 = Color(parseColor("#fafeff")),
+            teal7 = Color(parseColor("#f0fbff")),
+            teal6 = Color(parseColor("#e8f7fc")),
+            teal5 = Color(parseColor("#e0f3fa")),
+            teal4 = Color(parseColor("#c5ecf7")),
+            teal3 = Color(parseColor("#b8e8f5")),
+            teal2 = Color(parseColor("#7ac0dc")),
+            teal1 = Color(parseColor("#4f9eba")),
+            teal0 = Color(parseColor("#077597")),
+            negative4 = Color(parseColor("#012a37")),
+            negative3 = Color(parseColor("#0a495c")),
+            negative2 = Color(parseColor("#196076")),
+            negative1 = Color(parseColor("#196c85"))
+        ),
+        semantic = SemanticValuesContainer(
+            warning = WarningValuesContainer(
+                semanticWarningNegative4 = Color(parseColor("#492909")),
+                semanticWarningNegative3 = Color(parseColor("#7a4510")),
+                semanticWarningNegative2 = Color(parseColor("#a05c1c")),
+                semanticWarningNegative1 = Color(parseColor("#b4610e")),
+                semanticWarning8 = Color(parseColor("#fffcfa")),
+                semanticWarning7 = Color(parseColor("#fff5eb")),
+                semanticWarning6 = Color(parseColor("#fff0e0")),
+                semanticWarning5 = Color(parseColor("#ffe8d1")),
+                semanticWarning4 = Color(parseColor("#fcdec0")),
+                semanticWarning3 = Color(parseColor("#ffd4a8")),
+                semanticWarning2 = Color(parseColor("#feb871")),
+                semanticWarning1 = Color(parseColor("#f6a351")),
+                semanticWarning0 = Color(parseColor("#f59638"))
             ),
-            elevationBottom200 = listOf(),
-            elevationBottom300 = listOf(),
-            elevationBottom400 = listOf()
-        ), top = TopValuesContainer1(
-            elevationTop100 = BoxShadow(
-                y = 350.351,
-                x = 352.353,
-                type = "posidonium",
-                spread = 354.355,
-                color = "vivendo",
-                blur = 356.357
-            ), elevationTop200 = listOf(), elevationTop300 = listOf(), elevationTop400 = listOf()
+            success = SuccessValuesContainer1(
+                semanticSuccessNegative4 = Color(parseColor("#0a2e0b")),
+                semanticSuccessNegative3 = Color(parseColor("#135315")),
+                semanticSuccessNegative2 = Color(parseColor("#246626")),
+                semanticSuccessNegative1 = Color(parseColor("#2f6f2f")),
+                semanticSuccess8 = Color(parseColor("#fbfefb")),
+                semanticSuccess7 = Color(parseColor("#f4fbf4")),
+                semanticSuccess6 = Color(parseColor("#e6f9e6")),
+                semanticSuccess5 = Color(parseColor("#dff6df")),
+                semanticSuccess4 = Color(parseColor("#cff2cf")),
+                semanticSuccess3 = Color(parseColor("#c6ecc6")),
+                semanticSuccess2 = Color(parseColor("#87c987")),
+                semanticSuccess1 = Color(parseColor("#55a555")),
+                semanticSuccess0 = Color(parseColor("#347434"))
+            ),
+            neutralAlpha = NeutralAlphaValuesContainer(
+                semanticNeutralANegative4 = Color(parseColor("#09131aed")),
+                semanticNeutralANegative3 = Color(parseColor("#0a121ae0")),
+                semanticNeutralANegative2 = Color(parseColor("#1a232ddb")),
+                semanticNeutralANegative1 = Color(parseColor("#1d2835cc")),
+                semanticNeutralA8 = Color(parseColor("#1f529e05")),
+                semanticNeutralA7 = Color(parseColor("#00295c0a")),
+                semanticNeutralA6 = Color(parseColor("#022e500f")),
+                semanticNeutralA5 = Color(parseColor("#10284717")),
+                semanticNeutralA4 = Color(parseColor("#04294321")),
+                semanticNeutralA3 = Color(parseColor("#10315633")),
+                semanticNeutralA2 = Color(parseColor("#0d253f66")),
+                semanticNeutralA1 = Color(parseColor("#1830498f")),
+                semanticNeutralA0 = Color(parseColor("#182639bd"))
+            ),
+            neutral = NeutralValuesContainer2(
+                semanticNeutralNegative4 = Color(parseColor("#1b242c")),
+                semanticNeutralNegative3 = Color(parseColor("#272e35")),
+                semanticNeutralNegative2 = Color(parseColor("#3a424a")),
+                semanticNeutralNegative1 = Color(parseColor("#4a545e")),
+                semanticNeutral8 = Color(parseColor("#fcfcfd")),
+                semanticNeutral7 = Color(parseColor("#f5f7f9")),
+                semanticNeutral6 = Color(parseColor("#f0f3f5")),
+                semanticNeutral5 = Color(parseColor("#eaedf0")),
+                semanticNeutral4 = Color(parseColor("#dee3e7")),
+                semanticNeutral3 = Color(parseColor("#cfd6dd")),
+                semanticNeutral2 = Color(parseColor("#9ea8b3")),
+                semanticNeutral1 = Color(parseColor("#7e8c9a")),
+                semanticNeutral0 = Color(parseColor("#555f6d"))
+            ),
+            info = InfoValuesContainer(
+                semanticInfoNegative4 = Color(parseColor("#041f5d")),
+                semanticInfoNegative3 = Color(parseColor("#113997")),
+                semanticInfoNegative2 = Color(parseColor("#1e4fc2")),
+                semanticInfoNegative1 = Color(parseColor("#2759ce")),
+                semanticInfo8 = Color(parseColor("#fafbff")),
+                semanticInfo7 = Color(parseColor("#f5f8ff")),
+                semanticInfo6 = Color(parseColor("#ebf0ff")),
+                semanticInfo5 = Color(parseColor("#e5eeff")),
+                semanticInfo4 = Color(parseColor("#d6e3ff")),
+                semanticInfo3 = Color(parseColor("#ccdcff")),
+                semanticInfo2 = Color(parseColor("#8eb0fb")),
+                semanticInfo1 = Color(parseColor("#6691f4")),
+                semanticInfo0 = Color(parseColor("#3061d5"))
+            ),
+            danger = DangerValuesContainer2(
+                semanticDangerNegative4 = Color(parseColor("#4a0d0d")),
+                semanticDangerNegative3 = Color(parseColor("#6f2020")),
+                semanticDangerNegative2 = Color(parseColor("#952d2d")),
+                semanticDangerNegative1 = Color(parseColor("#a13636")),
+                semanticDanger8 = Color(parseColor("#fffafa")),
+                semanticDanger7 = Color(parseColor("#fef5f5")),
+                semanticDanger6 = Color(parseColor("#ffebeb")),
+                semanticDanger5 = Color(parseColor("#fee7e7")),
+                semanticDanger4 = Color(parseColor("#fcd9d9")),
+                semanticDanger3 = Color(parseColor("#fccfcf")),
+                semanticDanger2 = Color(parseColor("#f49090")),
+                semanticDanger1 = Color(parseColor("#f26363")),
+                semanticDanger0 = Color(parseColor("#c53434"))
+            ),
+            brand = BrandValuesContainer(
+                semanticBrandNegative4 = Color(parseColor("#3061d5")),
+                semanticBrandNegative3 = Color(parseColor("#113997")),
+                semanticBrandNegative2 = Color(parseColor("#1e4fc2")),
+                semanticBrandNegative1 = Color(parseColor("#2759ce")),
+                semanticBrand8 = Color(parseColor("#fafbff")),
+                semanticBrand7 = Color(parseColor("#f5f8ff")),
+                semanticBrand6 = Color(parseColor("#ebf0ff")),
+                semanticBrand5 = Color(parseColor("#e5eeff")),
+                semanticBrand4 = Color(parseColor("#d6e3ff")),
+                semanticBrand3 = Color(parseColor("#ccdcff")),
+                semanticBrand2 = Color(parseColor("#8eb0fb")),
+                semanticBrand1 = Color(parseColor("#6691f4")),
+                semanticBrand0 = Color(parseColor("#3061d5"))
+            )
+        ),
+        red = RedValuesContainer1(
+            red8 = Color(parseColor("#fffafa")),
+            red7 = Color(parseColor("#fef5f5")),
+            red6 = Color(parseColor("#ffebeb")),
+            red5 = Color(parseColor("#fee7e7")),
+            red4 = Color(parseColor("#fcd9d9")),
+            red3 = Color(parseColor("#fccfcf")),
+            red2 = Color(parseColor("#f49090")),
+            red1 = Color(parseColor("#f26363")),
+            red0 = Color(parseColor("#c53434")),
+            negative4 = Color(parseColor("#4a0d0d")),
+            negative3 = Color(parseColor("#6f2020")),
+            negative2 = Color(parseColor("#952d2d")),
+            negative1 = Color(parseColor("#a13636"))
+        ),
+        purple = PurpleValuesContainer1(
+            purple8 = Color(parseColor("#fefaff")),
+            purple7 = Color(parseColor("#fdf5ff")),
+            purple6 = Color(parseColor("#faedfd")),
+            purple5 = Color(parseColor("#f8e2fd")),
+            purple4 = Color(parseColor("#f5d5fb")),
+            purple3 = Color(parseColor("#f4caf7")),
+            purple2 = Color(parseColor("#d98eec")),
+            purple1 = Color(parseColor("#c466db")),
+            purple0 = Color(parseColor("#9939ac")),
+            negative4 = Color(parseColor("#410b2f")),
+            negative3 = Color(parseColor("#5b1e67")),
+            negative2 = Color(parseColor("#792989")),
+            negative1 = Color(parseColor("#853295"))
+        ),
+        orange = OrangeValuesContainer1(
+            orange8 = Color(parseColor("#fffcfa")),
+            orange7 = Color(parseColor("#fff5eb")),
+            orange6 = Color(parseColor("#fff0e0")),
+            orange5 = Color(parseColor("#ffe8d1")),
+            orange4 = Color(parseColor("#fcdec0")),
+            orange3 = Color(parseColor("#ffd4a8")),
+            orange2 = Color(parseColor("#feb871")),
+            orange1 = Color(parseColor("#f6a351")),
+            orange0 = Color(parseColor("#f59638")),
+            negative4 = Color(parseColor("#492909")),
+            negative3 = Color(parseColor("#7a4510")),
+            negative2 = Color(parseColor("#a05c1c")),
+            negative1 = Color(parseColor("#b4610e"))
+        ),
+        nonSemantic = NonSemanticValuesContainer(
+            white = WhiteValuesContainer(
+                nonSemanticWhiteContentSecondary = Color(parseColor("#ffffffa3")),
+                nonSemanticWhiteContentPrimary = Color(parseColor("#ffffff")),
+                nonSemanticWhiteBorderSubtle = Color(parseColor("#ffffffad")),
+                nonSemanticWhiteBorderStrong = Color(parseColor("#ffffff")),
+                nonSemanticWhiteBorderDefault = Color(parseColor("#ffffff66")),
+                nonSemanticWhiteBackgroundSurface = Color(parseColor("#ffffff1a")),
+                nonSemanticWhiteBackgroundSubtle = Color(parseColor("#ffffff1f")),
+                nonSemanticWhiteBackgroundStrong = Color(parseColor("#ffffff")),
+                nonSemanticWhiteBackgroundOnSubtle = Color(parseColor("#ffffff66")),
+                nonSemanticWhiteBackgroundMuted = Color(parseColor("#ffffffa3"))
+            ),
+            violet = VioletValuesContainer(
+                nonSemanticVioletContentSecondary = Color(parseColor("#634eca")),
+                nonSemanticVioletContentPrimary = Color(parseColor("#39288a")),
+                nonSemanticVioletBorderSubtle = Color(parseColor("#dcd6ff")),
+                nonSemanticVioletBorderStrong = Color(parseColor("#634eca")),
+                nonSemanticVioletBorderDefault = Color(parseColor("#eeebff")),
+                nonSemanticVioletBackgroundSurface = Color(parseColor("#fbfaff")),
+                nonSemanticVioletBackgroundSubtle = Color(parseColor("#f7f5ff")),
+                nonSemanticVioletBackgroundStrong = Color(parseColor("#634eca")),
+                nonSemanticVioletBackgroundOnSubtle = Color(parseColor("#eeebff")),
+                nonSemanticVioletBackgroundMuted = Color(parseColor("#e3e0ff"))
+            ),
+            teal = TealValuesContainer(
+                nonSemanticTealContentSecondary = Color(parseColor("#077597")),
+                nonSemanticTealContentPrimary = Color(parseColor("#0a495c")),
+                nonSemanticTealBorderSubtle = Color(parseColor("#b8e8f5")),
+                nonSemanticTealBorderStrong = Color(parseColor("#077597")),
+                nonSemanticTealBorderDefault = Color(parseColor("#e0f3fa")),
+                nonSemanticTealBackgroundSurface = Color(parseColor("#fafeff")),
+                nonSemanticTealBackgroundSubtle = Color(parseColor("#f0fbff")),
+                nonSemanticTealBackgroundStrong = Color(parseColor("#077597")),
+                nonSemanticTealBackgroundOnSubtle = Color(parseColor("#e0f3fa")),
+                nonSemanticTealBackgroundMuted = Color(parseColor("#c5ecf7"))
+            ),
+            red = RedValuesContainer(
+                nonSemanticRedContentSecondary = Color(parseColor("#c53434")),
+                nonSemanticRedContentPrimary = Color(parseColor("#6f2020")),
+                nonSemanticRedBorderSubtle = Color(parseColor("#fccfcf")),
+                nonSemanticRedBorderStrong = Color(parseColor("#c53434")),
+                nonSemanticRedBorderDefault = Color(parseColor("#fee7e7")),
+                nonSemanticRedBackgroundSurface = Color(parseColor("#fffafa")),
+                nonSemanticRedBackgroundSubtle = Color(parseColor("#fef5f5")),
+                nonSemanticRedBackgroundStrong = Color(parseColor("#c53434")),
+                nonSemanticRedBackgroundOnSubtle = Color(parseColor("#fee7e7")),
+                nonSemanticRedBackgroundMuted = Color(parseColor("#fcd9d9"))
+            ),
+            purple = PurpleValuesContainer(
+                nonSemanticPurpleContentSecondary = Color(parseColor("#9939ac")),
+                nonSemanticPurpleContentPrimary = Color(parseColor("#5b1e67")),
+                nonSemanticPurpleBorderSubtle = Color(parseColor("#f4caf7")),
+                nonSemanticPurpleBorderStrong = Color(parseColor("#9939ac")),
+                nonSemanticPurpleBorderDefault = Color(parseColor("#f8e2fd")),
+                nonSemanticPurpleBackgroundSurface = Color(parseColor("#fefaff")),
+                nonSemanticPurpleBackgroundSubtle = Color(parseColor("#fdf5ff")),
+                nonSemanticPurpleBackgroundStrong = Color(parseColor("#9939ac")),
+                nonSemanticPurpleBackgroundOnSubtle = Color(parseColor("#f8e2fd")),
+                nonSemanticPurpleBackgroundMuted = Color(parseColor("#f5d5fb"))
+            ),
+            orange = OrangeValuesContainer(
+                nonSemanticOrangeContentSecondary = Color(parseColor("#f59638")),
+                nonSemanticOrangeContentPrimary = Color(parseColor("#7a4510")),
+                nonSemanticOrangeBorderSubtle = Color(parseColor("#ffd4a8")),
+                nonSemanticOrangeBorderStrong = Color(parseColor("#f59638")),
+                nonSemanticOrangeBorderDefault = Color(parseColor("#ffe8d1")),
+                nonSemanticOrangeBackgroundSurface = Color(parseColor("#fffcfa")),
+                nonSemanticOrangeBackgroundSubtle = Color(parseColor("#fff5eb")),
+                nonSemanticOrangeBackgroundStrong = Color(parseColor("#f59638")),
+                nonSemanticOrangeBackgroundOnSubtle = Color(parseColor("#ffe8d1")),
+                nonSemanticOrangeBackgroundMuted = Color(parseColor("#fcdec0"))
+            ),
+            magenta = MagentaValuesContainer(
+                nonSemanticMagentaContentSecondary = Color(parseColor("#b12f86")),
+                nonSemanticMagentaContentPrimary = Color(parseColor("#671e4d")),
+                nonSemanticMagentaBorderSubtle = Color(parseColor("#f7cae8")),
+                nonSemanticMagentaBorderStrong = Color(parseColor("#b12f86")),
+                nonSemanticMagentaBorderDefault = Color(parseColor("#fde2f4")),
+                nonSemanticMagentaBackgroundSurface = Color(parseColor("#fffafd")),
+                nonSemanticMagentaBackgroundSubtle = Color(parseColor("#fef6fb")),
+                nonSemanticMagentaBackgroundStrong = Color(parseColor("#b12f86")),
+                nonSemanticMagentaBackgroundOnSubtle = Color(parseColor("#fde2f4")),
+                nonSemanticMagentaBackgroundMuted = Color(parseColor("#fbd5ee"))
+            ),
+            green = GreenValuesContainer(
+                nonSemanticGreenContentSecondary = Color(parseColor("#347434")),
+                nonSemanticGreenContentPrimary = Color(parseColor("#135315")),
+                nonSemanticGreenBorderSubtle = Color(parseColor("#c6ecc6")),
+                nonSemanticGreenBorderStrong = Color(parseColor("#347434")),
+                nonSemanticGreenBorderDefault = Color(parseColor("#dff6df")),
+                nonSemanticGreenBackgroundSurface = Color(parseColor("#fbfefb")),
+                nonSemanticGreenBackgroundSubtle = Color(parseColor("#f4fbf4")),
+                nonSemanticGreenBackgroundStrong = Color(parseColor("#347434")),
+                nonSemanticGreenBackgroundOnSubtle = Color(parseColor("#dff6df")),
+                nonSemanticGreenBackgroundMuted = Color(parseColor("#cff2cf"))
+            ),
+            gray = GrayValuesContainer(
+                nonSemanticGrayContentSecondary = Color(parseColor("#555f6d")),
+                nonSemanticGrayContentPrimary = Color(parseColor("#272e35")),
+                nonSemanticGrayBorderSubtle = Color(parseColor("#cfd6dd")),
+                nonSemanticGrayBorderStrong = Color(parseColor("#555f6d")),
+                nonSemanticGrayBorderDefault = Color(parseColor("#eaedf0")),
+                nonSemanticGrayBackgroundSurface = Color(parseColor("#fcfcfd")),
+                nonSemanticGrayBackgroundSubtle = Color(parseColor("#f5f7f9")),
+                nonSemanticGrayBackgroundStrong = Color(parseColor("#555f6d")),
+                nonSemanticGrayBackgroundOnSubtle = Color(parseColor("#eaedf0")),
+                nonSemanticGrayBackgroundMuted = Color(parseColor("#dee3e7"))
+            ),
+            cyan = CyanValuesContainer(
+                nonSemanticCyanContentSecondary = Color(parseColor("#0870ba")),
+                nonSemanticCyanContentPrimary = Color(parseColor("#0c456e")),
+                nonSemanticCyanBorderSubtle = Color(parseColor("#c2e2ff")),
+                nonSemanticCyanBorderStrong = Color(parseColor("#0870ba")),
+                nonSemanticCyanBorderDefault = Color(parseColor("#e0f1ff")),
+                nonSemanticCyanBackgroundSurface = Color(parseColor("#fafdff")),
+                nonSemanticCyanBackgroundSubtle = Color(parseColor("#f0f9ff")),
+                nonSemanticCyanBackgroundStrong = Color(parseColor("#0870ba")),
+                nonSemanticCyanBackgroundOnSubtle = Color(parseColor("#e0f1ff")),
+                nonSemanticCyanBackgroundMuted = Color(parseColor("#cce7ff"))
+            ),
+            blue = BlueValuesContainer(
+                nonSemanticBlueContentSecondary = Color(parseColor("#3061d5")),
+                nonSemanticBlueContentPrimary = Color(parseColor("#113997")),
+                nonSemanticBlueBorderSubtle = Color(parseColor("#ccdcff")),
+                nonSemanticBlueBorderStrong = Color(parseColor("#3061d5")),
+                nonSemanticBlueBorderDefault = Color(parseColor("#e5eeff")),
+                nonSemanticBlueBackgroundSurface = Color(parseColor("#fafbff")),
+                nonSemanticBlueBackgroundSubtle = Color(parseColor("#f5f8ff")),
+                nonSemanticBlueBackgroundStrong = Color(parseColor("#3061d5")),
+                nonSemanticBlueBackgroundOnSubtle = Color(parseColor("#e5eeff")),
+                nonSemanticBlueBackgroundMuted = Color(parseColor("#d6e3ff"))
+            ),
+            aquamarine = AquamarineValuesContainer(
+                nonSemanticAquamarineContentSecondary = Color(parseColor("#097b68")),
+                nonSemanticAquamarineContentPrimary = Color(parseColor("#0d4a42")),
+                nonSemanticAquamarineBorderSubtle = Color(parseColor("#bee9e4")),
+                nonSemanticAquamarineBorderStrong = Color(parseColor("#097b68")),
+                nonSemanticAquamarineBorderDefault = Color(parseColor("#daf6f3")),
+                nonSemanticAquamarineBackgroundSurface = Color(parseColor("#fbfefe")),
+                nonSemanticAquamarineBackgroundSubtle = Color(parseColor("#f0faf9")),
+                nonSemanticAquamarineBackgroundStrong = Color(parseColor("#097b68")),
+                nonSemanticAquamarineBackgroundOnSubtle = Color(parseColor("#daf6f3")),
+                nonSemanticAquamarineBackgroundMuted = Color(parseColor("#c5f2ec"))
+            )
+        ),
+        neutralGrayAlpha = NeutralGrayAlphaValuesContainer(
+            neutralGrayANegative4 = Color(parseColor("#121212ed")),
+            neutralGrayANegative3 = Color(parseColor("#0f0f0fe0")),
+            neutralGrayANegative2 = Color(parseColor("#212121db")),
+            neutralGrayANegative1 = Color(parseColor("#262626cc")),
+            neutralGrayA8 = Color(parseColor("#52525205")),
+            neutralGrayA7 = Color(parseColor("#2e2e2e0a")),
+            neutralGrayA6 = Color(parseColor("#2121210f")),
+            neutralGrayA5 = Color(parseColor("#1c1c1c17")),
+            neutralGrayA4 = Color(parseColor("#1f1f1f21")),
+            neutralGrayA3 = Color(parseColor("#2e2e2e33")),
+            neutralGrayA2 = Color(parseColor("#21212166")),
+            neutralGrayA1 = Color(parseColor("#2b2b2b8f")),
+            neutralGrayA0 = Color(parseColor("#262627bd"))
+        ),
+        neutralGray = NeutralGrayValuesContainer(
+            neutralGray8 = Color(parseColor("#fcfcfc")),
+            neutralGray7 = Color(parseColor("#f7f7f7")),
+            neutralGray6 = Color(parseColor("#f2f2f2")),
+            neutralGray5 = Color(parseColor("#ebebeb")),
+            neutralGray4 = Color(parseColor("#e3e3e3")),
+            neutralGray3 = Color(parseColor("#d6d6d6")),
+            neutralGray2 = Color(parseColor("#a6a6a6")),
+            neutralGray1 = Color(parseColor("#8a8a8a")),
+            neutralGray0 = Color(parseColor("#5e5e5e")),
+            negative4 = Color(parseColor("#212121")),
+            negative3 = Color(parseColor("#2e2e2e")),
+            negative2 = Color(parseColor("#404040")),
+            negative1 = Color(parseColor("#525252"))
+        ),
+        magenta = MagentaValuesContainer1(
+            negative4 = Color(parseColor("#410b2f")),
+            negative3 = Color(parseColor("#671e4d")),
+            negative2 = Color(parseColor("#892969")),
+            negative1 = Color(parseColor("#953274")),
+            magenta8 = Color(parseColor("#fffafd")),
+            magenta7 = Color(parseColor("#fef6fb")),
+            magenta6 = Color(parseColor("#fdedf8")),
+            magenta5 = Color(parseColor("#fde2f4")),
+            magenta4 = Color(parseColor("#fbd5ee")),
+            magenta3 = Color(parseColor("#f7cae8")),
+            magenta2 = Color(parseColor("#ec89cb")),
+            magenta1 = Color(parseColor("#de5eb3")),
+            magenta0 = Color(parseColor("#b12f86"))
+        ),
+        interaction = InteractionValuesContainer(
+            neutral = NeutralValuesContainer1(
+                interactionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
+                interactionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
+                interactionNeutralSubtleHover = Color(parseColor("#eaedf0")),
+                interactionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
+                interactionNeutralSelected = Color(parseColor("#3a424a")),
+                interactionNeutralNormal = Color(parseColor("#4a545e")),
+                interactionNeutralHover = Color(parseColor("#3a424a")),
+                interactionNeutralActive = Color(parseColor("#272e35"))
+            ),
+            inverse = InverseValuesContainer1(
+                interactionInverseSelected = Color(parseColor("#ffffffd1")),
+                interactionInverseNormal = Color(parseColor("#ffffff")),
+                interactionInverseHover = Color(parseColor("#ffffffd1")),
+                interactionInverseActive = Color(parseColor("#ffffffb8"))
+            ),
+            ghost = GhostValuesContainer1(
+                interactionGhostSelected = Color(parseColor("#022e500f")),
+                interactionGhostNormal = Color(parseColor("#ffffff00")),
+                interactionGhostInverseSelected = Color(parseColor("#ffffff1a")),
+                interactionGhostInverseNormal = Color(parseColor("#ffffff1f")),
+                interactionGhostInverseHover = Color(parseColor("#ffffff1a")),
+                interactionGhostHover = Color(parseColor("#022e500f")),
+                interactionGhostDangerSelected = Color(parseColor("#ffebeb")),
+                interactionGhostDangerNormal = Color(parseColor("#fee7e7")),
+                interactionGhostDangerHover = Color(parseColor("#ffebeb")),
+                interactionGhostActive = Color(parseColor("#10284717"))
+            ),
+            focus = FocusValuesContainer(
+                interactionFocusDefault = Color(parseColor("#6691f4"))
+            ),
+            disabled = DisabledValuesContainer(
+                interactionDisabledSubtleNormal = Color(parseColor("#eaedf0")),
+                interactionDisabledSubtleHover = Color(parseColor("#dee3e7")),
+                interactionDisabledSubtleActive = Color(parseColor("#cfd6dd")),
+                interactionDisabledNormal = Color(parseColor("#9ea8b3")),
+                interactionDisabledHover = Color(parseColor("#7e8c9a")),
+                interactionDisabledActive = Color(parseColor("#555f6d"))
+            ),
+            default = DefaultValuesContainer(
+                interactionDefaultSubtleSelected = Color(parseColor("#e5eeff")),
+                interactionDefaultSubtleNormal = Color(parseColor("#ebf0ff")),
+                interactionDefaultSubtleHover = Color(parseColor("#e5eeff")),
+                interactionDefaultSubtleActive = Color(parseColor("#ccdcff")),
+                interactionDefaultSelected = Color(parseColor("#1e4fc2")),
+                interactionDefaultNormal = Color(parseColor("#3061d5")),
+                interactionDefaultHover = Color(parseColor("#1e4fc2")),
+                interactionDefaultActive = Color(parseColor("#113997"))
+            ),
+            danger = DangerValuesContainer1(
+                interactionDangerSubtleSelected = Color(parseColor("#fee7e7")),
+                interactionDangerSubtleNormal = Color(parseColor("#ffebeb")),
+                interactionDangerSubtleHover = Color(parseColor("#fee7e7")),
+                interactionDangerSubtleActive = Color(parseColor("#fccfcf")),
+                interactionDangerSelected = Color(parseColor("#952d2d")),
+                interactionDangerNormal = Color(parseColor("#c53434")),
+                interactionDangerHover = Color(parseColor("#952d2d")),
+                interactionDangerActive = Color(parseColor("#6f2020"))
+            ),
+            border = BorderValuesContainer1(
+                interactionBorderSelected = Color(parseColor("#3061d5")),
+                interactionBorderNormal = Color(parseColor("#8eb0fb")),
+                interactionBorderNeutralSelected = Color(parseColor("#9ea8b3")),
+                interactionBorderNeutralNormal = Color(parseColor("#cfd6dd")),
+                interactionBorderNeutralHover = Color(parseColor("#9ea8b3")),
+                interactionBorderNeutralActive = Color(parseColor("#7e8c9a")),
+                interactionBorderHover = Color(parseColor("#6691f4")),
+                interactionBorderDanger = Color(parseColor("#f26363")),
+                interactionBorderActive = Color(parseColor("#2759ce"))
+            ),
+            background = BackgroundValuesContainer1(
+                interactionBackgroundSidepanel = Color(parseColor("#ffffff")),
+                interactionBackgroundModelessInverse = Color(parseColor("#272e35")),
+                interactionBackgroundModeless = Color(parseColor("#ffffff")),
+                interactionBackgroundModal = Color(parseColor("#ffffff")),
+                interactionBackgroundFormField = Color(parseColor("#ffffff")),
+                interactionBackgroundDimmer = Color(parseColor("#182639bd"))
+            )
+        ),
+        green = GreenValuesContainer1(
+            negative4 = Color(parseColor("#0a2e0b")),
+            negative3 = Color(parseColor("#135315")),
+            negative2 = Color(parseColor("#246626")),
+            negative1 = Color(parseColor("#2f6f2f")),
+            green8 = Color(parseColor("#fbfefb")),
+            green7 = Color(parseColor("#f4fbf4")),
+            green6 = Color(parseColor("#e6f9e6")),
+            green5 = Color(parseColor("#dff6df")),
+            green4 = Color(parseColor("#cff2cf")),
+            green3 = Color(parseColor("#c6ecc6")),
+            green2 = Color(parseColor("#87c987")),
+            green1 = Color(parseColor("#55a555")),
+            green0 = Color(parseColor("#347434"))
+        ),
+        cyan = CyanValuesContainer1(
+            negative4 = Color(parseColor("#002742")),
+            negative3 = Color(parseColor("#0c456e")),
+            negative2 = Color(parseColor("#165c8d")),
+            negative1 = Color(parseColor("#1b679d")),
+            cyan8 = Color(parseColor("#fafdff")),
+            cyan7 = Color(parseColor("#f0f9ff")),
+            cyan6 = Color(parseColor("#ebf5ff")),
+            cyan5 = Color(parseColor("#e0f1ff")),
+            cyan4 = Color(parseColor("#cce7ff")),
+            cyan3 = Color(parseColor("#c2e2ff")),
+            cyan2 = Color(parseColor("#79bcf6")),
+            cyan1 = Color(parseColor("#5699dc")),
+            cyan0 = Color(parseColor("#0870ba"))
+        ),
+        coolGrayAlpha = CoolGrayAlphaValuesContainer(
+            coolGrayANegative4 = Color(parseColor("#09131aed")),
+            coolGrayANegative3 = Color(parseColor("#0a121ae0")),
+            coolGrayANegative2 = Color(parseColor("#1a232ddb")),
+            coolGrayANegative1 = Color(parseColor("#1d2835cc")),
+            coolGrayA8 = Color(parseColor("#1f529e05")),
+            coolGrayA7 = Color(parseColor("#00295c0a")),
+            coolGrayA6 = Color(parseColor("#022e500f")),
+            coolGrayA5 = Color(parseColor("#10284717")),
+            coolGrayA4 = Color(parseColor("#04294321")),
+            coolGrayA3 = Color(parseColor("#10315633")),
+            coolGrayA2 = Color(parseColor("#0d253f66")),
+            coolGrayA1 = Color(parseColor("#1830498f")),
+            coolGrayA0 = Color(parseColor("#182639bd"))
+        ),
+        coolGray = CoolGrayValuesContainer(
+            negative4 = Color(parseColor("#1b242c")),
+            negative3 = Color(parseColor("#272e35")),
+            negative2 = Color(parseColor("#3a424a")),
+            negative1 = Color(parseColor("#4a545e")),
+            coolGray8 = Color(parseColor("#fcfcfd")),
+            coolGray7 = Color(parseColor("#f5f7f9")),
+            coolGray6 = Color(parseColor("#f0f3f5")),
+            coolGray5 = Color(parseColor("#eaedf0")),
+            coolGray4 = Color(parseColor("#dee3e7")),
+            coolGray3 = Color(parseColor("#cfd6dd")),
+            coolGray2 = Color(parseColor("#9ea8b3")),
+            coolGray1 = Color(parseColor("#7e8c9a")),
+            coolGray0 = Color(parseColor("#555f6d"))
+        ),
+        content = ContentValuesContainer(
+            warningSecondary = Color(parseColor("#f59638")),
+            warningPrimary = Color(parseColor("#7a4510")),
+            tertiaryInverse = Color(parseColor("#ffffff66")),
+            tertiary = Color(parseColor("#7e8c9a")),
+            successSecondary = Color(parseColor("#347434")),
+            successPrimary = Color(parseColor("#135315")),
+            secondaryInverse = Color(parseColor("#ffffffa3")),
+            secondary = Color(parseColor("#555f6d")),
+            primaryInverse = Color(parseColor("#ffffff")),
+            primary = Color(parseColor("#272e35")),
+            infoSecondary = Color(parseColor("#3061d5")),
+            infoPrimary = Color(parseColor("#113997")),
+            disabledInverse = Color(parseColor("#ffffff3d")),
+            disabled = Color(parseColor("#9ea8b3")),
+            dangerSecondary = Color(parseColor("#c53434")),
+            dangerPrimary = Color(parseColor("#6f2020")),
+            brandSecondary = Color(parseColor("#3061d5")),
+            brandPrimary = Color(parseColor("#113997"))
+        ),
+        border = BorderValuesContainer(
+            warningSubtle = Color(parseColor("#ffd4a8")),
+            warningStrong = Color(parseColor("#f59638")),
+            successSubtle = Color(parseColor("#c6ecc6")),
+            successStrong = Color(parseColor("#347434")),
+            neutralSubtle = Color(parseColor("#cfd6dd")),
+            neutralStrong = Color(parseColor("#555f6d")),
+            inverse = Color(parseColor("#ffffff")),
+            infoSubtle = Color(parseColor("#ccdcff")),
+            infoStrong = Color(parseColor("#3061d5")),
+            defaultA = Color(parseColor("#10284717")),
+            default = Color(parseColor("#eaedf0")),
+            dangerSubtle = Color(parseColor("#fccfcf")),
+            dangerStrong = Color(parseColor("#c53434"))
+        ),
+        blue = BlueValuesContainer1(
+            negative4 = Color(parseColor("#041f5d")),
+            negative3 = Color(parseColor("#113997")),
+            negative2 = Color(parseColor("#1e4fc2")),
+            negative1 = Color(parseColor("#2759ce")),
+            blue8 = Color(parseColor("#fafbff")),
+            blue7 = Color(parseColor("#f5f8ff")),
+            blue6 = Color(parseColor("#ebf0ff")),
+            blue5 = Color(parseColor("#e5eeff")),
+            blue4 = Color(parseColor("#d6e3ff")),
+            blue3 = Color(parseColor("#ccdcff")),
+            blue2 = Color(parseColor("#8eb0fb")),
+            blue1 = Color(parseColor("#6691f4")),
+            blue0 = Color(parseColor("#3061d5"))
+        ),
+        background = BackgroundValuesContainer(
+            warningSurface = Color(parseColor("#fffcfa")),
+            warningSubtle = Color(parseColor("#fff5eb")),
+            warningStrong = Color(parseColor("#f59638")),
+            warningOnSubtle = Color(parseColor("#ffe8d1")),
+            warningMuted = Color(parseColor("#fcdec0")),
+            successSurface = Color(parseColor("#fbfefb")),
+            successSubtle = Color(parseColor("#f4fbf4")),
+            successStrong = Color(parseColor("#347434")),
+            successOnSubtle = Color(parseColor("#dff6df")),
+            successMuted = Color(parseColor("#cff2cf")),
+            neutralSurface = Color(parseColor("#fcfcfd")),
+            neutralSubtle = Color(parseColor("#f5f7f9")),
+            neutralStrong = Color(parseColor("#555f6d")),
+            neutralOnSubtle = Color(parseColor("#eaedf0")),
+            neutralMuted = Color(parseColor("#dee3e7")),
+            inverse = Color(parseColor("#272e35")),
+            infoSurface = Color(parseColor("#fafbff")),
+            infoSubtle = Color(parseColor("#f5f8ff")),
+            infoStrong = Color(parseColor("#3061d5")),
+            infoOnSubtle = Color(parseColor("#e5eeff")),
+            infoMuted = Color(parseColor("#d6e3ff")),
+            default = Color(parseColor("#ffffff")),
+            dangerSurface = Color(parseColor("#fffafa")),
+            dangerSubtle = Color(parseColor("#fef5f5")),
+            dangerStrong = Color(parseColor("#c53434")),
+            dangerOnSubtle = Color(parseColor("#fee7e7")),
+            dangerMuted = Color(parseColor("#fcd9d9")),
+            brandSurface = Color(parseColor("#fafbff")),
+            brandSubtle = Color(parseColor("#f5f8ff")),
+            brandStrong = Color(parseColor("#3061d5")),
+            brandOnSubtle = Color(parseColor("#e5eeff")),
+            brandMuted = Color(parseColor("#d6e3ff"))
+        ),
+        aquamarine = AquamarineValuesContainer1(
+            negative4 = Color(parseColor("#012d26")),
+            negative3 = Color(parseColor("#0d4a42")),
+            negative2 = Color(parseColor("#15665b")),
+            negative1 = Color(parseColor("#1a7061")),
+            aquamarine8 = Color(parseColor("#fbfefe")),
+            aquamarine7 = Color(parseColor("#f0faf9")),
+            aquamarine6 = Color(parseColor("#e2f8f5")),
+            aquamarine5 = Color(parseColor("#daf6f3")),
+            aquamarine4 = Color(parseColor("#c5f2ec")),
+            aquamarine3 = Color(parseColor("#bee9e4")),
+            aquamarine2 = Color(parseColor("#6ec9bf")),
+            aquamarine1 = Color(parseColor("#3da496")),
+            aquamarine0 = Color(parseColor("#097b68"))
+        ),
+        action = ActionValuesContainer(
+            success = SuccessValuesContainer(
+                actionSuccessSubtleSelected = Color(parseColor("#dff6df")),
+                actionSuccessSubtleNormal = Color(parseColor("#e6f9e6")),
+                actionSuccessSubtleHover = Color(parseColor("#dff6df")),
+                actionSuccessSubtleActive = Color(parseColor("#c6ecc6")),
+                actionSuccessSelected = Color(parseColor("#246626")),
+                actionSuccessNormal = Color(parseColor("#347434")),
+                actionSuccessHover = Color(parseColor("#246626")),
+                actionSuccessActive = Color(parseColor("#135315"))
+            ),
+            reverseInverse = ReverseInverseValuesContainer(
+                actionReverseInverseSelected = Color(parseColor("#1d2835cc")),
+                actionReverseInverseNormal = Color(parseColor("#0a121ae0")),
+                actionReverseInverseHover = Color(parseColor("#1d2835cc")),
+                actionReverseInverseActive = Color(parseColor("#182639bd"))
+            ),
+            primary = PrimaryValuesContainer(
+                actionPrimarySubtleSelected = Color(parseColor("#e5eeff")),
+                actionPrimarySubtleNormal = Color(parseColor("#ebf0ff")),
+                actionPrimarySubtleHover = Color(parseColor("#e5eeff")),
+                actionPrimarySubtleActive = Color(parseColor("#ccdcff")),
+                actionPrimarySelected = Color(parseColor("#1e4fc2")),
+                actionPrimaryNormal = Color(parseColor("#3061d5")),
+                actionPrimaryHover = Color(parseColor("#1e4fc2")),
+                actionPrimaryActive = Color(parseColor("#113997"))
+            ),
+            outline = OutlineValuesContainer(
+                actionOutlineSelected = Color(parseColor("#9ea8b3")),
+                actionOutlineNormal = Color(parseColor("#cfd6dd")),
+                actionOutlineHover = Color(parseColor("#9ea8b3")),
+                actionOutlineActive = Color(parseColor("#7e8c9a"))
+            ),
+            neutral = NeutralValuesContainer(
+                actionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
+                actionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
+                actionNeutralSubtleHover = Color(parseColor("#eaedf0")),
+                actionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
+                actionNeutralSelected = Color(parseColor("#3a424a")),
+                actionNeutralNormal = Color(parseColor("#4a545e")),
+                actionNeutralHover = Color(parseColor("#3a424a")),
+                actionNeutralActive = Color(parseColor("#272e35"))
+            ),
+            inverse = InverseValuesContainer(
+                actionInverseSelected = Color(parseColor("#ffffffd1")),
+                actionInverseNormal = Color(parseColor("#ffffff")),
+                actionInverseHover = Color(parseColor("#ffffffd1")),
+                actionInverseActive = Color(parseColor("#ffffffb8"))
+            ),
+            ghost = GhostValuesContainer(
+                actionGhostSelected = Color(parseColor("#022e500f")),
+                actionGhostNormal = Color(parseColor("#ffffff00")),
+                actionGhostInverseSelected = Color(parseColor("#ffffff1a")),
+                actionGhostInverseHover = Color(parseColor("#ffffff1a")),
+                actionGhostInverseActive = Color(parseColor("#ffffff1f")),
+                actionGhostHover = Color(parseColor("#022e500f")),
+                actionGhostDangerSelected = Color(parseColor("#ffebeb")),
+                actionGhostDangerHover = Color(parseColor("#ffebeb")),
+                actionGhostDangerActive = Color(parseColor("#fee7e7")),
+                actionGhostActive = Color(parseColor("#10284717"))
+            ),
+            danger = DangerValuesContainer(
+                actionDangerSubtleSelected = Color(parseColor("#fee7e7")),
+                actionDangerSubtleNormal = Color(parseColor("#ffebeb")),
+                actionDangerSubtleHover = Color(parseColor("#fee7e7")),
+                actionDangerSubtleActive = Color(parseColor("#fccfcf")),
+                actionDangerSelected = Color(parseColor("#952d2d")),
+                actionDangerNormal = Color(parseColor("#c53434")),
+                actionDangerHover = Color(parseColor("#952d2d")),
+                actionDangerActive = Color(parseColor("#6f2020"))
+            )
         )
-    ), fontFamily = FontFamilyValuesContainer1(
-        sans = "orci",
-        serif = "ne",
-        mono = "nonumes"
-    ), fontSize = FontSizeValuesContainer1(
-        fontSize100 = 40.0,
-        fontSize125 = 360.361,
-        fontSize150 = 362.363,
-        fontSize175 = 364.365,
-        fontSize200 = 366.367,
-        fontSize225 = 368.369,
-        fontSize250 = 370.371,
-        fontSize300 = 372.373,
-        fontSize350 = 374.375,
-        fontSize400 = 376.377,
-        fontSize450 = 378.379,
-        fontSize525 = 380.381,
-        fontSize600 = 382.383,
-        fontSize675 = 384.385,
-        fontSize750 = 386.387,
-        fontSize850 = 388.389,
-        fontSize950 = 390.391,
-        fontSize1050 = 392.393,
-        fontSize1150 = 394.395
-    ), fontWeight = FontWeightValuesContainer1(
-        fontWeight300 = 396.397,
-        fontWeight400 = 398.399,
-        fontWeight500 = 400.401,
-        fontWeight600 = 402.403,
-        fontWeight700 = 404.405
-    ), letterSpacing = LetterSpacingValuesContainer1(
-        letterSpacing0 = 406.407,
-        letterSpacing100 = 408.409,
-        letterSpacing200 = 410.411,
-        letterSpacing300 = 412.413,
-        letterSpacing400 = 414.415,
-        letterSpacing500 = 416.417,
-        letterSpacing600 = 418.419,
-        letterSpacing700 = 420.421
-    ), lineHeight = LineHeightValuesContainer1(
-        value150 = 422.423,
-        value200 = 424.425,
-        value250 = 426.427,
-        value275 = 428.429,
-        value300 = 430.431,
-        value325 = 432.433,
-        value400 = 434.435,
-        value475 = 436.437,
-        value525 = 438.439,
-        value600 = 440.441,
-        value700 = 442.443,
-        value725 = 444.445,
-        value825 = 446.447,
-        value900 = 448.449,
-        value1025 = 450.451,
-        value1150 = 452.453,
-        value1275 = 454.455,
-        value1400 = 456.457
+    ),
+    borderWidth = BorderWidthValuesContainer(
+        xLarge = 8.0,
+        small = 1.0,
+        none = 0.0,
+        medium = 2.0,
+        large = 4.0,
+        focus = 2.0,
+        borderWidth800 = 8.0,
+        borderWidth400 = 4.0,
+        borderWidth200 = 2.0,
+        borderWidth100 = 1.0,
+        borderWidth0 = 0.0
+    ),
+    borderRadius = BorderRadiusValuesContainer(
+        xLarge = 12.0,
+        small = 2.0,
+        none = 0.0,
+        medium = 4.0,
+        large = 8.0,
+        full = 999.0,
+        borderRadius999 = 999.0,
+        borderRadius50 = 4.0,
+        borderRadius4xLarge = 24.0,
+        borderRadius3xLarge = 20.0,
+        borderRadius300 = 24.0,
+        borderRadius2xLarge = 16.0,
+        borderRadius250 = 20.0,
+        borderRadius25 = 2.0,
+        borderRadius200 = 16.0,
+        borderRadius150 = 12.0,
+        borderRadius100 = 8.0,
+        borderRadius0 = 0.0
+    ),
+    size = SizeValuesContainer(
+        xSmall = 24.0,
+        xLarge = 56.0,
+        small = 32.0,
+        size3xSmall = 16.0,
+        size3xLarge = 72.0,
+        size2xSmall = 20.0,
+        size2xLarge = 64.0,
+        medium = 40.0,
+        large = 48.0
+    ),
+    space = SpaceValuesContainer(
+        padding = PaddingValuesContainer(
+            xSmall = 4.0,
+            small = 8.0,
+            padding6xLarge = 64.0,
+            padding5xLarge = 44.0,
+            padding4xLarge = 40.0,
+            padding3xLarge = 32.0,
+            padding2xSmall = 2.0,
+            padding2xLarge = 24.0,
+            none = 0.0,
+            medium = 12.0,
+            large = 16.0
+        ),
+        gap = GapValuesContainer(
+            xSmall = 4.0,
+            xLarge = 24.0,
+            small = 8.0,
+            none = 0.0,
+            medium = 12.0,
+            large = 16.0,
+            gap3xLarge = 44.0,
+            gap2xSmall = 2.0,
+            gap2xLarge = 32.0
+        )
+    ),
+    opacity = OpacityValuesContainer(
+        opacity50 = 0.5,
+        opacity100 = 1.0,
+        opacity0 = 0.0,
+        disabled = 0.5
+    ),
+    typography = TypographyValuesContainer(
+        utility = UtilityValuesContainer(
+            typographyUtilitySmall = Typography(
+                lineHeight = 16.0,
+                letterSpacing = 0.0,
+                fontWeight = 500.0,
+                fontSize = 12.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyUtilityMedium = Typography(
+                lineHeight = 20.0,
+                letterSpacing = -0.006,
+                fontWeight = 500.0,
+                fontSize = 14.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyUtilityLarge = Typography(
+                lineHeight = 22.0,
+                letterSpacing = -0.011,
+                fontWeight = 500.0,
+                fontSize = 16.0,
+                fontFamily = "Noto Sans"
+            )
+        ),
+        heading = HeadingValuesContainer(
+            typographyHeadingXLarge = Typography(
+                lineHeight = 24.0,
+                letterSpacing = -0.014,
+                fontWeight = 700.0,
+                fontSize = 18.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeadingSmall = Typography(
+                lineHeight = 16.0,
+                letterSpacing = 0.0,
+                fontWeight = 700.0,
+                fontSize = 12.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeadingMedium = Typography(
+                lineHeight = 20.0,
+                letterSpacing = -0.006,
+                fontWeight = 700.0,
+                fontSize = 14.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeadingLarge = Typography(
+                lineHeight = 22.0,
+                letterSpacing = -0.011,
+                fontWeight = 700.0,
+                fontSize = 16.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading9xLarge = Typography(
+                lineHeight = 66.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 54.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading8xLarge = Typography(
+                lineHeight = 58.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 48.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading7xLarge = Typography(
+                lineHeight = 56.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 42.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading6xLarge = Typography(
+                lineHeight = 48.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 36.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading5xLarge = Typography(
+                lineHeight = 42.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 32.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading4xLarge = Typography(
+                lineHeight = 38.0,
+                letterSpacing = -0.021,
+                fontWeight = 700.0,
+                fontSize = 28.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading3xLarge = Typography(
+                lineHeight = 32.0,
+                letterSpacing = -0.019,
+                fontWeight = 700.0,
+                fontSize = 24.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyHeading2xLarge = Typography(
+                lineHeight = 26.0,
+                letterSpacing = -0.017,
+                fontWeight = 700.0,
+                fontSize = 20.0,
+                fontFamily = "Noto Sans"
+            )
+        ),
+        display = DisplayValuesContainer(
+            typographyDisplayXLarge = Typography(
+                lineHeight = 92.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 76.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyDisplaySmall = Typography(
+                lineHeight = 66.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 54.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyDisplayMedium = Typography(
+                lineHeight = 72.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 60.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyDisplayLarge = Typography(
+                lineHeight = 82.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 68.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyDisplay3xLarge = Typography(
+                lineHeight = 112.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 92.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyDisplay2xLarge = Typography(
+                lineHeight = 102.0,
+                letterSpacing = -0.022,
+                fontWeight = 700.0,
+                fontSize = 84.0,
+                fontFamily = "Noto Sans"
+            )
+        ),
+        code = CodeValuesContainer(
+            typographyCodeSmall = Typography(
+                lineHeight = 16.0,
+                letterSpacing = 0.0,
+                fontWeight = 400.0,
+                fontSize = 12.0,
+                fontFamily = "Noto Sans Mono"
+            ),
+            typographyCodeMedium = Typography(
+                lineHeight = 20.0,
+                letterSpacing = -0.006,
+                fontWeight = 400.0,
+                fontSize = 14.0,
+                fontFamily = "Noto Sans Mono"
+            ),
+            typographyCodeLarge = Typography(
+                lineHeight = 22.0,
+                letterSpacing = -0.011,
+                fontWeight = 400.0,
+                fontSize = 16.0,
+                fontFamily = "Noto Sans Mono"
+            )
+        ),
+        body = BodyValuesContainer(
+            typographyBodySmall = Typography(
+                lineHeight = 16.0,
+                letterSpacing = 0.0,
+                fontWeight = 400.0,
+                fontSize = 12.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyBodyMedium = Typography(
+                lineHeight = 20.0,
+                letterSpacing = -0.006,
+                fontWeight = 400.0,
+                fontSize = 14.0,
+                fontFamily = "Noto Sans"
+            ),
+            typographyBodyLarge = Typography(
+                lineHeight = 22.0,
+                letterSpacing = -0.011,
+                fontWeight = 400.0,
+                fontSize = 16.0,
+                fontFamily = "Noto Sans"
+            )
+        )
+    ),
+    dimension = DimensionValuesContainer(
+        dimension900 = 72.0,
+        dimension800 = 64.0,
+        dimension700 = 56.0,
+        dimension600 = 48.0,
+        dimension550 = 44.0,
+        dimension500 = 40.0,
+        dimension50 = 4.0,
+        dimension400 = 32.0,
+        dimension300 = 24.0,
+        dimension250 = 20.0,
+        dimension25 = 2.0,
+        dimension200 = 16.0,
+        dimension1600 = 128.0,
+        dimension1500 = 120.0,
+        dimension150 = 12.0,
+        dimension1200 = 96.0,
+        dimension1000 = 80.0,
+        dimension100 = 8.0,
+        dimension0 = 0.0
+    ),
+    elevation = ElevationValuesContainer(
+        top = TopValuesContainer(
+            elevationTop400 = listOf(BoxShadow(
+                y = -2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c0a",
+                blur = 2.0
+            ), BoxShadow(
+                y = -16.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -6.0,
+                color = "#1b242c29",
+                blur = 24.0
+            )),
+            elevationTop300 = listOf(BoxShadow(
+                y = -2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c0a",
+                blur = 2.0
+            ), BoxShadow(
+                y = -8.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -2.0,
+                color = "#1b242c1f",
+                blur = 16.0
+            )),
+            elevationTop200 = listOf(BoxShadow(
+                y = -2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c0a",
+                blur = 2.0
+            ), BoxShadow(
+                y = -2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c14",
+                blur = 8.0
+            )),
+            elevationTop100 = BoxShadow(
+                y = -1.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = 0.0,
+                color = "#1b242c1f",
+                blur = 2.0
+            )
+        ),
+        bottom = BottomValuesContainer(
+            elevationBottom400 = listOf(BoxShadow(
+                y = 2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c0a",
+                blur = 2.0
+            ), BoxShadow(
+                y = 16.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -6.0,
+                color = "#1b242c29",
+                blur = 24.0
+            )),
+            elevationBottom300 = listOf(BoxShadow(
+                y = 2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c0a",
+                blur = 2.0
+            ), BoxShadow(
+                y = 8.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -2.0,
+                color = "#1b242c1f",
+                blur = 16.0
+            )),
+            elevationBottom200 = listOf(BoxShadow(
+                y = 2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c0a",
+                blur = 2.0
+            ), BoxShadow(
+                y = 2.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = -1.0,
+                color = "#1b242c14",
+                blur = 8.0
+            )),
+            elevationBottom100 = BoxShadow(
+                y = 1.0,
+                x = 0.0,
+                type = "dropShadow",
+                spread = 0.0,
+                color = "#1b242c1f",
+                blur = 2.0
+            )
+        )
+    ),
+    fontFamily = FontFamilyValuesContainer(
+        serif = "Noto Serif",
+        sans = "Noto Sans",
+        mono = "Noto Sans Mono"
+    ),
+    fontSize = FontSizeValuesContainer(
+        fontSize950 = 76.0,
+        fontSize850 = 68.0,
+        fontSize750 = 60.0,
+        fontSize675 = 54.0,
+        fontSize600 = 48.0,
+        fontSize525 = 42.0,
+        fontSize450 = 36.0,
+        fontSize400 = 32.0,
+        fontSize350 = 28.0,
+        fontSize300 = 24.0,
+        fontSize250 = 20.0,
+        fontSize225 = 18.0,
+        fontSize200 = 16.0,
+        fontSize175 = 14.0,
+        fontSize150 = 12.0,
+        fontSize125 = 10.0,
+        fontSize1150 = 92.0,
+        fontSize1050 = 84.0,
+        fontSize100 = 8.0
+    ),
+    fontWeight = FontWeightValuesContainer(
+        fontWeight700 = 700.0,
+        fontWeight600 = 600.0,
+        fontWeight500 = 500.0,
+        fontWeight400 = 400.0,
+        fontWeight300 = 300.0
+    ),
+    letterSpacing = LetterSpacingValuesContainer(
+        letterSpacing700 = -0.022,
+        letterSpacing600 = -0.021,
+        letterSpacing500 = -0.019,
+        letterSpacing400 = -0.017,
+        letterSpacing300 = -0.014,
+        letterSpacing200 = -0.011,
+        letterSpacing100 = -0.006,
+        letterSpacing0 = 0.0
+    ),
+    lineHeight = LineHeightValuesContainer(
+        value900 = 72.0,
+        value825 = 66.0,
+        value725 = 58.0,
+        value700 = 56.0,
+        value600 = 48.0,
+        value525 = 42.0,
+        value475 = 38.0,
+        value400 = 32.0,
+        value325 = 26.0,
+        value300 = 24.0,
+        value275 = 22.0,
+        value250 = 20.0,
+        value200 = 16.0,
+        value150 = 12.0,
+        value1400 = 112.0,
+        value1275 = 102.0,
+        value1150 = 92.0,
+        value1025 = 82.0
     )
-
 )
