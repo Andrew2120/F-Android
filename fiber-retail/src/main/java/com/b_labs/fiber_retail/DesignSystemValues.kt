@@ -266,7 +266,7 @@ val designSystem = DesignSystem(
                 semanticDanger0 = Color(parseColor("#c53434"))
             ),
             brand = BrandValuesContainer(
-                semanticBrandNegative4 = Color(parseColor("#f59638")),
+                semanticBrandNegative4 = Color(parseColor("#246626")),
                 semanticBrandNegative3 = Color(parseColor("#113997")),
                 semanticBrandNegative2 = Color(parseColor("#1e4fc2")),
                 semanticBrandNegative1 = Color(parseColor("#2759ce")),
