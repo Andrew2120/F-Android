@@ -50,6 +50,8 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.fiber-android"
                 artifactId = "mylo"
+                version = "1.0"
+
             }
         }
     }

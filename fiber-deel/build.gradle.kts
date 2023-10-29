@@ -45,6 +45,8 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.fiber-android"
                 artifactId = "deel"
+                version = "1.0"
+
             }
         }
     }

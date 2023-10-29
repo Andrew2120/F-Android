@@ -48,6 +48,8 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.fiber-android"
                 artifactId = "components"
+                version = "1.0"
+
             }
         }
     }
