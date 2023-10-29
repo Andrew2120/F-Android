@@ -40,20 +40,21 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.github.fiber-android"
-                artifactId = "components"
-                version = "1.0"
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+                    groupId = "com.github.fiber-android"
+                    artifactId = "components"
+                    version = "1.0"
 
+                }
             }
         }
     }
 }
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")

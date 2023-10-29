@@ -38,18 +38,19 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.github.fiber-android"
-                artifactId = "fiber-tokens"
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+                    groupId = "com.github.fiber-android"
+                    artifactId = "fiber-tokens"
+                }
             }
         }
     }
 }
+
 
 dependencies {
 

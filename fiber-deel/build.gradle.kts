@@ -37,19 +37,20 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-}
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.github.fiber-android"
-                artifactId = "deel"
-                version = "1.0"
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+                    groupId = "com.github.fiber-android"
+                    artifactId = "deel"
+                    version = "1.0"
 
+                }
             }
         }
     }
+
 }
 
 

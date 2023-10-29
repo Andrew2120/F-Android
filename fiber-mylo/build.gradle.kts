@@ -42,20 +42,21 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-}
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.github.fiber-android"
-                artifactId = "mylo"
-                version = "1.0"
+    afterEvaluate {
+        publishing {
+            publications {
+                create<MavenPublication>("release") {
+                    from(components["release"])
+                    groupId = "com.github.fiber-android"
+                    artifactId = "mylo"
+                    version = "1.0"
 
+                }
             }
         }
     }
 }
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
