@@ -8,6 +8,6 @@ import com.b_labs.fiber_tokens.FiberTheme.designSystem
 @Composable
 fun F_Text(text:String) {
     androidx.compose.material3.Text(text = text, style = TextStyle(
-        fontSize = designSystem.fontSize?.fontSize100!!.sp
+        fontSize = designSystem.typography.code.typographyCodeMedium.fontSize.sp
     ))
 }

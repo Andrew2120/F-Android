@@ -21,8 +21,8 @@ fun F_PrimaryTextField(
         onValueChange = {},
         label = { Text(text) },
         colors = TextFieldDefaults.outlinedTextFieldColors(
-            focusedBorderColor = designSystem.color?.content?.primary!!,
-            unfocusedBorderColor = designSystem.color?.content?.infoPrimary!!
+            focusedBorderColor = designSystem.color.content.primary,
+            unfocusedBorderColor = designSystem.color.content.infoPrimary
         )
     )
 

@@ -18,7 +18,7 @@ fun F_PrimaryButton(
     Button(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(contentColor = designSystem.color!!.content!!.primary!!)
+        colors = ButtonDefaults.buttonColors(contentColor = designSystem.color.content.primary)
     ) {
         Text(text = text)
     }
@@ -33,7 +33,7 @@ fun F_SecondaryButton(
     OutlinedButton(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(contentColor = designSystem.color!!.content!!.secondary!!)
+        colors = ButtonDefaults.buttonColors(contentColor = designSystem.color.content.secondary)
 
     ) {
         Text(text = text)

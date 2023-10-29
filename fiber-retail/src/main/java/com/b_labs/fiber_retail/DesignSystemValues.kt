@@ -1,95 +1,95 @@
-import androidx.compose.ui.unit.*
-import androidx.compose.ui.graphics.Color
-import android.graphics.Color.parseColor
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalDensity
-import com.b_labs.fiber_tokens.DesignSystem
-import com.b_labs.fiber_tokens.ContentValuesContainer
-import com.b_labs.fiber_tokens.BorderValuesContainer
-import com.b_labs.fiber_tokens.BackgroundValuesContainer
-import com.b_labs.fiber_tokens.PrimaryValuesContainer
-import com.b_labs.fiber_tokens.NeutralValuesContainer
-import com.b_labs.fiber_tokens.SuccessValuesContainer
-import com.b_labs.fiber_tokens.DangerValuesContainer
-import com.b_labs.fiber_tokens.GhostValuesContainer
-import com.b_labs.fiber_tokens.OutlineValuesContainer
-import com.b_labs.fiber_tokens.InverseValuesContainer
-import com.b_labs.fiber_tokens.ReverseInverseValuesContainer
+package com.b_labs.fiber_retail
+
 import com.b_labs.fiber_tokens.ActionValuesContainer
-import com.b_labs.fiber_tokens.DefaultValuesContainer
-import com.b_labs.fiber_tokens.NeutralValuesContainer1
-import com.b_labs.fiber_tokens.DangerValuesContainer1
-import com.b_labs.fiber_tokens.GhostValuesContainer1
-import com.b_labs.fiber_tokens.DisabledValuesContainer
-import com.b_labs.fiber_tokens.BorderValuesContainer1
-import com.b_labs.fiber_tokens.BackgroundValuesContainer1
-import com.b_labs.fiber_tokens.InverseValuesContainer1
-import com.b_labs.fiber_tokens.FocusValuesContainer
-import com.b_labs.fiber_tokens.InteractionValuesContainer
-import com.b_labs.fiber_tokens.GrayValuesContainer
-import com.b_labs.fiber_tokens.WhiteValuesContainer
-import com.b_labs.fiber_tokens.RedValuesContainer
-import com.b_labs.fiber_tokens.MagentaValuesContainer
-import com.b_labs.fiber_tokens.PurpleValuesContainer
-import com.b_labs.fiber_tokens.VioletValuesContainer
-import com.b_labs.fiber_tokens.BlueValuesContainer
-import com.b_labs.fiber_tokens.CyanValuesContainer
-import com.b_labs.fiber_tokens.TealValuesContainer
 import com.b_labs.fiber_tokens.AquamarineValuesContainer
-import com.b_labs.fiber_tokens.GreenValuesContainer
-import com.b_labs.fiber_tokens.OrangeValuesContainer
-import com.b_labs.fiber_tokens.NonSemanticValuesContainer
-import com.b_labs.fiber_tokens.BrandValuesContainer
-import com.b_labs.fiber_tokens.NeutralValuesContainer2
-import com.b_labs.fiber_tokens.NeutralAlphaValuesContainer
-import com.b_labs.fiber_tokens.InfoValuesContainer
-import com.b_labs.fiber_tokens.SuccessValuesContainer1
-import com.b_labs.fiber_tokens.WarningValuesContainer
-import com.b_labs.fiber_tokens.DangerValuesContainer2
-import com.b_labs.fiber_tokens.SemanticValuesContainer
-import com.b_labs.fiber_tokens.CoolGrayValuesContainer
-import com.b_labs.fiber_tokens.CoolGrayAlphaValuesContainer
-import com.b_labs.fiber_tokens.NeutralGrayValuesContainer
-import com.b_labs.fiber_tokens.NeutralGrayAlphaValuesContainer
-import com.b_labs.fiber_tokens.WarmGrayValuesContainer
-import com.b_labs.fiber_tokens.WarmGrayAlphaValuesContainer
-import com.b_labs.fiber_tokens.WhiteAlphaValuesContainer
-import com.b_labs.fiber_tokens.RedValuesContainer1
-import com.b_labs.fiber_tokens.MagentaValuesContainer1
-import com.b_labs.fiber_tokens.PurpleValuesContainer1
-import com.b_labs.fiber_tokens.VioletValuesContainer1
-import com.b_labs.fiber_tokens.BlueValuesContainer1
-import com.b_labs.fiber_tokens.CyanValuesContainer1
-import com.b_labs.fiber_tokens.TealValuesContainer1
 import com.b_labs.fiber_tokens.AquamarineValuesContainer1
-import com.b_labs.fiber_tokens.GreenValuesContainer1
-import com.b_labs.fiber_tokens.OrangeValuesContainer1
-import com.b_labs.fiber_tokens.TransparentValuesContainer
-import com.b_labs.fiber_tokens.ColorValuesContainer
-import com.b_labs.fiber_tokens.BorderWidthValuesContainer
-import com.b_labs.fiber_tokens.BorderRadiusValuesContainer
-import com.b_labs.fiber_tokens.SizeValuesContainer
-import com.b_labs.fiber_tokens.PaddingValuesContainer
-import com.b_labs.fiber_tokens.GapValuesContainer
-import com.b_labs.fiber_tokens.SpaceValuesContainer
-import com.b_labs.fiber_tokens.OpacityValuesContainer
-import com.b_labs.fiber_tokens.Typography
-import com.b_labs.fiber_tokens.CodeValuesContainer
-import com.b_labs.fiber_tokens.UtilityValuesContainer
+import com.b_labs.fiber_tokens.BackgroundValuesContainer
+import com.b_labs.fiber_tokens.BackgroundValuesContainer1
+import com.b_labs.fiber_tokens.BlueValuesContainer
+import com.b_labs.fiber_tokens.BlueValuesContainer1
 import com.b_labs.fiber_tokens.BodyValuesContainer
-import com.b_labs.fiber_tokens.HeadingValuesContainer
-import com.b_labs.fiber_tokens.DisplayValuesContainer
-import com.b_labs.fiber_tokens.TypographyValuesContainer
-import com.b_labs.fiber_tokens.DimensionValuesContainer
-import com.b_labs.fiber_tokens.BoxShadow
+import com.b_labs.fiber_tokens.BorderRadiusValuesContainer
+import com.b_labs.fiber_tokens.BorderValuesContainer
+import com.b_labs.fiber_tokens.BorderValuesContainer1
+import com.b_labs.fiber_tokens.BorderWidthValuesContainer
 import com.b_labs.fiber_tokens.BottomValuesContainer
-import com.b_labs.fiber_tokens.TopValuesContainer
+import com.b_labs.fiber_tokens.BoxShadow
+import com.b_labs.fiber_tokens.BrandValuesContainer
+import com.b_labs.fiber_tokens.CodeValuesContainer
+import com.b_labs.fiber_tokens.ColorValuesContainer
+import com.b_labs.fiber_tokens.ContentValuesContainer
+import com.b_labs.fiber_tokens.CoolGrayAlphaValuesContainer
+import com.b_labs.fiber_tokens.CoolGrayValuesContainer
+import com.b_labs.fiber_tokens.CyanValuesContainer
+import com.b_labs.fiber_tokens.CyanValuesContainer1
+import com.b_labs.fiber_tokens.DangerValuesContainer
+import com.b_labs.fiber_tokens.DangerValuesContainer1
+import com.b_labs.fiber_tokens.DangerValuesContainer2
+import com.b_labs.fiber_tokens.DefaultValuesContainer
+import com.b_labs.fiber_tokens.DesignSystem
+import com.b_labs.fiber_tokens.DimensionValuesContainer
+import com.b_labs.fiber_tokens.DisabledValuesContainer
+import com.b_labs.fiber_tokens.DisplayValuesContainer
 import com.b_labs.fiber_tokens.ElevationValuesContainer
+import com.b_labs.fiber_tokens.FocusValuesContainer
 import com.b_labs.fiber_tokens.FontFamilyValuesContainer
 import com.b_labs.fiber_tokens.FontSizeValuesContainer
 import com.b_labs.fiber_tokens.FontWeightValuesContainer
+import com.b_labs.fiber_tokens.GapValuesContainer
+import com.b_labs.fiber_tokens.GhostValuesContainer
+import com.b_labs.fiber_tokens.GhostValuesContainer1
+import com.b_labs.fiber_tokens.GrayValuesContainer
+import com.b_labs.fiber_tokens.GreenValuesContainer
+import com.b_labs.fiber_tokens.GreenValuesContainer1
+import com.b_labs.fiber_tokens.HeadingValuesContainer
+import com.b_labs.fiber_tokens.InfoValuesContainer
+import com.b_labs.fiber_tokens.InteractionValuesContainer
+import com.b_labs.fiber_tokens.InverseValuesContainer
+import com.b_labs.fiber_tokens.InverseValuesContainer1
 import com.b_labs.fiber_tokens.LetterSpacingValuesContainer
 import com.b_labs.fiber_tokens.LineHeightValuesContainer
+import com.b_labs.fiber_tokens.MagentaValuesContainer
+import com.b_labs.fiber_tokens.MagentaValuesContainer1
+import com.b_labs.fiber_tokens.NeutralAlphaValuesContainer
+import com.b_labs.fiber_tokens.NeutralGrayAlphaValuesContainer
+import com.b_labs.fiber_tokens.NeutralGrayValuesContainer
+import com.b_labs.fiber_tokens.NeutralValuesContainer
+import com.b_labs.fiber_tokens.NeutralValuesContainer1
+import com.b_labs.fiber_tokens.NeutralValuesContainer2
+import com.b_labs.fiber_tokens.NonSemanticValuesContainer
+import com.b_labs.fiber_tokens.OpacityValuesContainer
+import com.b_labs.fiber_tokens.OrangeValuesContainer
+import com.b_labs.fiber_tokens.OrangeValuesContainer1
+import com.b_labs.fiber_tokens.OutlineValuesContainer
+import com.b_labs.fiber_tokens.PaddingValuesContainer
+import com.b_labs.fiber_tokens.PrimaryValuesContainer
+import com.b_labs.fiber_tokens.PurpleValuesContainer
+import com.b_labs.fiber_tokens.PurpleValuesContainer1
+import com.b_labs.fiber_tokens.RedValuesContainer
+import com.b_labs.fiber_tokens.RedValuesContainer1
+import com.b_labs.fiber_tokens.ReverseInverseValuesContainer
+import com.b_labs.fiber_tokens.SemanticValuesContainer
+import com.b_labs.fiber_tokens.SizeValuesContainer
+import com.b_labs.fiber_tokens.SpaceValuesContainer
+import com.b_labs.fiber_tokens.SuccessValuesContainer
+import com.b_labs.fiber_tokens.SuccessValuesContainer1
+import com.b_labs.fiber_tokens.TealValuesContainer
+import com.b_labs.fiber_tokens.TealValuesContainer1
+import com.b_labs.fiber_tokens.TopValuesContainer
+import com.b_labs.fiber_tokens.TransparentValuesContainer
+import com.b_labs.fiber_tokens.Typography
+import com.b_labs.fiber_tokens.TypographyValuesContainer
+import com.b_labs.fiber_tokens.UtilityValuesContainer
+import com.b_labs.fiber_tokens.VioletValuesContainer
+import com.b_labs.fiber_tokens.VioletValuesContainer1
+import com.b_labs.fiber_tokens.WarmGrayAlphaValuesContainer
+import com.b_labs.fiber_tokens.WarmGrayValuesContainer
+import com.b_labs.fiber_tokens.WarningValuesContainer
+import com.b_labs.fiber_tokens.WhiteAlphaValuesContainer
+import com.b_labs.fiber_tokens.WhiteValuesContainer
+import androidx.compose.ui.graphics.Color
+import android.graphics.Color.parseColor
+
 
 
 
@@ -1129,51 +1129,57 @@ val designSystem = DesignSystem(
     ),
     elevation = ElevationValuesContainer(
         top = TopValuesContainer(
-            elevationTop400 = listOf(BoxShadow(
-                y = -2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c0a",
-                blur = 2.0
-            ), BoxShadow(
-                y = -16.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -6.0,
-                color = "#1b242c29",
-                blur = 24.0
-            )),
-            elevationTop300 = listOf(BoxShadow(
-                y = -2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c0a",
-                blur = 2.0
-            ), BoxShadow(
-                y = -8.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -2.0,
-                color = "#1b242c1f",
-                blur = 16.0
-            )),
-            elevationTop200 = listOf(BoxShadow(
-                y = -2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c0a",
-                blur = 2.0
-            ), BoxShadow(
-                y = -2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c14",
-                blur = 8.0
-            )),
+            elevationTop400 = listOf(
+                BoxShadow(
+                    y = -2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c0a",
+                    blur = 2.0
+                ), BoxShadow(
+                    y = -16.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -6.0,
+                    color = "#1b242c29",
+                    blur = 24.0
+                )
+            ),
+            elevationTop300 = listOf(
+                BoxShadow(
+                    y = -2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c0a",
+                    blur = 2.0
+                ), BoxShadow(
+                    y = -8.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -2.0,
+                    color = "#1b242c1f",
+                    blur = 16.0
+                )
+            ),
+            elevationTop200 = listOf(
+                BoxShadow(
+                    y = -2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c0a",
+                    blur = 2.0
+                ), BoxShadow(
+                    y = -2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c14",
+                    blur = 8.0
+                )
+            ),
             elevationTop100 = BoxShadow(
                 y = -1.0,
                 x = 0.0,
@@ -1184,51 +1190,57 @@ val designSystem = DesignSystem(
             )
         ),
         bottom = BottomValuesContainer(
-            elevationBottom400 = listOf(BoxShadow(
-                y = 2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c0a",
-                blur = 2.0
-            ), BoxShadow(
-                y = 16.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -6.0,
-                color = "#1b242c29",
-                blur = 24.0
-            )),
-            elevationBottom300 = listOf(BoxShadow(
-                y = 2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c0a",
-                blur = 2.0
-            ), BoxShadow(
-                y = 8.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -2.0,
-                color = "#1b242c1f",
-                blur = 16.0
-            )),
-            elevationBottom200 = listOf(BoxShadow(
-                y = 2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c0a",
-                blur = 2.0
-            ), BoxShadow(
-                y = 2.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = -1.0,
-                color = "#1b242c14",
-                blur = 8.0
-            )),
+            elevationBottom400 = listOf(
+                BoxShadow(
+                    y = 2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c0a",
+                    blur = 2.0
+                ), BoxShadow(
+                    y = 16.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -6.0,
+                    color = "#1b242c29",
+                    blur = 24.0
+                )
+            ),
+            elevationBottom300 = listOf(
+                BoxShadow(
+                    y = 2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c0a",
+                    blur = 2.0
+                ), BoxShadow(
+                    y = 8.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -2.0,
+                    color = "#1b242c1f",
+                    blur = 16.0
+                )
+            ),
+            elevationBottom200 = listOf(
+                BoxShadow(
+                    y = 2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c0a",
+                    blur = 2.0
+                ), BoxShadow(
+                    y = 2.0,
+                    x = 0.0,
+                    type = "dropShadow",
+                    spread = -1.0,
+                    color = "#1b242c14",
+                    blur = 8.0
+                )
+            ),
             elevationBottom100 = BoxShadow(
                 y = 1.0,
                 x = 0.0,
