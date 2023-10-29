@@ -1,22 +1,35 @@
-on: 
+name: Create Release on Master
+
+on:
   push:
     branches:
       - master
 
 jobs:
-  release-on-push:
+  create_release:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    steps:
-      - id: release
-        uses: rymndhng/release-on-push-action@master
-        with:
-          bump_version_scheme: minor
-          use_github_release_notes: true
 
-      - name: Check Output Parameters
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Tag and Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Got tag name ${{ steps.release.outputs.tag_name }}"
-          echo "Got release version ${{ steps.release.outputs.version }}"
-          echo "Upload release artifacts to ${{ steps.release.outputs.upload_url }}"
+          # Get the latest commit hash
+          COMMIT_HASH=$(git rev-parse --short=7 HEAD)
+          
+          # Create a new tag
+          TAG_NAME="v${{ github.run_number }}-${COMMIT_HASH}"
+          git tag -a $TAG_NAME -m "Release $TAG_NAME"
+          git push origin $TAG_NAME
+          
+          # Create a GitHub release
+          RELEASE_TITLE="Release $TAG_NAME"
+          RELEASE_BODY="Release notes go here"
+          echo "::set-output name=tag::$TAG_NAME"
+          gh release create $TAG_NAME -t "$RELEASE_TITLE" -n "$RELEASE_BODY"
+
+      - name: Print Release Tag
+        run: echo "Created release with tag ${{ steps.create_release.outputs.tag }}"
