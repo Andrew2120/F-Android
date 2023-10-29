@@ -1,27 +1,24 @@
-name: Generate New Tag and Release on Push to Master
+name: Create release
 
 on:
   push:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
-  build:
+  release:
+    name: Release pushed tag
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Generate new tag
-        id: generate_tag
+      - name: Create release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
         run: |
-          git fetch --all
-          latest_tag=$(git describe --tags --abbrev=0)
-          new_tag=$(semver bump $latest_tag)
-          git tag $new_tag
-
-      - name: Create new release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.generate_tag.outputs.new_tag }}
-          name: ${{ steps.generate_tag.outputs.new_tag }}
-          body: ${{ steps.generate_tag.outputs.changelog }}
+          gh release create "$tag" \
+              --repo="$GITHUB_REPOSITORY" \
+              --title="${GITHUB_REPOSITORY#*/} ${tag#v}" \
+              --generate-notes
