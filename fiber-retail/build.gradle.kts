@@ -50,7 +50,6 @@ android {
                     from(components["release"])
                     groupId = "com.github.fiber-android"
                     artifactId = "retail"
-                    version = "1.0"
                 }
             }
         }
