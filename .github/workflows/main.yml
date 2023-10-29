@@ -1,4 +1,4 @@
-name: Create Release on Master
+name: Generate New Tag and Release on Push to Master
 
 on:
   push:
@@ -6,30 +6,22 @@ on:
       - master
 
 jobs:
-  create_release:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Create Tag and Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate new tag
+        id: generate_tag
         run: |
-          # Get the latest commit hash
-          COMMIT_HASH=$(git rev-parse --short=7 HEAD)
-          
-          # Create a new tag
-          TAG_NAME="v${{ github.run_number }}-${COMMIT_HASH}"
-          git tag -a $TAG_NAME -m "Release $TAG_NAME"
-          git push origin $TAG_NAME
-          
-          # Create a GitHub release
-          RELEASE_TITLE="Release $TAG_NAME"
-          RELEASE_BODY="Release notes go here"
-          echo "::set-output name=tag::$TAG_NAME"
-          gh release create $TAG_NAME -t "$RELEASE_TITLE" -n "$RELEASE_BODY"
+          git fetch --all
+          latest_tag=$(git describe --tags --abbrev=0)
+          new_tag=$(semver bump $latest_tag)
+          git tag $new_tag
 
-      - name: Print Release Tag
-        run: echo "Created release with tag ${{ steps.create_release.outputs.tag }}"
+      - name: Create new release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.generate_tag.outputs.new_tag }}
+          name: ${{ steps.generate_tag.outputs.new_tag }}
+          body: ${{ steps.generate_tag.outputs.changelog }}
