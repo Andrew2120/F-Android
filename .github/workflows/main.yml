@@ -24,4 +24,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
           tag_name: ${{ steps.taggerDryRun.outputs.new_tag }}
-          release_name: Release ${{ stepstaggerDryRun.outputs.new_tag }}
+          release_name: Release ${{ steps.taggerDryRun.outputs.new_tag }}
