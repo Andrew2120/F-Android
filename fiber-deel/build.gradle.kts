@@ -1,11 +1,12 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
     namespace = "com.b_labs.fiber_deel"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 28
@@ -37,10 +38,20 @@ android {
         jvmTarget = "1.8"
     }
 }
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.fiber-android"
+                artifactId = "deel"
+            }
+        }
+    }
+}
 
 
 dependencies {
-
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")

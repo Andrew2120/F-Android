@@ -1,11 +1,13 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
+
 }
 
 android {
     namespace = "com.b_labs.fiber_tokens"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 28
@@ -37,7 +39,17 @@ android {
         jvmTarget = "1.8"
     }
 }
-
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.fiber-android"
+                artifactId = "fiber-tokens"
+            }
+        }
+    }
+}
 
 dependencies {
 
