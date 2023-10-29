@@ -2,7 +2,7 @@ name: Auto Tag my Application
 on:
   push:
     branches:
-      - main
+      - master
 concurrency: production
 jobs:
   Patch:
