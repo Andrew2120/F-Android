@@ -1,6 +1,10 @@
+package com.b_labs.fiber_tokens
+
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-data class DesignSystem (
+public data class DesignSystem(
     val color: ColorValuesContainer,
     val borderWidth: BorderWidthValuesContainer,
     val borderRadius: BorderRadiusValuesContainer,
@@ -17,7 +21,7 @@ data class DesignSystem (
     val lineHeight: LineHeightValuesContainer,
 )
 
-data class ContentValuesContainer (
+public data class ContentValuesContainer(
     val warningSecondary: Color,
     val warningPrimary: Color,
     val tertiaryInverse: Color,
@@ -38,7 +42,7 @@ data class ContentValuesContainer (
     val brandPrimary: Color,
 )
 
-data class BorderValuesContainer (
+public data class BorderValuesContainer(
     val warningSubtle: Color,
     val warningStrong: Color,
     val successSubtle: Color,
@@ -54,7 +58,7 @@ data class BorderValuesContainer (
     val dangerStrong: Color,
 )
 
-data class BackgroundValuesContainer (
+public data class BackgroundValuesContainer(
     val warningSurface: Color,
     val warningSubtle: Color,
     val warningStrong: Color,
@@ -89,7 +93,7 @@ data class BackgroundValuesContainer (
     val brandMuted: Color,
 )
 
-data class PrimaryValuesContainer (
+public data class PrimaryValuesContainer(
     val actionPrimarySubtleSelected: Color,
     val actionPrimarySubtleNormal: Color,
     val actionPrimarySubtleHover: Color,
@@ -100,7 +104,7 @@ data class PrimaryValuesContainer (
     val actionPrimaryActive: Color,
 )
 
-data class NeutralValuesContainer (
+public data class NeutralValuesContainer(
     val actionNeutralSubtleSelected: Color,
     val actionNeutralSubtleNormal: Color,
     val actionNeutralSubtleHover: Color,
@@ -111,7 +115,7 @@ data class NeutralValuesContainer (
     val actionNeutralActive: Color,
 )
 
-data class SuccessValuesContainer (
+public data class SuccessValuesContainer(
     val actionSuccessSubtleSelected: Color,
     val actionSuccessSubtleNormal: Color,
     val actionSuccessSubtleHover: Color,
@@ -122,7 +126,7 @@ data class SuccessValuesContainer (
     val actionSuccessActive: Color,
 )
 
-data class DangerValuesContainer (
+public data class DangerValuesContainer(
     val actionDangerSubtleSelected: Color,
     val actionDangerSubtleNormal: Color,
     val actionDangerSubtleHover: Color,
@@ -133,7 +137,7 @@ data class DangerValuesContainer (
     val actionDangerActive: Color,
 )
 
-data class GhostValuesContainer (
+public data class GhostValuesContainer(
     val actionGhostSelected: Color,
     val actionGhostNormal: Color,
     val actionGhostInverseSelected: Color,
@@ -146,28 +150,28 @@ data class GhostValuesContainer (
     val actionGhostActive: Color,
 )
 
-data class OutlineValuesContainer (
+public data class OutlineValuesContainer(
     val actionOutlineSelected: Color,
     val actionOutlineNormal: Color,
     val actionOutlineHover: Color,
     val actionOutlineActive: Color,
 )
 
-data class InverseValuesContainer (
+public data class InverseValuesContainer(
     val actionInverseSelected: Color,
     val actionInverseNormal: Color,
     val actionInverseHover: Color,
     val actionInverseActive: Color,
 )
 
-data class ReverseInverseValuesContainer (
+public data class ReverseInverseValuesContainer(
     val actionReverseInverseSelected: Color,
     val actionReverseInverseNormal: Color,
     val actionReverseInverseHover: Color,
     val actionReverseInverseActive: Color,
 )
 
-data class ActionValuesContainer (
+public data class ActionValuesContainer(
     val success: SuccessValuesContainer,
     val reverseInverse: ReverseInverseValuesContainer,
     val primary: PrimaryValuesContainer,
@@ -178,7 +182,7 @@ data class ActionValuesContainer (
     val danger: DangerValuesContainer,
 )
 
-data class DefaultValuesContainer (
+public data class DefaultValuesContainer(
     val interactionDefaultSubtleSelected: Color,
     val interactionDefaultSubtleNormal: Color,
     val interactionDefaultSubtleHover: Color,
@@ -189,7 +193,7 @@ data class DefaultValuesContainer (
     val interactionDefaultActive: Color,
 )
 
-data class NeutralValuesContainer1 (
+public data class NeutralValuesContainer1(
     val interactionNeutralSubtleSelected: Color,
     val interactionNeutralSubtleNormal: Color,
     val interactionNeutralSubtleHover: Color,
@@ -200,7 +204,7 @@ data class NeutralValuesContainer1 (
     val interactionNeutralActive: Color,
 )
 
-data class DangerValuesContainer1 (
+public data class DangerValuesContainer1(
     val interactionDangerSubtleSelected: Color,
     val interactionDangerSubtleNormal: Color,
     val interactionDangerSubtleHover: Color,
@@ -211,7 +215,7 @@ data class DangerValuesContainer1 (
     val interactionDangerActive: Color,
 )
 
-data class GhostValuesContainer1 (
+public data class GhostValuesContainer1(
     val interactionGhostSelected: Color,
     val interactionGhostNormal: Color,
     val interactionGhostInverseSelected: Color,
@@ -224,7 +228,7 @@ data class GhostValuesContainer1 (
     val interactionGhostActive: Color,
 )
 
-data class DisabledValuesContainer (
+public data class DisabledValuesContainer(
     val interactionDisabledSubtleNormal: Color,
     val interactionDisabledSubtleHover: Color,
     val interactionDisabledSubtleActive: Color,
@@ -233,7 +237,7 @@ data class DisabledValuesContainer (
     val interactionDisabledActive: Color,
 )
 
-data class BorderValuesContainer1 (
+public data class BorderValuesContainer1(
     val interactionBorderSelected: Color,
     val interactionBorderNormal: Color,
     val interactionBorderNeutralSelected: Color,
@@ -245,7 +249,7 @@ data class BorderValuesContainer1 (
     val interactionBorderActive: Color,
 )
 
-data class BackgroundValuesContainer1 (
+public data class BackgroundValuesContainer1(
     val interactionBackgroundSidepanel: Color,
     val interactionBackgroundModelessInverse: Color,
     val interactionBackgroundModeless: Color,
@@ -254,18 +258,18 @@ data class BackgroundValuesContainer1 (
     val interactionBackgroundDimmer: Color,
 )
 
-data class InverseValuesContainer1 (
+public data class InverseValuesContainer1(
     val interactionInverseSelected: Color,
     val interactionInverseNormal: Color,
     val interactionInverseHover: Color,
     val interactionInverseActive: Color,
 )
 
-data class FocusValuesContainer (
+public data class FocusValuesContainer(
     val interactionFocusDefault: Color,
 )
 
-data class InteractionValuesContainer (
+public data class InteractionValuesContainer(
     val neutral: NeutralValuesContainer1,
     val inverse: InverseValuesContainer1,
     val ghost: GhostValuesContainer1,
@@ -277,7 +281,7 @@ data class InteractionValuesContainer (
     val background: BackgroundValuesContainer1,
 )
 
-data class GrayValuesContainer (
+public data class GrayValuesContainer(
     val nonSemanticGrayContentSecondary: Color,
     val nonSemanticGrayContentPrimary: Color,
     val nonSemanticGrayBorderSubtle: Color,
@@ -290,7 +294,7 @@ data class GrayValuesContainer (
     val nonSemanticGrayBackgroundMuted: Color,
 )
 
-data class WhiteValuesContainer (
+public data class WhiteValuesContainer(
     val nonSemanticWhiteContentSecondary: Color,
     val nonSemanticWhiteContentPrimary: Color,
     val nonSemanticWhiteBorderSubtle: Color,
@@ -303,7 +307,7 @@ data class WhiteValuesContainer (
     val nonSemanticWhiteBackgroundMuted: Color,
 )
 
-data class RedValuesContainer (
+public data class RedValuesContainer(
     val nonSemanticRedContentSecondary: Color,
     val nonSemanticRedContentPrimary: Color,
     val nonSemanticRedBorderSubtle: Color,
@@ -316,7 +320,7 @@ data class RedValuesContainer (
     val nonSemanticRedBackgroundMuted: Color,
 )
 
-data class MagentaValuesContainer (
+public data class MagentaValuesContainer(
     val nonSemanticMagentaContentSecondary: Color,
     val nonSemanticMagentaContentPrimary: Color,
     val nonSemanticMagentaBorderSubtle: Color,
@@ -329,7 +333,7 @@ data class MagentaValuesContainer (
     val nonSemanticMagentaBackgroundMuted: Color,
 )
 
-data class PurpleValuesContainer (
+public data class PurpleValuesContainer(
     val nonSemanticPurpleContentSecondary: Color,
     val nonSemanticPurpleContentPrimary: Color,
     val nonSemanticPurpleBorderSubtle: Color,
@@ -342,7 +346,7 @@ data class PurpleValuesContainer (
     val nonSemanticPurpleBackgroundMuted: Color,
 )
 
-data class VioletValuesContainer (
+public data class VioletValuesContainer(
     val nonSemanticVioletContentSecondary: Color,
     val nonSemanticVioletContentPrimary: Color,
     val nonSemanticVioletBorderSubtle: Color,
@@ -355,7 +359,7 @@ data class VioletValuesContainer (
     val nonSemanticVioletBackgroundMuted: Color,
 )
 
-data class BlueValuesContainer (
+public data class BlueValuesContainer(
     val nonSemanticBlueContentSecondary: Color,
     val nonSemanticBlueContentPrimary: Color,
     val nonSemanticBlueBorderSubtle: Color,
@@ -368,7 +372,7 @@ data class BlueValuesContainer (
     val nonSemanticBlueBackgroundMuted: Color,
 )
 
-data class CyanValuesContainer (
+public data class CyanValuesContainer(
     val nonSemanticCyanContentSecondary: Color,
     val nonSemanticCyanContentPrimary: Color,
     val nonSemanticCyanBorderSubtle: Color,
@@ -381,7 +385,7 @@ data class CyanValuesContainer (
     val nonSemanticCyanBackgroundMuted: Color,
 )
 
-data class TealValuesContainer (
+public data class TealValuesContainer(
     val nonSemanticTealContentSecondary: Color,
     val nonSemanticTealContentPrimary: Color,
     val nonSemanticTealBorderSubtle: Color,
@@ -394,7 +398,7 @@ data class TealValuesContainer (
     val nonSemanticTealBackgroundMuted: Color,
 )
 
-data class AquamarineValuesContainer (
+public data class AquamarineValuesContainer(
     val nonSemanticAquamarineContentSecondary: Color,
     val nonSemanticAquamarineContentPrimary: Color,
     val nonSemanticAquamarineBorderSubtle: Color,
@@ -407,7 +411,7 @@ data class AquamarineValuesContainer (
     val nonSemanticAquamarineBackgroundMuted: Color,
 )
 
-data class GreenValuesContainer (
+public data class GreenValuesContainer(
     val nonSemanticGreenContentSecondary: Color,
     val nonSemanticGreenContentPrimary: Color,
     val nonSemanticGreenBorderSubtle: Color,
@@ -420,7 +424,7 @@ data class GreenValuesContainer (
     val nonSemanticGreenBackgroundMuted: Color,
 )
 
-data class OrangeValuesContainer (
+public data class OrangeValuesContainer(
     val nonSemanticOrangeContentSecondary: Color,
     val nonSemanticOrangeContentPrimary: Color,
     val nonSemanticOrangeBorderSubtle: Color,
@@ -433,7 +437,7 @@ data class OrangeValuesContainer (
     val nonSemanticOrangeBackgroundMuted: Color,
 )
 
-data class NonSemanticValuesContainer (
+public data class NonSemanticValuesContainer(
     val white: WhiteValuesContainer,
     val violet: VioletValuesContainer,
     val teal: TealValuesContainer,
@@ -448,7 +452,7 @@ data class NonSemanticValuesContainer (
     val aquamarine: AquamarineValuesContainer,
 )
 
-data class BrandValuesContainer (
+public data class BrandValuesContainer(
     val semanticBrandNegative4: Color,
     val semanticBrandNegative3: Color,
     val semanticBrandNegative2: Color,
@@ -464,7 +468,7 @@ data class BrandValuesContainer (
     val semanticBrand0: Color,
 )
 
-data class NeutralValuesContainer2 (
+public data class NeutralValuesContainer2(
     val semanticNeutralNegative4: Color,
     val semanticNeutralNegative3: Color,
     val semanticNeutralNegative2: Color,
@@ -480,7 +484,7 @@ data class NeutralValuesContainer2 (
     val semanticNeutral0: Color,
 )
 
-data class NeutralAlphaValuesContainer (
+public data class NeutralAlphaValuesContainer(
     val semanticNeutralANegative4: Color,
     val semanticNeutralANegative3: Color,
     val semanticNeutralANegative2: Color,
@@ -496,7 +500,7 @@ data class NeutralAlphaValuesContainer (
     val semanticNeutralA0: Color,
 )
 
-data class InfoValuesContainer (
+public data class InfoValuesContainer(
     val semanticInfoNegative4: Color,
     val semanticInfoNegative3: Color,
     val semanticInfoNegative2: Color,
@@ -512,7 +516,7 @@ data class InfoValuesContainer (
     val semanticInfo0: Color,
 )
 
-data class SuccessValuesContainer1 (
+public data class SuccessValuesContainer1(
     val semanticSuccessNegative4: Color,
     val semanticSuccessNegative3: Color,
     val semanticSuccessNegative2: Color,
@@ -528,7 +532,7 @@ data class SuccessValuesContainer1 (
     val semanticSuccess0: Color,
 )
 
-data class WarningValuesContainer (
+public data class WarningValuesContainer(
     val semanticWarningNegative4: Color,
     val semanticWarningNegative3: Color,
     val semanticWarningNegative2: Color,
@@ -544,7 +548,7 @@ data class WarningValuesContainer (
     val semanticWarning0: Color,
 )
 
-data class DangerValuesContainer2 (
+public data class DangerValuesContainer2(
     val semanticDangerNegative4: Color,
     val semanticDangerNegative3: Color,
     val semanticDangerNegative2: Color,
@@ -560,7 +564,7 @@ data class DangerValuesContainer2 (
     val semanticDanger0: Color,
 )
 
-data class SemanticValuesContainer (
+public data class SemanticValuesContainer(
     val warning: WarningValuesContainer,
     val success: SuccessValuesContainer1,
     val neutralAlpha: NeutralAlphaValuesContainer,
@@ -570,7 +574,7 @@ data class SemanticValuesContainer (
     val brand: BrandValuesContainer,
 )
 
-data class CoolGrayValuesContainer (
+public data class CoolGrayValuesContainer(
     val negative4: Color,
     val negative3: Color,
     val negative2: Color,
@@ -586,7 +590,7 @@ data class CoolGrayValuesContainer (
     val coolGray0: Color,
 )
 
-data class CoolGrayAlphaValuesContainer (
+public data class CoolGrayAlphaValuesContainer(
     val coolGrayANegative4: Color,
     val coolGrayANegative3: Color,
     val coolGrayANegative2: Color,
@@ -602,7 +606,7 @@ data class CoolGrayAlphaValuesContainer (
     val coolGrayA0: Color,
 )
 
-data class NeutralGrayValuesContainer (
+public data class NeutralGrayValuesContainer(
     val neutralGray8: Color,
     val neutralGray7: Color,
     val neutralGray6: Color,
@@ -618,7 +622,7 @@ data class NeutralGrayValuesContainer (
     val negative1: Color,
 )
 
-data class NeutralGrayAlphaValuesContainer (
+public data class NeutralGrayAlphaValuesContainer(
     val neutralGrayANegative4: Color,
     val neutralGrayANegative3: Color,
     val neutralGrayANegative2: Color,
@@ -634,7 +638,7 @@ data class NeutralGrayAlphaValuesContainer (
     val neutralGrayA0: Color,
 )
 
-data class WarmGrayValuesContainer (
+public data class WarmGrayValuesContainer(
     val warmGray8: Color,
     val warmGray7: Color,
     val warmGray6: Color,
@@ -650,7 +654,7 @@ data class WarmGrayValuesContainer (
     val negative1: Color,
 )
 
-data class WarmGrayAlphaValuesContainer (
+public data class WarmGrayAlphaValuesContainer(
     val warmGrayANegative4: Color,
     val warmGrayANegative3: Color,
     val warmGrayANegative2: Color,
@@ -666,7 +670,7 @@ data class WarmGrayAlphaValuesContainer (
     val warmGrayA0: Color,
 )
 
-data class WhiteAlphaValuesContainer (
+public data class WhiteAlphaValuesContainer(
     val whiteANegative9: Color,
     val whiteANegative8: Color,
     val whiteANegative7: Color,
@@ -682,7 +686,7 @@ data class WhiteAlphaValuesContainer (
     val whiteA0: Color,
 )
 
-data class RedValuesContainer1 (
+public data class RedValuesContainer1(
     val red8: Color,
     val red7: Color,
     val red6: Color,
@@ -698,7 +702,7 @@ data class RedValuesContainer1 (
     val negative1: Color,
 )
 
-data class MagentaValuesContainer1 (
+public data class MagentaValuesContainer1(
     val negative4: Color,
     val negative3: Color,
     val negative2: Color,
@@ -714,7 +718,7 @@ data class MagentaValuesContainer1 (
     val magenta0: Color,
 )
 
-data class PurpleValuesContainer1 (
+public data class PurpleValuesContainer1(
     val purple8: Color,
     val purple7: Color,
     val purple6: Color,
@@ -730,7 +734,7 @@ data class PurpleValuesContainer1 (
     val negative1: Color,
 )
 
-data class VioletValuesContainer1 (
+public data class VioletValuesContainer1(
     val violet8: Color,
     val violet7: Color,
     val violet6: Color,
@@ -746,7 +750,7 @@ data class VioletValuesContainer1 (
     val negative1: Color,
 )
 
-data class BlueValuesContainer1 (
+public data class BlueValuesContainer1(
     val negative4: Color,
     val negative3: Color,
     val negative2: Color,
@@ -762,7 +766,7 @@ data class BlueValuesContainer1 (
     val blue0: Color,
 )
 
-data class CyanValuesContainer1 (
+public data class CyanValuesContainer1(
     val negative4: Color,
     val negative3: Color,
     val negative2: Color,
@@ -778,7 +782,7 @@ data class CyanValuesContainer1 (
     val cyan0: Color,
 )
 
-data class TealValuesContainer1 (
+public data class TealValuesContainer1(
     val teal8: Color,
     val teal7: Color,
     val teal6: Color,
@@ -794,7 +798,7 @@ data class TealValuesContainer1 (
     val negative1: Color,
 )
 
-data class AquamarineValuesContainer1 (
+public data class AquamarineValuesContainer1(
     val negative4: Color,
     val negative3: Color,
     val negative2: Color,
@@ -810,7 +814,7 @@ data class AquamarineValuesContainer1 (
     val aquamarine0: Color,
 )
 
-data class GreenValuesContainer1 (
+public data class GreenValuesContainer1(
     val negative4: Color,
     val negative3: Color,
     val negative2: Color,
@@ -826,7 +830,7 @@ data class GreenValuesContainer1 (
     val green0: Color,
 )
 
-data class OrangeValuesContainer1 (
+public data class OrangeValuesContainer1(
     val orange8: Color,
     val orange7: Color,
     val orange6: Color,
@@ -842,11 +846,11 @@ data class OrangeValuesContainer1 (
     val negative1: Color,
 )
 
-data class TransparentValuesContainer (
+public data class TransparentValuesContainer(
     val transparent: Color,
 )
 
-data class ColorValuesContainer (
+public data class ColorValuesContainer(
     val whiteAlpha: WhiteAlphaValuesContainer,
     val warmGrayAlpha: WarmGrayAlphaValuesContainer,
     val warmGray: WarmGrayValuesContainer,
@@ -874,7 +878,7 @@ data class ColorValuesContainer (
     val action: ActionValuesContainer,
 )
 
-data class BorderWidthValuesContainer (
+public data class BorderWidthValuesContainer(
     val xLarge: Double,
     val small: Double,
     val none: Double,
@@ -888,7 +892,7 @@ data class BorderWidthValuesContainer (
     val borderWidth0: Double,
 )
 
-data class BorderRadiusValuesContainer (
+public data class BorderRadiusValuesContainer(
     val xLarge: Double,
     val small: Double,
     val none: Double,
@@ -909,7 +913,7 @@ data class BorderRadiusValuesContainer (
     val borderRadius0: Double,
 )
 
-data class SizeValuesContainer (
+public data class SizeValuesContainer(
     val xSmall: Double,
     val xLarge: Double,
     val small: Double,
@@ -921,7 +925,7 @@ data class SizeValuesContainer (
     val large: Double,
 )
 
-data class PaddingValuesContainer (
+public data class PaddingValuesContainer(
     val xSmall: Double,
     val small: Double,
     val padding6xLarge: Double,
@@ -935,7 +939,7 @@ data class PaddingValuesContainer (
     val large: Double,
 )
 
-data class GapValuesContainer (
+public data class GapValuesContainer(
     val xSmall: Double,
     val xLarge: Double,
     val small: Double,
@@ -947,19 +951,19 @@ data class GapValuesContainer (
     val gap2xLarge: Double,
 )
 
-data class SpaceValuesContainer (
+public data class SpaceValuesContainer(
     val padding: PaddingValuesContainer,
     val gap: GapValuesContainer,
 )
 
-data class OpacityValuesContainer (
+public data class OpacityValuesContainer(
     val opacity50: Double,
     val opacity100: Double,
     val opacity0: Double,
     val disabled: Double,
 )
 
-data class Typography (
+public data class Typography(
     val lineHeight: Double,
     val letterSpacing: Double,
     val fontWeight: Double,
@@ -967,25 +971,25 @@ data class Typography (
     val fontFamily: String,
 )
 
-data class CodeValuesContainer (
+public data class CodeValuesContainer(
     val typographyCodeSmall: Typography,
     val typographyCodeMedium: Typography,
     val typographyCodeLarge: Typography,
 )
 
-data class UtilityValuesContainer (
+public data class UtilityValuesContainer(
     val typographyUtilitySmall: Typography,
     val typographyUtilityMedium: Typography,
     val typographyUtilityLarge: Typography,
 )
 
-data class BodyValuesContainer (
+public data class BodyValuesContainer(
     val typographyBodySmall: Typography,
     val typographyBodyMedium: Typography,
     val typographyBodyLarge: Typography,
 )
 
-data class HeadingValuesContainer (
+public data class HeadingValuesContainer(
     val typographyHeadingXLarge: Typography,
     val typographyHeadingSmall: Typography,
     val typographyHeadingMedium: Typography,
@@ -1000,7 +1004,7 @@ data class HeadingValuesContainer (
     val typographyHeading2xLarge: Typography,
 )
 
-data class DisplayValuesContainer (
+public data class DisplayValuesContainer(
     val typographyDisplayXLarge: Typography,
     val typographyDisplaySmall: Typography,
     val typographyDisplayMedium: Typography,
@@ -1009,7 +1013,7 @@ data class DisplayValuesContainer (
     val typographyDisplay2xLarge: Typography,
 )
 
-data class TypographyValuesContainer (
+public data class TypographyValuesContainer(
     val utility: UtilityValuesContainer,
     val heading: HeadingValuesContainer,
     val display: DisplayValuesContainer,
@@ -1017,7 +1021,7 @@ data class TypographyValuesContainer (
     val body: BodyValuesContainer,
 )
 
-data class DimensionValuesContainer (
+public data class DimensionValuesContainer(
     val dimension900: Double,
     val dimension800: Double,
     val dimension700: Double,
@@ -1039,7 +1043,7 @@ data class DimensionValuesContainer (
     val dimension0: Double,
 )
 
-data class BoxShadow (
+public data class BoxShadow(
     val y: Double,
     val x: Double,
     val type: String,
@@ -1048,32 +1052,32 @@ data class BoxShadow (
     val blur: Double,
 )
 
-data class BottomValuesContainer (
+public data class BottomValuesContainer(
     val elevationBottom400: List<BoxShadow>,
     val elevationBottom300: List<BoxShadow>,
     val elevationBottom200: List<BoxShadow>,
     val elevationBottom100: BoxShadow,
 )
 
-data class TopValuesContainer (
+public data class TopValuesContainer(
     val elevationTop400: List<BoxShadow>,
     val elevationTop300: List<BoxShadow>,
     val elevationTop200: List<BoxShadow>,
     val elevationTop100: BoxShadow,
 )
 
-data class ElevationValuesContainer (
+public data class ElevationValuesContainer(
     val top: TopValuesContainer,
     val bottom: BottomValuesContainer,
 )
 
-data class FontFamilyValuesContainer (
+public data class FontFamilyValuesContainer(
     val serif: String,
     val sans: String,
     val mono: String,
 )
 
-data class FontSizeValuesContainer (
+public data class FontSizeValuesContainer(
     val fontSize950: Double,
     val fontSize850: Double,
     val fontSize750: Double,
@@ -1095,7 +1099,7 @@ data class FontSizeValuesContainer (
     val fontSize100: Double,
 )
 
-data class FontWeightValuesContainer (
+public data class FontWeightValuesContainer(
     val fontWeight700: Double,
     val fontWeight600: Double,
     val fontWeight500: Double,
@@ -1103,7 +1107,7 @@ data class FontWeightValuesContainer (
     val fontWeight300: Double,
 )
 
-data class LetterSpacingValuesContainer (
+public data class LetterSpacingValuesContainer(
     val letterSpacing700: Double,
     val letterSpacing600: Double,
     val letterSpacing500: Double,
@@ -1114,7 +1118,7 @@ data class LetterSpacingValuesContainer (
     val letterSpacing0: Double,
 )
 
-data class LineHeightValuesContainer (
+public data class LineHeightValuesContainer(
     val value900: Double,
     val value825: Double,
     val value725: Double,
@@ -1134,3 +1138,7 @@ data class LineHeightValuesContainer (
     val value1150: Double,
     val value1025: Double,
 )
+
+@Composable
+fun isSystemInDarkTheme(isDark: Boolean) = isDark
+

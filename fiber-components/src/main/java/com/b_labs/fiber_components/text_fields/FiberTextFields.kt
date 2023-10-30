@@ -6,6 +6,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.b_labs.fiber_components.buttons.F_PrimaryButton
 import com.b_labs.fiber_tokens.FiberTheme.designSystem
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -26,4 +28,10 @@ fun F_PrimaryTextField(
         )
     )
 
+}
+
+@Preview
+@Composable
+fun F_PrimaryTextFieldPreview() {
+    F_PrimaryTextField(modifier = Modifier, text = "Login")
 }

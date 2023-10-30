@@ -1,5 +1,6 @@
 package com.b_labs.fiber_components.buttons
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -7,6 +8,8 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.b_labs.fiber_components.F_Text
 import com.b_labs.fiber_tokens.FiberTheme.designSystem
 
 @Composable
@@ -18,9 +21,11 @@ fun F_PrimaryButton(
     Button(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(contentColor = designSystem.color.content.primary)
+        colors = ButtonDefaults.buttonColors(
+            containerColor = designSystem.color.content.primary
+        )
     ) {
-        Text(text = text)
+        F_Text(text = text)
     }
 }
 
@@ -33,9 +38,20 @@ fun F_SecondaryButton(
     OutlinedButton(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(contentColor = designSystem.color.content.secondary)
+        colors = ButtonDefaults.buttonColors(
+            containerColor = designSystem.color.content.secondary
+        )
 
     ) {
-        Text(text = text)
+        F_Text(text = text)
+    }
+}
+
+@Preview
+@Composable
+fun ButtonsPreview() {
+    Column {
+        F_PrimaryButton(modifier = Modifier, text = "Sign in") {}
+        F_SecondaryButton(modifier = Modifier, text = "Sign up") {}
     }
 }

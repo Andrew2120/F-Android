@@ -1,19 +1,23 @@
 plugins {
-    id("com.android.library")
+    id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
-
 }
 
 android {
-    namespace = "com.b_labs.fiber_components"
+    namespace = "com.b_labs.app"
     compileSdk = 34
 
     defaultConfig {
+        applicationId = "com.b_labs.app"
         minSdk = 28
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -25,14 +29,6 @@ android {
             )
         }
     }
-
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
-    }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -40,10 +36,23 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.3"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
 }
 
 dependencies {
+    implementation(project(":fiber-components"))
+    implementation(project(":fiber-deel"))
+    implementation(project(":fiber-tokens"))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
@@ -60,19 +69,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation(project(":fiber-tokens"))
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.4")
-    implementation(kotlin("reflect"))
-
-}
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
-                groupId = "com.github.fiber-android"
-                artifactId = "components"
-            }
-        }
-    }
 }
