@@ -1,3 +1,4 @@
+package com.b_labs.fiber_mylo
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.Color
 import android.graphics.Color.parseColor
@@ -90,9 +91,6 @@ import com.b_labs.fiber_tokens.FontSizeValuesContainer
 import com.b_labs.fiber_tokens.FontWeightValuesContainer
 import com.b_labs.fiber_tokens.LetterSpacingValuesContainer
 import com.b_labs.fiber_tokens.LineHeightValuesContainer
-
-
-
 
 val designSystem = DesignSystem(
     color = ColorValuesContainer(
