@@ -22,7 +22,7 @@ fun F_PrimaryButton(
         onClick = onClick,
         modifier = modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
-            containerColor = designSystem.color.content.primary
+            containerColor = designSystem.color.content.warningSecondary
         )
     ) {
         F_Text(text = text)
