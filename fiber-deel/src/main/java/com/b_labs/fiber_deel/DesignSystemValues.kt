@@ -91,9 +91,6 @@ import com.b_labs.fiber_tokens.FontWeightValuesContainer
 import com.b_labs.fiber_tokens.LetterSpacingValuesContainer
 import com.b_labs.fiber_tokens.LineHeightValuesContainer
 
-
-
-
 val designSystem = DesignSystem(
     color = ColorValuesContainer(
         whiteAlpha = WhiteAlphaValuesContainer(
