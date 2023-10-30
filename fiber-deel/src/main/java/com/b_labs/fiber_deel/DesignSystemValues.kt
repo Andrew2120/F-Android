@@ -1,3 +1,4 @@
+package com.b_labs.fiber_deel
 import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.Color
 import android.graphics.Color.parseColor
