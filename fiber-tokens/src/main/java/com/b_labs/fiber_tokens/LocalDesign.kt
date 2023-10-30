@@ -1,762 +1,850 @@
 package com.b_labs.fiber_tokens
 
+import ContentValuesContainer
+import BorderValuesContainer
+import BackgroundValuesContainer
+import PrimaryValuesContainer
+import NeutralValuesContainer
+import SuccessValuesContainer
+import DangerValuesContainer
+import GhostValuesContainer
+import OutlineValuesContainer
+import InverseValuesContainer
+import ReverseInverseValuesContainer
+import ActionValuesContainer
+import DefaultValuesContainer
+import NeutralValuesContainer1
+import DangerValuesContainer1
+import GhostValuesContainer1
+import DisabledValuesContainer
+import BorderValuesContainer1
+import BackgroundValuesContainer1
+import InverseValuesContainer1
+import FocusValuesContainer
+import InteractionValuesContainer
+import GrayValuesContainer
+import WhiteValuesContainer
+import RedValuesContainer
+import MagentaValuesContainer
+import PurpleValuesContainer
+import VioletValuesContainer
+import BlueValuesContainer
+import CyanValuesContainer
+import TealValuesContainer
+import AquamarineValuesContainer
+import GreenValuesContainer
+import OrangeValuesContainer
+import NonSemanticValuesContainer
+import BrandValuesContainer
+import NeutralValuesContainer2
+import NeutralAlphaValuesContainer
+import InfoValuesContainer
+import SuccessValuesContainer1
+import WarningValuesContainer
+import DangerValuesContainer2
+import SemanticValuesContainer
+import CoolGrayValuesContainer
+import CoolGrayAlphaValuesContainer
+import NeutralGrayValuesContainer
+import NeutralGrayAlphaValuesContainer
+import WarmGrayValuesContainer
+import WarmGrayAlphaValuesContainer
+import WhiteAlphaValuesContainer
+import RedValuesContainer1
+import MagentaValuesContainer1
+import PurpleValuesContainer1
+import VioletValuesContainer1
+import BlueValuesContainer1
+import CyanValuesContainer1
+import TealValuesContainer1
+import AquamarineValuesContainer1
+import GreenValuesContainer1
+import OrangeValuesContainer1
+import TransparentValuesContainer
+import ColorValuesContainer
+import BorderWidthValuesContainer
+import BorderRadiusValuesContainer
+import SizeValuesContainer
+import PaddingValuesContainer
+import GapValuesContainer
+import SpaceValuesContainer
+import OpacityValuesContainer
+import Typography
+import CodeValuesContainer
+import UtilityValuesContainer
+import BodyValuesContainer
+import HeadingValuesContainer
+import DisplayValuesContainer
+import TypographyValuesContainer
+import DimensionValuesContainer
+import BoxShadow
+import BottomValuesContainer
+import DesignSystem
+import TopValuesContainer
+import ElevationValuesContainer
+import FontFamilyValuesContainer
+import FontSizeValuesContainer
+import FontWeightValuesContainer
+import LetterSpacingValuesContainer
+import LineHeightValuesContainer
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
+import android.graphics.Color.parseColor
 
 val localDesign = staticCompositionLocalOf {
     DesignSystem(
         color = ColorValuesContainer(
             whiteAlpha = WhiteAlphaValuesContainer(
-                whiteANegative9 = Color(android.graphics.Color.parseColor("#ffffff14")),
-                whiteANegative8 = Color(android.graphics.Color.parseColor("#ffffff1a")),
-                whiteANegative7 = Color(android.graphics.Color.parseColor("#ffffff1f")),
-                whiteANegative6 = Color(android.graphics.Color.parseColor("#ffffff3d")),
-                whiteANegative5 = Color(android.graphics.Color.parseColor("#ffffff66")),
-                whiteANegative4 = Color(android.graphics.Color.parseColor("#ffffffa3")),
-                whiteANegative3 = Color(android.graphics.Color.parseColor("#ffffffad")),
-                whiteANegative2 = Color(android.graphics.Color.parseColor("#ffffffb8")),
-                whiteANegative12 = Color(android.graphics.Color.parseColor("#ffffff05")),
-                whiteANegative11 = Color(android.graphics.Color.parseColor("#ffffff08")),
-                whiteANegative10 = Color(android.graphics.Color.parseColor("#ffffff0d")),
-                whiteANegative1 = Color(android.graphics.Color.parseColor("#ffffffd1")),
-                whiteA0 = Color(android.graphics.Color.parseColor("#ffffff"))
+                whiteANegative9 = Color(parseColor("#ffffff14")),
+                whiteANegative8 = Color(parseColor("#ffffff1a")),
+                whiteANegative7 = Color(parseColor("#ffffff1f")),
+                whiteANegative6 = Color(parseColor("#ffffff3d")),
+                whiteANegative5 = Color(parseColor("#ffffff66")),
+                whiteANegative4 = Color(parseColor("#ffffffa3")),
+                whiteANegative3 = Color(parseColor("#ffffffad")),
+                whiteANegative2 = Color(parseColor("#ffffffb8")),
+                whiteANegative12 = Color(parseColor("#ffffff05")),
+                whiteANegative11 = Color(parseColor("#ffffff08")),
+                whiteANegative10 = Color(parseColor("#ffffff0d")),
+                whiteANegative1 = Color(parseColor("#ffffffd1")),
+                whiteA0 = Color(parseColor("#ffffff"))
             ),
             warmGrayAlpha = WarmGrayAlphaValuesContainer(
-                warmGrayANegative4 = Color(android.graphics.Color.parseColor("#131311ed")),
-                warmGrayANegative3 = Color(android.graphics.Color.parseColor("#12120de0")),
-                warmGrayANegative2 = Color(android.graphics.Color.parseColor("#22221bdb")),
-                warmGrayANegative1 = Color(android.graphics.Color.parseColor("#272720cc")),
-                warmGrayA8 = Color(android.graphics.Color.parseColor("#52525205")),
-                warmGrayA7 = Color(android.graphics.Color.parseColor("#2f2f2d0a")),
-                warmGrayA6 = Color(android.graphics.Color.parseColor("#2f2f0e0f")),
-                warmGrayA5 = Color(android.graphics.Color.parseColor("#22220217")),
-                warmGrayA4 = Color(android.graphics.Color.parseColor("#33331421")),
-                warmGrayA3 = Color(android.graphics.Color.parseColor("#3e3e1d33")),
-                warmGrayA2 = Color(android.graphics.Color.parseColor("#28281166")),
-                warmGrayA1 = Color(android.graphics.Color.parseColor("#2f2f238f")),
-                warmGrayA0 = Color(android.graphics.Color.parseColor("#26261cbd"))
+                warmGrayANegative4 = Color(parseColor("#131311ed")),
+                warmGrayANegative3 = Color(parseColor("#12120de0")),
+                warmGrayANegative2 = Color(parseColor("#22221bdb")),
+                warmGrayANegative1 = Color(parseColor("#272720cc")),
+                warmGrayA8 = Color(parseColor("#52525205")),
+                warmGrayA7 = Color(parseColor("#2f2f2d0a")),
+                warmGrayA6 = Color(parseColor("#2f2f0e0f")),
+                warmGrayA5 = Color(parseColor("#22220217")),
+                warmGrayA4 = Color(parseColor("#33331421")),
+                warmGrayA3 = Color(parseColor("#3e3e1d33")),
+                warmGrayA2 = Color(parseColor("#28281166")),
+                warmGrayA1 = Color(parseColor("#2f2f238f")),
+                warmGrayA0 = Color(parseColor("#26261cbd"))
             ),
             warmGray = WarmGrayValuesContainer(
-                warmGray8 = Color(android.graphics.Color.parseColor("#fdfdfc")),
-                warmGray7 = Color(android.graphics.Color.parseColor("#f8f8f7")),
-                warmGray6 = Color(android.graphics.Color.parseColor("#f3f3f1")),
-                warmGray5 = Color(android.graphics.Color.parseColor("#eaeae6")),
-                warmGray4 = Color(android.graphics.Color.parseColor("#e5e5e1")),
-                warmGray3 = Color(android.graphics.Color.parseColor("#d9d9d3")),
-                warmGray2 = Color(android.graphics.Color.parseColor("#a8a89f")),
-                warmGray1 = Color(android.graphics.Color.parseColor("#8b8b84")),
-                warmGray0 = Color(android.graphics.Color.parseColor("#5f5f58")),
-                negative4 = Color(android.graphics.Color.parseColor("#222220")),
-                negative3 = Color(android.graphics.Color.parseColor("#30302c")),
-                negative2 = Color(android.graphics.Color.parseColor("#40403a")),
-                negative1 = Color(android.graphics.Color.parseColor("#52524c"))
+                warmGray8 = Color(parseColor("#fdfdfc")),
+                warmGray7 = Color(parseColor("#f8f8f7")),
+                warmGray6 = Color(parseColor("#f3f3f1")),
+                warmGray5 = Color(parseColor("#eaeae6")),
+                warmGray4 = Color(parseColor("#e5e5e1")),
+                warmGray3 = Color(parseColor("#d9d9d3")),
+                warmGray2 = Color(parseColor("#a8a89f")),
+                warmGray1 = Color(parseColor("#8b8b84")),
+                warmGray0 = Color(parseColor("#5f5f58")),
+                negative4 = Color(parseColor("#222220")),
+                negative3 = Color(parseColor("#30302c")),
+                negative2 = Color(parseColor("#40403a")),
+                negative1 = Color(parseColor("#52524c"))
             ),
             violet = VioletValuesContainer1(
-                violet8 = Color(android.graphics.Color.parseColor("#fbfaff")),
-                violet7 = Color(android.graphics.Color.parseColor("#f7f5ff")),
-                violet6 = Color(android.graphics.Color.parseColor("#f3f0ff")),
-                violet5 = Color(android.graphics.Color.parseColor("#eeebff")),
-                violet4 = Color(android.graphics.Color.parseColor("#e3e0ff")),
-                violet3 = Color(android.graphics.Color.parseColor("#dcd6ff")),
-                violet2 = Color(android.graphics.Color.parseColor("#aba2fb")),
-                violet1 = Color(android.graphics.Color.parseColor("#927ef1")),
-                violet0 = Color(android.graphics.Color.parseColor("#634eca")),
-                negative4 = Color(android.graphics.Color.parseColor("#201263")),
-                negative3 = Color(android.graphics.Color.parseColor("#39288a")),
-                negative2 = Color(android.graphics.Color.parseColor("#4e38bc")),
-                negative1 = Color(android.graphics.Color.parseColor("#573fcf"))
+                violet8 = Color(parseColor("#fbfaff")),
+                violet7 = Color(parseColor("#f7f5ff")),
+                violet6 = Color(parseColor("#f3f0ff")),
+                violet5 = Color(parseColor("#eeebff")),
+                violet4 = Color(parseColor("#e3e0ff")),
+                violet3 = Color(parseColor("#dcd6ff")),
+                violet2 = Color(parseColor("#aba2fb")),
+                violet1 = Color(parseColor("#927ef1")),
+                violet0 = Color(parseColor("#634eca")),
+                negative4 = Color(parseColor("#201263")),
+                negative3 = Color(parseColor("#39288a")),
+                negative2 = Color(parseColor("#4e38bc")),
+                negative1 = Color(parseColor("#573fcf"))
             ),
             transparent = TransparentValuesContainer(
-                transparent = Color(android.graphics.Color.parseColor("#ffffff00"))
+                transparent = Color(parseColor("#ffffff00"))
             ),
             teal = TealValuesContainer1(
-                teal8 = Color(android.graphics.Color.parseColor("#fafeff")),
-                teal7 = Color(android.graphics.Color.parseColor("#f0fbff")),
-                teal6 = Color(android.graphics.Color.parseColor("#e8f7fc")),
-                teal5 = Color(android.graphics.Color.parseColor("#e0f3fa")),
-                teal4 = Color(android.graphics.Color.parseColor("#c5ecf7")),
-                teal3 = Color(android.graphics.Color.parseColor("#b8e8f5")),
-                teal2 = Color(android.graphics.Color.parseColor("#7ac0dc")),
-                teal1 = Color(android.graphics.Color.parseColor("#4f9eba")),
-                teal0 = Color(android.graphics.Color.parseColor("#077597")),
-                negative4 = Color(android.graphics.Color.parseColor("#012a37")),
-                negative3 = Color(android.graphics.Color.parseColor("#0a495c")),
-                negative2 = Color(android.graphics.Color.parseColor("#196076")),
-                negative1 = Color(android.graphics.Color.parseColor("#196c85"))
+                teal8 = Color(parseColor("#fafeff")),
+                teal7 = Color(parseColor("#f0fbff")),
+                teal6 = Color(parseColor("#e8f7fc")),
+                teal5 = Color(parseColor("#e0f3fa")),
+                teal4 = Color(parseColor("#c5ecf7")),
+                teal3 = Color(parseColor("#b8e8f5")),
+                teal2 = Color(parseColor("#7ac0dc")),
+                teal1 = Color(parseColor("#4f9eba")),
+                teal0 = Color(parseColor("#077597")),
+                negative4 = Color(parseColor("#012a37")),
+                negative3 = Color(parseColor("#0a495c")),
+                negative2 = Color(parseColor("#196076")),
+                negative1 = Color(parseColor("#196c85"))
             ),
             semantic = SemanticValuesContainer(
                 warning = WarningValuesContainer(
-                    semanticWarningNegative4 = Color(android.graphics.Color.parseColor("#492909")),
-                    semanticWarningNegative3 = Color(android.graphics.Color.parseColor("#7a4510")),
-                    semanticWarningNegative2 = Color(android.graphics.Color.parseColor("#a05c1c")),
-                    semanticWarningNegative1 = Color(android.graphics.Color.parseColor("#b4610e")),
-                    semanticWarning8 = Color(android.graphics.Color.parseColor("#fffcfa")),
-                    semanticWarning7 = Color(android.graphics.Color.parseColor("#fff5eb")),
-                    semanticWarning6 = Color(android.graphics.Color.parseColor("#fff0e0")),
-                    semanticWarning5 = Color(android.graphics.Color.parseColor("#ffe8d1")),
-                    semanticWarning4 = Color(android.graphics.Color.parseColor("#fcdec0")),
-                    semanticWarning3 = Color(android.graphics.Color.parseColor("#ffd4a8")),
-                    semanticWarning2 = Color(android.graphics.Color.parseColor("#feb871")),
-                    semanticWarning1 = Color(android.graphics.Color.parseColor("#f6a351")),
-                    semanticWarning0 = Color(android.graphics.Color.parseColor("#f59638"))
+                    semanticWarningNegative4 = Color(parseColor("#492909")),
+                    semanticWarningNegative3 = Color(parseColor("#7a4510")),
+                    semanticWarningNegative2 = Color(parseColor("#a05c1c")),
+                    semanticWarningNegative1 = Color(parseColor("#b4610e")),
+                    semanticWarning8 = Color(parseColor("#fffcfa")),
+                    semanticWarning7 = Color(parseColor("#fff5eb")),
+                    semanticWarning6 = Color(parseColor("#fff0e0")),
+                    semanticWarning5 = Color(parseColor("#ffe8d1")),
+                    semanticWarning4 = Color(parseColor("#fcdec0")),
+                    semanticWarning3 = Color(parseColor("#ffd4a8")),
+                    semanticWarning2 = Color(parseColor("#feb871")),
+                    semanticWarning1 = Color(parseColor("#f6a351")),
+                    semanticWarning0 = Color(parseColor("#f59638"))
                 ),
                 success = SuccessValuesContainer1(
-                    semanticSuccessNegative4 = Color(android.graphics.Color.parseColor("#0a2e0b")),
-                    semanticSuccessNegative3 = Color(android.graphics.Color.parseColor("#135315")),
-                    semanticSuccessNegative2 = Color(android.graphics.Color.parseColor("#246626")),
-                    semanticSuccessNegative1 = Color(android.graphics.Color.parseColor("#2f6f2f")),
-                    semanticSuccess8 = Color(android.graphics.Color.parseColor("#fbfefb")),
-                    semanticSuccess7 = Color(android.graphics.Color.parseColor("#f4fbf4")),
-                    semanticSuccess6 = Color(android.graphics.Color.parseColor("#e6f9e6")),
-                    semanticSuccess5 = Color(android.graphics.Color.parseColor("#dff6df")),
-                    semanticSuccess4 = Color(android.graphics.Color.parseColor("#cff2cf")),
-                    semanticSuccess3 = Color(android.graphics.Color.parseColor("#c6ecc6")),
-                    semanticSuccess2 = Color(android.graphics.Color.parseColor("#87c987")),
-                    semanticSuccess1 = Color(android.graphics.Color.parseColor("#55a555")),
-                    semanticSuccess0 = Color(android.graphics.Color.parseColor("#347434"))
+                    semanticSuccessNegative4 = Color(parseColor("#0a2e0b")),
+                    semanticSuccessNegative3 = Color(parseColor("#135315")),
+                    semanticSuccessNegative2 = Color(parseColor("#246626")),
+                    semanticSuccessNegative1 = Color(parseColor("#2f6f2f")),
+                    semanticSuccess8 = Color(parseColor("#fbfefb")),
+                    semanticSuccess7 = Color(parseColor("#f4fbf4")),
+                    semanticSuccess6 = Color(parseColor("#e6f9e6")),
+                    semanticSuccess5 = Color(parseColor("#dff6df")),
+                    semanticSuccess4 = Color(parseColor("#cff2cf")),
+                    semanticSuccess3 = Color(parseColor("#c6ecc6")),
+                    semanticSuccess2 = Color(parseColor("#87c987")),
+                    semanticSuccess1 = Color(parseColor("#55a555")),
+                    semanticSuccess0 = Color(parseColor("#347434"))
                 ),
                 neutralAlpha = NeutralAlphaValuesContainer(
-                    semanticNeutralANegative4 = Color(android.graphics.Color.parseColor("#09131aed")),
-                    semanticNeutralANegative3 = Color(android.graphics.Color.parseColor("#0a121ae0")),
-                    semanticNeutralANegative2 = Color(android.graphics.Color.parseColor("#1a232ddb")),
-                    semanticNeutralANegative1 = Color(android.graphics.Color.parseColor("#1d2835cc")),
-                    semanticNeutralA8 = Color(android.graphics.Color.parseColor("#1f529e05")),
-                    semanticNeutralA7 = Color(android.graphics.Color.parseColor("#00295c0a")),
-                    semanticNeutralA6 = Color(android.graphics.Color.parseColor("#022e500f")),
-                    semanticNeutralA5 = Color(android.graphics.Color.parseColor("#10284717")),
-                    semanticNeutralA4 = Color(android.graphics.Color.parseColor("#04294321")),
-                    semanticNeutralA3 = Color(android.graphics.Color.parseColor("#10315633")),
-                    semanticNeutralA2 = Color(android.graphics.Color.parseColor("#0d253f66")),
-                    semanticNeutralA1 = Color(android.graphics.Color.parseColor("#1830498f")),
-                    semanticNeutralA0 = Color(android.graphics.Color.parseColor("#182639bd"))
+                    semanticNeutralANegative4 = Color(parseColor("#09131aed")),
+                    semanticNeutralANegative3 = Color(parseColor("#0a121ae0")),
+                    semanticNeutralANegative2 = Color(parseColor("#1a232ddb")),
+                    semanticNeutralANegative1 = Color(parseColor("#1d2835cc")),
+                    semanticNeutralA8 = Color(parseColor("#1f529e05")),
+                    semanticNeutralA7 = Color(parseColor("#00295c0a")),
+                    semanticNeutralA6 = Color(parseColor("#022e500f")),
+                    semanticNeutralA5 = Color(parseColor("#10284717")),
+                    semanticNeutralA4 = Color(parseColor("#04294321")),
+                    semanticNeutralA3 = Color(parseColor("#10315633")),
+                    semanticNeutralA2 = Color(parseColor("#0d253f66")),
+                    semanticNeutralA1 = Color(parseColor("#1830498f")),
+                    semanticNeutralA0 = Color(parseColor("#182639bd"))
                 ),
                 neutral = NeutralValuesContainer2(
-                    semanticNeutralNegative4 = Color(android.graphics.Color.parseColor("#1b242c")),
-                    semanticNeutralNegative3 = Color(android.graphics.Color.parseColor("#272e35")),
-                    semanticNeutralNegative2 = Color(android.graphics.Color.parseColor("#3a424a")),
-                    semanticNeutralNegative1 = Color(android.graphics.Color.parseColor("#4a545e")),
-                    semanticNeutral8 = Color(android.graphics.Color.parseColor("#fcfcfd")),
-                    semanticNeutral7 = Color(android.graphics.Color.parseColor("#f5f7f9")),
-                    semanticNeutral6 = Color(android.graphics.Color.parseColor("#f0f3f5")),
-                    semanticNeutral5 = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    semanticNeutral4 = Color(android.graphics.Color.parseColor("#dee3e7")),
-                    semanticNeutral3 = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    semanticNeutral2 = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                    semanticNeutral1 = Color(android.graphics.Color.parseColor("#7e8c9a")),
-                    semanticNeutral0 = Color(android.graphics.Color.parseColor("#555f6d"))
+                    semanticNeutralNegative4 = Color(parseColor("#1b242c")),
+                    semanticNeutralNegative3 = Color(parseColor("#272e35")),
+                    semanticNeutralNegative2 = Color(parseColor("#3a424a")),
+                    semanticNeutralNegative1 = Color(parseColor("#4a545e")),
+                    semanticNeutral8 = Color(parseColor("#fcfcfd")),
+                    semanticNeutral7 = Color(parseColor("#f5f7f9")),
+                    semanticNeutral6 = Color(parseColor("#f0f3f5")),
+                    semanticNeutral5 = Color(parseColor("#eaedf0")),
+                    semanticNeutral4 = Color(parseColor("#dee3e7")),
+                    semanticNeutral3 = Color(parseColor("#cfd6dd")),
+                    semanticNeutral2 = Color(parseColor("#9ea8b3")),
+                    semanticNeutral1 = Color(parseColor("#7e8c9a")),
+                    semanticNeutral0 = Color(parseColor("#555f6d"))
                 ),
                 info = InfoValuesContainer(
-                    semanticInfoNegative4 = Color(android.graphics.Color.parseColor("#041f5d")),
-                    semanticInfoNegative3 = Color(android.graphics.Color.parseColor("#113997")),
-                    semanticInfoNegative2 = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                    semanticInfoNegative1 = Color(android.graphics.Color.parseColor("#2759ce")),
-                    semanticInfo8 = Color(android.graphics.Color.parseColor("#fafbff")),
-                    semanticInfo7 = Color(android.graphics.Color.parseColor("#f5f8ff")),
-                    semanticInfo6 = Color(android.graphics.Color.parseColor("#ebf0ff")),
-                    semanticInfo5 = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    semanticInfo4 = Color(android.graphics.Color.parseColor("#d6e3ff")),
-                    semanticInfo3 = Color(android.graphics.Color.parseColor("#ccdcff")),
-                    semanticInfo2 = Color(android.graphics.Color.parseColor("#8eb0fb")),
-                    semanticInfo1 = Color(android.graphics.Color.parseColor("#6691f4")),
-                    semanticInfo0 = Color(android.graphics.Color.parseColor("#3061d5"))
+                    semanticInfoNegative4 = Color(parseColor("#041f5d")),
+                    semanticInfoNegative3 = Color(parseColor("#113997")),
+                    semanticInfoNegative2 = Color(parseColor("#1e4fc2")),
+                    semanticInfoNegative1 = Color(parseColor("#2759ce")),
+                    semanticInfo8 = Color(parseColor("#fafbff")),
+                    semanticInfo7 = Color(parseColor("#f5f8ff")),
+                    semanticInfo6 = Color(parseColor("#ebf0ff")),
+                    semanticInfo5 = Color(parseColor("#e5eeff")),
+                    semanticInfo4 = Color(parseColor("#d6e3ff")),
+                    semanticInfo3 = Color(parseColor("#ccdcff")),
+                    semanticInfo2 = Color(parseColor("#8eb0fb")),
+                    semanticInfo1 = Color(parseColor("#6691f4")),
+                    semanticInfo0 = Color(parseColor("#3061d5"))
                 ),
                 danger = DangerValuesContainer2(
-                    semanticDangerNegative4 = Color(android.graphics.Color.parseColor("#4a0d0d")),
-                    semanticDangerNegative3 = Color(android.graphics.Color.parseColor("#6f2020")),
-                    semanticDangerNegative2 = Color(android.graphics.Color.parseColor("#952d2d")),
-                    semanticDangerNegative1 = Color(android.graphics.Color.parseColor("#a13636")),
-                    semanticDanger8 = Color(android.graphics.Color.parseColor("#fffafa")),
-                    semanticDanger7 = Color(android.graphics.Color.parseColor("#fef5f5")),
-                    semanticDanger6 = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    semanticDanger5 = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    semanticDanger4 = Color(android.graphics.Color.parseColor("#fcd9d9")),
-                    semanticDanger3 = Color(android.graphics.Color.parseColor("#fccfcf")),
-                    semanticDanger2 = Color(android.graphics.Color.parseColor("#f49090")),
-                    semanticDanger1 = Color(android.graphics.Color.parseColor("#f26363")),
-                    semanticDanger0 = Color(android.graphics.Color.parseColor("#c53434"))
+                    semanticDangerNegative4 = Color(parseColor("#4a0d0d")),
+                    semanticDangerNegative3 = Color(parseColor("#6f2020")),
+                    semanticDangerNegative2 = Color(parseColor("#952d2d")),
+                    semanticDangerNegative1 = Color(parseColor("#a13636")),
+                    semanticDanger8 = Color(parseColor("#fffafa")),
+                    semanticDanger7 = Color(parseColor("#fef5f5")),
+                    semanticDanger6 = Color(parseColor("#ffebeb")),
+                    semanticDanger5 = Color(parseColor("#fee7e7")),
+                    semanticDanger4 = Color(parseColor("#fcd9d9")),
+                    semanticDanger3 = Color(parseColor("#fccfcf")),
+                    semanticDanger2 = Color(parseColor("#f49090")),
+                    semanticDanger1 = Color(parseColor("#f26363")),
+                    semanticDanger0 = Color(parseColor("#c53434"))
                 ),
                 brand = BrandValuesContainer(
-                    semanticBrandNegative4 = Color(android.graphics.Color.parseColor("#952d2d")),
-                    semanticBrandNegative3 = Color(android.graphics.Color.parseColor("#113997")),
-                    semanticBrandNegative2 = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                    semanticBrandNegative1 = Color(android.graphics.Color.parseColor("#2759ce")),
-                    semanticBrand8 = Color(android.graphics.Color.parseColor("#fafbff")),
-                    semanticBrand7 = Color(android.graphics.Color.parseColor("#f5f8ff")),
-                    semanticBrand6 = Color(android.graphics.Color.parseColor("#ebf0ff")),
-                    semanticBrand5 = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    semanticBrand4 = Color(android.graphics.Color.parseColor("#d6e3ff")),
-                    semanticBrand3 = Color(android.graphics.Color.parseColor("#ccdcff")),
-                    semanticBrand2 = Color(android.graphics.Color.parseColor("#8eb0fb")),
-                    semanticBrand1 = Color(android.graphics.Color.parseColor("#6691f4")),
-                    semanticBrand0 = Color(android.graphics.Color.parseColor("#3061d5"))
+                    semanticBrandNegative4 = Color(parseColor("#952d2d")),
+                    semanticBrandNegative3 = Color(parseColor("#113997")),
+                    semanticBrandNegative2 = Color(parseColor("#1e4fc2")),
+                    semanticBrandNegative1 = Color(parseColor("#2759ce")),
+                    semanticBrand8 = Color(parseColor("#fafbff")),
+                    semanticBrand7 = Color(parseColor("#f5f8ff")),
+                    semanticBrand6 = Color(parseColor("#ebf0ff")),
+                    semanticBrand5 = Color(parseColor("#e5eeff")),
+                    semanticBrand4 = Color(parseColor("#d6e3ff")),
+                    semanticBrand3 = Color(parseColor("#ccdcff")),
+                    semanticBrand2 = Color(parseColor("#8eb0fb")),
+                    semanticBrand1 = Color(parseColor("#6691f4")),
+                    semanticBrand0 = Color(parseColor("#3061d5"))
                 )
             ),
             red = RedValuesContainer1(
-                red8 = Color(android.graphics.Color.parseColor("#fffafa")),
-                red7 = Color(android.graphics.Color.parseColor("#fef5f5")),
-                red6 = Color(android.graphics.Color.parseColor("#ffebeb")),
-                red5 = Color(android.graphics.Color.parseColor("#fee7e7")),
-                red4 = Color(android.graphics.Color.parseColor("#fcd9d9")),
-                red3 = Color(android.graphics.Color.parseColor("#fccfcf")),
-                red2 = Color(android.graphics.Color.parseColor("#f49090")),
-                red1 = Color(android.graphics.Color.parseColor("#f26363")),
-                red0 = Color(android.graphics.Color.parseColor("#c53434")),
-                negative4 = Color(android.graphics.Color.parseColor("#4a0d0d")),
-                negative3 = Color(android.graphics.Color.parseColor("#6f2020")),
-                negative2 = Color(android.graphics.Color.parseColor("#952d2d")),
-                negative1 = Color(android.graphics.Color.parseColor("#a13636"))
+                red8 = Color(parseColor("#fffafa")),
+                red7 = Color(parseColor("#fef5f5")),
+                red6 = Color(parseColor("#ffebeb")),
+                red5 = Color(parseColor("#fee7e7")),
+                red4 = Color(parseColor("#fcd9d9")),
+                red3 = Color(parseColor("#fccfcf")),
+                red2 = Color(parseColor("#f49090")),
+                red1 = Color(parseColor("#f26363")),
+                red0 = Color(parseColor("#c53434")),
+                negative4 = Color(parseColor("#4a0d0d")),
+                negative3 = Color(parseColor("#6f2020")),
+                negative2 = Color(parseColor("#952d2d")),
+                negative1 = Color(parseColor("#a13636"))
             ),
             purple = PurpleValuesContainer1(
-                purple8 = Color(android.graphics.Color.parseColor("#fefaff")),
-                purple7 = Color(android.graphics.Color.parseColor("#fdf5ff")),
-                purple6 = Color(android.graphics.Color.parseColor("#faedfd")),
-                purple5 = Color(android.graphics.Color.parseColor("#f8e2fd")),
-                purple4 = Color(android.graphics.Color.parseColor("#f5d5fb")),
-                purple3 = Color(android.graphics.Color.parseColor("#f4caf7")),
-                purple2 = Color(android.graphics.Color.parseColor("#d98eec")),
-                purple1 = Color(android.graphics.Color.parseColor("#c466db")),
-                purple0 = Color(android.graphics.Color.parseColor("#9939ac")),
-                negative4 = Color(android.graphics.Color.parseColor("#410b2f")),
-                negative3 = Color(android.graphics.Color.parseColor("#5b1e67")),
-                negative2 = Color(android.graphics.Color.parseColor("#792989")),
-                negative1 = Color(android.graphics.Color.parseColor("#853295"))
+                purple8 = Color(parseColor("#fefaff")),
+                purple7 = Color(parseColor("#fdf5ff")),
+                purple6 = Color(parseColor("#faedfd")),
+                purple5 = Color(parseColor("#f8e2fd")),
+                purple4 = Color(parseColor("#f5d5fb")),
+                purple3 = Color(parseColor("#f4caf7")),
+                purple2 = Color(parseColor("#d98eec")),
+                purple1 = Color(parseColor("#c466db")),
+                purple0 = Color(parseColor("#9939ac")),
+                negative4 = Color(parseColor("#410b2f")),
+                negative3 = Color(parseColor("#5b1e67")),
+                negative2 = Color(parseColor("#792989")),
+                negative1 = Color(parseColor("#853295"))
             ),
             orange = OrangeValuesContainer1(
-                orange8 = Color(android.graphics.Color.parseColor("#fffcfa")),
-                orange7 = Color(android.graphics.Color.parseColor("#fff5eb")),
-                orange6 = Color(android.graphics.Color.parseColor("#fff0e0")),
-                orange5 = Color(android.graphics.Color.parseColor("#ffe8d1")),
-                orange4 = Color(android.graphics.Color.parseColor("#fcdec0")),
-                orange3 = Color(android.graphics.Color.parseColor("#ffd4a8")),
-                orange2 = Color(android.graphics.Color.parseColor("#feb871")),
-                orange1 = Color(android.graphics.Color.parseColor("#f6a351")),
-                orange0 = Color(android.graphics.Color.parseColor("#f59638")),
-                negative4 = Color(android.graphics.Color.parseColor("#492909")),
-                negative3 = Color(android.graphics.Color.parseColor("#7a4510")),
-                negative2 = Color(android.graphics.Color.parseColor("#a05c1c")),
-                negative1 = Color(android.graphics.Color.parseColor("#b4610e"))
+                orange8 = Color(parseColor("#fffcfa")),
+                orange7 = Color(parseColor("#fff5eb")),
+                orange6 = Color(parseColor("#fff0e0")),
+                orange5 = Color(parseColor("#ffe8d1")),
+                orange4 = Color(parseColor("#fcdec0")),
+                orange3 = Color(parseColor("#ffd4a8")),
+                orange2 = Color(parseColor("#feb871")),
+                orange1 = Color(parseColor("#f6a351")),
+                orange0 = Color(parseColor("#f59638")),
+                negative4 = Color(parseColor("#492909")),
+                negative3 = Color(parseColor("#7a4510")),
+                negative2 = Color(parseColor("#a05c1c")),
+                negative1 = Color(parseColor("#b4610e"))
             ),
             nonSemantic = NonSemanticValuesContainer(
                 white = WhiteValuesContainer(
-                    nonSemanticWhiteContentSecondary = Color(android.graphics.Color.parseColor("#ffffffa3")),
-                    nonSemanticWhiteContentPrimary = Color(android.graphics.Color.parseColor("#ffffff")),
-                    nonSemanticWhiteBorderSubtle = Color(android.graphics.Color.parseColor("#ffffffad")),
-                    nonSemanticWhiteBorderStrong = Color(android.graphics.Color.parseColor("#ffffff")),
-                    nonSemanticWhiteBorderDefault = Color(android.graphics.Color.parseColor("#ffffff66")),
-                    nonSemanticWhiteBackgroundSurface = Color(android.graphics.Color.parseColor("#ffffff1a")),
-                    nonSemanticWhiteBackgroundSubtle = Color(android.graphics.Color.parseColor("#ffffff1f")),
-                    nonSemanticWhiteBackgroundStrong = Color(android.graphics.Color.parseColor("#ffffff")),
-                    nonSemanticWhiteBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#ffffff66")),
-                    nonSemanticWhiteBackgroundMuted = Color(android.graphics.Color.parseColor("#ffffffa3"))
+                    nonSemanticWhiteContentSecondary = Color(parseColor("#ffffffa3")),
+                    nonSemanticWhiteContentPrimary = Color(parseColor("#ffffff")),
+                    nonSemanticWhiteBorderSubtle = Color(parseColor("#ffffffad")),
+                    nonSemanticWhiteBorderStrong = Color(parseColor("#ffffff")),
+                    nonSemanticWhiteBorderDefault = Color(parseColor("#ffffff66")),
+                    nonSemanticWhiteBackgroundSurface = Color(parseColor("#ffffff1a")),
+                    nonSemanticWhiteBackgroundSubtle = Color(parseColor("#ffffff1f")),
+                    nonSemanticWhiteBackgroundStrong = Color(parseColor("#ffffff")),
+                    nonSemanticWhiteBackgroundOnSubtle = Color(parseColor("#ffffff66")),
+                    nonSemanticWhiteBackgroundMuted = Color(parseColor("#ffffffa3"))
                 ),
                 violet = VioletValuesContainer(
-                    nonSemanticVioletContentSecondary = Color(android.graphics.Color.parseColor("#634eca")),
-                    nonSemanticVioletContentPrimary = Color(android.graphics.Color.parseColor("#39288a")),
-                    nonSemanticVioletBorderSubtle = Color(android.graphics.Color.parseColor("#dcd6ff")),
-                    nonSemanticVioletBorderStrong = Color(android.graphics.Color.parseColor("#634eca")),
-                    nonSemanticVioletBorderDefault = Color(android.graphics.Color.parseColor("#eeebff")),
-                    nonSemanticVioletBackgroundSurface = Color(android.graphics.Color.parseColor("#fbfaff")),
-                    nonSemanticVioletBackgroundSubtle = Color(android.graphics.Color.parseColor("#f7f5ff")),
-                    nonSemanticVioletBackgroundStrong = Color(android.graphics.Color.parseColor("#634eca")),
-                    nonSemanticVioletBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#eeebff")),
-                    nonSemanticVioletBackgroundMuted = Color(android.graphics.Color.parseColor("#e3e0ff"))
+                    nonSemanticVioletContentSecondary = Color(parseColor("#634eca")),
+                    nonSemanticVioletContentPrimary = Color(parseColor("#39288a")),
+                    nonSemanticVioletBorderSubtle = Color(parseColor("#dcd6ff")),
+                    nonSemanticVioletBorderStrong = Color(parseColor("#634eca")),
+                    nonSemanticVioletBorderDefault = Color(parseColor("#eeebff")),
+                    nonSemanticVioletBackgroundSurface = Color(parseColor("#fbfaff")),
+                    nonSemanticVioletBackgroundSubtle = Color(parseColor("#f7f5ff")),
+                    nonSemanticVioletBackgroundStrong = Color(parseColor("#634eca")),
+                    nonSemanticVioletBackgroundOnSubtle = Color(parseColor("#eeebff")),
+                    nonSemanticVioletBackgroundMuted = Color(parseColor("#e3e0ff"))
                 ),
                 teal = TealValuesContainer(
-                    nonSemanticTealContentSecondary = Color(android.graphics.Color.parseColor("#077597")),
-                    nonSemanticTealContentPrimary = Color(android.graphics.Color.parseColor("#0a495c")),
-                    nonSemanticTealBorderSubtle = Color(android.graphics.Color.parseColor("#b8e8f5")),
-                    nonSemanticTealBorderStrong = Color(android.graphics.Color.parseColor("#077597")),
-                    nonSemanticTealBorderDefault = Color(android.graphics.Color.parseColor("#e0f3fa")),
-                    nonSemanticTealBackgroundSurface = Color(android.graphics.Color.parseColor("#fafeff")),
-                    nonSemanticTealBackgroundSubtle = Color(android.graphics.Color.parseColor("#f0fbff")),
-                    nonSemanticTealBackgroundStrong = Color(android.graphics.Color.parseColor("#077597")),
-                    nonSemanticTealBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#e0f3fa")),
-                    nonSemanticTealBackgroundMuted = Color(android.graphics.Color.parseColor("#c5ecf7"))
+                    nonSemanticTealContentSecondary = Color(parseColor("#077597")),
+                    nonSemanticTealContentPrimary = Color(parseColor("#0a495c")),
+                    nonSemanticTealBorderSubtle = Color(parseColor("#b8e8f5")),
+                    nonSemanticTealBorderStrong = Color(parseColor("#077597")),
+                    nonSemanticTealBorderDefault = Color(parseColor("#e0f3fa")),
+                    nonSemanticTealBackgroundSurface = Color(parseColor("#fafeff")),
+                    nonSemanticTealBackgroundSubtle = Color(parseColor("#f0fbff")),
+                    nonSemanticTealBackgroundStrong = Color(parseColor("#077597")),
+                    nonSemanticTealBackgroundOnSubtle = Color(parseColor("#e0f3fa")),
+                    nonSemanticTealBackgroundMuted = Color(parseColor("#c5ecf7"))
                 ),
                 red = RedValuesContainer(
-                    nonSemanticRedContentSecondary = Color(android.graphics.Color.parseColor("#c53434")),
-                    nonSemanticRedContentPrimary = Color(android.graphics.Color.parseColor("#6f2020")),
-                    nonSemanticRedBorderSubtle = Color(android.graphics.Color.parseColor("#fccfcf")),
-                    nonSemanticRedBorderStrong = Color(android.graphics.Color.parseColor("#c53434")),
-                    nonSemanticRedBorderDefault = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    nonSemanticRedBackgroundSurface = Color(android.graphics.Color.parseColor("#fffafa")),
-                    nonSemanticRedBackgroundSubtle = Color(android.graphics.Color.parseColor("#fef5f5")),
-                    nonSemanticRedBackgroundStrong = Color(android.graphics.Color.parseColor("#c53434")),
-                    nonSemanticRedBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    nonSemanticRedBackgroundMuted = Color(android.graphics.Color.parseColor("#fcd9d9"))
+                    nonSemanticRedContentSecondary = Color(parseColor("#c53434")),
+                    nonSemanticRedContentPrimary = Color(parseColor("#6f2020")),
+                    nonSemanticRedBorderSubtle = Color(parseColor("#fccfcf")),
+                    nonSemanticRedBorderStrong = Color(parseColor("#c53434")),
+                    nonSemanticRedBorderDefault = Color(parseColor("#fee7e7")),
+                    nonSemanticRedBackgroundSurface = Color(parseColor("#fffafa")),
+                    nonSemanticRedBackgroundSubtle = Color(parseColor("#fef5f5")),
+                    nonSemanticRedBackgroundStrong = Color(parseColor("#c53434")),
+                    nonSemanticRedBackgroundOnSubtle = Color(parseColor("#fee7e7")),
+                    nonSemanticRedBackgroundMuted = Color(parseColor("#fcd9d9"))
                 ),
                 purple = PurpleValuesContainer(
-                    nonSemanticPurpleContentSecondary = Color(android.graphics.Color.parseColor("#9939ac")),
-                    nonSemanticPurpleContentPrimary = Color(android.graphics.Color.parseColor("#5b1e67")),
-                    nonSemanticPurpleBorderSubtle = Color(android.graphics.Color.parseColor("#f4caf7")),
-                    nonSemanticPurpleBorderStrong = Color(android.graphics.Color.parseColor("#9939ac")),
-                    nonSemanticPurpleBorderDefault = Color(android.graphics.Color.parseColor("#f8e2fd")),
-                    nonSemanticPurpleBackgroundSurface = Color(android.graphics.Color.parseColor("#fefaff")),
-                    nonSemanticPurpleBackgroundSubtle = Color(android.graphics.Color.parseColor("#fdf5ff")),
-                    nonSemanticPurpleBackgroundStrong = Color(android.graphics.Color.parseColor("#9939ac")),
-                    nonSemanticPurpleBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#f8e2fd")),
-                    nonSemanticPurpleBackgroundMuted = Color(android.graphics.Color.parseColor("#f5d5fb"))
+                    nonSemanticPurpleContentSecondary = Color(parseColor("#9939ac")),
+                    nonSemanticPurpleContentPrimary = Color(parseColor("#5b1e67")),
+                    nonSemanticPurpleBorderSubtle = Color(parseColor("#f4caf7")),
+                    nonSemanticPurpleBorderStrong = Color(parseColor("#9939ac")),
+                    nonSemanticPurpleBorderDefault = Color(parseColor("#f8e2fd")),
+                    nonSemanticPurpleBackgroundSurface = Color(parseColor("#fefaff")),
+                    nonSemanticPurpleBackgroundSubtle = Color(parseColor("#fdf5ff")),
+                    nonSemanticPurpleBackgroundStrong = Color(parseColor("#9939ac")),
+                    nonSemanticPurpleBackgroundOnSubtle = Color(parseColor("#f8e2fd")),
+                    nonSemanticPurpleBackgroundMuted = Color(parseColor("#f5d5fb"))
                 ),
                 orange = OrangeValuesContainer(
-                    nonSemanticOrangeContentSecondary = Color(android.graphics.Color.parseColor("#f59638")),
-                    nonSemanticOrangeContentPrimary = Color(android.graphics.Color.parseColor("#7a4510")),
-                    nonSemanticOrangeBorderSubtle = Color(android.graphics.Color.parseColor("#ffd4a8")),
-                    nonSemanticOrangeBorderStrong = Color(android.graphics.Color.parseColor("#f59638")),
-                    nonSemanticOrangeBorderDefault = Color(android.graphics.Color.parseColor("#ffe8d1")),
-                    nonSemanticOrangeBackgroundSurface = Color(android.graphics.Color.parseColor("#fffcfa")),
-                    nonSemanticOrangeBackgroundSubtle = Color(android.graphics.Color.parseColor("#fff5eb")),
-                    nonSemanticOrangeBackgroundStrong = Color(android.graphics.Color.parseColor("#f59638")),
-                    nonSemanticOrangeBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#ffe8d1")),
-                    nonSemanticOrangeBackgroundMuted = Color(android.graphics.Color.parseColor("#fcdec0"))
+                    nonSemanticOrangeContentSecondary = Color(parseColor("#f59638")),
+                    nonSemanticOrangeContentPrimary = Color(parseColor("#7a4510")),
+                    nonSemanticOrangeBorderSubtle = Color(parseColor("#ffd4a8")),
+                    nonSemanticOrangeBorderStrong = Color(parseColor("#f59638")),
+                    nonSemanticOrangeBorderDefault = Color(parseColor("#ffe8d1")),
+                    nonSemanticOrangeBackgroundSurface = Color(parseColor("#fffcfa")),
+                    nonSemanticOrangeBackgroundSubtle = Color(parseColor("#fff5eb")),
+                    nonSemanticOrangeBackgroundStrong = Color(parseColor("#f59638")),
+                    nonSemanticOrangeBackgroundOnSubtle = Color(parseColor("#ffe8d1")),
+                    nonSemanticOrangeBackgroundMuted = Color(parseColor("#fcdec0"))
                 ),
                 magenta = MagentaValuesContainer(
-                    nonSemanticMagentaContentSecondary = Color(android.graphics.Color.parseColor("#b12f86")),
-                    nonSemanticMagentaContentPrimary = Color(android.graphics.Color.parseColor("#671e4d")),
-                    nonSemanticMagentaBorderSubtle = Color(android.graphics.Color.parseColor("#f7cae8")),
-                    nonSemanticMagentaBorderStrong = Color(android.graphics.Color.parseColor("#b12f86")),
-                    nonSemanticMagentaBorderDefault = Color(android.graphics.Color.parseColor("#fde2f4")),
-                    nonSemanticMagentaBackgroundSurface = Color(android.graphics.Color.parseColor("#fffafd")),
-                    nonSemanticMagentaBackgroundSubtle = Color(android.graphics.Color.parseColor("#fef6fb")),
-                    nonSemanticMagentaBackgroundStrong = Color(android.graphics.Color.parseColor("#b12f86")),
-                    nonSemanticMagentaBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#fde2f4")),
-                    nonSemanticMagentaBackgroundMuted = Color(android.graphics.Color.parseColor("#fbd5ee"))
+                    nonSemanticMagentaContentSecondary = Color(parseColor("#b12f86")),
+                    nonSemanticMagentaContentPrimary = Color(parseColor("#671e4d")),
+                    nonSemanticMagentaBorderSubtle = Color(parseColor("#f7cae8")),
+                    nonSemanticMagentaBorderStrong = Color(parseColor("#b12f86")),
+                    nonSemanticMagentaBorderDefault = Color(parseColor("#fde2f4")),
+                    nonSemanticMagentaBackgroundSurface = Color(parseColor("#fffafd")),
+                    nonSemanticMagentaBackgroundSubtle = Color(parseColor("#fef6fb")),
+                    nonSemanticMagentaBackgroundStrong = Color(parseColor("#b12f86")),
+                    nonSemanticMagentaBackgroundOnSubtle = Color(parseColor("#fde2f4")),
+                    nonSemanticMagentaBackgroundMuted = Color(parseColor("#fbd5ee"))
                 ),
                 green = GreenValuesContainer(
-                    nonSemanticGreenContentSecondary = Color(android.graphics.Color.parseColor("#347434")),
-                    nonSemanticGreenContentPrimary = Color(android.graphics.Color.parseColor("#135315")),
-                    nonSemanticGreenBorderSubtle = Color(android.graphics.Color.parseColor("#c6ecc6")),
-                    nonSemanticGreenBorderStrong = Color(android.graphics.Color.parseColor("#347434")),
-                    nonSemanticGreenBorderDefault = Color(android.graphics.Color.parseColor("#dff6df")),
-                    nonSemanticGreenBackgroundSurface = Color(android.graphics.Color.parseColor("#fbfefb")),
-                    nonSemanticGreenBackgroundSubtle = Color(android.graphics.Color.parseColor("#f4fbf4")),
-                    nonSemanticGreenBackgroundStrong = Color(android.graphics.Color.parseColor("#347434")),
-                    nonSemanticGreenBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#dff6df")),
-                    nonSemanticGreenBackgroundMuted = Color(android.graphics.Color.parseColor("#cff2cf"))
+                    nonSemanticGreenContentSecondary = Color(parseColor("#347434")),
+                    nonSemanticGreenContentPrimary = Color(parseColor("#135315")),
+                    nonSemanticGreenBorderSubtle = Color(parseColor("#c6ecc6")),
+                    nonSemanticGreenBorderStrong = Color(parseColor("#347434")),
+                    nonSemanticGreenBorderDefault = Color(parseColor("#dff6df")),
+                    nonSemanticGreenBackgroundSurface = Color(parseColor("#fbfefb")),
+                    nonSemanticGreenBackgroundSubtle = Color(parseColor("#f4fbf4")),
+                    nonSemanticGreenBackgroundStrong = Color(parseColor("#347434")),
+                    nonSemanticGreenBackgroundOnSubtle = Color(parseColor("#dff6df")),
+                    nonSemanticGreenBackgroundMuted = Color(parseColor("#cff2cf"))
                 ),
                 gray = GrayValuesContainer(
-                    nonSemanticGrayContentSecondary = Color(android.graphics.Color.parseColor("#555f6d")),
-                    nonSemanticGrayContentPrimary = Color(android.graphics.Color.parseColor("#272e35")),
-                    nonSemanticGrayBorderSubtle = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    nonSemanticGrayBorderStrong = Color(android.graphics.Color.parseColor("#555f6d")),
-                    nonSemanticGrayBorderDefault = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    nonSemanticGrayBackgroundSurface = Color(android.graphics.Color.parseColor("#fcfcfd")),
-                    nonSemanticGrayBackgroundSubtle = Color(android.graphics.Color.parseColor("#f5f7f9")),
-                    nonSemanticGrayBackgroundStrong = Color(android.graphics.Color.parseColor("#555f6d")),
-                    nonSemanticGrayBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    nonSemanticGrayBackgroundMuted = Color(android.graphics.Color.parseColor("#dee3e7"))
+                    nonSemanticGrayContentSecondary = Color(parseColor("#555f6d")),
+                    nonSemanticGrayContentPrimary = Color(parseColor("#272e35")),
+                    nonSemanticGrayBorderSubtle = Color(parseColor("#cfd6dd")),
+                    nonSemanticGrayBorderStrong = Color(parseColor("#555f6d")),
+                    nonSemanticGrayBorderDefault = Color(parseColor("#eaedf0")),
+                    nonSemanticGrayBackgroundSurface = Color(parseColor("#fcfcfd")),
+                    nonSemanticGrayBackgroundSubtle = Color(parseColor("#f5f7f9")),
+                    nonSemanticGrayBackgroundStrong = Color(parseColor("#555f6d")),
+                    nonSemanticGrayBackgroundOnSubtle = Color(parseColor("#eaedf0")),
+                    nonSemanticGrayBackgroundMuted = Color(parseColor("#dee3e7"))
                 ),
                 cyan = CyanValuesContainer(
-                    nonSemanticCyanContentSecondary = Color(android.graphics.Color.parseColor("#0870ba")),
-                    nonSemanticCyanContentPrimary = Color(android.graphics.Color.parseColor("#0c456e")),
-                    nonSemanticCyanBorderSubtle = Color(android.graphics.Color.parseColor("#c2e2ff")),
-                    nonSemanticCyanBorderStrong = Color(android.graphics.Color.parseColor("#0870ba")),
-                    nonSemanticCyanBorderDefault = Color(android.graphics.Color.parseColor("#e0f1ff")),
-                    nonSemanticCyanBackgroundSurface = Color(android.graphics.Color.parseColor("#fafdff")),
-                    nonSemanticCyanBackgroundSubtle = Color(android.graphics.Color.parseColor("#f0f9ff")),
-                    nonSemanticCyanBackgroundStrong = Color(android.graphics.Color.parseColor("#0870ba")),
-                    nonSemanticCyanBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#e0f1ff")),
-                    nonSemanticCyanBackgroundMuted = Color(android.graphics.Color.parseColor("#cce7ff"))
+                    nonSemanticCyanContentSecondary = Color(parseColor("#0870ba")),
+                    nonSemanticCyanContentPrimary = Color(parseColor("#0c456e")),
+                    nonSemanticCyanBorderSubtle = Color(parseColor("#c2e2ff")),
+                    nonSemanticCyanBorderStrong = Color(parseColor("#0870ba")),
+                    nonSemanticCyanBorderDefault = Color(parseColor("#e0f1ff")),
+                    nonSemanticCyanBackgroundSurface = Color(parseColor("#fafdff")),
+                    nonSemanticCyanBackgroundSubtle = Color(parseColor("#f0f9ff")),
+                    nonSemanticCyanBackgroundStrong = Color(parseColor("#0870ba")),
+                    nonSemanticCyanBackgroundOnSubtle = Color(parseColor("#e0f1ff")),
+                    nonSemanticCyanBackgroundMuted = Color(parseColor("#cce7ff"))
                 ),
                 blue = BlueValuesContainer(
-                    nonSemanticBlueContentSecondary = Color(android.graphics.Color.parseColor("#3061d5")),
-                    nonSemanticBlueContentPrimary = Color(android.graphics.Color.parseColor("#113997")),
-                    nonSemanticBlueBorderSubtle = Color(android.graphics.Color.parseColor("#ccdcff")),
-                    nonSemanticBlueBorderStrong = Color(android.graphics.Color.parseColor("#3061d5")),
-                    nonSemanticBlueBorderDefault = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    nonSemanticBlueBackgroundSurface = Color(android.graphics.Color.parseColor("#fafbff")),
-                    nonSemanticBlueBackgroundSubtle = Color(android.graphics.Color.parseColor("#f5f8ff")),
-                    nonSemanticBlueBackgroundStrong = Color(android.graphics.Color.parseColor("#3061d5")),
-                    nonSemanticBlueBackgroundOnSubtle = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    nonSemanticBlueBackgroundMuted = Color(android.graphics.Color.parseColor("#d6e3ff"))
+                    nonSemanticBlueContentSecondary = Color(parseColor("#3061d5")),
+                    nonSemanticBlueContentPrimary = Color(parseColor("#113997")),
+                    nonSemanticBlueBorderSubtle = Color(parseColor("#ccdcff")),
+                    nonSemanticBlueBorderStrong = Color(parseColor("#3061d5")),
+                    nonSemanticBlueBorderDefault = Color(parseColor("#e5eeff")),
+                    nonSemanticBlueBackgroundSurface = Color(parseColor("#fafbff")),
+                    nonSemanticBlueBackgroundSubtle = Color(parseColor("#f5f8ff")),
+                    nonSemanticBlueBackgroundStrong = Color(parseColor("#3061d5")),
+                    nonSemanticBlueBackgroundOnSubtle = Color(parseColor("#e5eeff")),
+                    nonSemanticBlueBackgroundMuted = Color(parseColor("#d6e3ff"))
                 ),
                 aquamarine = AquamarineValuesContainer(
                     nonSemanticAquamarineContentSecondary = Color(
-                        android.graphics.Color.parseColor(
+                        parseColor(
                             "#097b68"
                         )
                     ),
-                    nonSemanticAquamarineContentPrimary = Color(android.graphics.Color.parseColor("#0d4a42")),
-                    nonSemanticAquamarineBorderSubtle = Color(android.graphics.Color.parseColor("#bee9e4")),
-                    nonSemanticAquamarineBorderStrong = Color(android.graphics.Color.parseColor("#097b68")),
-                    nonSemanticAquamarineBorderDefault = Color(android.graphics.Color.parseColor("#daf6f3")),
+                    nonSemanticAquamarineContentPrimary = Color(parseColor("#0d4a42")),
+                    nonSemanticAquamarineBorderSubtle = Color(parseColor("#bee9e4")),
+                    nonSemanticAquamarineBorderStrong = Color(parseColor("#097b68")),
+                    nonSemanticAquamarineBorderDefault = Color(parseColor("#daf6f3")),
                     nonSemanticAquamarineBackgroundSurface = Color(
-                        android.graphics.Color.parseColor(
+                        parseColor(
                             "#fbfefe"
                         )
                     ),
                     nonSemanticAquamarineBackgroundSubtle = Color(
-                        android.graphics.Color.parseColor(
+                        parseColor(
                             "#f0faf9"
                         )
                     ),
                     nonSemanticAquamarineBackgroundStrong = Color(
-                        android.graphics.Color.parseColor(
+                        parseColor(
                             "#097b68"
                         )
                     ),
                     nonSemanticAquamarineBackgroundOnSubtle = Color(
-                        android.graphics.Color.parseColor(
+                        parseColor(
                             "#daf6f3"
                         )
                     ),
-                    nonSemanticAquamarineBackgroundMuted = Color(android.graphics.Color.parseColor("#c5f2ec"))
+                    nonSemanticAquamarineBackgroundMuted = Color(parseColor("#c5f2ec"))
                 )
             ),
             neutralGrayAlpha = NeutralGrayAlphaValuesContainer(
-                neutralGrayANegative4 = Color(android.graphics.Color.parseColor("#121212ed")),
-                neutralGrayANegative3 = Color(android.graphics.Color.parseColor("#0f0f0fe0")),
-                neutralGrayANegative2 = Color(android.graphics.Color.parseColor("#212121db")),
-                neutralGrayANegative1 = Color(android.graphics.Color.parseColor("#262626cc")),
-                neutralGrayA8 = Color(android.graphics.Color.parseColor("#52525205")),
-                neutralGrayA7 = Color(android.graphics.Color.parseColor("#2e2e2e0a")),
-                neutralGrayA6 = Color(android.graphics.Color.parseColor("#2121210f")),
-                neutralGrayA5 = Color(android.graphics.Color.parseColor("#1c1c1c17")),
-                neutralGrayA4 = Color(android.graphics.Color.parseColor("#1f1f1f21")),
-                neutralGrayA3 = Color(android.graphics.Color.parseColor("#2e2e2e33")),
-                neutralGrayA2 = Color(android.graphics.Color.parseColor("#21212166")),
-                neutralGrayA1 = Color(android.graphics.Color.parseColor("#2b2b2b8f")),
-                neutralGrayA0 = Color(android.graphics.Color.parseColor("#262627bd"))
+                neutralGrayANegative4 = Color(parseColor("#121212ed")),
+                neutralGrayANegative3 = Color(parseColor("#0f0f0fe0")),
+                neutralGrayANegative2 = Color(parseColor("#212121db")),
+                neutralGrayANegative1 = Color(parseColor("#262626cc")),
+                neutralGrayA8 = Color(parseColor("#52525205")),
+                neutralGrayA7 = Color(parseColor("#2e2e2e0a")),
+                neutralGrayA6 = Color(parseColor("#2121210f")),
+                neutralGrayA5 = Color(parseColor("#1c1c1c17")),
+                neutralGrayA4 = Color(parseColor("#1f1f1f21")),
+                neutralGrayA3 = Color(parseColor("#2e2e2e33")),
+                neutralGrayA2 = Color(parseColor("#21212166")),
+                neutralGrayA1 = Color(parseColor("#2b2b2b8f")),
+                neutralGrayA0 = Color(parseColor("#262627bd"))
             ),
             neutralGray = NeutralGrayValuesContainer(
-                neutralGray8 = Color(android.graphics.Color.parseColor("#fcfcfc")),
-                neutralGray7 = Color(android.graphics.Color.parseColor("#f7f7f7")),
-                neutralGray6 = Color(android.graphics.Color.parseColor("#f2f2f2")),
-                neutralGray5 = Color(android.graphics.Color.parseColor("#ebebeb")),
-                neutralGray4 = Color(android.graphics.Color.parseColor("#e3e3e3")),
-                neutralGray3 = Color(android.graphics.Color.parseColor("#d6d6d6")),
-                neutralGray2 = Color(android.graphics.Color.parseColor("#a6a6a6")),
-                neutralGray1 = Color(android.graphics.Color.parseColor("#8a8a8a")),
-                neutralGray0 = Color(android.graphics.Color.parseColor("#5e5e5e")),
-                negative4 = Color(android.graphics.Color.parseColor("#212121")),
-                negative3 = Color(android.graphics.Color.parseColor("#2e2e2e")),
-                negative2 = Color(android.graphics.Color.parseColor("#404040")),
-                negative1 = Color(android.graphics.Color.parseColor("#525252"))
+                neutralGray8 = Color(parseColor("#fcfcfc")),
+                neutralGray7 = Color(parseColor("#f7f7f7")),
+                neutralGray6 = Color(parseColor("#f2f2f2")),
+                neutralGray5 = Color(parseColor("#ebebeb")),
+                neutralGray4 = Color(parseColor("#e3e3e3")),
+                neutralGray3 = Color(parseColor("#d6d6d6")),
+                neutralGray2 = Color(parseColor("#a6a6a6")),
+                neutralGray1 = Color(parseColor("#8a8a8a")),
+                neutralGray0 = Color(parseColor("#5e5e5e")),
+                negative4 = Color(parseColor("#212121")),
+                negative3 = Color(parseColor("#2e2e2e")),
+                negative2 = Color(parseColor("#404040")),
+                negative1 = Color(parseColor("#525252"))
             ),
             magenta = MagentaValuesContainer1(
-                negative4 = Color(android.graphics.Color.parseColor("#410b2f")),
-                negative3 = Color(android.graphics.Color.parseColor("#671e4d")),
-                negative2 = Color(android.graphics.Color.parseColor("#892969")),
-                negative1 = Color(android.graphics.Color.parseColor("#953274")),
-                magenta8 = Color(android.graphics.Color.parseColor("#fffafd")),
-                magenta7 = Color(android.graphics.Color.parseColor("#fef6fb")),
-                magenta6 = Color(android.graphics.Color.parseColor("#fdedf8")),
-                magenta5 = Color(android.graphics.Color.parseColor("#fde2f4")),
-                magenta4 = Color(android.graphics.Color.parseColor("#fbd5ee")),
-                magenta3 = Color(android.graphics.Color.parseColor("#f7cae8")),
-                magenta2 = Color(android.graphics.Color.parseColor("#ec89cb")),
-                magenta1 = Color(android.graphics.Color.parseColor("#de5eb3")),
-                magenta0 = Color(android.graphics.Color.parseColor("#b12f86"))
+                negative4 = Color(parseColor("#410b2f")),
+                negative3 = Color(parseColor("#671e4d")),
+                negative2 = Color(parseColor("#892969")),
+                negative1 = Color(parseColor("#953274")),
+                magenta8 = Color(parseColor("#fffafd")),
+                magenta7 = Color(parseColor("#fef6fb")),
+                magenta6 = Color(parseColor("#fdedf8")),
+                magenta5 = Color(parseColor("#fde2f4")),
+                magenta4 = Color(parseColor("#fbd5ee")),
+                magenta3 = Color(parseColor("#f7cae8")),
+                magenta2 = Color(parseColor("#ec89cb")),
+                magenta1 = Color(parseColor("#de5eb3")),
+                magenta0 = Color(parseColor("#b12f86"))
             ),
             interaction = InteractionValuesContainer(
                 neutral = NeutralValuesContainer1(
-                    interactionNeutralSubtleSelected = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    interactionNeutralSubtleNormal = Color(android.graphics.Color.parseColor("#f0f3f5")),
-                    interactionNeutralSubtleHover = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    interactionNeutralSubtleActive = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    interactionNeutralSelected = Color(android.graphics.Color.parseColor("#3a424a")),
-                    interactionNeutralNormal = Color(android.graphics.Color.parseColor("#4a545e")),
-                    interactionNeutralHover = Color(android.graphics.Color.parseColor("#3a424a")),
-                    interactionNeutralActive = Color(android.graphics.Color.parseColor("#272e35"))
+                    interactionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
+                    interactionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
+                    interactionNeutralSubtleHover = Color(parseColor("#eaedf0")),
+                    interactionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
+                    interactionNeutralSelected = Color(parseColor("#3a424a")),
+                    interactionNeutralNormal = Color(parseColor("#4a545e")),
+                    interactionNeutralHover = Color(parseColor("#3a424a")),
+                    interactionNeutralActive = Color(parseColor("#272e35"))
                 ),
                 inverse = InverseValuesContainer1(
-                    interactionInverseSelected = Color(android.graphics.Color.parseColor("#ffffffd1")),
-                    interactionInverseNormal = Color(android.graphics.Color.parseColor("#ffffff")),
-                    interactionInverseHover = Color(android.graphics.Color.parseColor("#ffffffd1")),
-                    interactionInverseActive = Color(android.graphics.Color.parseColor("#ffffffb8"))
+                    interactionInverseSelected = Color(parseColor("#ffffffd1")),
+                    interactionInverseNormal = Color(parseColor("#ffffff")),
+                    interactionInverseHover = Color(parseColor("#ffffffd1")),
+                    interactionInverseActive = Color(parseColor("#ffffffb8"))
                 ),
                 ghost = GhostValuesContainer1(
-                    interactionGhostSelected = Color(android.graphics.Color.parseColor("#022e500f")),
-                    interactionGhostNormal = Color(android.graphics.Color.parseColor("#ffffff00")),
-                    interactionGhostInverseSelected = Color(android.graphics.Color.parseColor("#ffffff1a")),
-                    interactionGhostInverseNormal = Color(android.graphics.Color.parseColor("#ffffff1f")),
-                    interactionGhostInverseHover = Color(android.graphics.Color.parseColor("#ffffff1a")),
-                    interactionGhostHover = Color(android.graphics.Color.parseColor("#022e500f")),
-                    interactionGhostDangerSelected = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    interactionGhostDangerNormal = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    interactionGhostDangerHover = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    interactionGhostActive = Color(android.graphics.Color.parseColor("#10284717"))
+                    interactionGhostSelected = Color(parseColor("#022e500f")),
+                    interactionGhostNormal = Color(parseColor("#ffffff00")),
+                    interactionGhostInverseSelected = Color(parseColor("#ffffff1a")),
+                    interactionGhostInverseNormal = Color(parseColor("#ffffff1f")),
+                    interactionGhostInverseHover = Color(parseColor("#ffffff1a")),
+                    interactionGhostHover = Color(parseColor("#022e500f")),
+                    interactionGhostDangerSelected = Color(parseColor("#ffebeb")),
+                    interactionGhostDangerNormal = Color(parseColor("#fee7e7")),
+                    interactionGhostDangerHover = Color(parseColor("#ffebeb")),
+                    interactionGhostActive = Color(parseColor("#10284717"))
                 ),
                 focus = FocusValuesContainer(
-                    interactionFocusDefault = Color(android.graphics.Color.parseColor("#6691f4"))
+                    interactionFocusDefault = Color(parseColor("#6691f4"))
                 ),
                 disabled = DisabledValuesContainer(
-                    interactionDisabledSubtleNormal = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    interactionDisabledSubtleHover = Color(android.graphics.Color.parseColor("#dee3e7")),
-                    interactionDisabledSubtleActive = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    interactionDisabledNormal = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                    interactionDisabledHover = Color(android.graphics.Color.parseColor("#7e8c9a")),
-                    interactionDisabledActive = Color(android.graphics.Color.parseColor("#555f6d"))
+                    interactionDisabledSubtleNormal = Color(parseColor("#eaedf0")),
+                    interactionDisabledSubtleHover = Color(parseColor("#dee3e7")),
+                    interactionDisabledSubtleActive = Color(parseColor("#cfd6dd")),
+                    interactionDisabledNormal = Color(parseColor("#9ea8b3")),
+                    interactionDisabledHover = Color(parseColor("#7e8c9a")),
+                    interactionDisabledActive = Color(parseColor("#555f6d"))
                 ),
                 default = DefaultValuesContainer(
-                    interactionDefaultSubtleSelected = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    interactionDefaultSubtleNormal = Color(android.graphics.Color.parseColor("#ebf0ff")),
-                    interactionDefaultSubtleHover = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    interactionDefaultSubtleActive = Color(android.graphics.Color.parseColor("#ccdcff")),
-                    interactionDefaultSelected = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                    interactionDefaultNormal = Color(android.graphics.Color.parseColor("#3061d5")),
-                    interactionDefaultHover = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                    interactionDefaultActive = Color(android.graphics.Color.parseColor("#113997"))
+                    interactionDefaultSubtleSelected = Color(parseColor("#e5eeff")),
+                    interactionDefaultSubtleNormal = Color(parseColor("#ebf0ff")),
+                    interactionDefaultSubtleHover = Color(parseColor("#e5eeff")),
+                    interactionDefaultSubtleActive = Color(parseColor("#ccdcff")),
+                    interactionDefaultSelected = Color(parseColor("#1e4fc2")),
+                    interactionDefaultNormal = Color(parseColor("#3061d5")),
+                    interactionDefaultHover = Color(parseColor("#1e4fc2")),
+                    interactionDefaultActive = Color(parseColor("#113997"))
                 ),
                 danger = DangerValuesContainer1(
-                    interactionDangerSubtleSelected = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    interactionDangerSubtleNormal = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    interactionDangerSubtleHover = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    interactionDangerSubtleActive = Color(android.graphics.Color.parseColor("#fccfcf")),
-                    interactionDangerSelected = Color(android.graphics.Color.parseColor("#952d2d")),
-                    interactionDangerNormal = Color(android.graphics.Color.parseColor("#c53434")),
-                    interactionDangerHover = Color(android.graphics.Color.parseColor("#952d2d")),
-                    interactionDangerActive = Color(android.graphics.Color.parseColor("#6f2020"))
+                    interactionDangerSubtleSelected = Color(parseColor("#fee7e7")),
+                    interactionDangerSubtleNormal = Color(parseColor("#ffebeb")),
+                    interactionDangerSubtleHover = Color(parseColor("#fee7e7")),
+                    interactionDangerSubtleActive = Color(parseColor("#fccfcf")),
+                    interactionDangerSelected = Color(parseColor("#952d2d")),
+                    interactionDangerNormal = Color(parseColor("#c53434")),
+                    interactionDangerHover = Color(parseColor("#952d2d")),
+                    interactionDangerActive = Color(parseColor("#6f2020"))
                 ),
                 border = BorderValuesContainer1(
-                    interactionBorderSelected = Color(android.graphics.Color.parseColor("#3061d5")),
-                    interactionBorderNormal = Color(android.graphics.Color.parseColor("#8eb0fb")),
-                    interactionBorderNeutralSelected = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                    interactionBorderNeutralNormal = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    interactionBorderNeutralHover = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                    interactionBorderNeutralActive = Color(android.graphics.Color.parseColor("#7e8c9a")),
-                    interactionBorderHover = Color(android.graphics.Color.parseColor("#6691f4")),
-                    interactionBorderDanger = Color(android.graphics.Color.parseColor("#f26363")),
-                    interactionBorderActive = Color(android.graphics.Color.parseColor("#2759ce"))
+                    interactionBorderSelected = Color(parseColor("#3061d5")),
+                    interactionBorderNormal = Color(parseColor("#8eb0fb")),
+                    interactionBorderNeutralSelected = Color(parseColor("#9ea8b3")),
+                    interactionBorderNeutralNormal = Color(parseColor("#cfd6dd")),
+                    interactionBorderNeutralHover = Color(parseColor("#9ea8b3")),
+                    interactionBorderNeutralActive = Color(parseColor("#7e8c9a")),
+                    interactionBorderHover = Color(parseColor("#6691f4")),
+                    interactionBorderDanger = Color(parseColor("#f26363")),
+                    interactionBorderActive = Color(parseColor("#2759ce"))
                 ),
                 background = BackgroundValuesContainer1(
-                    interactionBackgroundSidepanel = Color(android.graphics.Color.parseColor("#ffffff")),
-                    interactionBackgroundModelessInverse = Color(android.graphics.Color.parseColor("#272e35")),
-                    interactionBackgroundModeless = Color(android.graphics.Color.parseColor("#ffffff")),
-                    interactionBackgroundModal = Color(android.graphics.Color.parseColor("#ffffff")),
-                    interactionBackgroundFormField = Color(android.graphics.Color.parseColor("#ffffff")),
-                    interactionBackgroundDimmer = Color(android.graphics.Color.parseColor("#182639bd"))
+                    interactionBackgroundSidepanel = Color(parseColor("#ffffff")),
+                    interactionBackgroundModelessInverse = Color(parseColor("#272e35")),
+                    interactionBackgroundModeless = Color(parseColor("#ffffff")),
+                    interactionBackgroundModal = Color(parseColor("#ffffff")),
+                    interactionBackgroundFormField = Color(parseColor("#ffffff")),
+                    interactionBackgroundDimmer = Color(parseColor("#182639bd"))
                 )
             ),
             green = GreenValuesContainer1(
-                negative4 = Color(android.graphics.Color.parseColor("#0a2e0b")),
-                negative3 = Color(android.graphics.Color.parseColor("#135315")),
-                negative2 = Color(android.graphics.Color.parseColor("#246626")),
-                negative1 = Color(android.graphics.Color.parseColor("#2f6f2f")),
-                green8 = Color(android.graphics.Color.parseColor("#fbfefb")),
-                green7 = Color(android.graphics.Color.parseColor("#f4fbf4")),
-                green6 = Color(android.graphics.Color.parseColor("#e6f9e6")),
-                green5 = Color(android.graphics.Color.parseColor("#dff6df")),
-                green4 = Color(android.graphics.Color.parseColor("#cff2cf")),
-                green3 = Color(android.graphics.Color.parseColor("#c6ecc6")),
-                green2 = Color(android.graphics.Color.parseColor("#87c987")),
-                green1 = Color(android.graphics.Color.parseColor("#55a555")),
-                green0 = Color(android.graphics.Color.parseColor("#347434"))
+                negative4 = Color(parseColor("#0a2e0b")),
+                negative3 = Color(parseColor("#135315")),
+                negative2 = Color(parseColor("#246626")),
+                negative1 = Color(parseColor("#2f6f2f")),
+                green8 = Color(parseColor("#fbfefb")),
+                green7 = Color(parseColor("#f4fbf4")),
+                green6 = Color(parseColor("#e6f9e6")),
+                green5 = Color(parseColor("#dff6df")),
+                green4 = Color(parseColor("#cff2cf")),
+                green3 = Color(parseColor("#c6ecc6")),
+                green2 = Color(parseColor("#87c987")),
+                green1 = Color(parseColor("#55a555")),
+                green0 = Color(parseColor("#347434"))
             ),
             cyan = CyanValuesContainer1(
-                negative4 = Color(android.graphics.Color.parseColor("#002742")),
-                negative3 = Color(android.graphics.Color.parseColor("#0c456e")),
-                negative2 = Color(android.graphics.Color.parseColor("#165c8d")),
-                negative1 = Color(android.graphics.Color.parseColor("#1b679d")),
-                cyan8 = Color(android.graphics.Color.parseColor("#fafdff")),
-                cyan7 = Color(android.graphics.Color.parseColor("#f0f9ff")),
-                cyan6 = Color(android.graphics.Color.parseColor("#ebf5ff")),
-                cyan5 = Color(android.graphics.Color.parseColor("#e0f1ff")),
-                cyan4 = Color(android.graphics.Color.parseColor("#cce7ff")),
-                cyan3 = Color(android.graphics.Color.parseColor("#c2e2ff")),
-                cyan2 = Color(android.graphics.Color.parseColor("#79bcf6")),
-                cyan1 = Color(android.graphics.Color.parseColor("#5699dc")),
-                cyan0 = Color(android.graphics.Color.parseColor("#0870ba"))
+                negative4 = Color(parseColor("#002742")),
+                negative3 = Color(parseColor("#0c456e")),
+                negative2 = Color(parseColor("#165c8d")),
+                negative1 = Color(parseColor("#1b679d")),
+                cyan8 = Color(parseColor("#fafdff")),
+                cyan7 = Color(parseColor("#f0f9ff")),
+                cyan6 = Color(parseColor("#ebf5ff")),
+                cyan5 = Color(parseColor("#e0f1ff")),
+                cyan4 = Color(parseColor("#cce7ff")),
+                cyan3 = Color(parseColor("#c2e2ff")),
+                cyan2 = Color(parseColor("#79bcf6")),
+                cyan1 = Color(parseColor("#5699dc")),
+                cyan0 = Color(parseColor("#0870ba"))
             ),
             coolGrayAlpha = CoolGrayAlphaValuesContainer(
-                coolGrayANegative4 = Color(android.graphics.Color.parseColor("#09131aed")),
-                coolGrayANegative3 = Color(android.graphics.Color.parseColor("#0a121ae0")),
-                coolGrayANegative2 = Color(android.graphics.Color.parseColor("#1a232ddb")),
-                coolGrayANegative1 = Color(android.graphics.Color.parseColor("#1d2835cc")),
-                coolGrayA8 = Color(android.graphics.Color.parseColor("#1f529e05")),
-                coolGrayA7 = Color(android.graphics.Color.parseColor("#00295c0a")),
-                coolGrayA6 = Color(android.graphics.Color.parseColor("#022e500f")),
-                coolGrayA5 = Color(android.graphics.Color.parseColor("#10284717")),
-                coolGrayA4 = Color(android.graphics.Color.parseColor("#04294321")),
-                coolGrayA3 = Color(android.graphics.Color.parseColor("#10315633")),
-                coolGrayA2 = Color(android.graphics.Color.parseColor("#0d253f66")),
-                coolGrayA1 = Color(android.graphics.Color.parseColor("#1830498f")),
-                coolGrayA0 = Color(android.graphics.Color.parseColor("#182639bd"))
+                coolGrayANegative4 = Color(parseColor("#09131aed")),
+                coolGrayANegative3 = Color(parseColor("#0a121ae0")),
+                coolGrayANegative2 = Color(parseColor("#1a232ddb")),
+                coolGrayANegative1 = Color(parseColor("#1d2835cc")),
+                coolGrayA8 = Color(parseColor("#1f529e05")),
+                coolGrayA7 = Color(parseColor("#00295c0a")),
+                coolGrayA6 = Color(parseColor("#022e500f")),
+                coolGrayA5 = Color(parseColor("#10284717")),
+                coolGrayA4 = Color(parseColor("#04294321")),
+                coolGrayA3 = Color(parseColor("#10315633")),
+                coolGrayA2 = Color(parseColor("#0d253f66")),
+                coolGrayA1 = Color(parseColor("#1830498f")),
+                coolGrayA0 = Color(parseColor("#182639bd"))
             ),
             coolGray = CoolGrayValuesContainer(
-                negative4 = Color(android.graphics.Color.parseColor("#1b242c")),
-                negative3 = Color(android.graphics.Color.parseColor("#272e35")),
-                negative2 = Color(android.graphics.Color.parseColor("#3a424a")),
-                negative1 = Color(android.graphics.Color.parseColor("#4a545e")),
-                coolGray8 = Color(android.graphics.Color.parseColor("#fcfcfd")),
-                coolGray7 = Color(android.graphics.Color.parseColor("#f5f7f9")),
-                coolGray6 = Color(android.graphics.Color.parseColor("#f0f3f5")),
-                coolGray5 = Color(android.graphics.Color.parseColor("#eaedf0")),
-                coolGray4 = Color(android.graphics.Color.parseColor("#dee3e7")),
-                coolGray3 = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                coolGray2 = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                coolGray1 = Color(android.graphics.Color.parseColor("#7e8c9a")),
-                coolGray0 = Color(android.graphics.Color.parseColor("#555f6d"))
+                negative4 = Color(parseColor("#1b242c")),
+                negative3 = Color(parseColor("#272e35")),
+                negative2 = Color(parseColor("#3a424a")),
+                negative1 = Color(parseColor("#4a545e")),
+                coolGray8 = Color(parseColor("#fcfcfd")),
+                coolGray7 = Color(parseColor("#f5f7f9")),
+                coolGray6 = Color(parseColor("#f0f3f5")),
+                coolGray5 = Color(parseColor("#eaedf0")),
+                coolGray4 = Color(parseColor("#dee3e7")),
+                coolGray3 = Color(parseColor("#cfd6dd")),
+                coolGray2 = Color(parseColor("#9ea8b3")),
+                coolGray1 = Color(parseColor("#7e8c9a")),
+                coolGray0 = Color(parseColor("#555f6d"))
             ),
             content = ContentValuesContainer(
-                warningSecondary = Color(android.graphics.Color.parseColor("#f59638")),
-                warningPrimary = Color(android.graphics.Color.parseColor("#7a4510")),
-                tertiaryInverse = Color(android.graphics.Color.parseColor("#ffffff66")),
-                tertiary = Color(android.graphics.Color.parseColor("#7e8c9a")),
-                successSecondary = Color(android.graphics.Color.parseColor("#347434")),
-                successPrimary = Color(android.graphics.Color.parseColor("#135315")),
-                secondaryInverse = Color(android.graphics.Color.parseColor("#ffffffa3")),
-                secondary = Color(android.graphics.Color.parseColor("#555f6d")),
-                primaryInverse = Color(android.graphics.Color.parseColor("#ffffff")),
-                primary = Color(android.graphics.Color.parseColor("#272e35")),
-                infoSecondary = Color(android.graphics.Color.parseColor("#3061d5")),
-                infoPrimary = Color(android.graphics.Color.parseColor("#113997")),
-                disabledInverse = Color(android.graphics.Color.parseColor("#ffffff3d")),
-                disabled = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                dangerSecondary = Color(android.graphics.Color.parseColor("#c53434")),
-                dangerPrimary = Color(android.graphics.Color.parseColor("#6f2020")),
-                brandSecondary = Color(android.graphics.Color.parseColor("#3061d5")),
-                brandPrimary = Color(android.graphics.Color.parseColor("#113997"))
+                warningSecondary = Color(parseColor("#f59638")),
+                warningPrimary = Color(parseColor("#7a4510")),
+                tertiaryInverse = Color(parseColor("#ffffff66")),
+                tertiary = Color(parseColor("#7e8c9a")),
+                successSecondary = Color(parseColor("#347434")),
+                successPrimary = Color(parseColor("#135315")),
+                secondaryInverse = Color(parseColor("#ffffffa3")),
+                secondary = Color(parseColor("#555f6d")),
+                primaryInverse = Color(parseColor("#ffffff")),
+                primary = Color(parseColor("#272e35")),
+                infoSecondary = Color(parseColor("#3061d5")),
+                infoPrimary = Color(parseColor("#113997")),
+                disabledInverse = Color(parseColor("#ffffff3d")),
+                disabled = Color(parseColor("#9ea8b3")),
+                dangerSecondary = Color(parseColor("#c53434")),
+                dangerPrimary = Color(parseColor("#6f2020")),
+                brandSecondary = Color(parseColor("#3061d5")),
+                brandPrimary = Color(parseColor("#113997"))
             ),
             border = BorderValuesContainer(
-                warningSubtle = Color(android.graphics.Color.parseColor("#ffd4a8")),
-                warningStrong = Color(android.graphics.Color.parseColor("#f59638")),
-                successSubtle = Color(android.graphics.Color.parseColor("#c6ecc6")),
-                successStrong = Color(android.graphics.Color.parseColor("#347434")),
-                neutralSubtle = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                neutralStrong = Color(android.graphics.Color.parseColor("#555f6d")),
-                inverse = Color(android.graphics.Color.parseColor("#ffffff")),
-                infoSubtle = Color(android.graphics.Color.parseColor("#ccdcff")),
-                infoStrong = Color(android.graphics.Color.parseColor("#3061d5")),
-                defaultA = Color(android.graphics.Color.parseColor("#10284717")),
-                default = Color(android.graphics.Color.parseColor("#eaedf0")),
-                dangerSubtle = Color(android.graphics.Color.parseColor("#fccfcf")),
-                dangerStrong = Color(android.graphics.Color.parseColor("#c53434"))
+                warningSubtle = Color(parseColor("#ffd4a8")),
+                warningStrong = Color(parseColor("#f59638")),
+                successSubtle = Color(parseColor("#c6ecc6")),
+                successStrong = Color(parseColor("#347434")),
+                neutralSubtle = Color(parseColor("#cfd6dd")),
+                neutralStrong = Color(parseColor("#555f6d")),
+                inverse = Color(parseColor("#ffffff")),
+                infoSubtle = Color(parseColor("#ccdcff")),
+                infoStrong = Color(parseColor("#3061d5")),
+                defaultA = Color(parseColor("#10284717")),
+                default = Color(parseColor("#eaedf0")),
+                dangerSubtle = Color(parseColor("#fccfcf")),
+                dangerStrong = Color(parseColor("#c53434"))
             ),
             blue = BlueValuesContainer1(
-                negative4 = Color(android.graphics.Color.parseColor("#041f5d")),
-                negative3 = Color(android.graphics.Color.parseColor("#113997")),
-                negative2 = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                negative1 = Color(android.graphics.Color.parseColor("#2759ce")),
-                blue8 = Color(android.graphics.Color.parseColor("#fafbff")),
-                blue7 = Color(android.graphics.Color.parseColor("#f5f8ff")),
-                blue6 = Color(android.graphics.Color.parseColor("#ebf0ff")),
-                blue5 = Color(android.graphics.Color.parseColor("#e5eeff")),
-                blue4 = Color(android.graphics.Color.parseColor("#d6e3ff")),
-                blue3 = Color(android.graphics.Color.parseColor("#ccdcff")),
-                blue2 = Color(android.graphics.Color.parseColor("#8eb0fb")),
-                blue1 = Color(android.graphics.Color.parseColor("#6691f4")),
-                blue0 = Color(android.graphics.Color.parseColor("#3061d5"))
+                negative4 = Color(parseColor("#041f5d")),
+                negative3 = Color(parseColor("#113997")),
+                negative2 = Color(parseColor("#1e4fc2")),
+                negative1 = Color(parseColor("#2759ce")),
+                blue8 = Color(parseColor("#fafbff")),
+                blue7 = Color(parseColor("#f5f8ff")),
+                blue6 = Color(parseColor("#ebf0ff")),
+                blue5 = Color(parseColor("#e5eeff")),
+                blue4 = Color(parseColor("#d6e3ff")),
+                blue3 = Color(parseColor("#ccdcff")),
+                blue2 = Color(parseColor("#8eb0fb")),
+                blue1 = Color(parseColor("#6691f4")),
+                blue0 = Color(parseColor("#3061d5"))
             ),
             background = BackgroundValuesContainer(
-                warningSurface = Color(android.graphics.Color.parseColor("#fffcfa")),
-                warningSubtle = Color(android.graphics.Color.parseColor("#fff5eb")),
-                warningStrong = Color(android.graphics.Color.parseColor("#f59638")),
-                warningOnSubtle = Color(android.graphics.Color.parseColor("#ffe8d1")),
-                warningMuted = Color(android.graphics.Color.parseColor("#fcdec0")),
-                successSurface = Color(android.graphics.Color.parseColor("#fbfefb")),
-                successSubtle = Color(android.graphics.Color.parseColor("#f4fbf4")),
-                successStrong = Color(android.graphics.Color.parseColor("#347434")),
-                successOnSubtle = Color(android.graphics.Color.parseColor("#dff6df")),
-                successMuted = Color(android.graphics.Color.parseColor("#cff2cf")),
-                neutralSurface = Color(android.graphics.Color.parseColor("#fcfcfd")),
-                neutralSubtle = Color(android.graphics.Color.parseColor("#f5f7f9")),
-                neutralStrong = Color(android.graphics.Color.parseColor("#555f6d")),
-                neutralOnSubtle = Color(android.graphics.Color.parseColor("#eaedf0")),
-                neutralMuted = Color(android.graphics.Color.parseColor("#dee3e7")),
-                inverse = Color(android.graphics.Color.parseColor("#272e35")),
-                infoSurface = Color(android.graphics.Color.parseColor("#fafbff")),
-                infoSubtle = Color(android.graphics.Color.parseColor("#f5f8ff")),
-                infoStrong = Color(android.graphics.Color.parseColor("#3061d5")),
-                infoOnSubtle = Color(android.graphics.Color.parseColor("#e5eeff")),
-                infoMuted = Color(android.graphics.Color.parseColor("#d6e3ff")),
-                default = Color(android.graphics.Color.parseColor("#ffffff")),
-                dangerSurface = Color(android.graphics.Color.parseColor("#fffafa")),
-                dangerSubtle = Color(android.graphics.Color.parseColor("#fef5f5")),
-                dangerStrong = Color(android.graphics.Color.parseColor("#c53434")),
-                dangerOnSubtle = Color(android.graphics.Color.parseColor("#fee7e7")),
-                dangerMuted = Color(android.graphics.Color.parseColor("#fcd9d9")),
-                brandSurface = Color(android.graphics.Color.parseColor("#fafbff")),
-                brandSubtle = Color(android.graphics.Color.parseColor("#f5f8ff")),
-                brandStrong = Color(android.graphics.Color.parseColor("#3061d5")),
-                brandOnSubtle = Color(android.graphics.Color.parseColor("#e5eeff")),
-                brandMuted = Color(android.graphics.Color.parseColor("#d6e3ff"))
+                warningSurface = Color(parseColor("#fffcfa")),
+                warningSubtle = Color(parseColor("#fff5eb")),
+                warningStrong = Color(parseColor("#f59638")),
+                warningOnSubtle = Color(parseColor("#ffe8d1")),
+                warningMuted = Color(parseColor("#fcdec0")),
+                successSurface = Color(parseColor("#fbfefb")),
+                successSubtle = Color(parseColor("#f4fbf4")),
+                successStrong = Color(parseColor("#347434")),
+                successOnSubtle = Color(parseColor("#dff6df")),
+                successMuted = Color(parseColor("#cff2cf")),
+                neutralSurface = Color(parseColor("#fcfcfd")),
+                neutralSubtle = Color(parseColor("#f5f7f9")),
+                neutralStrong = Color(parseColor("#555f6d")),
+                neutralOnSubtle = Color(parseColor("#eaedf0")),
+                neutralMuted = Color(parseColor("#dee3e7")),
+                inverse = Color(parseColor("#272e35")),
+                infoSurface = Color(parseColor("#fafbff")),
+                infoSubtle = Color(parseColor("#f5f8ff")),
+                infoStrong = Color(parseColor("#3061d5")),
+                infoOnSubtle = Color(parseColor("#e5eeff")),
+                infoMuted = Color(parseColor("#d6e3ff")),
+                default = Color(parseColor("#ffffff")),
+                dangerSurface = Color(parseColor("#fffafa")),
+                dangerSubtle = Color(parseColor("#fef5f5")),
+                dangerStrong = Color(parseColor("#c53434")),
+                dangerOnSubtle = Color(parseColor("#fee7e7")),
+                dangerMuted = Color(parseColor("#fcd9d9")),
+                brandSurface = Color(parseColor("#fafbff")),
+                brandSubtle = Color(parseColor("#f5f8ff")),
+                brandStrong = Color(parseColor("#3061d5")),
+                brandOnSubtle = Color(parseColor("#e5eeff")),
+                brandMuted = Color(parseColor("#d6e3ff"))
             ),
             aquamarine = AquamarineValuesContainer1(
-                negative4 = Color(android.graphics.Color.parseColor("#012d26")),
-                negative3 = Color(android.graphics.Color.parseColor("#0d4a42")),
-                negative2 = Color(android.graphics.Color.parseColor("#15665b")),
-                negative1 = Color(android.graphics.Color.parseColor("#1a7061")),
-                aquamarine8 = Color(android.graphics.Color.parseColor("#fbfefe")),
-                aquamarine7 = Color(android.graphics.Color.parseColor("#f0faf9")),
-                aquamarine6 = Color(android.graphics.Color.parseColor("#e2f8f5")),
-                aquamarine5 = Color(android.graphics.Color.parseColor("#daf6f3")),
-                aquamarine4 = Color(android.graphics.Color.parseColor("#c5f2ec")),
-                aquamarine3 = Color(android.graphics.Color.parseColor("#bee9e4")),
-                aquamarine2 = Color(android.graphics.Color.parseColor("#6ec9bf")),
-                aquamarine1 = Color(android.graphics.Color.parseColor("#3da496")),
-                aquamarine0 = Color(android.graphics.Color.parseColor("#097b68"))
+                negative4 = Color(parseColor("#012d26")),
+                negative3 = Color(parseColor("#0d4a42")),
+                negative2 = Color(parseColor("#15665b")),
+                negative1 = Color(parseColor("#1a7061")),
+                aquamarine8 = Color(parseColor("#fbfefe")),
+                aquamarine7 = Color(parseColor("#f0faf9")),
+                aquamarine6 = Color(parseColor("#e2f8f5")),
+                aquamarine5 = Color(parseColor("#daf6f3")),
+                aquamarine4 = Color(parseColor("#c5f2ec")),
+                aquamarine3 = Color(parseColor("#bee9e4")),
+                aquamarine2 = Color(parseColor("#6ec9bf")),
+                aquamarine1 = Color(parseColor("#3da496")),
+                aquamarine0 = Color(parseColor("#097b68"))
             ),
             action = ActionValuesContainer(
                 success = SuccessValuesContainer(
-                    actionSuccessSubtleSelected = Color(android.graphics.Color.parseColor("#dff6df")),
-                    actionSuccessSubtleNormal = Color(android.graphics.Color.parseColor("#e6f9e6")),
-                    actionSuccessSubtleHover = Color(android.graphics.Color.parseColor("#dff6df")),
-                    actionSuccessSubtleActive = Color(android.graphics.Color.parseColor("#c6ecc6")),
-                    actionSuccessSelected = Color(android.graphics.Color.parseColor("#246626")),
-                    actionSuccessNormal = Color(android.graphics.Color.parseColor("#347434")),
-                    actionSuccessHover = Color(android.graphics.Color.parseColor("#246626")),
-                    actionSuccessActive = Color(android.graphics.Color.parseColor("#135315"))
+                    actionSuccessSubtleSelected = Color(parseColor("#dff6df")),
+                    actionSuccessSubtleNormal = Color(parseColor("#e6f9e6")),
+                    actionSuccessSubtleHover = Color(parseColor("#dff6df")),
+                    actionSuccessSubtleActive = Color(parseColor("#c6ecc6")),
+                    actionSuccessSelected = Color(parseColor("#246626")),
+                    actionSuccessNormal = Color(parseColor("#347434")),
+                    actionSuccessHover = Color(parseColor("#246626")),
+                    actionSuccessActive = Color(parseColor("#135315"))
                 ),
                 reverseInverse = ReverseInverseValuesContainer(
-                    actionReverseInverseSelected = Color(android.graphics.Color.parseColor("#1d2835cc")),
-                    actionReverseInverseNormal = Color(android.graphics.Color.parseColor("#0a121ae0")),
-                    actionReverseInverseHover = Color(android.graphics.Color.parseColor("#1d2835cc")),
-                    actionReverseInverseActive = Color(android.graphics.Color.parseColor("#182639bd"))
+                    actionReverseInverseSelected = Color(parseColor("#1d2835cc")),
+                    actionReverseInverseNormal = Color(parseColor("#0a121ae0")),
+                    actionReverseInverseHover = Color(parseColor("#1d2835cc")),
+                    actionReverseInverseActive = Color(parseColor("#182639bd"))
                 ),
                 primary = PrimaryValuesContainer(
-                    actionPrimarySubtleSelected = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    actionPrimarySubtleNormal = Color(android.graphics.Color.parseColor("#ebf0ff")),
-                    actionPrimarySubtleHover = Color(android.graphics.Color.parseColor("#e5eeff")),
-                    actionPrimarySubtleActive = Color(android.graphics.Color.parseColor("#ccdcff")),
-                    actionPrimarySelected = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                    actionPrimaryNormal = Color(android.graphics.Color.parseColor("#3061d5")),
-                    actionPrimaryHover = Color(android.graphics.Color.parseColor("#1e4fc2")),
-                    actionPrimaryActive = Color(android.graphics.Color.parseColor("#113997"))
+                    actionPrimarySubtleSelected = Color(parseColor("#e5eeff")),
+                    actionPrimarySubtleNormal = Color(parseColor("#ebf0ff")),
+                    actionPrimarySubtleHover = Color(parseColor("#e5eeff")),
+                    actionPrimarySubtleActive = Color(parseColor("#ccdcff")),
+                    actionPrimarySelected = Color(parseColor("#1e4fc2")),
+                    actionPrimaryNormal = Color(parseColor("#3061d5")),
+                    actionPrimaryHover = Color(parseColor("#1e4fc2")),
+                    actionPrimaryActive = Color(parseColor("#113997"))
                 ),
                 outline = OutlineValuesContainer(
-                    actionOutlineSelected = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                    actionOutlineNormal = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    actionOutlineHover = Color(android.graphics.Color.parseColor("#9ea8b3")),
-                    actionOutlineActive = Color(android.graphics.Color.parseColor("#7e8c9a"))
+                    actionOutlineSelected = Color(parseColor("#9ea8b3")),
+                    actionOutlineNormal = Color(parseColor("#cfd6dd")),
+                    actionOutlineHover = Color(parseColor("#9ea8b3")),
+                    actionOutlineActive = Color(parseColor("#7e8c9a"))
                 ),
                 neutral = NeutralValuesContainer(
-                    actionNeutralSubtleSelected = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    actionNeutralSubtleNormal = Color(android.graphics.Color.parseColor("#f0f3f5")),
-                    actionNeutralSubtleHover = Color(android.graphics.Color.parseColor("#eaedf0")),
-                    actionNeutralSubtleActive = Color(android.graphics.Color.parseColor("#cfd6dd")),
-                    actionNeutralSelected = Color(android.graphics.Color.parseColor("#3a424a")),
-                    actionNeutralNormal = Color(android.graphics.Color.parseColor("#4a545e")),
-                    actionNeutralHover = Color(android.graphics.Color.parseColor("#3a424a")),
-                    actionNeutralActive = Color(android.graphics.Color.parseColor("#272e35"))
+                    actionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
+                    actionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
+                    actionNeutralSubtleHover = Color(parseColor("#eaedf0")),
+                    actionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
+                    actionNeutralSelected = Color(parseColor("#3a424a")),
+                    actionNeutralNormal = Color(parseColor("#4a545e")),
+                    actionNeutralHover = Color(parseColor("#3a424a")),
+                    actionNeutralActive = Color(parseColor("#272e35"))
                 ),
                 inverse = InverseValuesContainer(
-                    actionInverseSelected = Color(android.graphics.Color.parseColor("#ffffffd1")),
-                    actionInverseNormal = Color(android.graphics.Color.parseColor("#ffffff")),
-                    actionInverseHover = Color(android.graphics.Color.parseColor("#ffffffd1")),
-                    actionInverseActive = Color(android.graphics.Color.parseColor("#ffffffb8"))
+                    actionInverseSelected = Color(parseColor("#ffffffd1")),
+                    actionInverseNormal = Color(parseColor("#ffffff")),
+                    actionInverseHover = Color(parseColor("#ffffffd1")),
+                    actionInverseActive = Color(parseColor("#ffffffb8"))
                 ),
                 ghost = GhostValuesContainer(
-                    actionGhostSelected = Color(android.graphics.Color.parseColor("#022e500f")),
-                    actionGhostNormal = Color(android.graphics.Color.parseColor("#ffffff00")),
-                    actionGhostInverseSelected = Color(android.graphics.Color.parseColor("#ffffff1a")),
-                    actionGhostInverseHover = Color(android.graphics.Color.parseColor("#ffffff1a")),
-                    actionGhostInverseActive = Color(android.graphics.Color.parseColor("#ffffff1f")),
-                    actionGhostHover = Color(android.graphics.Color.parseColor("#022e500f")),
-                    actionGhostDangerSelected = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    actionGhostDangerHover = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    actionGhostDangerActive = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    actionGhostActive = Color(android.graphics.Color.parseColor("#10284717"))
+                    actionGhostSelected = Color(parseColor("#022e500f")),
+                    actionGhostNormal = Color(parseColor("#ffffff00")),
+                    actionGhostInverseSelected = Color(parseColor("#ffffff1a")),
+                    actionGhostInverseHover = Color(parseColor("#ffffff1a")),
+                    actionGhostInverseActive = Color(parseColor("#ffffff1f")),
+                    actionGhostHover = Color(parseColor("#022e500f")),
+                    actionGhostDangerSelected = Color(parseColor("#ffebeb")),
+                    actionGhostDangerHover = Color(parseColor("#ffebeb")),
+                    actionGhostDangerActive = Color(parseColor("#fee7e7")),
+                    actionGhostActive = Color(parseColor("#10284717"))
                 ),
                 danger = DangerValuesContainer(
-                    actionDangerSubtleSelected = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    actionDangerSubtleNormal = Color(android.graphics.Color.parseColor("#ffebeb")),
-                    actionDangerSubtleHover = Color(android.graphics.Color.parseColor("#fee7e7")),
-                    actionDangerSubtleActive = Color(android.graphics.Color.parseColor("#fccfcf")),
-                    actionDangerSelected = Color(android.graphics.Color.parseColor("#952d2d")),
-                    actionDangerNormal = Color(android.graphics.Color.parseColor("#c53434")),
-                    actionDangerHover = Color(android.graphics.Color.parseColor("#952d2d")),
-                    actionDangerActive = Color(android.graphics.Color.parseColor("#6f2020"))
+                    actionDangerSubtleSelected = Color(parseColor("#fee7e7")),
+                    actionDangerSubtleNormal = Color(parseColor("#ffebeb")),
+                    actionDangerSubtleHover = Color(parseColor("#fee7e7")),
+                    actionDangerSubtleActive = Color(parseColor("#fccfcf")),
+                    actionDangerSelected = Color(parseColor("#952d2d")),
+                    actionDangerNormal = Color(parseColor("#c53434")),
+                    actionDangerHover = Color(parseColor("#952d2d")),
+                    actionDangerActive = Color(parseColor("#6f2020"))
                 )
             )
         ),
@@ -1246,7 +1334,7 @@ val localDesign = staticCompositionLocalOf {
             value1025 = 82.0
         )
     )
-  
+
 }
 
 object FiberTheme {
