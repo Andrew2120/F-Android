@@ -249,7 +249,7 @@ val designSystem = DesignSystem(
                 semanticInfo0 = Color(parseColor("#3061d5"))
             ),
             danger = DangerValuesContainer2(
-                semanticDangerNegative4 = Color(parseColor("#246626")),
+                semanticDangerNegative4 = Color(parseColor("#3061d5")),
                 semanticDangerNegative3 = Color(parseColor("#6f2020")),
                 semanticDangerNegative2 = Color(parseColor("#952d2d")),
                 semanticDangerNegative1 = Color(parseColor("#a13636")),
@@ -289,7 +289,7 @@ val designSystem = DesignSystem(
             red2 = Color(parseColor("#f49090")),
             red1 = Color(parseColor("#f26363")),
             red0 = Color(parseColor("#c53434")),
-            negative4 = Color(parseColor("#246626")),
+            negative4 = Color(parseColor("#3061d5")),
             negative3 = Color(parseColor("#6f2020")),
             negative2 = Color(parseColor("#952d2d")),
             negative1 = Color(parseColor("#a13636"))
