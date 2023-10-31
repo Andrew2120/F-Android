@@ -15,8 +15,13 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.b_labs.fiber_tokens.FiberTheme.designSystem
-import com.b_labs.fiber_tokens.localDesign
+import com.b_labs.fiber_retail.designSystem
+import com.b_labs.fiber_tokens.FiberTheme.sizing
+import com.b_labs.fiber_tokens.FiberTheme.spacing
+import com.b_labs.fiber_tokens.FiberTheme.typography
+import com.b_labs.fiber_tokens.designSystem
+import com.b_labs.fiber_tokens.localColors
+import com.b_labs.fiber_tokens.localTypography
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -40,11 +45,12 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+
 @Composable
 fun FiberAndroid1Theme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
@@ -64,8 +70,12 @@ fun FiberAndroid1Theme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
+    com.b_labs.fiber_retail.designSystem.isDark = darkTheme
 
-    CompositionLocalProvider(localDesign provides designSystem) {
+    CompositionLocalProvider(
+        localTypography provides typography,
+        localColors provides com.b_labs.fiber_retail.designSystem.color,
+    ) {
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography,

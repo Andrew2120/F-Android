@@ -51,7 +51,7 @@ android {
 
 dependencies {
     implementation(project(":fiber-components"))
-    implementation(project(":fiber-deel"))
+    implementation(project(":fiber-retail"))
     implementation(project(":fiber-tokens"))
 
     implementation("androidx.core:core-ktx:1.9.0")
