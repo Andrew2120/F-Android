@@ -2,6 +2,7 @@ package com.b_labs.app.ui.theme
 
 import android.app.Activity
 import android.os.Build
+import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -15,13 +16,17 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.b_labs.fiber_retail.designSystem
-import com.b_labs.fiber_tokens.FiberTheme.sizing
-import com.b_labs.fiber_tokens.FiberTheme.spacing
-import com.b_labs.fiber_tokens.FiberTheme.typography
-import com.b_labs.fiber_tokens.designSystem
-import com.b_labs.fiber_tokens.localColors
-import com.b_labs.fiber_tokens.localTypography
+import com.b_labs.fiber_retail.retailDesignSystem
+import com.blabs.hicomponents.theme.HITheme
+
+//
+//import com.b_labs.fiber_retail.designSystem
+//import com.b_labs.fiber_tokens.FiberTheme.sizing
+//import com.b_labs.fiber_tokens.FiberTheme.spacing
+//import com.b_labs.fiber_tokens.FiberTheme.typography
+//import com.b_labs.fiber_tokens.designSystem
+//import com.b_labs.fiber_tokens.localColors
+//import com.b_labs.fiber_tokens.localTypography
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -53,6 +58,7 @@ fun FiberAndroid1Theme(
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
+
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
@@ -70,16 +76,16 @@ fun FiberAndroid1Theme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
-    com.b_labs.fiber_retail.designSystem.isDark = darkTheme
+    HITheme.current.isDark = darkTheme
 
-    CompositionLocalProvider(
-        localTypography provides typography,
-        localColors provides com.b_labs.fiber_retail.designSystem.color,
-    ) {
+//    CompositionLocalProvider(
+//        localTypography provides typography,
+//        localColors provides com.b_labs.fiber_retail.designSystem.color,
+//    ) {
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography,
             content = content
         )
-    }
+//    }
 }

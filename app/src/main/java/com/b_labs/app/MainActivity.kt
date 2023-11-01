@@ -16,17 +16,14 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.b_labs.app.ui.theme.FiberAndroid1Theme
-import com.b_labs.fiber_components.buttons.PrimaryButton
-import com.b_labs.fiber_tokens.FiberTheme
-import com.b_labs.fiber_tokens.FontUnit
-import com.b_labs.fiber_tokens.designSystem
-import com.b_labs.fiber_tokens.dp
+import com.blabs.hicomponents.components.PrimaryButton
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,7 +48,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        designSystem.testUnit.dp()
+       Text(text = "hello")
         PrimaryButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Login")
 
         PrimaryButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Register")
