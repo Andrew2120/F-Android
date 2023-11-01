@@ -2014,7 +2014,7 @@ val retailDesignSystem = DesignSystem(
         letterSpacing100 = -0.006,
         letterSpacing0 = 0.0
     ),
-     testUnit = FontUnit.PX(30.0),
+    testUnit = FontUnit.PX(30.0),
     lineHeight = LineHeightValuesContainer(
         value900 = 72.0,
         value825 = 66.0,

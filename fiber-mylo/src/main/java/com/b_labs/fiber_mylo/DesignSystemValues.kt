@@ -1,4 +1,4 @@
-package com.b_labs.fiber_deel
+package com.b_labs.fiber_mylo
 
 import android.content.Context
 import androidx.compose.ui.unit.*

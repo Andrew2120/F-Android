@@ -17,7 +17,5 @@ rootProject.name = "Fiber-Android1"
 include(":fiber-deel")
 include(":fiber-retail")
 include(":fiber-mylo")
-include(":fiber-components")
-include(":fiber-tokens")
 include(":app")
 include(":HIComponents")

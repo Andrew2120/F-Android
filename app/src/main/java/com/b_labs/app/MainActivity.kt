@@ -24,6 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.b_labs.app.ui.theme.FiberAndroid1Theme
 import com.blabs.hicomponents.components.PrimaryButton
+import com.blabs.hicomponents.theme.HITheme
+import com.blabs.hicomponents.theme.localDesignSystem
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,12 +50,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-       Text(text = "hello")
+        Text(text = "hello")
+
         PrimaryButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Login")
 
         PrimaryButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Register")
-
     }
+
 
 }
 

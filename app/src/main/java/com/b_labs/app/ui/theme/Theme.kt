@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import com.b_labs.fiber_retail.retailDesignSystem
 import com.blabs.hicomponents.theme.HITheme
+import com.blabs.hicomponents.theme.localDesignSystem
 
 //
 //import com.b_labs.fiber_retail.designSystem
@@ -68,6 +69,7 @@ fun FiberAndroid1Theme(
         darkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
+
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
@@ -76,16 +78,16 @@ fun FiberAndroid1Theme(
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }
-    HITheme.current.isDark = darkTheme
 
-//    CompositionLocalProvider(
-//        localTypography provides typography,
-//        localColors provides com.b_labs.fiber_retail.designSystem.color,
-//    ) {
+    CompositionLocalProvider(
+        localDesignSystem provides retailDesignSystem,
+    ) {
+        HITheme.designSystem.isDark = darkTheme
+
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography,
             content = content
         )
-//    }
+    }
 }

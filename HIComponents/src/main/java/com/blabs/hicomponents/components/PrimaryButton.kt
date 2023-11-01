@@ -15,19 +15,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.blabs.hicomponents.theme.DesignSystem
-import com.blabs.hicomponents.theme.HITheme
+import com.blabs.hicomponents.theme.localDesignSystem
+import com.blabs.hicomponents.theme.localDesignSystem
 
 @Composable
 fun PrimaryButton(
     text: String,
     modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(HITheme.current.space.padding.padding2xSmall.dp),
+    contentPadding: PaddingValues = PaddingValues(localDesignSystem.current.space.padding.padding2xSmall.dp),
     isEnabled: Boolean = true,
-    shape: Shape = RoundedCornerShape(HITheme.current.borderRadius.medium.dp),
+    shape: Shape = RoundedCornerShape(localDesignSystem.current.borderRadius.medium.dp),
     colors: ButtonColors =
         ButtonDefaults.buttonColors(
-            containerColor = HITheme.current.color.action.primary.actionPrimaryNormal,
-            contentColor = HITheme.current.color.content.primary
+            containerColor = localDesignSystem.current.color.action.primary.actionPrimaryNormal,
+            contentColor = localDesignSystem.current.color.content.primary
         ),
 ) {
     Button(
@@ -39,8 +40,8 @@ fun PrimaryButton(
         content = {
             Text(
                 text = text,
-                fontSize = HITheme.current.typography.body.typographyBodyMedium.fontSize.sp,
-                fontWeight = FontWeight(HITheme.current.typography.body.typographyBodyMedium.fontWeight.toInt())
+                fontSize = localDesignSystem.current.typography.body.typographyBodyMedium.fontSize.sp,
+                fontWeight = FontWeight(localDesignSystem.current.typography.body.typographyBodyMedium.fontWeight.toInt())
             )
 
         },

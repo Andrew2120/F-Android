@@ -4,18 +4,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.staticCompositionLocalOf
 
 object HITheme {
-    var current: DesignSystem =baseDesignSystem
+    var current: DesignSystem = baseDesignSystem
         private set
-
-
-    private var LocalTheme = staticCompositionLocalOf {
-        baseDesignSystem
-    }
 
 
     fun setCurrentTheme(newTheme: DesignSystem) {
         current = newTheme
     }
 
+    val designSystem
+        @Composable
+        get() = localDesignSystem.current
+
 }
 
+val localDesignSystem = staticCompositionLocalOf {
+    baseDesignSystem
+}
