@@ -51,6 +51,8 @@ android {
 
 dependencies {
     implementation(project(":fiber-mylo"))
+    implementation(project(":fiber-retail"))
+    implementation(project(":fiber-deel"))
     implementation(project(":HIComponents"))
 
     implementation("androidx.core:core-ktx:1.9.0")
