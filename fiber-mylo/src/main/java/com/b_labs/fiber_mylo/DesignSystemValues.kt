@@ -1,1603 +1,1040 @@
 package com.b_labs.fiber_mylo
 
-import android.content.Context
-import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.Color
-import android.graphics.Color.parseColor
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalDensity
-import com.blabs.hicomponents.theme.ContentValuesContainer
-import com.blabs.hicomponents.theme.BorderValuesContainer
-import com.blabs.hicomponents.theme.BackgroundValuesContainer
-import com.blabs.hicomponents.theme.PrimaryValuesContainer
-import com.blabs.hicomponents.theme.NeutralValuesContainer
-import com.blabs.hicomponents.theme.SuccessValuesContainer
-import com.blabs.hicomponents.theme.DangerValuesContainer
-import com.blabs.hicomponents.theme.GhostValuesContainer
-import com.blabs.hicomponents.theme.OutlineValuesContainer
-import com.blabs.hicomponents.theme.InverseValuesContainer
-import com.blabs.hicomponents.theme.ReverseInverseValuesContainer
-import com.blabs.hicomponents.theme.ActionValuesContainer
-import com.blabs.hicomponents.theme.DefaultValuesContainer
-import com.blabs.hicomponents.theme.NeutralValuesContainer1
-import com.blabs.hicomponents.theme.DangerValuesContainer1
-import com.blabs.hicomponents.theme.GhostValuesContainer1
-import com.blabs.hicomponents.theme.DisabledValuesContainer
-import com.blabs.hicomponents.theme.BorderValuesContainer1
-import com.blabs.hicomponents.theme.BackgroundValuesContainer1
-import com.blabs.hicomponents.theme.InverseValuesContainer1
-import com.blabs.hicomponents.theme.FocusValuesContainer
-import com.blabs.hicomponents.theme.InteractionValuesContainer
-import com.blabs.hicomponents.theme.GrayValuesContainer
-import com.blabs.hicomponents.theme.WhiteValuesContainer
-import com.blabs.hicomponents.theme.RedValuesContainer
-import com.blabs.hicomponents.theme.MagentaValuesContainer
-import com.blabs.hicomponents.theme.PurpleValuesContainer
-import com.blabs.hicomponents.theme.VioletValuesContainer
-import com.blabs.hicomponents.theme.BlueValuesContainer
-import com.blabs.hicomponents.theme.CyanValuesContainer
-import com.blabs.hicomponents.theme.TealValuesContainer
-import com.blabs.hicomponents.theme.AquamarineValuesContainer
-import com.blabs.hicomponents.theme.GreenValuesContainer
-import com.blabs.hicomponents.theme.OrangeValuesContainer
-import com.blabs.hicomponents.theme.NonSemanticValuesContainer
-import com.blabs.hicomponents.theme.BrandValuesContainer
-import com.blabs.hicomponents.theme.NeutralValuesContainer2
-import com.blabs.hicomponents.theme.NeutralAlphaValuesContainer
-import com.blabs.hicomponents.theme.InfoValuesContainer
-import com.blabs.hicomponents.theme.SuccessValuesContainer1
-import com.blabs.hicomponents.theme.WarningValuesContainer
-import com.blabs.hicomponents.theme.DangerValuesContainer2
-import com.blabs.hicomponents.theme.SemanticValuesContainer
-import com.blabs.hicomponents.theme.CoolGrayValuesContainer
-import com.blabs.hicomponents.theme.CoolGrayAlphaValuesContainer
-import com.blabs.hicomponents.theme.NeutralGrayValuesContainer
-import com.blabs.hicomponents.theme.NeutralGrayAlphaValuesContainer
-import com.blabs.hicomponents.theme.WarmGrayValuesContainer
-import com.blabs.hicomponents.theme.WarmGrayAlphaValuesContainer
-import com.blabs.hicomponents.theme.WhiteAlphaValuesContainer
-import com.blabs.hicomponents.theme.RedValuesContainer1
-import com.blabs.hicomponents.theme.MagentaValuesContainer1
-import com.blabs.hicomponents.theme.PurpleValuesContainer1
-import com.blabs.hicomponents.theme.VioletValuesContainer1
-import com.blabs.hicomponents.theme.BlueValuesContainer1
-import com.blabs.hicomponents.theme.CyanValuesContainer1
-import com.blabs.hicomponents.theme.TealValuesContainer1
-import com.blabs.hicomponents.theme.AquamarineValuesContainer1
-import com.blabs.hicomponents.theme.GreenValuesContainer1
-import com.blabs.hicomponents.theme.OrangeValuesContainer1
-import com.blabs.hicomponents.theme.TransparentValuesContainer
-import com.blabs.hicomponents.theme.ColorValuesContainer
-import com.blabs.hicomponents.theme.BorderWidthValuesContainer
-import com.blabs.hicomponents.theme.BorderRadiusValuesContainer
-import com.blabs.hicomponents.theme.SizeValuesContainer
-import com.blabs.hicomponents.theme.PaddingValuesContainer
-import com.blabs.hicomponents.theme.GapValuesContainer
-import com.blabs.hicomponents.theme.SpaceValuesContainer
-import com.blabs.hicomponents.theme.OpacityValuesContainer
-import com.blabs.hicomponents.theme.Typography
-import com.blabs.hicomponents.theme.CodeValuesContainer
-import com.blabs.hicomponents.theme.UtilityValuesContainer
-import com.blabs.hicomponents.theme.BodyValuesContainer
-import com.blabs.hicomponents.theme.HeadingValuesContainer
-import com.blabs.hicomponents.theme.DisplayValuesContainer
-import com.blabs.hicomponents.theme.TypographyValuesContainer
-import com.blabs.hicomponents.theme.DimensionValuesContainer
-import com.blabs.hicomponents.theme.BoxShadow
-import com.blabs.hicomponents.theme.BottomValuesContainer
+import androidx.core.graphics.toColorInt
+import com.blabs.hicomponents.theme.DSAction
+import com.blabs.hicomponents.theme.DSAquamarine
+import com.blabs.hicomponents.theme.DSBackground
+import com.blabs.hicomponents.theme.DSBackground1
+import com.blabs.hicomponents.theme.DSBlue
+import com.blabs.hicomponents.theme.DSBody
+import com.blabs.hicomponents.theme.DSBorder
+import com.blabs.hicomponents.theme.DSBorder1
+import com.blabs.hicomponents.theme.DSBorderRadius
+import com.blabs.hicomponents.theme.DSBorderWidth
+import com.blabs.hicomponents.theme.DSBrand
+import com.blabs.hicomponents.theme.DSCode
+import com.blabs.hicomponents.theme.DSColor
+import com.blabs.hicomponents.theme.DSContent
+import com.blabs.hicomponents.theme.DSCyan
+import com.blabs.hicomponents.theme.DSDanger
+import com.blabs.hicomponents.theme.DSDanger1
+import com.blabs.hicomponents.theme.DSDanger2
+import com.blabs.hicomponents.theme.DSDefault
+import com.blabs.hicomponents.theme.DSDisabled
+import com.blabs.hicomponents.theme.DSDisplay
+import com.blabs.hicomponents.theme.DSFocus
+import com.blabs.hicomponents.theme.DSGap
+import com.blabs.hicomponents.theme.DSGhost
+import com.blabs.hicomponents.theme.DSGhost1
+import com.blabs.hicomponents.theme.DSGray
+import com.blabs.hicomponents.theme.DSGreen
+import com.blabs.hicomponents.theme.DSHeading
+import com.blabs.hicomponents.theme.DSInfo
+import com.blabs.hicomponents.theme.DSInteraction
+import com.blabs.hicomponents.theme.DSInverse
+import com.blabs.hicomponents.theme.DSInverse1
+import com.blabs.hicomponents.theme.DSMagenta
+import com.blabs.hicomponents.theme.DSNeutral
+import com.blabs.hicomponents.theme.DSNeutral1
+import com.blabs.hicomponents.theme.DSNeutral2
+import com.blabs.hicomponents.theme.DSNeutralAlpha
+import com.blabs.hicomponents.theme.DSNonSemantic
+import com.blabs.hicomponents.theme.DSOpacity
+import com.blabs.hicomponents.theme.DSOrange
+import com.blabs.hicomponents.theme.DSOutline
+import com.blabs.hicomponents.theme.DSPadding
+import com.blabs.hicomponents.theme.DSPrimary
+import com.blabs.hicomponents.theme.DSPurple
+import com.blabs.hicomponents.theme.DSRed
+import com.blabs.hicomponents.theme.DSReverseInverse
+import com.blabs.hicomponents.theme.DSSemantic
+import com.blabs.hicomponents.theme.DSSize
+import com.blabs.hicomponents.theme.DSSpace
+import com.blabs.hicomponents.theme.DSSuccess
+import com.blabs.hicomponents.theme.DSSuccess1
+import com.blabs.hicomponents.theme.DSTeal
+import com.blabs.hicomponents.theme.DSTypography
+import com.blabs.hicomponents.theme.DSUtility
+import com.blabs.hicomponents.theme.DSViolet
+import com.blabs.hicomponents.theme.DSWarning
+import com.blabs.hicomponents.theme.DSWhite
 import com.blabs.hicomponents.theme.DesignSystem
-import com.blabs.hicomponents.theme.TopValuesContainer
-import com.blabs.hicomponents.theme.ElevationValuesContainer
-import com.blabs.hicomponents.theme.FontFamilyValuesContainer
-import com.blabs.hicomponents.theme.FontSizeValuesContainer
-import com.blabs.hicomponents.theme.FontUnit
-import com.blabs.hicomponents.theme.FontWeightValuesContainer
-import com.blabs.hicomponents.theme.LetterSpacingValuesContainer
-import com.blabs.hicomponents.theme.LineHeightValuesContainer
+import com.blabs.hicomponents.theme.Typography
 
-val designSystem = DesignSystem(
-    colorLight = ColorValuesContainer(
-        whiteAlpha = WhiteAlphaValuesContainer(
-            whiteANegative9 = Color(parseColor("#ffffff14")),
-            whiteANegative8 = Color(parseColor("#ffffff1a")),
-            whiteANegative7 = Color(parseColor("#ffffff1f")),
-            whiteANegative6 = Color(parseColor("#ffffff3d")),
-            whiteANegative5 = Color(parseColor("#ffffff66")),
-            whiteANegative4 = Color(parseColor("#ffffffa3")),
-            whiteANegative3 = Color(parseColor("#ffffffad")),
-            whiteANegative2 = Color(parseColor("#ffffffb8")),
-            whiteANegative12 = Color(parseColor("#ffffff05")),
-            whiteANegative11 = Color(parseColor("#ffffff08")),
-            whiteANegative10 = Color(parseColor("#ffffff0d")),
-            whiteANegative1 = Color(parseColor("#ffffffd1")),
-            whiteA0 = Color(parseColor("#ffffff"))
-        ),
-        warmGrayAlpha = WarmGrayAlphaValuesContainer(
-            warmGrayANegative4 = Color(parseColor("#131311ed")),
-            warmGrayANegative3 = Color(parseColor("#12120de0")),
-            warmGrayANegative2 = Color(parseColor("#22221bdb")),
-            warmGrayANegative1 = Color(parseColor("#272720cc")),
-            warmGrayA8 = Color(parseColor("#52525205")),
-            warmGrayA7 = Color(parseColor("#2f2f2d0a")),
-            warmGrayA6 = Color(parseColor("#2f2f0e0f")),
-            warmGrayA5 = Color(parseColor("#22220217")),
-            warmGrayA4 = Color(parseColor("#33331421")),
-            warmGrayA3 = Color(parseColor("#3e3e1d33")),
-            warmGrayA2 = Color(parseColor("#28281166")),
-            warmGrayA1 = Color(parseColor("#2f2f238f")),
-            warmGrayA0 = Color(parseColor("#26261cbd"))
-        ),
-        warmGray = WarmGrayValuesContainer(
-            warmGray8 = Color(parseColor("#fdfdfc")),
-            warmGray7 = Color(parseColor("#f8f8f7")),
-            warmGray6 = Color(parseColor("#f3f3f1")),
-            warmGray5 = Color(parseColor("#eaeae6")),
-            warmGray4 = Color(parseColor("#e5e5e1")),
-            warmGray3 = Color(parseColor("#d9d9d3")),
-            warmGray2 = Color(parseColor("#a8a89f")),
-            warmGray1 = Color(parseColor("#8b8b84")),
-            warmGray0 = Color(parseColor("#5f5f58")),
-            negative4 = Color(parseColor("#222220")),
-            negative3 = Color(parseColor("#30302c")),
-            negative2 = Color(parseColor("#40403a")),
-            negative1 = Color(parseColor("#52524c"))
-        ),
-        violet = VioletValuesContainer1(
-            violet8 = Color(parseColor("#fbfaff")),
-            violet7 = Color(parseColor("#f7f5ff")),
-            violet6 = Color(parseColor("#f3f0ff")),
-            violet5 = Color(parseColor("#eeebff")),
-            violet4 = Color(parseColor("#e3e0ff")),
-            violet3 = Color(parseColor("#dcd6ff")),
-            violet2 = Color(parseColor("#aba2fb")),
-            violet1 = Color(parseColor("#927ef1")),
-            violet0 = Color(parseColor("#634eca")),
-            negative4 = Color(parseColor("#201263")),
-            negative3 = Color(parseColor("#39288a")),
-            negative2 = Color(parseColor("#4e38bc")),
-            negative1 = Color(parseColor("#573fcf"))
-        ),
-        transparent = TransparentValuesContainer(
-            transparent = Color(parseColor("#ffffff00"))
-        ),
-        teal = TealValuesContainer1(
-            teal8 = Color(parseColor("#fafeff")),
-            teal7 = Color(parseColor("#f0fbff")),
-            teal6 = Color(parseColor("#e8f7fc")),
-            teal5 = Color(parseColor("#e0f3fa")),
-            teal4 = Color(parseColor("#c5ecf7")),
-            teal3 = Color(parseColor("#b8e8f5")),
-            teal2 = Color(parseColor("#7ac0dc")),
-            teal1 = Color(parseColor("#4f9eba")),
-            teal0 = Color(parseColor("#077597")),
-            negative4 = Color(parseColor("#012a37")),
-            negative3 = Color(parseColor("#0a495c")),
-            negative2 = Color(parseColor("#196076")),
-            negative1 = Color(parseColor("#196c85"))
-        ),
-        semantic = SemanticValuesContainer(
-            warning = WarningValuesContainer(
-                semanticWarningNegative4 = Color(parseColor("#492909")),
-                semanticWarningNegative3 = Color(parseColor("#7a4510")),
-                semanticWarningNegative2 = Color(parseColor("#a05c1c")),
-                semanticWarningNegative1 = Color(parseColor("#b4610e")),
-                semanticWarning8 = Color(parseColor("#fffcfa")),
-                semanticWarning7 = Color(parseColor("#fff5eb")),
-                semanticWarning6 = Color(parseColor("#fff0e0")),
-                semanticWarning5 = Color(parseColor("#ffe8d1")),
-                semanticWarning4 = Color(parseColor("#fcdec0")),
-                semanticWarning3 = Color(parseColor("#ffd4a8")),
-                semanticWarning2 = Color(parseColor("#feb871")),
-                semanticWarning1 = Color(parseColor("#f6a351")),
-                semanticWarning0 = Color(parseColor("#f59638"))
+val designSystem: DesignSystem = DesignSystem(
+    colorDark = DSColor(
+        semantic = DSSemantic(
+            warning = DSWarning(
+                semanticWarningNegative4 = Color("#492909".toColorInt()),
+                semanticWarningNegative3 = Color("#3f2828".toColorInt()),
+                semanticWarningNegative2 = Color("#a05c1c".toColorInt()),
+                semanticWarningNegative1 = Color("#b4610e".toColorInt()),
+                semanticWarning8 = Color("#fffcfa".toColorInt()),
+                semanticWarning7 = Color("#fff5eb".toColorInt()),
+                semanticWarning6 = Color("#fff0e0".toColorInt()),
+                semanticWarning5 = Color("#ffe8d1".toColorInt()),
+                semanticWarning4 = Color("#fcdec0".toColorInt()),
+                semanticWarning3 = Color("#ffd4a8".toColorInt()),
+                semanticWarning2 = Color("#feb871".toColorInt()),
+                semanticWarning1 = Color("#f6a351".toColorInt()),
+                semanticWarning0 = Color("#f59638".toColorInt())
             ),
-            success = SuccessValuesContainer1(
-                semanticSuccessNegative4 = Color(parseColor("#0a2e0b")),
-                semanticSuccessNegative3 = Color(parseColor("#135315")),
-                semanticSuccessNegative2 = Color(parseColor("#246626")),
-                semanticSuccessNegative1 = Color(parseColor("#2f6f2f")),
-                semanticSuccess8 = Color(parseColor("#fbfefb")),
-                semanticSuccess7 = Color(parseColor("#f4fbf4")),
-                semanticSuccess6 = Color(parseColor("#e6f9e6")),
-                semanticSuccess5 = Color(parseColor("#dff6df")),
-                semanticSuccess4 = Color(parseColor("#cff2cf")),
-                semanticSuccess3 = Color(parseColor("#c6ecc6")),
-                semanticSuccess2 = Color(parseColor("#87c987")),
-                semanticSuccess1 = Color(parseColor("#55a555")),
-                semanticSuccess0 = Color(parseColor("#347434"))
+            success = DSSuccess1(
+                semanticSuccessNegative4 = Color("#0a2e0b".toColorInt()),
+                semanticSuccessNegative3 = Color("#b3b7b0".toColorInt()),
+                semanticSuccessNegative2 = Color("#246626".toColorInt()),
+                semanticSuccessNegative1 = Color("#2f6f2f".toColorInt()),
+                semanticSuccess8 = Color("#fbfefb".toColorInt()),
+                semanticSuccess7 = Color("#f4fbf4".toColorInt()),
+                semanticSuccess6 = Color("#e6f9e6".toColorInt()),
+                semanticSuccess5 = Color("#dff6df".toColorInt()),
+                semanticSuccess4 = Color("#cff2cf".toColorInt()),
+                semanticSuccess3 = Color("#00ff10".toColorInt()),
+                semanticSuccess2 = Color("#fdff84".toColorInt()),
+                semanticSuccess1 = Color("#55a555".toColorInt()),
+                semanticSuccess0 = Color("#20b027".toColorInt())
             ),
-            neutralAlpha = NeutralAlphaValuesContainer(
-                semanticNeutralANegative4 = Color(parseColor("#09131aed")),
-                semanticNeutralANegative3 = Color(parseColor("#0a121ae0")),
-                semanticNeutralANegative2 = Color(parseColor("#1a232ddb")),
-                semanticNeutralANegative1 = Color(parseColor("#1d2835cc")),
-                semanticNeutralA8 = Color(parseColor("#1f529e05")),
-                semanticNeutralA7 = Color(parseColor("#00295c0a")),
-                semanticNeutralA6 = Color(parseColor("#022e500f")),
-                semanticNeutralA5 = Color(parseColor("#10284717")),
-                semanticNeutralA4 = Color(parseColor("#04294321")),
-                semanticNeutralA3 = Color(parseColor("#10315633")),
-                semanticNeutralA2 = Color(parseColor("#0d253f66")),
-                semanticNeutralA1 = Color(parseColor("#1830498f")),
-                semanticNeutralA0 = Color(parseColor("#182639bd"))
+            neutralAlpha = DSNeutralAlpha(
+                semanticNeutralANegative4 = Color("#09131aed".toColorInt()),
+                semanticNeutralANegative3 = Color("#0a121ae0".toColorInt()),
+                semanticNeutralANegative2 = Color("#1a232ddb".toColorInt()),
+                semanticNeutralANegative1 = Color("#1d2835cc".toColorInt()),
+                semanticNeutralA8 = Color("#1f529e05".toColorInt()),
+                semanticNeutralA7 = Color("#00295c0a".toColorInt()),
+                semanticNeutralA6 = Color("#022e500f".toColorInt()),
+                semanticNeutralA5 = Color("#10284717".toColorInt()),
+                semanticNeutralA4 = Color("#04294321".toColorInt()),
+                semanticNeutralA3 = Color("#10315633".toColorInt()),
+                semanticNeutralA2 = Color("#0d253f66".toColorInt()),
+                semanticNeutralA1 = Color("#1830498f".toColorInt()),
+                semanticNeutralA0 = Color("#182639bd".toColorInt())
             ),
-            neutral = NeutralValuesContainer2(
-                semanticNeutralNegative4 = Color(parseColor("#1b242c")),
-                semanticNeutralNegative3 = Color(parseColor("#272e35")),
-                semanticNeutralNegative2 = Color(parseColor("#3a424a")),
-                semanticNeutralNegative1 = Color(parseColor("#4a545e")),
-                semanticNeutral8 = Color(parseColor("#fcfcfd")),
-                semanticNeutral7 = Color(parseColor("#f5f7f9")),
-                semanticNeutral6 = Color(parseColor("#f0f3f5")),
-                semanticNeutral5 = Color(parseColor("#eaedf0")),
-                semanticNeutral4 = Color(parseColor("#dee3e7")),
-                semanticNeutral3 = Color(parseColor("#cfd6dd")),
-                semanticNeutral2 = Color(parseColor("#9ea8b3")),
-                semanticNeutral1 = Color(parseColor("#7e8c9a")),
-                semanticNeutral0 = Color(parseColor("#555f6d"))
+            neutral = DSNeutral2(
+                semanticNeutralNegative4 = Color("#1b242c".toColorInt()),
+                semanticNeutralNegative3 = Color("#272e35".toColorInt()),
+                semanticNeutralNegative2 = Color("#3a424a".toColorInt()),
+                semanticNeutralNegative1 = Color("#4a545e".toColorInt()),
+                semanticNeutral8 = Color("#fcfcfd".toColorInt()),
+                semanticNeutral7 = Color("#f5f7f9".toColorInt()),
+                semanticNeutral6 = Color("#f0f3f5".toColorInt()),
+                semanticNeutral5 = Color("#eaedf0".toColorInt()),
+                semanticNeutral4 = Color("#dee3e7".toColorInt()),
+                semanticNeutral3 = Color("#cfd6dd".toColorInt()),
+                semanticNeutral2 = Color("#9ea8b3".toColorInt()),
+                semanticNeutral1 = Color("#7e8c9a".toColorInt()),
+                semanticNeutral0 = Color("#555f6d".toColorInt())
             ),
-            info = InfoValuesContainer(
-                semanticInfoNegative4 = Color(parseColor("#041f5d")),
-                semanticInfoNegative3 = Color(parseColor("#113997")),
-                semanticInfoNegative2 = Color(parseColor("#1e4fc2")),
-                semanticInfoNegative1 = Color(parseColor("#2759ce")),
-                semanticInfo8 = Color(parseColor("#fafbff")),
-                semanticInfo7 = Color(parseColor("#f5f8ff")),
-                semanticInfo6 = Color(parseColor("#ebf0ff")),
-                semanticInfo5 = Color(parseColor("#e5eeff")),
-                semanticInfo4 = Color(parseColor("#d6e3ff")),
-                semanticInfo3 = Color(parseColor("#ccdcff")),
-                semanticInfo2 = Color(parseColor("#8eb0fb")),
-                semanticInfo1 = Color(parseColor("#6691f4")),
-                semanticInfo0 = Color(parseColor("#3061d5"))
+            info = DSInfo(
+                semanticInfoNegative4 = Color("#041f5d".toColorInt()),
+                semanticInfoNegative3 = Color("#113997".toColorInt()),
+                semanticInfoNegative2 = Color("#658b6e".toColorInt()),
+                semanticInfoNegative1 = Color("#9e6610".toColorInt()),
+                semanticInfo8 = Color("#fafbff".toColorInt()),
+                semanticInfo7 = Color("#f5f8ff".toColorInt()),
+                semanticInfo6 = Color("#ebf0ff".toColorInt()),
+                semanticInfo5 = Color("#e5eeff".toColorInt()),
+                semanticInfo4 = Color("#d6e3ff".toColorInt()),
+                semanticInfo3 = Color("#0085ff".toColorInt()),
+                semanticInfo2 = Color("#8eb0fb".toColorInt()),
+                semanticInfo1 = Color("#6691f4".toColorInt()),
+                semanticInfo0 = Color("#3061d5".toColorInt())
             ),
-            danger = DangerValuesContainer2(
-                semanticDangerNegative4 = Color(parseColor("#c53434")),
-                semanticDangerNegative3 = Color(parseColor("#6f2020")),
-                semanticDangerNegative2 = Color(parseColor("#952d2d")),
-                semanticDangerNegative1 = Color(parseColor("#a13636")),
-                semanticDanger8 = Color(parseColor("#fffafa")),
-                semanticDanger7 = Color(parseColor("#fef5f5")),
-                semanticDanger6 = Color(parseColor("#ffebeb")),
-                semanticDanger5 = Color(parseColor("#fee7e7")),
-                semanticDanger4 = Color(parseColor("#fcd9d9")),
-                semanticDanger3 = Color(parseColor("#fccfcf")),
-                semanticDanger2 = Color(parseColor("#f49090")),
-                semanticDanger1 = Color(parseColor("#f26363")),
-                semanticDanger0 = Color(parseColor("#c53434"))
+            danger = DSDanger2(
+                semanticDangerNegative4 = Color("#4a0d0d".toColorInt()),
+                semanticDangerNegative3 = Color("#30723a".toColorInt()),
+                semanticDangerNegative2 = Color("#63c7c3".toColorInt()),
+                semanticDangerNegative1 = Color("#a13636".toColorInt()),
+                semanticDanger8 = Color("#fffafa".toColorInt()),
+                semanticDanger7 = Color("#fef5f5".toColorInt()),
+                semanticDanger6 = Color("#ffebeb".toColorInt()),
+                semanticDanger5 = Color("#fee7e7".toColorInt()),
+                semanticDanger4 = Color("#d15a5a".toColorInt()),
+                semanticDanger3 = Color("#76d91c".toColorInt()),
+                semanticDanger2 = Color("#494b75".toColorInt()),
+                semanticDanger1 = Color("#285aa5".toColorInt()),
+                semanticDanger0 = Color("#9e6610".toColorInt())
             ),
-            brand = BrandValuesContainer(
-                semanticBrandNegative4 = Color(parseColor("#15665b")),
-                semanticBrandNegative3 = Color(parseColor("#113997")),
-                semanticBrandNegative2 = Color(parseColor("#1e4fc2")),
-                semanticBrandNegative1 = Color(parseColor("#2759ce")),
-                semanticBrand8 = Color(parseColor("#fafbff")),
-                semanticBrand7 = Color(parseColor("#f5f8ff")),
-                semanticBrand6 = Color(parseColor("#ebf0ff")),
-                semanticBrand5 = Color(parseColor("#e5eeff")),
-                semanticBrand4 = Color(parseColor("#d6e3ff")),
-                semanticBrand3 = Color(parseColor("#ccdcff")),
-                semanticBrand2 = Color(parseColor("#8eb0fb")),
-                semanticBrand1 = Color(parseColor("#6691f4")),
-                semanticBrand0 = Color(parseColor("#3061d5"))
+            brand = DSBrand(
+                semanticBrandNegative4 = Color("#3061d5".toColorInt()),
+                semanticBrandNegative3 = Color("#113997".toColorInt()),
+                semanticBrandNegative2 = Color("#658b6e".toColorInt()),
+                semanticBrandNegative1 = Color("#ff9375".toColorInt()),
+                semanticBrand8 = Color("#fafbff".toColorInt()),
+                semanticBrand7 = Color("#f5f8ff".toColorInt()),
+                semanticBrand6 = Color("#ebf0ff".toColorInt()),
+                semanticBrand5 = Color("#e5eeff".toColorInt()),
+                semanticBrand4 = Color("#d6e3ff".toColorInt()),
+                semanticBrand3 = Color("#0085ff".toColorInt()),
+                semanticBrand2 = Color("#8eb0fb".toColorInt()),
+                semanticBrand1 = Color("#6691f4".toColorInt()),
+                semanticBrand0 = Color("#3061d5".toColorInt())
             )
         ),
-        red = RedValuesContainer1(
-            red8 = Color(parseColor("#fffafa")),
-            red7 = Color(parseColor("#fef5f5")),
-            red6 = Color(parseColor("#ffebeb")),
-            red5 = Color(parseColor("#fee7e7")),
-            red4 = Color(parseColor("#fcd9d9")),
-            red3 = Color(parseColor("#fccfcf")),
-            red2 = Color(parseColor("#f49090")),
-            red1 = Color(parseColor("#f26363")),
-            red0 = Color(parseColor("#c53434")),
-            negative4 = Color(parseColor("#c53434")),
-            negative3 = Color(parseColor("#6f2020")),
-            negative2 = Color(parseColor("#952d2d")),
-            negative1 = Color(parseColor("#a13636"))
-        ),
-        purple = PurpleValuesContainer1(
-            purple8 = Color(parseColor("#fefaff")),
-            purple7 = Color(parseColor("#fdf5ff")),
-            purple6 = Color(parseColor("#faedfd")),
-            purple5 = Color(parseColor("#f8e2fd")),
-            purple4 = Color(parseColor("#f5d5fb")),
-            purple3 = Color(parseColor("#f4caf7")),
-            purple2 = Color(parseColor("#d98eec")),
-            purple1 = Color(parseColor("#c466db")),
-            purple0 = Color(parseColor("#9939ac")),
-            negative4 = Color(parseColor("#410b2f")),
-            negative3 = Color(parseColor("#5b1e67")),
-            negative2 = Color(parseColor("#792989")),
-            negative1 = Color(parseColor("#853295"))
-        ),
-        orange = OrangeValuesContainer1(
-            orange8 = Color(parseColor("#fffcfa")),
-            orange7 = Color(parseColor("#fff5eb")),
-            orange6 = Color(parseColor("#fff0e0")),
-            orange5 = Color(parseColor("#ffe8d1")),
-            orange4 = Color(parseColor("#fcdec0")),
-            orange3 = Color(parseColor("#ffd4a8")),
-            orange2 = Color(parseColor("#feb871")),
-            orange1 = Color(parseColor("#f6a351")),
-            orange0 = Color(parseColor("#f59638")),
-            negative4 = Color(parseColor("#492909")),
-            negative3 = Color(parseColor("#7a4510")),
-            negative2 = Color(parseColor("#a05c1c")),
-            negative1 = Color(parseColor("#b4610e"))
-        ),
-        nonSemantic = NonSemanticValuesContainer(
-            white = WhiteValuesContainer(
-                nonSemanticWhiteContentSecondary = Color(parseColor("#ffffffa3")),
-                nonSemanticWhiteContentPrimary = Color(parseColor("#ffffff")),
-                nonSemanticWhiteBorderSubtle = Color(parseColor("#ffffffad")),
-                nonSemanticWhiteBorderStrong = Color(parseColor("#ffffff")),
-                nonSemanticWhiteBorderDefault = Color(parseColor("#ffffff66")),
-                nonSemanticWhiteBackgroundSurface = Color(parseColor("#ffffff1a")),
-                nonSemanticWhiteBackgroundSubtle = Color(parseColor("#ffffff1f")),
-                nonSemanticWhiteBackgroundStrong = Color(parseColor("#ffffff")),
-                nonSemanticWhiteBackgroundOnSubtle = Color(parseColor("#ffffff66")),
-                nonSemanticWhiteBackgroundMuted = Color(parseColor("#ffffffa3"))
+        nonSemantic = DSNonSemantic(
+            white = DSWhite(
+                nonSemanticWhiteContentSecondary = Color("#ffffffa3".toColorInt()),
+                nonSemanticWhiteContentPrimary = Color("#ffffff".toColorInt()),
+                nonSemanticWhiteBorderSubtle = Color("#ffffffad".toColorInt()),
+                nonSemanticWhiteBorderStrong = Color("#ffffff".toColorInt()),
+                nonSemanticWhiteBorderDefault = Color("#ffffff66".toColorInt()),
+                nonSemanticWhiteBackgroundSurface = Color("#ffffff1a".toColorInt()),
+                nonSemanticWhiteBackgroundSubtle = Color("#ffffff1f".toColorInt()),
+                nonSemanticWhiteBackgroundStrong = Color("#ffffff".toColorInt()),
+                nonSemanticWhiteBackgroundOnSubtle = Color("#ffffff66".toColorInt()),
+                nonSemanticWhiteBackgroundMuted = Color("#ffffffa3".toColorInt())
             ),
-            violet = VioletValuesContainer(
-                nonSemanticVioletContentSecondary = Color(parseColor("#634eca")),
-                nonSemanticVioletContentPrimary = Color(parseColor("#39288a")),
-                nonSemanticVioletBorderSubtle = Color(parseColor("#dcd6ff")),
-                nonSemanticVioletBorderStrong = Color(parseColor("#634eca")),
-                nonSemanticVioletBorderDefault = Color(parseColor("#eeebff")),
-                nonSemanticVioletBackgroundSurface = Color(parseColor("#fbfaff")),
-                nonSemanticVioletBackgroundSubtle = Color(parseColor("#f7f5ff")),
-                nonSemanticVioletBackgroundStrong = Color(parseColor("#634eca")),
-                nonSemanticVioletBackgroundOnSubtle = Color(parseColor("#eeebff")),
-                nonSemanticVioletBackgroundMuted = Color(parseColor("#e3e0ff"))
+            violet = DSViolet(
+                nonSemanticVioletContentSecondary = Color("#634eca".toColorInt()),
+                nonSemanticVioletContentPrimary = Color("#39288a".toColorInt()),
+                nonSemanticVioletBorderSubtle = Color("#54917b".toColorInt()),
+                nonSemanticVioletBorderStrong = Color("#634eca".toColorInt()),
+                nonSemanticVioletBorderDefault = Color("#eeebff".toColorInt()),
+                nonSemanticVioletBackgroundSurface = Color("#fbfaff".toColorInt()),
+                nonSemanticVioletBackgroundSubtle = Color("#f7f5ff".toColorInt()),
+                nonSemanticVioletBackgroundStrong = Color("#634eca".toColorInt()),
+                nonSemanticVioletBackgroundOnSubtle = Color("#eeebff".toColorInt()),
+                nonSemanticVioletBackgroundMuted = Color("#e3e0ff".toColorInt())
             ),
-            teal = TealValuesContainer(
-                nonSemanticTealContentSecondary = Color(parseColor("#077597")),
-                nonSemanticTealContentPrimary = Color(parseColor("#0a495c")),
-                nonSemanticTealBorderSubtle = Color(parseColor("#b8e8f5")),
-                nonSemanticTealBorderStrong = Color(parseColor("#077597")),
-                nonSemanticTealBorderDefault = Color(parseColor("#e0f3fa")),
-                nonSemanticTealBackgroundSurface = Color(parseColor("#fafeff")),
-                nonSemanticTealBackgroundSubtle = Color(parseColor("#f0fbff")),
-                nonSemanticTealBackgroundStrong = Color(parseColor("#077597")),
-                nonSemanticTealBackgroundOnSubtle = Color(parseColor("#e0f3fa")),
-                nonSemanticTealBackgroundMuted = Color(parseColor("#c5ecf7"))
+            teal = DSTeal(
+                nonSemanticTealContentSecondary = Color("#077597".toColorInt()),
+                nonSemanticTealContentPrimary = Color("#7c4fc4".toColorInt()),
+                nonSemanticTealBorderSubtle = Color("#b8e8f5".toColorInt()),
+                nonSemanticTealBorderStrong = Color("#077597".toColorInt()),
+                nonSemanticTealBorderDefault = Color("#e0f3fa".toColorInt()),
+                nonSemanticTealBackgroundSurface = Color("#fafeff".toColorInt()),
+                nonSemanticTealBackgroundSubtle = Color("#f0fbff".toColorInt()),
+                nonSemanticTealBackgroundStrong = Color("#077597".toColorInt()),
+                nonSemanticTealBackgroundOnSubtle = Color("#e0f3fa".toColorInt()),
+                nonSemanticTealBackgroundMuted = Color("#c5ecf7".toColorInt())
             ),
-            red = RedValuesContainer(
-                nonSemanticRedContentSecondary = Color(parseColor("#c53434")),
-                nonSemanticRedContentPrimary = Color(parseColor("#6f2020")),
-                nonSemanticRedBorderSubtle = Color(parseColor("#fccfcf")),
-                nonSemanticRedBorderStrong = Color(parseColor("#c53434")),
-                nonSemanticRedBorderDefault = Color(parseColor("#fee7e7")),
-                nonSemanticRedBackgroundSurface = Color(parseColor("#fffafa")),
-                nonSemanticRedBackgroundSubtle = Color(parseColor("#fef5f5")),
-                nonSemanticRedBackgroundStrong = Color(parseColor("#c53434")),
-                nonSemanticRedBackgroundOnSubtle = Color(parseColor("#fee7e7")),
-                nonSemanticRedBackgroundMuted = Color(parseColor("#fcd9d9"))
+            red = DSRed(
+                nonSemanticRedContentSecondary = Color("#9e6610".toColorInt()),
+                nonSemanticRedContentPrimary = Color("#30723a".toColorInt()),
+                nonSemanticRedBorderSubtle = Color("#76d91c".toColorInt()),
+                nonSemanticRedBorderStrong = Color("#9e6610".toColorInt()),
+                nonSemanticRedBorderDefault = Color("#fee7e7".toColorInt()),
+                nonSemanticRedBackgroundSurface = Color("#fffafa".toColorInt()),
+                nonSemanticRedBackgroundSubtle = Color("#fef5f5".toColorInt()),
+                nonSemanticRedBackgroundStrong = Color("#9e6610".toColorInt()),
+                nonSemanticRedBackgroundOnSubtle = Color("#fee7e7".toColorInt()),
+                nonSemanticRedBackgroundMuted = Color("#d15a5a".toColorInt())
             ),
-            purple = PurpleValuesContainer(
-                nonSemanticPurpleContentSecondary = Color(parseColor("#9939ac")),
-                nonSemanticPurpleContentPrimary = Color(parseColor("#5b1e67")),
-                nonSemanticPurpleBorderSubtle = Color(parseColor("#f4caf7")),
-                nonSemanticPurpleBorderStrong = Color(parseColor("#9939ac")),
-                nonSemanticPurpleBorderDefault = Color(parseColor("#f8e2fd")),
-                nonSemanticPurpleBackgroundSurface = Color(parseColor("#fefaff")),
-                nonSemanticPurpleBackgroundSubtle = Color(parseColor("#fdf5ff")),
-                nonSemanticPurpleBackgroundStrong = Color(parseColor("#9939ac")),
-                nonSemanticPurpleBackgroundOnSubtle = Color(parseColor("#f8e2fd")),
-                nonSemanticPurpleBackgroundMuted = Color(parseColor("#f5d5fb"))
+            purple = DSPurple(
+                nonSemanticPurpleContentSecondary = Color("#9939ac".toColorInt()),
+                nonSemanticPurpleContentPrimary = Color("#5b1e67".toColorInt()),
+                nonSemanticPurpleBorderSubtle = Color("#c04c0d".toColorInt()),
+                nonSemanticPurpleBorderStrong = Color("#9939ac".toColorInt()),
+                nonSemanticPurpleBorderDefault = Color("#f8e2fd".toColorInt()),
+                nonSemanticPurpleBackgroundSurface = Color("#fefaff".toColorInt()),
+                nonSemanticPurpleBackgroundSubtle = Color("#fdf5ff".toColorInt()),
+                nonSemanticPurpleBackgroundStrong = Color("#9939ac".toColorInt()),
+                nonSemanticPurpleBackgroundOnSubtle = Color("#f8e2fd".toColorInt()),
+                nonSemanticPurpleBackgroundMuted = Color("#f5d5fb".toColorInt())
             ),
-            orange = OrangeValuesContainer(
-                nonSemanticOrangeContentSecondary = Color(parseColor("#f59638")),
-                nonSemanticOrangeContentPrimary = Color(parseColor("#7a4510")),
-                nonSemanticOrangeBorderSubtle = Color(parseColor("#ffd4a8")),
-                nonSemanticOrangeBorderStrong = Color(parseColor("#f59638")),
-                nonSemanticOrangeBorderDefault = Color(parseColor("#ffe8d1")),
-                nonSemanticOrangeBackgroundSurface = Color(parseColor("#fffcfa")),
-                nonSemanticOrangeBackgroundSubtle = Color(parseColor("#fff5eb")),
-                nonSemanticOrangeBackgroundStrong = Color(parseColor("#f59638")),
-                nonSemanticOrangeBackgroundOnSubtle = Color(parseColor("#ffe8d1")),
-                nonSemanticOrangeBackgroundMuted = Color(parseColor("#fcdec0"))
+            orange = DSOrange(
+                nonSemanticOrangeContentSecondary = Color("#f59638".toColorInt()),
+                nonSemanticOrangeContentPrimary = Color("#3f2828".toColorInt()),
+                nonSemanticOrangeBorderSubtle = Color("#ffd4a8".toColorInt()),
+                nonSemanticOrangeBorderStrong = Color("#f59638".toColorInt()),
+                nonSemanticOrangeBorderDefault = Color("#ffe8d1".toColorInt()),
+                nonSemanticOrangeBackgroundSurface = Color("#fffcfa".toColorInt()),
+                nonSemanticOrangeBackgroundSubtle = Color("#fff5eb".toColorInt()),
+                nonSemanticOrangeBackgroundStrong = Color("#f59638".toColorInt()),
+                nonSemanticOrangeBackgroundOnSubtle = Color("#ffe8d1".toColorInt()),
+                nonSemanticOrangeBackgroundMuted = Color("#fcdec0".toColorInt())
             ),
-            magenta = MagentaValuesContainer(
-                nonSemanticMagentaContentSecondary = Color(parseColor("#b12f86")),
-                nonSemanticMagentaContentPrimary = Color(parseColor("#671e4d")),
-                nonSemanticMagentaBorderSubtle = Color(parseColor("#f7cae8")),
-                nonSemanticMagentaBorderStrong = Color(parseColor("#b12f86")),
-                nonSemanticMagentaBorderDefault = Color(parseColor("#fde2f4")),
-                nonSemanticMagentaBackgroundSurface = Color(parseColor("#fffafd")),
-                nonSemanticMagentaBackgroundSubtle = Color(parseColor("#fef6fb")),
-                nonSemanticMagentaBackgroundStrong = Color(parseColor("#b12f86")),
-                nonSemanticMagentaBackgroundOnSubtle = Color(parseColor("#fde2f4")),
-                nonSemanticMagentaBackgroundMuted = Color(parseColor("#fbd5ee"))
+            magenta = DSMagenta(
+                nonSemanticMagentaContentSecondary = Color("#91ae7a".toColorInt()),
+                nonSemanticMagentaContentPrimary = Color("#671e4d".toColorInt()),
+                nonSemanticMagentaBorderSubtle = Color("#f7cae8".toColorInt()),
+                nonSemanticMagentaBorderStrong = Color("#91ae7a".toColorInt()),
+                nonSemanticMagentaBorderDefault = Color("#fde2f4".toColorInt()),
+                nonSemanticMagentaBackgroundSurface = Color("#fffafd".toColorInt()),
+                nonSemanticMagentaBackgroundSubtle = Color("#fef6fb".toColorInt()),
+                nonSemanticMagentaBackgroundStrong = Color("#91ae7a".toColorInt()),
+                nonSemanticMagentaBackgroundOnSubtle = Color("#fde2f4".toColorInt()),
+                nonSemanticMagentaBackgroundMuted = Color("#fbd5ee".toColorInt())
             ),
-            green = GreenValuesContainer(
-                nonSemanticGreenContentSecondary = Color(parseColor("#347434")),
-                nonSemanticGreenContentPrimary = Color(parseColor("#135315")),
-                nonSemanticGreenBorderSubtle = Color(parseColor("#c6ecc6")),
-                nonSemanticGreenBorderStrong = Color(parseColor("#347434")),
-                nonSemanticGreenBorderDefault = Color(parseColor("#dff6df")),
-                nonSemanticGreenBackgroundSurface = Color(parseColor("#fbfefb")),
-                nonSemanticGreenBackgroundSubtle = Color(parseColor("#f4fbf4")),
-                nonSemanticGreenBackgroundStrong = Color(parseColor("#347434")),
-                nonSemanticGreenBackgroundOnSubtle = Color(parseColor("#dff6df")),
-                nonSemanticGreenBackgroundMuted = Color(parseColor("#cff2cf"))
+            green = DSGreen(
+                nonSemanticGreenContentSecondary = Color("#20b027".toColorInt()),
+                nonSemanticGreenContentPrimary = Color("#b3b7b0".toColorInt()),
+                nonSemanticGreenBorderSubtle = Color("#00ff10".toColorInt()),
+                nonSemanticGreenBorderStrong = Color("#20b027".toColorInt()),
+                nonSemanticGreenBorderDefault = Color("#dff6df".toColorInt()),
+                nonSemanticGreenBackgroundSurface = Color("#fbfefb".toColorInt()),
+                nonSemanticGreenBackgroundSubtle = Color("#f4fbf4".toColorInt()),
+                nonSemanticGreenBackgroundStrong = Color("#20b027".toColorInt()),
+                nonSemanticGreenBackgroundOnSubtle = Color("#dff6df".toColorInt()),
+                nonSemanticGreenBackgroundMuted = Color("#cff2cf".toColorInt())
             ),
-            gray = GrayValuesContainer(
-                nonSemanticGrayContentSecondary = Color(parseColor("#555f6d")),
-                nonSemanticGrayContentPrimary = Color(parseColor("#272e35")),
-                nonSemanticGrayBorderSubtle = Color(parseColor("#cfd6dd")),
-                nonSemanticGrayBorderStrong = Color(parseColor("#555f6d")),
-                nonSemanticGrayBorderDefault = Color(parseColor("#eaedf0")),
-                nonSemanticGrayBackgroundSurface = Color(parseColor("#fcfcfd")),
-                nonSemanticGrayBackgroundSubtle = Color(parseColor("#f5f7f9")),
-                nonSemanticGrayBackgroundStrong = Color(parseColor("#555f6d")),
-                nonSemanticGrayBackgroundOnSubtle = Color(parseColor("#eaedf0")),
-                nonSemanticGrayBackgroundMuted = Color(parseColor("#dee3e7"))
+            gray = DSGray(
+                nonSemanticGrayContentSecondary = Color("#555f6d".toColorInt()),
+                nonSemanticGrayContentPrimary = Color("#272e35".toColorInt()),
+                nonSemanticGrayBorderSubtle = Color("#cfd6dd".toColorInt()),
+                nonSemanticGrayBorderStrong = Color("#555f6d".toColorInt()),
+                nonSemanticGrayBorderDefault = Color("#eaedf0".toColorInt()),
+                nonSemanticGrayBackgroundSurface = Color("#fcfcfd".toColorInt()),
+                nonSemanticGrayBackgroundSubtle = Color("#f5f7f9".toColorInt()),
+                nonSemanticGrayBackgroundStrong = Color("#555f6d".toColorInt()),
+                nonSemanticGrayBackgroundOnSubtle = Color("#eaedf0".toColorInt()),
+                nonSemanticGrayBackgroundMuted = Color("#dee3e7".toColorInt())
             ),
-            cyan = CyanValuesContainer(
-                nonSemanticCyanContentSecondary = Color(parseColor("#0870ba")),
-                nonSemanticCyanContentPrimary = Color(parseColor("#0c456e")),
-                nonSemanticCyanBorderSubtle = Color(parseColor("#c2e2ff")),
-                nonSemanticCyanBorderStrong = Color(parseColor("#0870ba")),
-                nonSemanticCyanBorderDefault = Color(parseColor("#e0f1ff")),
-                nonSemanticCyanBackgroundSurface = Color(parseColor("#fafdff")),
-                nonSemanticCyanBackgroundSubtle = Color(parseColor("#f0f9ff")),
-                nonSemanticCyanBackgroundStrong = Color(parseColor("#0870ba")),
-                nonSemanticCyanBackgroundOnSubtle = Color(parseColor("#e0f1ff")),
-                nonSemanticCyanBackgroundMuted = Color(parseColor("#cce7ff"))
+            cyan = DSCyan(
+                nonSemanticCyanContentSecondary = Color("#0870ba".toColorInt()),
+                nonSemanticCyanContentPrimary = Color("#0c636e".toColorInt()),
+                nonSemanticCyanBorderSubtle = Color("#c2e2ff".toColorInt()),
+                nonSemanticCyanBorderStrong = Color("#0870ba".toColorInt()),
+                nonSemanticCyanBorderDefault = Color("#e0f1ff".toColorInt()),
+                nonSemanticCyanBackgroundSurface = Color("#fafdff".toColorInt()),
+                nonSemanticCyanBackgroundSubtle = Color("#f0f9ff".toColorInt()),
+                nonSemanticCyanBackgroundStrong = Color("#0870ba".toColorInt()),
+                nonSemanticCyanBackgroundOnSubtle = Color("#e0f1ff".toColorInt()),
+                nonSemanticCyanBackgroundMuted = Color("#cce7ff".toColorInt())
             ),
-            blue = BlueValuesContainer(
-                nonSemanticBlueContentSecondary = Color(parseColor("#3061d5")),
-                nonSemanticBlueContentPrimary = Color(parseColor("#113997")),
-                nonSemanticBlueBorderSubtle = Color(parseColor("#ccdcff")),
-                nonSemanticBlueBorderStrong = Color(parseColor("#3061d5")),
-                nonSemanticBlueBorderDefault = Color(parseColor("#e5eeff")),
-                nonSemanticBlueBackgroundSurface = Color(parseColor("#fafbff")),
-                nonSemanticBlueBackgroundSubtle = Color(parseColor("#f5f8ff")),
-                nonSemanticBlueBackgroundStrong = Color(parseColor("#3061d5")),
-                nonSemanticBlueBackgroundOnSubtle = Color(parseColor("#e5eeff")),
-                nonSemanticBlueBackgroundMuted = Color(parseColor("#d6e3ff"))
+            blue = DSBlue(
+                nonSemanticBlueContentSecondary = Color("#3061d5".toColorInt()),
+                nonSemanticBlueContentPrimary = Color("#113997".toColorInt()),
+                nonSemanticBlueBorderSubtle = Color("#0085ff".toColorInt()),
+                nonSemanticBlueBorderStrong = Color("#3061d5".toColorInt()),
+                nonSemanticBlueBorderDefault = Color("#e5eeff".toColorInt()),
+                nonSemanticBlueBackgroundSurface = Color("#fafbff".toColorInt()),
+                nonSemanticBlueBackgroundSubtle = Color("#f5f8ff".toColorInt()),
+                nonSemanticBlueBackgroundStrong = Color("#3061d5".toColorInt()),
+                nonSemanticBlueBackgroundOnSubtle = Color("#e5eeff".toColorInt()),
+                nonSemanticBlueBackgroundMuted = Color("#d6e3ff".toColorInt())
             ),
-            aquamarine = AquamarineValuesContainer(
-                nonSemanticAquamarineContentSecondary = Color(parseColor("#097b68")),
-                nonSemanticAquamarineContentPrimary = Color(parseColor("#0d4a42")),
-                nonSemanticAquamarineBorderSubtle = Color(parseColor("#bee9e4")),
-                nonSemanticAquamarineBorderStrong = Color(parseColor("#097b68")),
-                nonSemanticAquamarineBorderDefault = Color(parseColor("#daf6f3")),
-                nonSemanticAquamarineBackgroundSurface = Color(parseColor("#fbfefe")),
-                nonSemanticAquamarineBackgroundSubtle = Color(parseColor("#f0faf9")),
-                nonSemanticAquamarineBackgroundStrong = Color(parseColor("#097b68")),
-                nonSemanticAquamarineBackgroundOnSubtle = Color(parseColor("#daf6f3")),
-                nonSemanticAquamarineBackgroundMuted = Color(parseColor("#c5f2ec"))
+            aquamarine = DSAquamarine(
+                nonSemanticAquamarineContentSecondary = Color("#097b68".toColorInt()),
+                nonSemanticAquamarineContentPrimary = Color("#0d4a42".toColorInt()),
+                nonSemanticAquamarineBorderSubtle = Color("#bee9e4".toColorInt()),
+                nonSemanticAquamarineBorderStrong = Color("#097b68".toColorInt()),
+                nonSemanticAquamarineBorderDefault = Color("#daf6f3".toColorInt()),
+                nonSemanticAquamarineBackgroundSurface = Color("#fbfefe".toColorInt()),
+                nonSemanticAquamarineBackgroundSubtle = Color("#f0faf9".toColorInt()),
+                nonSemanticAquamarineBackgroundStrong = Color("#097b68".toColorInt()),
+                nonSemanticAquamarineBackgroundOnSubtle = Color("#daf6f3".toColorInt()),
+                nonSemanticAquamarineBackgroundMuted = Color("#c5f2ec".toColorInt())
             )
         ),
-        neutralGrayAlpha = NeutralGrayAlphaValuesContainer(
-            neutralGrayANegative4 = Color(parseColor("#121212ed")),
-            neutralGrayANegative3 = Color(parseColor("#0f0f0fe0")),
-            neutralGrayANegative2 = Color(parseColor("#212121db")),
-            neutralGrayANegative1 = Color(parseColor("#262626cc")),
-            neutralGrayA8 = Color(parseColor("#52525205")),
-            neutralGrayA7 = Color(parseColor("#2e2e2e0a")),
-            neutralGrayA6 = Color(parseColor("#2121210f")),
-            neutralGrayA5 = Color(parseColor("#1c1c1c17")),
-            neutralGrayA4 = Color(parseColor("#1f1f1f21")),
-            neutralGrayA3 = Color(parseColor("#2e2e2e33")),
-            neutralGrayA2 = Color(parseColor("#21212166")),
-            neutralGrayA1 = Color(parseColor("#2b2b2b8f")),
-            neutralGrayA0 = Color(parseColor("#262627bd"))
-        ),
-        neutralGray = NeutralGrayValuesContainer(
-            neutralGray8 = Color(parseColor("#fcfcfc")),
-            neutralGray7 = Color(parseColor("#f7f7f7")),
-            neutralGray6 = Color(parseColor("#f2f2f2")),
-            neutralGray5 = Color(parseColor("#ebebeb")),
-            neutralGray4 = Color(parseColor("#e3e3e3")),
-            neutralGray3 = Color(parseColor("#d6d6d6")),
-            neutralGray2 = Color(parseColor("#a6a6a6")),
-            neutralGray1 = Color(parseColor("#8a8a8a")),
-            neutralGray0 = Color(parseColor("#5e5e5e")),
-            negative4 = Color(parseColor("#212121")),
-            negative3 = Color(parseColor("#2e2e2e")),
-            negative2 = Color(parseColor("#404040")),
-            negative1 = Color(parseColor("#525252"))
-        ),
-        magenta = MagentaValuesContainer1(
-            negative4 = Color(parseColor("#410b2f")),
-            negative3 = Color(parseColor("#671e4d")),
-            negative2 = Color(parseColor("#892969")),
-            negative1 = Color(parseColor("#953274")),
-            magenta8 = Color(parseColor("#fffafd")),
-            magenta7 = Color(parseColor("#fef6fb")),
-            magenta6 = Color(parseColor("#fdedf8")),
-            magenta5 = Color(parseColor("#fde2f4")),
-            magenta4 = Color(parseColor("#fbd5ee")),
-            magenta3 = Color(parseColor("#f7cae8")),
-            magenta2 = Color(parseColor("#ec89cb")),
-            magenta1 = Color(parseColor("#de5eb3")),
-            magenta0 = Color(parseColor("#b12f86"))
-        ),
-        interaction = InteractionValuesContainer(
-            neutral = NeutralValuesContainer1(
-                interactionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
-                interactionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
-                interactionNeutralSubtleHover = Color(parseColor("#eaedf0")),
-                interactionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
-                interactionNeutralSelected = Color(parseColor("#3a424a")),
-                interactionNeutralNormal = Color(parseColor("#4a545e")),
-                interactionNeutralHover = Color(parseColor("#3a424a")),
-                interactionNeutralActive = Color(parseColor("#272e35"))
+        interaction = DSInteraction(
+            neutral = DSNeutral1(
+                interactionNeutralSubtleSelected = Color("#eaedf0".toColorInt()),
+                interactionNeutralSubtleNormal = Color("#f0f3f5".toColorInt()),
+                interactionNeutralSubtleHover = Color("#eaedf0".toColorInt()),
+                interactionNeutralSubtleActive = Color("#cfd6dd".toColorInt()),
+                interactionNeutralSelected = Color("#3a424a".toColorInt()),
+                interactionNeutralNormal = Color("#4a545e".toColorInt()),
+                interactionNeutralHover = Color("#3a424a".toColorInt()),
+                interactionNeutralActive = Color("#272e35".toColorInt())
             ),
-            inverse = InverseValuesContainer1(
-                interactionInverseSelected = Color(parseColor("#ffffffd1")),
-                interactionInverseNormal = Color(parseColor("#ffffff")),
-                interactionInverseHover = Color(parseColor("#ffffffd1")),
-                interactionInverseActive = Color(parseColor("#ffffffb8"))
+            inverse = DSInverse1(
+                interactionInverseSelected = Color("#ffffffd1".toColorInt()),
+                interactionInverseNormal = Color("#ffffff".toColorInt()),
+                interactionInverseHover = Color("#ffffffd1".toColorInt()),
+                interactionInverseActive = Color("#ffffffb8".toColorInt())
             ),
-            ghost = GhostValuesContainer1(
-                interactionGhostSelected = Color(parseColor("#022e500f")),
-                interactionGhostNormal = Color(parseColor("#ffffff00")),
-                interactionGhostInverseSelected = Color(parseColor("#ffffff1a")),
-                interactionGhostInverseNormal = Color(parseColor("#ffffff1f")),
-                interactionGhostInverseHover = Color(parseColor("#ffffff1a")),
-                interactionGhostHover = Color(parseColor("#022e500f")),
-                interactionGhostDangerSelected = Color(parseColor("#ffebeb")),
-                interactionGhostDangerNormal = Color(parseColor("#fee7e7")),
-                interactionGhostDangerHover = Color(parseColor("#ffebeb")),
-                interactionGhostActive = Color(parseColor("#10284717"))
+            ghost = DSGhost1(
+                interactionGhostSelected = Color("#022e500f".toColorInt()),
+                interactionGhostNormal = Color("#ffffff00".toColorInt()),
+                interactionGhostInverseSelected = Color("#ffffff1a".toColorInt()),
+                interactionGhostInverseNormal = Color("#ffffff1f".toColorInt()),
+                interactionGhostInverseHover = Color("#ffffff1a".toColorInt()),
+                interactionGhostHover = Color("#022e500f".toColorInt()),
+                interactionGhostDangerSelected = Color("#ffebeb".toColorInt()),
+                interactionGhostDangerNormal = Color("#fee7e7".toColorInt()),
+                interactionGhostDangerHover = Color("#ffebeb".toColorInt()),
+                interactionGhostActive = Color("#10284717".toColorInt())
             ),
-            focus = FocusValuesContainer(
-                interactionFocusDefault = Color(parseColor("#6691f4"))
+            focus = DSFocus(
+                interactionFocusDefault = Color("#6691f4".toColorInt())
             ),
-            disabled = DisabledValuesContainer(
-                interactionDisabledSubtleNormal = Color(parseColor("#eaedf0")),
-                interactionDisabledSubtleHover = Color(parseColor("#dee3e7")),
-                interactionDisabledSubtleActive = Color(parseColor("#cfd6dd")),
-                interactionDisabledNormal = Color(parseColor("#9ea8b3")),
-                interactionDisabledHover = Color(parseColor("#7e8c9a")),
-                interactionDisabledActive = Color(parseColor("#555f6d"))
+            disabled = DSDisabled(
+                interactionDisabledSubtleNormal = Color("#eaedf0".toColorInt()),
+                interactionDisabledSubtleHover = Color("#dee3e7".toColorInt()),
+                interactionDisabledSubtleActive = Color("#cfd6dd".toColorInt()),
+                interactionDisabledNormal = Color("#9ea8b3".toColorInt()),
+                interactionDisabledHover = Color("#7e8c9a".toColorInt()),
+                interactionDisabledActive = Color("#555f6d".toColorInt())
             ),
-            default = DefaultValuesContainer(
-                interactionDefaultSubtleSelected = Color(parseColor("#e5eeff")),
-                interactionDefaultSubtleNormal = Color(parseColor("#ebf0ff")),
-                interactionDefaultSubtleHover = Color(parseColor("#e5eeff")),
-                interactionDefaultSubtleActive = Color(parseColor("#ccdcff")),
-                interactionDefaultSelected = Color(parseColor("#1e4fc2")),
-                interactionDefaultNormal = Color(parseColor("#3061d5")),
-                interactionDefaultHover = Color(parseColor("#1e4fc2")),
-                interactionDefaultActive = Color(parseColor("#113997"))
+            default = DSDefault(
+                interactionDefaultSubtleSelected = Color("#e5eeff".toColorInt()),
+                interactionDefaultSubtleNormal = Color("#ebf0ff".toColorInt()),
+                interactionDefaultSubtleHover = Color("#e5eeff".toColorInt()),
+                interactionDefaultSubtleActive = Color("#0085ff".toColorInt()),
+                interactionDefaultSelected = Color("#658b6e".toColorInt()),
+                interactionDefaultNormal = Color("#3061d5".toColorInt()),
+                interactionDefaultHover = Color("#658b6e".toColorInt()),
+                interactionDefaultActive = Color("#113997".toColorInt())
             ),
-            danger = DangerValuesContainer1(
-                interactionDangerSubtleSelected = Color(parseColor("#fee7e7")),
-                interactionDangerSubtleNormal = Color(parseColor("#ffebeb")),
-                interactionDangerSubtleHover = Color(parseColor("#fee7e7")),
-                interactionDangerSubtleActive = Color(parseColor("#fccfcf")),
-                interactionDangerSelected = Color(parseColor("#952d2d")),
-                interactionDangerNormal = Color(parseColor("#c53434")),
-                interactionDangerHover = Color(parseColor("#952d2d")),
-                interactionDangerActive = Color(parseColor("#6f2020"))
+            danger = DSDanger1(
+                interactionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
+                interactionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
+                interactionDangerSubtleHover = Color("#fee7e7".toColorInt()),
+                interactionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                interactionDangerSelected = Color("#63c7c3".toColorInt()),
+                interactionDangerNormal = Color("#9e6610".toColorInt()),
+                interactionDangerHover = Color("#63c7c3".toColorInt()),
+                interactionDangerActive = Color("#30723a".toColorInt())
             ),
-            border = BorderValuesContainer1(
-                interactionBorderSelected = Color(parseColor("#3061d5")),
-                interactionBorderNormal = Color(parseColor("#8eb0fb")),
-                interactionBorderNeutralSelected = Color(parseColor("#9ea8b3")),
-                interactionBorderNeutralNormal = Color(parseColor("#cfd6dd")),
-                interactionBorderNeutralHover = Color(parseColor("#9ea8b3")),
-                interactionBorderNeutralActive = Color(parseColor("#7e8c9a")),
-                interactionBorderHover = Color(parseColor("#6691f4")),
-                interactionBorderDanger = Color(parseColor("#f26363")),
-                interactionBorderActive = Color(parseColor("#2759ce"))
+            border = DSBorder1(
+                interactionBorderSelected = Color("#3061d5".toColorInt()),
+                interactionBorderNormal = Color("#8eb0fb".toColorInt()),
+                interactionBorderNeutralSelected = Color("#9ea8b3".toColorInt()),
+                interactionBorderNeutralNormal = Color("#cfd6dd".toColorInt()),
+                interactionBorderNeutralHover = Color("#9ea8b3".toColorInt()),
+                interactionBorderNeutralActive = Color("#7e8c9a".toColorInt()),
+                interactionBorderHover = Color("#6691f4".toColorInt()),
+                interactionBorderDanger = Color("#285aa5".toColorInt()),
+                interactionBorderActive = Color("#ff9375".toColorInt())
             ),
-            background = BackgroundValuesContainer1(
-                interactionBackgroundSidepanel = Color(parseColor("#ffffff")),
-                interactionBackgroundModelessInverse = Color(parseColor("#272e35")),
-                interactionBackgroundModeless = Color(parseColor("#ffffff")),
-                interactionBackgroundModal = Color(parseColor("#ffffff")),
-                interactionBackgroundFormField = Color(parseColor("#ffffff")),
-                interactionBackgroundDimmer = Color(parseColor("#182639bd"))
+            background = DSBackground1(
+                interactionBackgroundSidepanel = Color("#ffffff".toColorInt()),
+                interactionBackgroundModelessInverse = Color("#272e35".toColorInt()),
+                interactionBackgroundModeless = Color("#ffffff".toColorInt()),
+                interactionBackgroundModal = Color("#ffffff".toColorInt()),
+                interactionBackgroundFormField = Color("#ffffff".toColorInt()),
+                interactionBackgroundDimmer = Color("#182639bd".toColorInt())
             )
         ),
-        green = GreenValuesContainer1(
-            negative4 = Color(parseColor("#0a2e0b")),
-            negative3 = Color(parseColor("#135315")),
-            negative2 = Color(parseColor("#246626")),
-            negative1 = Color(parseColor("#2f6f2f")),
-            green8 = Color(parseColor("#fbfefb")),
-            green7 = Color(parseColor("#f4fbf4")),
-            green6 = Color(parseColor("#e6f9e6")),
-            green5 = Color(parseColor("#dff6df")),
-            green4 = Color(parseColor("#cff2cf")),
-            green3 = Color(parseColor("#c6ecc6")),
-            green2 = Color(parseColor("#87c987")),
-            green1 = Color(parseColor("#55a555")),
-            green0 = Color(parseColor("#347434"))
+        content = DSContent(
+            warningSecondary = Color("#f59638".toColorInt()),
+            warningPrimary = Color("#3f2828".toColorInt()),
+            tertiaryInverse = Color("#ffffff66".toColorInt()),
+            tertiary = Color("#7e8c9a".toColorInt()),
+            successSecondary = Color("#20b027".toColorInt()),
+            successPrimary = Color("#b3b7b0".toColorInt()),
+            secondaryInverse = Color("#ffffffa3".toColorInt()),
+            secondary = Color("#555f6d".toColorInt()),
+            primaryInverse = Color("#ffffff".toColorInt()),
+            primary = Color("#272e35".toColorInt()),
+            infoSecondary = Color("#3061d5".toColorInt()),
+            infoPrimary = Color("#113997".toColorInt()),
+            disabledInverse = Color("#ffffff3d".toColorInt()),
+            disabled = Color("#9ea8b3".toColorInt()),
+            dangerSecondary = Color("#9e6610".toColorInt()),
+            dangerPrimary = Color("#30723a".toColorInt()),
+            brandSecondary = Color("#3061d5".toColorInt()),
+            brandPrimary = Color("#113997".toColorInt())
         ),
-        cyan = CyanValuesContainer1(
-            negative4 = Color(parseColor("#002742")),
-            negative3 = Color(parseColor("#0c456e")),
-            negative2 = Color(parseColor("#165c8d")),
-            negative1 = Color(parseColor("#1b679d")),
-            cyan8 = Color(parseColor("#fafdff")),
-            cyan7 = Color(parseColor("#f0f9ff")),
-            cyan6 = Color(parseColor("#ebf5ff")),
-            cyan5 = Color(parseColor("#e0f1ff")),
-            cyan4 = Color(parseColor("#cce7ff")),
-            cyan3 = Color(parseColor("#c2e2ff")),
-            cyan2 = Color(parseColor("#79bcf6")),
-            cyan1 = Color(parseColor("#5699dc")),
-            cyan0 = Color(parseColor("#0870ba"))
+        border = DSBorder(
+            warningSubtle = Color("#fff5eb".toColorInt()),
+            warningStrong = Color("#f59638".toColorInt()),
+            successSubtle = Color("#f4fbf4".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
+            neutralSubtle = Color("#f5f7f9".toColorInt()),
+            neutralStrong = Color("#555f6d".toColorInt()),
+            inverse = Color("#272e35".toColorInt()),
+            infoSubtle = Color("#f5f8ff".toColorInt()),
+            infoStrong = Color("#3061d5".toColorInt()),
+            defaultA = Color("#10284717".toColorInt()),
+            default = Color("#ffffff".toColorInt()),
+            dangerSubtle = Color("#fef5f5".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt())
         ),
-        coolGrayAlpha = CoolGrayAlphaValuesContainer(
-            coolGrayANegative4 = Color(parseColor("#09131aed")),
-            coolGrayANegative3 = Color(parseColor("#0a121ae0")),
-            coolGrayANegative2 = Color(parseColor("#1a232ddb")),
-            coolGrayANegative1 = Color(parseColor("#1d2835cc")),
-            coolGrayA8 = Color(parseColor("#1f529e05")),
-            coolGrayA7 = Color(parseColor("#00295c0a")),
-            coolGrayA6 = Color(parseColor("#022e500f")),
-            coolGrayA5 = Color(parseColor("#10284717")),
-            coolGrayA4 = Color(parseColor("#04294321")),
-            coolGrayA3 = Color(parseColor("#10315633")),
-            coolGrayA2 = Color(parseColor("#0d253f66")),
-            coolGrayA1 = Color(parseColor("#1830498f")),
-            coolGrayA0 = Color(parseColor("#182639bd"))
+        background = DSBackground(
+            warningSurface = Color("#fffcfa".toColorInt()),
+            warningSubtle = Color("#fff5eb".toColorInt()),
+            warningStrong = Color("#f59638".toColorInt()),
+            warningOnSubtle = Color("#ffe8d1".toColorInt()),
+            warningMuted = Color("#fcdec0".toColorInt()),
+            successSurface = Color("#fbfefb".toColorInt()),
+            successSubtle = Color("#f4fbf4".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
+            successOnSubtle = Color("#dff6df".toColorInt()),
+            successMuted = Color("#cff2cf".toColorInt()),
+            neutralSurface = Color("#fcfcfd".toColorInt()),
+            neutralSubtle = Color("#f5f7f9".toColorInt()),
+            neutralStrong = Color("#555f6d".toColorInt()),
+            neutralOnSubtle = Color("#eaedf0".toColorInt()),
+            neutralMuted = Color("#dee3e7".toColorInt()),
+            inverse = Color("#272e35".toColorInt()),
+            infoSurface = Color("#fafbff".toColorInt()),
+            infoSubtle = Color("#f5f8ff".toColorInt()),
+            infoStrong = Color("#3061d5".toColorInt()),
+            infoOnSubtle = Color("#e5eeff".toColorInt()),
+            infoMuted = Color("#d6e3ff".toColorInt()),
+            default = Color("#ffffff".toColorInt()),
+            dangerSurface = Color("#fffafa".toColorInt()),
+            dangerSubtle = Color("#fef5f5".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt()),
+            dangerOnSubtle = Color("#fee7e7".toColorInt()),
+            dangerMuted = Color("#d15a5a".toColorInt()),
+            brandSurface = Color("#fafbff".toColorInt()),
+            brandSubtle = Color("#f5f8ff".toColorInt()),
+            brandStrong = Color("#3061d5".toColorInt()),
+            brandOnSubtle = Color("#e5eeff".toColorInt()),
+            brandMuted = Color("#d6e3ff".toColorInt())
         ),
-        coolGray = CoolGrayValuesContainer(
-            negative4 = Color(parseColor("#1b242c")),
-            negative3 = Color(parseColor("#272e35")),
-            negative2 = Color(parseColor("#3a424a")),
-            negative1 = Color(parseColor("#4a545e")),
-            coolGray8 = Color(parseColor("#fcfcfd")),
-            coolGray7 = Color(parseColor("#f5f7f9")),
-            coolGray6 = Color(parseColor("#f0f3f5")),
-            coolGray5 = Color(parseColor("#eaedf0")),
-            coolGray4 = Color(parseColor("#dee3e7")),
-            coolGray3 = Color(parseColor("#cfd6dd")),
-            coolGray2 = Color(parseColor("#9ea8b3")),
-            coolGray1 = Color(parseColor("#7e8c9a")),
-            coolGray0 = Color(parseColor("#555f6d"))
-        ),
-        content = ContentValuesContainer(
-            warningSecondary = Color(parseColor("#FF0000")),
-            warningPrimary = Color(parseColor("#7a4510")),
-            tertiaryInverse = Color(parseColor("#ffffff66")),
-            tertiary = Color(parseColor("#7e8c9a")),
-            successSecondary = Color(parseColor("#347434")),
-            successPrimary = Color(parseColor("#135315")),
-            secondaryInverse = Color(parseColor("#ffffffa3")),
-            secondary = Color(parseColor("#555f6d")),
-            primaryInverse = Color(parseColor("#ffffff")),
-            primary = Color(parseColor("#272e35")),
-            infoSecondary = Color(parseColor("#3061d5")),
-            infoPrimary = Color(parseColor("#113997")),
-            disabledInverse = Color(parseColor("#ffffff3d")),
-            disabled = Color(parseColor("#9ea8b3")),
-            dangerSecondary = Color(parseColor("#c53434")),
-            dangerPrimary = Color(parseColor("#6f2020")),
-            brandSecondary = Color(parseColor("#3061d5")),
-            brandPrimary = Color(parseColor("#113997"))
-        ),
-        border = BorderValuesContainer(
-            warningSubtle = Color(parseColor("#ffd4a8")),
-            warningStrong = Color(parseColor("#f59638")),
-            successSubtle = Color(parseColor("#c6ecc6")),
-            successStrong = Color(parseColor("#347434")),
-            neutralSubtle = Color(parseColor("#cfd6dd")),
-            neutralStrong = Color(parseColor("#555f6d")),
-            inverse = Color(parseColor("#ffffff")),
-            infoSubtle = Color(parseColor("#ccdcff")),
-            infoStrong = Color(parseColor("#3061d5")),
-            defaultA = Color(parseColor("#10284717")),
-            default = Color(parseColor("#eaedf0")),
-            dangerSubtle = Color(parseColor("#fccfcf")),
-            dangerStrong = Color(parseColor("#c53434"))
-        ),
-        blue = BlueValuesContainer1(
-            negative4 = Color(parseColor("#041f5d")),
-            negative3 = Color(parseColor("#113997")),
-            negative2 = Color(parseColor("#1e4fc2")),
-            negative1 = Color(parseColor("#2759ce")),
-            blue8 = Color(parseColor("#fafbff")),
-            blue7 = Color(parseColor("#f5f8ff")),
-            blue6 = Color(parseColor("#ebf0ff")),
-            blue5 = Color(parseColor("#e5eeff")),
-            blue4 = Color(parseColor("#d6e3ff")),
-            blue3 = Color(parseColor("#ccdcff")),
-            blue2 = Color(parseColor("#8eb0fb")),
-            blue1 = Color(parseColor("#6691f4")),
-            blue0 = Color(parseColor("#3061d5"))
-        ),
-        background = BackgroundValuesContainer(
-            warningSurface = Color(parseColor("#fffcfa")),
-            warningSubtle = Color(parseColor("#fff5eb")),
-            warningStrong = Color(parseColor("#f59638")),
-            warningOnSubtle = Color(parseColor("#ffe8d1")),
-            warningMuted = Color(parseColor("#fcdec0")),
-            successSurface = Color(parseColor("#fbfefb")),
-            successSubtle = Color(parseColor("#f4fbf4")),
-            successStrong = Color(parseColor("#347434")),
-            successOnSubtle = Color(parseColor("#dff6df")),
-            successMuted = Color(parseColor("#cff2cf")),
-            neutralSurface = Color(parseColor("#fcfcfd")),
-            neutralSubtle = Color(parseColor("#f5f7f9")),
-            neutralStrong = Color(parseColor("#555f6d")),
-            neutralOnSubtle = Color(parseColor("#eaedf0")),
-            neutralMuted = Color(parseColor("#dee3e7")),
-            inverse = Color(parseColor("#272e35")),
-            infoSurface = Color(parseColor("#fafbff")),
-            infoSubtle = Color(parseColor("#f5f8ff")),
-            infoStrong = Color(parseColor("#3061d5")),
-            infoOnSubtle = Color(parseColor("#e5eeff")),
-            infoMuted = Color(parseColor("#d6e3ff")),
-            default = Color(parseColor("#ffffff")),
-            dangerSurface = Color(parseColor("#fffafa")),
-            dangerSubtle = Color(parseColor("#fef5f5")),
-            dangerStrong = Color(parseColor("#c53434")),
-            dangerOnSubtle = Color(parseColor("#fee7e7")),
-            dangerMuted = Color(parseColor("#fcd9d9")),
-            brandSurface = Color(parseColor("#fafbff")),
-            brandSubtle = Color(parseColor("#f5f8ff")),
-            brandStrong = Color(parseColor("#3061d5")),
-            brandOnSubtle = Color(parseColor("#e5eeff")),
-            brandMuted = Color(parseColor("#d6e3ff"))
-        ),
-        aquamarine = AquamarineValuesContainer1(
-            negative4 = Color(parseColor("#012d26")),
-            negative3 = Color(parseColor("#0d4a42")),
-            negative2 = Color(parseColor("#15665b")),
-            negative1 = Color(parseColor("#1a7061")),
-            aquamarine8 = Color(parseColor("#fbfefe")),
-            aquamarine7 = Color(parseColor("#f0faf9")),
-            aquamarine6 = Color(parseColor("#e2f8f5")),
-            aquamarine5 = Color(parseColor("#daf6f3")),
-            aquamarine4 = Color(parseColor("#c5f2ec")),
-            aquamarine3 = Color(parseColor("#bee9e4")),
-            aquamarine2 = Color(parseColor("#6ec9bf")),
-            aquamarine1 = Color(parseColor("#3da496")),
-            aquamarine0 = Color(parseColor("#097b68"))
-        ),
-        action = ActionValuesContainer(
-            success = SuccessValuesContainer(
-                actionSuccessSubtleSelected = Color(parseColor("#dff6df")),
-                actionSuccessSubtleNormal = Color(parseColor("#e6f9e6")),
-                actionSuccessSubtleHover = Color(parseColor("#dff6df")),
-                actionSuccessSubtleActive = Color(parseColor("#c6ecc6")),
-                actionSuccessSelected = Color(parseColor("#246626")),
-                actionSuccessNormal = Color(parseColor("#347434")),
-                actionSuccessHover = Color(parseColor("#246626")),
-                actionSuccessActive = Color(parseColor("#135315"))
+        action = DSAction(
+            success = DSSuccess(
+                actionSuccessSubtleSelected = Color("#dff6df".toColorInt()),
+                actionSuccessSubtleNormal = Color("#e6f9e6".toColorInt()),
+                actionSuccessSubtleHover = Color("#dff6df".toColorInt()),
+                actionSuccessSubtleActive = Color("#00ff10".toColorInt()),
+                actionSuccessSelected = Color("#246626".toColorInt()),
+                actionSuccessNormal = Color("#20b027".toColorInt()),
+                actionSuccessHover = Color("#246626".toColorInt()),
+                actionSuccessActive = Color("#b3b7b0".toColorInt())
             ),
-            reverseInverse = ReverseInverseValuesContainer(
-                actionReverseInverseSelected = Color(parseColor("#1d2835cc")),
-                actionReverseInverseNormal = Color(parseColor("#0a121ae0")),
-                actionReverseInverseHover = Color(parseColor("#1d2835cc")),
-                actionReverseInverseActive = Color(parseColor("#182639bd"))
+            reverseInverse = DSReverseInverse(
+                actionReverseInverseSelected = Color("#1d2835cc".toColorInt()),
+                actionReverseInverseNormal = Color("#0a121ae0".toColorInt()),
+                actionReverseInverseHover = Color("#1d2835cc".toColorInt()),
+                actionReverseInverseActive = Color("#182639bd".toColorInt())
             ),
-            primary = PrimaryValuesContainer(
-                actionPrimarySubtleSelected = Color(parseColor("#e5eeff")),
-                actionPrimarySubtleNormal = Color(parseColor("#ebf0ff")),
-                actionPrimarySubtleHover = Color(parseColor("#e5eeff")),
-                actionPrimarySubtleActive = Color(parseColor("#ccdcff")),
-                actionPrimarySelected = Color(parseColor("#1e4fc2")),
-                actionPrimaryNormal = Color(parseColor("#000000")),
-                actionPrimaryHover = Color(parseColor("#1e4fc2")),
-                actionPrimaryActive = Color(parseColor("#113997"))
+            primary = DSPrimary(
+                actionPrimarySubtleSelected = Color("#e5eeff".toColorInt()),
+                actionPrimarySubtleNormal = Color("#ebf0ff".toColorInt()),
+                actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
+                actionPrimarySubtleActive = Color("#0085ff".toColorInt()),
+                actionPrimarySelected = Color("#658b6e".toColorInt()),
+                actionPrimaryNormal = Color("#3061d5".toColorInt()),
+                actionPrimaryHover = Color("#658b6e".toColorInt()),
+                actionPrimaryActive = Color("#113997".toColorInt())
             ),
-            outline = OutlineValuesContainer(
-                actionOutlineSelected = Color(parseColor("#9ea8b3")),
-                actionOutlineNormal = Color(parseColor("#cfd6dd")),
-                actionOutlineHover = Color(parseColor("#9ea8b3")),
-                actionOutlineActive = Color(parseColor("#7e8c9a"))
+            outline = DSOutline(
+                actionOutlineSelected = Color("#9ea8b3".toColorInt()),
+                actionOutlineNormal = Color("#cfd6dd".toColorInt()),
+                actionOutlineHover = Color("#9ea8b3".toColorInt()),
+                actionOutlineActive = Color("#7e8c9a".toColorInt())
             ),
-            neutral = NeutralValuesContainer(
-                actionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
-                actionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
-                actionNeutralSubtleHover = Color(parseColor("#eaedf0")),
-                actionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
-                actionNeutralSelected = Color(parseColor("#3a424a")),
-                actionNeutralNormal = Color(parseColor("#4a545e")),
-                actionNeutralHover = Color(parseColor("#3a424a")),
-                actionNeutralActive = Color(parseColor("#272e35"))
+            neutral = DSNeutral(
+                actionNeutralSubtleSelected = Color("#eaedf0".toColorInt()),
+                actionNeutralSubtleNormal = Color("#f0f3f5".toColorInt()),
+                actionNeutralSubtleHover = Color("#eaedf0".toColorInt()),
+                actionNeutralSubtleActive = Color("#cfd6dd".toColorInt()),
+                actionNeutralSelected = Color("#3a424a".toColorInt()),
+                actionNeutralNormal = Color("#4a545e".toColorInt()),
+                actionNeutralHover = Color("#3a424a".toColorInt()),
+                actionNeutralActive = Color("#272e35".toColorInt())
             ),
-            inverse = InverseValuesContainer(
-                actionInverseSelected = Color(parseColor("#ffffffd1")),
-                actionInverseNormal = Color(parseColor("#ffffff")),
-                actionInverseHover = Color(parseColor("#ffffffd1")),
-                actionInverseActive = Color(parseColor("#ffffffb8"))
+            inverse = DSInverse(
+                actionInverseSelected = Color("#ffffffd1".toColorInt()),
+                actionInverseNormal = Color("#ffffff".toColorInt()),
+                actionInverseHover = Color("#ffffffd1".toColorInt()),
+                actionInverseActive = Color("#ffffffb8".toColorInt())
             ),
-            ghost = GhostValuesContainer(
-                actionGhostSelected = Color(parseColor("#022e500f")),
-                actionGhostNormal = Color(parseColor("#ffffff00")),
-                actionGhostInverseSelected = Color(parseColor("#ffffff1a")),
-                actionGhostInverseHover = Color(parseColor("#ffffff1a")),
-                actionGhostInverseActive = Color(parseColor("#ffffff1f")),
-                actionGhostHover = Color(parseColor("#022e500f")),
-                actionGhostDangerSelected = Color(parseColor("#ffebeb")),
-                actionGhostDangerHover = Color(parseColor("#ffebeb")),
-                actionGhostDangerActive = Color(parseColor("#fee7e7")),
-                actionGhostActive = Color(parseColor("#10284717"))
+            ghost = DSGhost(
+                actionGhostSelected = Color("#022e500f".toColorInt()),
+                actionGhostNormal = Color("#ffffff00".toColorInt()),
+                actionGhostInverseSelected = Color("#ffffff1a".toColorInt()),
+                actionGhostInverseHover = Color("#ffffff1a".toColorInt()),
+                actionGhostInverseActive = Color("#ffffff1f".toColorInt()),
+                actionGhostHover = Color("#022e500f".toColorInt()),
+                actionGhostDangerSelected = Color("#ffebeb".toColorInt()),
+                actionGhostDangerHover = Color("#ffebeb".toColorInt()),
+                actionGhostDangerActive = Color("#fee7e7".toColorInt()),
+                actionGhostActive = Color("#10284717".toColorInt())
             ),
-            danger = DangerValuesContainer(
-                actionDangerSubtleSelected = Color(parseColor("#fee7e7")),
-                actionDangerSubtleNormal = Color(parseColor("#ffebeb")),
-                actionDangerSubtleHover = Color(parseColor("#fee7e7")),
-                actionDangerSubtleActive = Color(parseColor("#fccfcf")),
-                actionDangerSelected = Color(parseColor("#952d2d")),
-                actionDangerNormal = Color(parseColor("#c53434")),
-                actionDangerHover = Color(parseColor("#952d2d")),
-                actionDangerActive = Color(parseColor("#6f2020"))
+            danger = DSDanger(
+                actionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
+                actionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
+                actionDangerSubtleHover = Color("#fee7e7".toColorInt()),
+                actionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                actionDangerSelected = Color("#63c7c3".toColorInt()),
+                actionDangerNormal = Color("#9e6610".toColorInt()),
+                actionDangerHover = Color("#63c7c3".toColorInt()),
+                actionDangerActive = Color("#30723a".toColorInt())
             )
         )
     ),
-    colorDark = ColorValuesContainer(
-        whiteAlpha = WhiteAlphaValuesContainer(
-            whiteANegative9 = Color(parseColor("#ffffff14")),
-            whiteANegative8 = Color(parseColor("#ffffff1a")),
-            whiteANegative7 = Color(parseColor("#ffffff1f")),
-            whiteANegative6 = Color(parseColor("#ffffff3d")),
-            whiteANegative5 = Color(parseColor("#ffffff66")),
-            whiteANegative4 = Color(parseColor("#ffffffa3")),
-            whiteANegative3 = Color(parseColor("#ffffffad")),
-            whiteANegative2 = Color(parseColor("#ffffffb8")),
-            whiteANegative12 = Color(parseColor("#ffffff05")),
-            whiteANegative11 = Color(parseColor("#ffffff08")),
-            whiteANegative10 = Color(parseColor("#ffffff0d")),
-            whiteANegative1 = Color(parseColor("#ffffffd1")),
-            whiteA0 = Color(parseColor("#ffffff"))
-        ),
-        warmGrayAlpha = WarmGrayAlphaValuesContainer(
-            warmGrayANegative4 = Color(parseColor("#131311ed")),
-            warmGrayANegative3 = Color(parseColor("#12120de0")),
-            warmGrayANegative2 = Color(parseColor("#22221bdb")),
-            warmGrayANegative1 = Color(parseColor("#272720cc")),
-            warmGrayA8 = Color(parseColor("#52525205")),
-            warmGrayA7 = Color(parseColor("#2f2f2d0a")),
-            warmGrayA6 = Color(parseColor("#2f2f0e0f")),
-            warmGrayA5 = Color(parseColor("#22220217")),
-            warmGrayA4 = Color(parseColor("#33331421")),
-            warmGrayA3 = Color(parseColor("#3e3e1d33")),
-            warmGrayA2 = Color(parseColor("#28281166")),
-            warmGrayA1 = Color(parseColor("#2f2f238f")),
-            warmGrayA0 = Color(parseColor("#26261cbd"))
-        ),
-        warmGray = WarmGrayValuesContainer(
-            warmGray8 = Color(parseColor("#fdfdfc")),
-            warmGray7 = Color(parseColor("#f8f8f7")),
-            warmGray6 = Color(parseColor("#f3f3f1")),
-            warmGray5 = Color(parseColor("#eaeae6")),
-            warmGray4 = Color(parseColor("#e5e5e1")),
-            warmGray3 = Color(parseColor("#d9d9d3")),
-            warmGray2 = Color(parseColor("#a8a89f")),
-            warmGray1 = Color(parseColor("#8b8b84")),
-            warmGray0 = Color(parseColor("#5f5f58")),
-            negative4 = Color(parseColor("#222220")),
-            negative3 = Color(parseColor("#30302c")),
-            negative2 = Color(parseColor("#40403a")),
-            negative1 = Color(parseColor("#52524c"))
-        ),
-        violet = VioletValuesContainer1(
-            violet8 = Color(parseColor("#fbfaff")),
-            violet7 = Color(parseColor("#f7f5ff")),
-            violet6 = Color(parseColor("#f3f0ff")),
-            violet5 = Color(parseColor("#eeebff")),
-            violet4 = Color(parseColor("#e3e0ff")),
-            violet3 = Color(parseColor("#dcd6ff")),
-            violet2 = Color(parseColor("#aba2fb")),
-            violet1 = Color(parseColor("#927ef1")),
-            violet0 = Color(parseColor("#634eca")),
-            negative4 = Color(parseColor("#201263")),
-            negative3 = Color(parseColor("#39288a")),
-            negative2 = Color(parseColor("#4e38bc")),
-            negative1 = Color(parseColor("#573fcf"))
-        ),
-        transparent = TransparentValuesContainer(
-            transparent = Color(parseColor("#ffffff00"))
-        ),
-        teal = TealValuesContainer1(
-            teal8 = Color(parseColor("#fafeff")),
-            teal7 = Color(parseColor("#f0fbff")),
-            teal6 = Color(parseColor("#e8f7fc")),
-            teal5 = Color(parseColor("#e0f3fa")),
-            teal4 = Color(parseColor("#c5ecf7")),
-            teal3 = Color(parseColor("#b8e8f5")),
-            teal2 = Color(parseColor("#7ac0dc")),
-            teal1 = Color(parseColor("#4f9eba")),
-            teal0 = Color(parseColor("#077597")),
-            negative4 = Color(parseColor("#012a37")),
-            negative3 = Color(parseColor("#0a495c")),
-            negative2 = Color(parseColor("#196076")),
-            negative1 = Color(parseColor("#196c85"))
-        ),
-        semantic = SemanticValuesContainer(
-            warning = WarningValuesContainer(
-                semanticWarningNegative4 = Color(parseColor("#492909")),
-                semanticWarningNegative3 = Color(parseColor("#7a4510")),
-                semanticWarningNegative2 = Color(parseColor("#a05c1c")),
-                semanticWarningNegative1 = Color(parseColor("#b4610e")),
-                semanticWarning8 = Color(parseColor("#fffcfa")),
-                semanticWarning7 = Color(parseColor("#fff5eb")),
-                semanticWarning6 = Color(parseColor("#fff0e0")),
-                semanticWarning5 = Color(parseColor("#ffe8d1")),
-                semanticWarning4 = Color(parseColor("#fcdec0")),
-                semanticWarning3 = Color(parseColor("#ffd4a8")),
-                semanticWarning2 = Color(parseColor("#feb871")),
-                semanticWarning1 = Color(parseColor("#f6a351")),
-                semanticWarning0 = Color(parseColor("#f59638"))
+    colorLight = DSColor(
+        semantic = DSSemantic(
+            warning = DSWarning(
+                semanticWarningNegative4 = Color("#492909".toColorInt()),
+                semanticWarningNegative3 = Color("#3f2828".toColorInt()),
+                semanticWarningNegative2 = Color("#a05c1c".toColorInt()),
+                semanticWarningNegative1 = Color("#b4610e".toColorInt()),
+                semanticWarning8 = Color("#fffcfa".toColorInt()),
+                semanticWarning7 = Color("#fff5eb".toColorInt()),
+                semanticWarning6 = Color("#fff0e0".toColorInt()),
+                semanticWarning5 = Color("#ffe8d1".toColorInt()),
+                semanticWarning4 = Color("#fcdec0".toColorInt()),
+                semanticWarning3 = Color("#ffd4a8".toColorInt()),
+                semanticWarning2 = Color("#feb871".toColorInt()),
+                semanticWarning1 = Color("#f6a351".toColorInt()),
+                semanticWarning0 = Color("#f59638".toColorInt())
             ),
-            success = SuccessValuesContainer1(
-                semanticSuccessNegative4 = Color(parseColor("#0a2e0b")),
-                semanticSuccessNegative3 = Color(parseColor("#135315")),
-                semanticSuccessNegative2 = Color(parseColor("#246626")),
-                semanticSuccessNegative1 = Color(parseColor("#2f6f2f")),
-                semanticSuccess8 = Color(parseColor("#fbfefb")),
-                semanticSuccess7 = Color(parseColor("#f4fbf4")),
-                semanticSuccess6 = Color(parseColor("#e6f9e6")),
-                semanticSuccess5 = Color(parseColor("#dff6df")),
-                semanticSuccess4 = Color(parseColor("#cff2cf")),
-                semanticSuccess3 = Color(parseColor("#c6ecc6")),
-                semanticSuccess2 = Color(parseColor("#87c987")),
-                semanticSuccess1 = Color(parseColor("#55a555")),
-                semanticSuccess0 = Color(parseColor("#347434"))
+            success = DSSuccess1(
+                semanticSuccessNegative4 = Color("#0a2e0b".toColorInt()),
+                semanticSuccessNegative3 = Color("#b3b7b0".toColorInt()),
+                semanticSuccessNegative2 = Color("#246626".toColorInt()),
+                semanticSuccessNegative1 = Color("#2f6f2f".toColorInt()),
+                semanticSuccess8 = Color("#fbfefb".toColorInt()),
+                semanticSuccess7 = Color("#f4fbf4".toColorInt()),
+                semanticSuccess6 = Color("#e6f9e6".toColorInt()),
+                semanticSuccess5 = Color("#dff6df".toColorInt()),
+                semanticSuccess4 = Color("#cff2cf".toColorInt()),
+                semanticSuccess3 = Color("#00ff10".toColorInt()),
+                semanticSuccess2 = Color("#fdff84".toColorInt()),
+                semanticSuccess1 = Color("#55a555".toColorInt()),
+                semanticSuccess0 = Color("#20b027".toColorInt())
             ),
-            neutralAlpha = NeutralAlphaValuesContainer(
-                semanticNeutralANegative4 = Color(parseColor("#09131aed")),
-                semanticNeutralANegative3 = Color(parseColor("#0a121ae0")),
-                semanticNeutralANegative2 = Color(parseColor("#1a232ddb")),
-                semanticNeutralANegative1 = Color(parseColor("#1d2835cc")),
-                semanticNeutralA8 = Color(parseColor("#1f529e05")),
-                semanticNeutralA7 = Color(parseColor("#00295c0a")),
-                semanticNeutralA6 = Color(parseColor("#022e500f")),
-                semanticNeutralA5 = Color(parseColor("#10284717")),
-                semanticNeutralA4 = Color(parseColor("#04294321")),
-                semanticNeutralA3 = Color(parseColor("#10315633")),
-                semanticNeutralA2 = Color(parseColor("#0d253f66")),
-                semanticNeutralA1 = Color(parseColor("#1830498f")),
-                semanticNeutralA0 = Color(parseColor("#182639bd"))
+            neutralAlpha = DSNeutralAlpha(
+                semanticNeutralANegative4 = Color("#09131aed".toColorInt()),
+                semanticNeutralANegative3 = Color("#0a121ae0".toColorInt()),
+                semanticNeutralANegative2 = Color("#1a232ddb".toColorInt()),
+                semanticNeutralANegative1 = Color("#1d2835cc".toColorInt()),
+                semanticNeutralA8 = Color("#1f529e05".toColorInt()),
+                semanticNeutralA7 = Color("#00295c0a".toColorInt()),
+                semanticNeutralA6 = Color("#022e500f".toColorInt()),
+                semanticNeutralA5 = Color("#10284717".toColorInt()),
+                semanticNeutralA4 = Color("#04294321".toColorInt()),
+                semanticNeutralA3 = Color("#10315633".toColorInt()),
+                semanticNeutralA2 = Color("#0d253f66".toColorInt()),
+                semanticNeutralA1 = Color("#1830498f".toColorInt()),
+                semanticNeutralA0 = Color("#182639bd".toColorInt())
             ),
-            neutral = NeutralValuesContainer2(
-                semanticNeutralNegative4 = Color(parseColor("#1b242c")),
-                semanticNeutralNegative3 = Color(parseColor("#272e35")),
-                semanticNeutralNegative2 = Color(parseColor("#3a424a")),
-                semanticNeutralNegative1 = Color(parseColor("#4a545e")),
-                semanticNeutral8 = Color(parseColor("#fcfcfd")),
-                semanticNeutral7 = Color(parseColor("#f5f7f9")),
-                semanticNeutral6 = Color(parseColor("#f0f3f5")),
-                semanticNeutral5 = Color(parseColor("#eaedf0")),
-                semanticNeutral4 = Color(parseColor("#dee3e7")),
-                semanticNeutral3 = Color(parseColor("#cfd6dd")),
-                semanticNeutral2 = Color(parseColor("#9ea8b3")),
-                semanticNeutral1 = Color(parseColor("#7e8c9a")),
-                semanticNeutral0 = Color(parseColor("#555f6d"))
+            neutral = DSNeutral2(
+                semanticNeutralNegative4 = Color("#1b242c".toColorInt()),
+                semanticNeutralNegative3 = Color("#272e35".toColorInt()),
+                semanticNeutralNegative2 = Color("#3a424a".toColorInt()),
+                semanticNeutralNegative1 = Color("#4a545e".toColorInt()),
+                semanticNeutral8 = Color("#fcfcfd".toColorInt()),
+                semanticNeutral7 = Color("#f5f7f9".toColorInt()),
+                semanticNeutral6 = Color("#f0f3f5".toColorInt()),
+                semanticNeutral5 = Color("#eaedf0".toColorInt()),
+                semanticNeutral4 = Color("#dee3e7".toColorInt()),
+                semanticNeutral3 = Color("#cfd6dd".toColorInt()),
+                semanticNeutral2 = Color("#9ea8b3".toColorInt()),
+                semanticNeutral1 = Color("#7e8c9a".toColorInt()),
+                semanticNeutral0 = Color("#555f6d".toColorInt())
             ),
-            info = InfoValuesContainer(
-                semanticInfoNegative4 = Color(parseColor("#041f5d")),
-                semanticInfoNegative3 = Color(parseColor("#113997")),
-                semanticInfoNegative2 = Color(parseColor("#1e4fc2")),
-                semanticInfoNegative1 = Color(parseColor("#2759ce")),
-                semanticInfo8 = Color(parseColor("#fafbff")),
-                semanticInfo7 = Color(parseColor("#f5f8ff")),
-                semanticInfo6 = Color(parseColor("#ebf0ff")),
-                semanticInfo5 = Color(parseColor("#e5eeff")),
-                semanticInfo4 = Color(parseColor("#d6e3ff")),
-                semanticInfo3 = Color(parseColor("#ccdcff")),
-                semanticInfo2 = Color(parseColor("#8eb0fb")),
-                semanticInfo1 = Color(parseColor("#6691f4")),
-                semanticInfo0 = Color(parseColor("#3061d5"))
+            info = DSInfo(
+                semanticInfoNegative4 = Color("#041f5d".toColorInt()),
+                semanticInfoNegative3 = Color("#113997".toColorInt()),
+                semanticInfoNegative2 = Color("#658b6e".toColorInt()),
+                semanticInfoNegative1 = Color("#ffebeb".toColorInt()),
+                semanticInfo8 = Color("#fafbff".toColorInt()),
+                semanticInfo7 = Color("#f5f8ff".toColorInt()),
+                semanticInfo6 = Color("#ebf0ff".toColorInt()),
+                semanticInfo5 = Color("#e5eeff".toColorInt()),
+                semanticInfo4 = Color("#d6e3ff".toColorInt()),
+                semanticInfo3 = Color("#0085ff".toColorInt()),
+                semanticInfo2 = Color("#8eb0fb".toColorInt()),
+                semanticInfo1 = Color("#6691f4".toColorInt()),
+                semanticInfo0 = Color("#3061d5".toColorInt())
             ),
-            danger = DangerValuesContainer2(
-                semanticDangerNegative4 = Color(parseColor("#c53434")),
-                semanticDangerNegative3 = Color(parseColor("#6f2020")),
-                semanticDangerNegative2 = Color(parseColor("#952d2d")),
-                semanticDangerNegative1 = Color(parseColor("#a13636")),
-                semanticDanger8 = Color(parseColor("#fffafa")),
-                semanticDanger7 = Color(parseColor("#fef5f5")),
-                semanticDanger6 = Color(parseColor("#ffebeb")),
-                semanticDanger5 = Color(parseColor("#fee7e7")),
-                semanticDanger4 = Color(parseColor("#fcd9d9")),
-                semanticDanger3 = Color(parseColor("#fccfcf")),
-                semanticDanger2 = Color(parseColor("#f49090")),
-                semanticDanger1 = Color(parseColor("#f26363")),
-                semanticDanger0 = Color(parseColor("#c53434"))
+            danger = DSDanger2(
+                semanticDangerNegative4 = Color("#4a0d0d".toColorInt()),
+                semanticDangerNegative3 = Color("#30723a".toColorInt()),
+                semanticDangerNegative2 = Color("#63c7c3".toColorInt()),
+                semanticDangerNegative1 = Color("#a13636".toColorInt()),
+                semanticDanger8 = Color("#fffafa".toColorInt()),
+                semanticDanger7 = Color("#fef5f5".toColorInt()),
+                semanticDanger6 = Color("#ffebeb".toColorInt()),
+                semanticDanger5 = Color("#fee7e7".toColorInt()),
+                semanticDanger4 = Color("#d15a5a".toColorInt()),
+                semanticDanger3 = Color("#76d91c".toColorInt()),
+                semanticDanger2 = Color("#494b75".toColorInt()),
+                semanticDanger1 = Color("#285aa5".toColorInt()),
+                semanticDanger0 = Color("#9e6610".toColorInt())
             ),
-            brand = BrandValuesContainer(
-                semanticBrandNegative4 = Color(parseColor("#15665b")),
-                semanticBrandNegative3 = Color(parseColor("#113997")),
-                semanticBrandNegative2 = Color(parseColor("#1e4fc2")),
-                semanticBrandNegative1 = Color(parseColor("#2759ce")),
-                semanticBrand8 = Color(parseColor("#fafbff")),
-                semanticBrand7 = Color(parseColor("#f5f8ff")),
-                semanticBrand6 = Color(parseColor("#ebf0ff")),
-                semanticBrand5 = Color(parseColor("#e5eeff")),
-                semanticBrand4 = Color(parseColor("#d6e3ff")),
-                semanticBrand3 = Color(parseColor("#ccdcff")),
-                semanticBrand2 = Color(parseColor("#8eb0fb")),
-                semanticBrand1 = Color(parseColor("#6691f4")),
-                semanticBrand0 = Color(parseColor("#3061d5"))
+            brand = DSBrand(
+                semanticBrandNegative4 = Color("#3061d5".toColorInt()),
+                semanticBrandNegative3 = Color("#113997".toColorInt()),
+                semanticBrandNegative2 = Color("#658b6e".toColorInt()),
+                semanticBrandNegative1 = Color("#ff9375".toColorInt()),
+                semanticBrand8 = Color("#fafbff".toColorInt()),
+                semanticBrand7 = Color("#f5f8ff".toColorInt()),
+                semanticBrand6 = Color("#ebf0ff".toColorInt()),
+                semanticBrand5 = Color("#e5eeff".toColorInt()),
+                semanticBrand4 = Color("#d6e3ff".toColorInt()),
+                semanticBrand3 = Color("#0085ff".toColorInt()),
+                semanticBrand2 = Color("#8eb0fb".toColorInt()),
+                semanticBrand1 = Color("#6691f4".toColorInt()),
+                semanticBrand0 = Color("#3061d5".toColorInt())
             )
         ),
-        red = RedValuesContainer1(
-            red8 = Color(parseColor("#fffafa")),
-            red7 = Color(parseColor("#fef5f5")),
-            red6 = Color(parseColor("#ffebeb")),
-            red5 = Color(parseColor("#fee7e7")),
-            red4 = Color(parseColor("#fcd9d9")),
-            red3 = Color(parseColor("#fccfcf")),
-            red2 = Color(parseColor("#f49090")),
-            red1 = Color(parseColor("#f26363")),
-            red0 = Color(parseColor("#c53434")),
-            negative4 = Color(parseColor("#c53434")),
-            negative3 = Color(parseColor("#6f2020")),
-            negative2 = Color(parseColor("#952d2d")),
-            negative1 = Color(parseColor("#a13636"))
-        ),
-        purple = PurpleValuesContainer1(
-            purple8 = Color(parseColor("#fefaff")),
-            purple7 = Color(parseColor("#fdf5ff")),
-            purple6 = Color(parseColor("#faedfd")),
-            purple5 = Color(parseColor("#f8e2fd")),
-            purple4 = Color(parseColor("#f5d5fb")),
-            purple3 = Color(parseColor("#f4caf7")),
-            purple2 = Color(parseColor("#d98eec")),
-            purple1 = Color(parseColor("#c466db")),
-            purple0 = Color(parseColor("#9939ac")),
-            negative4 = Color(parseColor("#410b2f")),
-            negative3 = Color(parseColor("#5b1e67")),
-            negative2 = Color(parseColor("#792989")),
-            negative1 = Color(parseColor("#853295"))
-        ),
-        orange = OrangeValuesContainer1(
-            orange8 = Color(parseColor("#fffcfa")),
-            orange7 = Color(parseColor("#fff5eb")),
-            orange6 = Color(parseColor("#fff0e0")),
-            orange5 = Color(parseColor("#ffe8d1")),
-            orange4 = Color(parseColor("#fcdec0")),
-            orange3 = Color(parseColor("#ffd4a8")),
-            orange2 = Color(parseColor("#feb871")),
-            orange1 = Color(parseColor("#f6a351")),
-            orange0 = Color(parseColor("#f59638")),
-            negative4 = Color(parseColor("#492909")),
-            negative3 = Color(parseColor("#7a4510")),
-            negative2 = Color(parseColor("#a05c1c")),
-            negative1 = Color(parseColor("#b4610e"))
-        ),
-        nonSemantic = NonSemanticValuesContainer(
-            white = WhiteValuesContainer(
-                nonSemanticWhiteContentSecondary = Color(parseColor("#ffffffa3")),
-                nonSemanticWhiteContentPrimary = Color(parseColor("#ffffff")),
-                nonSemanticWhiteBorderSubtle = Color(parseColor("#ffffffad")),
-                nonSemanticWhiteBorderStrong = Color(parseColor("#ffffff")),
-                nonSemanticWhiteBorderDefault = Color(parseColor("#ffffff66")),
-                nonSemanticWhiteBackgroundSurface = Color(parseColor("#ffffff1a")),
-                nonSemanticWhiteBackgroundSubtle = Color(parseColor("#ffffff1f")),
-                nonSemanticWhiteBackgroundStrong = Color(parseColor("#ffffff")),
-                nonSemanticWhiteBackgroundOnSubtle = Color(parseColor("#ffffff66")),
-                nonSemanticWhiteBackgroundMuted = Color(parseColor("#ffffffa3"))
+        nonSemantic = DSNonSemantic(
+            white = DSWhite(
+                nonSemanticWhiteContentSecondary = Color("#ffffffa3".toColorInt()),
+                nonSemanticWhiteContentPrimary = Color("#ffffff".toColorInt()),
+                nonSemanticWhiteBorderSubtle = Color("#ffffffad".toColorInt()),
+                nonSemanticWhiteBorderStrong = Color("#ffffff".toColorInt()),
+                nonSemanticWhiteBorderDefault = Color("#ffffff66".toColorInt()),
+                nonSemanticWhiteBackgroundSurface = Color("#ffffff1a".toColorInt()),
+                nonSemanticWhiteBackgroundSubtle = Color("#ffffff1f".toColorInt()),
+                nonSemanticWhiteBackgroundStrong = Color("#ffffff".toColorInt()),
+                nonSemanticWhiteBackgroundOnSubtle = Color("#ffffff66".toColorInt()),
+                nonSemanticWhiteBackgroundMuted = Color("#ffffffa3".toColorInt())
             ),
-            violet = VioletValuesContainer(
-                nonSemanticVioletContentSecondary = Color(parseColor("#634eca")),
-                nonSemanticVioletContentPrimary = Color(parseColor("#39288a")),
-                nonSemanticVioletBorderSubtle = Color(parseColor("#dcd6ff")),
-                nonSemanticVioletBorderStrong = Color(parseColor("#634eca")),
-                nonSemanticVioletBorderDefault = Color(parseColor("#eeebff")),
-                nonSemanticVioletBackgroundSurface = Color(parseColor("#fbfaff")),
-                nonSemanticVioletBackgroundSubtle = Color(parseColor("#f7f5ff")),
-                nonSemanticVioletBackgroundStrong = Color(parseColor("#634eca")),
-                nonSemanticVioletBackgroundOnSubtle = Color(parseColor("#eeebff")),
-                nonSemanticVioletBackgroundMuted = Color(parseColor("#e3e0ff"))
+            violet = DSViolet(
+                nonSemanticVioletContentSecondary = Color("#634eca".toColorInt()),
+                nonSemanticVioletContentPrimary = Color("#39288a".toColorInt()),
+                nonSemanticVioletBorderSubtle = Color("#54917b".toColorInt()),
+                nonSemanticVioletBorderStrong = Color("#634eca".toColorInt()),
+                nonSemanticVioletBorderDefault = Color("#eeebff".toColorInt()),
+                nonSemanticVioletBackgroundSurface = Color("#fbfaff".toColorInt()),
+                nonSemanticVioletBackgroundSubtle = Color("#f7f5ff".toColorInt()),
+                nonSemanticVioletBackgroundStrong = Color("#634eca".toColorInt()),
+                nonSemanticVioletBackgroundOnSubtle = Color("#eeebff".toColorInt()),
+                nonSemanticVioletBackgroundMuted = Color("#e3e0ff".toColorInt())
             ),
-            teal = TealValuesContainer(
-                nonSemanticTealContentSecondary = Color(parseColor("#077597")),
-                nonSemanticTealContentPrimary = Color(parseColor("#0a495c")),
-                nonSemanticTealBorderSubtle = Color(parseColor("#b8e8f5")),
-                nonSemanticTealBorderStrong = Color(parseColor("#077597")),
-                nonSemanticTealBorderDefault = Color(parseColor("#e0f3fa")),
-                nonSemanticTealBackgroundSurface = Color(parseColor("#fafeff")),
-                nonSemanticTealBackgroundSubtle = Color(parseColor("#f0fbff")),
-                nonSemanticTealBackgroundStrong = Color(parseColor("#077597")),
-                nonSemanticTealBackgroundOnSubtle = Color(parseColor("#e0f3fa")),
-                nonSemanticTealBackgroundMuted = Color(parseColor("#c5ecf7"))
+            teal = DSTeal(
+                nonSemanticTealContentSecondary = Color("#077597".toColorInt()),
+                nonSemanticTealContentPrimary = Color("#7c4fc4".toColorInt()),
+                nonSemanticTealBorderSubtle = Color("#b8e8f5".toColorInt()),
+                nonSemanticTealBorderStrong = Color("#077597".toColorInt()),
+                nonSemanticTealBorderDefault = Color("#e0f3fa".toColorInt()),
+                nonSemanticTealBackgroundSurface = Color("#fafeff".toColorInt()),
+                nonSemanticTealBackgroundSubtle = Color("#f0fbff".toColorInt()),
+                nonSemanticTealBackgroundStrong = Color("#077597".toColorInt()),
+                nonSemanticTealBackgroundOnSubtle = Color("#e0f3fa".toColorInt()),
+                nonSemanticTealBackgroundMuted = Color("#c5ecf7".toColorInt())
             ),
-            red = RedValuesContainer(
-                nonSemanticRedContentSecondary = Color(parseColor("#c53434")),
-                nonSemanticRedContentPrimary = Color(parseColor("#6f2020")),
-                nonSemanticRedBorderSubtle = Color(parseColor("#fccfcf")),
-                nonSemanticRedBorderStrong = Color(parseColor("#c53434")),
-                nonSemanticRedBorderDefault = Color(parseColor("#fee7e7")),
-                nonSemanticRedBackgroundSurface = Color(parseColor("#fffafa")),
-                nonSemanticRedBackgroundSubtle = Color(parseColor("#fef5f5")),
-                nonSemanticRedBackgroundStrong = Color(parseColor("#c53434")),
-                nonSemanticRedBackgroundOnSubtle = Color(parseColor("#fee7e7")),
-                nonSemanticRedBackgroundMuted = Color(parseColor("#fcd9d9"))
+            red = DSRed(
+                nonSemanticRedContentSecondary = Color("#9e6610".toColorInt()),
+                nonSemanticRedContentPrimary = Color("#30723a".toColorInt()),
+                nonSemanticRedBorderSubtle = Color("#76d91c".toColorInt()),
+                nonSemanticRedBorderStrong = Color("#9e6610".toColorInt()),
+                nonSemanticRedBorderDefault = Color("#fee7e7".toColorInt()),
+                nonSemanticRedBackgroundSurface = Color("#fffafa".toColorInt()),
+                nonSemanticRedBackgroundSubtle = Color("#fef5f5".toColorInt()),
+                nonSemanticRedBackgroundStrong = Color("#9e6610".toColorInt()),
+                nonSemanticRedBackgroundOnSubtle = Color("#fee7e7".toColorInt()),
+                nonSemanticRedBackgroundMuted = Color("#d15a5a".toColorInt())
             ),
-            purple = PurpleValuesContainer(
-                nonSemanticPurpleContentSecondary = Color(parseColor("#9939ac")),
-                nonSemanticPurpleContentPrimary = Color(parseColor("#5b1e67")),
-                nonSemanticPurpleBorderSubtle = Color(parseColor("#f4caf7")),
-                nonSemanticPurpleBorderStrong = Color(parseColor("#9939ac")),
-                nonSemanticPurpleBorderDefault = Color(parseColor("#f8e2fd")),
-                nonSemanticPurpleBackgroundSurface = Color(parseColor("#fefaff")),
-                nonSemanticPurpleBackgroundSubtle = Color(parseColor("#fdf5ff")),
-                nonSemanticPurpleBackgroundStrong = Color(parseColor("#9939ac")),
-                nonSemanticPurpleBackgroundOnSubtle = Color(parseColor("#f8e2fd")),
-                nonSemanticPurpleBackgroundMuted = Color(parseColor("#f5d5fb"))
+            purple = DSPurple(
+                nonSemanticPurpleContentSecondary = Color("#9939ac".toColorInt()),
+                nonSemanticPurpleContentPrimary = Color("#5b1e67".toColorInt()),
+                nonSemanticPurpleBorderSubtle = Color("#c04c0d".toColorInt()),
+                nonSemanticPurpleBorderStrong = Color("#9939ac".toColorInt()),
+                nonSemanticPurpleBorderDefault = Color("#f8e2fd".toColorInt()),
+                nonSemanticPurpleBackgroundSurface = Color("#fefaff".toColorInt()),
+                nonSemanticPurpleBackgroundSubtle = Color("#fdf5ff".toColorInt()),
+                nonSemanticPurpleBackgroundStrong = Color("#9939ac".toColorInt()),
+                nonSemanticPurpleBackgroundOnSubtle = Color("#f8e2fd".toColorInt()),
+                nonSemanticPurpleBackgroundMuted = Color("#f5d5fb".toColorInt())
             ),
-            orange = OrangeValuesContainer(
-                nonSemanticOrangeContentSecondary = Color(parseColor("#f59638")),
-                nonSemanticOrangeContentPrimary = Color(parseColor("#7a4510")),
-                nonSemanticOrangeBorderSubtle = Color(parseColor("#ffd4a8")),
-                nonSemanticOrangeBorderStrong = Color(parseColor("#f59638")),
-                nonSemanticOrangeBorderDefault = Color(parseColor("#ffe8d1")),
-                nonSemanticOrangeBackgroundSurface = Color(parseColor("#fffcfa")),
-                nonSemanticOrangeBackgroundSubtle = Color(parseColor("#fff5eb")),
-                nonSemanticOrangeBackgroundStrong = Color(parseColor("#f59638")),
-                nonSemanticOrangeBackgroundOnSubtle = Color(parseColor("#ffe8d1")),
-                nonSemanticOrangeBackgroundMuted = Color(parseColor("#fcdec0"))
+            orange = DSOrange(
+                nonSemanticOrangeContentSecondary = Color("#f59638".toColorInt()),
+                nonSemanticOrangeContentPrimary = Color("#3f2828".toColorInt()),
+                nonSemanticOrangeBorderSubtle = Color("#ffd4a8".toColorInt()),
+                nonSemanticOrangeBorderStrong = Color("#f59638".toColorInt()),
+                nonSemanticOrangeBorderDefault = Color("#ffe8d1".toColorInt()),
+                nonSemanticOrangeBackgroundSurface = Color("#fffcfa".toColorInt()),
+                nonSemanticOrangeBackgroundSubtle = Color("#fff5eb".toColorInt()),
+                nonSemanticOrangeBackgroundStrong = Color("#f59638".toColorInt()),
+                nonSemanticOrangeBackgroundOnSubtle = Color("#ffe8d1".toColorInt()),
+                nonSemanticOrangeBackgroundMuted = Color("#fcdec0".toColorInt())
             ),
-            magenta = MagentaValuesContainer(
-                nonSemanticMagentaContentSecondary = Color(parseColor("#b12f86")),
-                nonSemanticMagentaContentPrimary = Color(parseColor("#671e4d")),
-                nonSemanticMagentaBorderSubtle = Color(parseColor("#f7cae8")),
-                nonSemanticMagentaBorderStrong = Color(parseColor("#b12f86")),
-                nonSemanticMagentaBorderDefault = Color(parseColor("#fde2f4")),
-                nonSemanticMagentaBackgroundSurface = Color(parseColor("#fffafd")),
-                nonSemanticMagentaBackgroundSubtle = Color(parseColor("#fef6fb")),
-                nonSemanticMagentaBackgroundStrong = Color(parseColor("#b12f86")),
-                nonSemanticMagentaBackgroundOnSubtle = Color(parseColor("#fde2f4")),
-                nonSemanticMagentaBackgroundMuted = Color(parseColor("#fbd5ee"))
+            magenta = DSMagenta(
+                nonSemanticMagentaContentSecondary = Color("#91ae7a".toColorInt()),
+                nonSemanticMagentaContentPrimary = Color("#671e4d".toColorInt()),
+                nonSemanticMagentaBorderSubtle = Color("#f7cae8".toColorInt()),
+                nonSemanticMagentaBorderStrong = Color("#91ae7a".toColorInt()),
+                nonSemanticMagentaBorderDefault = Color("#fde2f4".toColorInt()),
+                nonSemanticMagentaBackgroundSurface = Color("#fffafd".toColorInt()),
+                nonSemanticMagentaBackgroundSubtle = Color("#fef6fb".toColorInt()),
+                nonSemanticMagentaBackgroundStrong = Color("#91ae7a".toColorInt()),
+                nonSemanticMagentaBackgroundOnSubtle = Color("#fde2f4".toColorInt()),
+                nonSemanticMagentaBackgroundMuted = Color("#fbd5ee".toColorInt())
             ),
-            green = GreenValuesContainer(
-                nonSemanticGreenContentSecondary = Color(parseColor("#347434")),
-                nonSemanticGreenContentPrimary = Color(parseColor("#135315")),
-                nonSemanticGreenBorderSubtle = Color(parseColor("#c6ecc6")),
-                nonSemanticGreenBorderStrong = Color(parseColor("#347434")),
-                nonSemanticGreenBorderDefault = Color(parseColor("#dff6df")),
-                nonSemanticGreenBackgroundSurface = Color(parseColor("#fbfefb")),
-                nonSemanticGreenBackgroundSubtle = Color(parseColor("#f4fbf4")),
-                nonSemanticGreenBackgroundStrong = Color(parseColor("#347434")),
-                nonSemanticGreenBackgroundOnSubtle = Color(parseColor("#dff6df")),
-                nonSemanticGreenBackgroundMuted = Color(parseColor("#cff2cf"))
+            green = DSGreen(
+                nonSemanticGreenContentSecondary = Color("#20b027".toColorInt()),
+                nonSemanticGreenContentPrimary = Color("#b3b7b0".toColorInt()),
+                nonSemanticGreenBorderSubtle = Color("#00ff10".toColorInt()),
+                nonSemanticGreenBorderStrong = Color("#20b027".toColorInt()),
+                nonSemanticGreenBorderDefault = Color("#dff6df".toColorInt()),
+                nonSemanticGreenBackgroundSurface = Color("#fbfefb".toColorInt()),
+                nonSemanticGreenBackgroundSubtle = Color("#f4fbf4".toColorInt()),
+                nonSemanticGreenBackgroundStrong = Color("#20b027".toColorInt()),
+                nonSemanticGreenBackgroundOnSubtle = Color("#dff6df".toColorInt()),
+                nonSemanticGreenBackgroundMuted = Color("#cff2cf".toColorInt())
             ),
-            gray = GrayValuesContainer(
-                nonSemanticGrayContentSecondary = Color(parseColor("#555f6d")),
-                nonSemanticGrayContentPrimary = Color(parseColor("#272e35")),
-                nonSemanticGrayBorderSubtle = Color(parseColor("#cfd6dd")),
-                nonSemanticGrayBorderStrong = Color(parseColor("#555f6d")),
-                nonSemanticGrayBorderDefault = Color(parseColor("#eaedf0")),
-                nonSemanticGrayBackgroundSurface = Color(parseColor("#fcfcfd")),
-                nonSemanticGrayBackgroundSubtle = Color(parseColor("#f5f7f9")),
-                nonSemanticGrayBackgroundStrong = Color(parseColor("#555f6d")),
-                nonSemanticGrayBackgroundOnSubtle = Color(parseColor("#eaedf0")),
-                nonSemanticGrayBackgroundMuted = Color(parseColor("#dee3e7"))
+            gray = DSGray(
+                nonSemanticGrayContentSecondary = Color("#555f6d".toColorInt()),
+                nonSemanticGrayContentPrimary = Color("#272e35".toColorInt()),
+                nonSemanticGrayBorderSubtle = Color("#cfd6dd".toColorInt()),
+                nonSemanticGrayBorderStrong = Color("#555f6d".toColorInt()),
+                nonSemanticGrayBorderDefault = Color("#eaedf0".toColorInt()),
+                nonSemanticGrayBackgroundSurface = Color("#fcfcfd".toColorInt()),
+                nonSemanticGrayBackgroundSubtle = Color("#f5f7f9".toColorInt()),
+                nonSemanticGrayBackgroundStrong = Color("#555f6d".toColorInt()),
+                nonSemanticGrayBackgroundOnSubtle = Color("#eaedf0".toColorInt()),
+                nonSemanticGrayBackgroundMuted = Color("#dee3e7".toColorInt())
             ),
-            cyan = CyanValuesContainer(
-                nonSemanticCyanContentSecondary = Color(parseColor("#0870ba")),
-                nonSemanticCyanContentPrimary = Color(parseColor("#0c456e")),
-                nonSemanticCyanBorderSubtle = Color(parseColor("#c2e2ff")),
-                nonSemanticCyanBorderStrong = Color(parseColor("#0870ba")),
-                nonSemanticCyanBorderDefault = Color(parseColor("#e0f1ff")),
-                nonSemanticCyanBackgroundSurface = Color(parseColor("#fafdff")),
-                nonSemanticCyanBackgroundSubtle = Color(parseColor("#f0f9ff")),
-                nonSemanticCyanBackgroundStrong = Color(parseColor("#0870ba")),
-                nonSemanticCyanBackgroundOnSubtle = Color(parseColor("#e0f1ff")),
-                nonSemanticCyanBackgroundMuted = Color(parseColor("#cce7ff"))
+            cyan = DSCyan(
+                nonSemanticCyanContentSecondary = Color("#0870ba".toColorInt()),
+                nonSemanticCyanContentPrimary = Color("#0c636e".toColorInt()),
+                nonSemanticCyanBorderSubtle = Color("#c2e2ff".toColorInt()),
+                nonSemanticCyanBorderStrong = Color("#0870ba".toColorInt()),
+                nonSemanticCyanBorderDefault = Color("#e0f1ff".toColorInt()),
+                nonSemanticCyanBackgroundSurface = Color("#fafdff".toColorInt()),
+                nonSemanticCyanBackgroundSubtle = Color("#f0f9ff".toColorInt()),
+                nonSemanticCyanBackgroundStrong = Color("#0870ba".toColorInt()),
+                nonSemanticCyanBackgroundOnSubtle = Color("#e0f1ff".toColorInt()),
+                nonSemanticCyanBackgroundMuted = Color("#cce7ff".toColorInt())
             ),
-            blue = BlueValuesContainer(
-                nonSemanticBlueContentSecondary = Color(parseColor("#3061d5")),
-                nonSemanticBlueContentPrimary = Color(parseColor("#113997")),
-                nonSemanticBlueBorderSubtle = Color(parseColor("#ccdcff")),
-                nonSemanticBlueBorderStrong = Color(parseColor("#3061d5")),
-                nonSemanticBlueBorderDefault = Color(parseColor("#e5eeff")),
-                nonSemanticBlueBackgroundSurface = Color(parseColor("#fafbff")),
-                nonSemanticBlueBackgroundSubtle = Color(parseColor("#f5f8ff")),
-                nonSemanticBlueBackgroundStrong = Color(parseColor("#3061d5")),
-                nonSemanticBlueBackgroundOnSubtle = Color(parseColor("#e5eeff")),
-                nonSemanticBlueBackgroundMuted = Color(parseColor("#d6e3ff"))
+            blue = DSBlue(
+                nonSemanticBlueContentSecondary = Color("#3061d5".toColorInt()),
+                nonSemanticBlueContentPrimary = Color("#113997".toColorInt()),
+                nonSemanticBlueBorderSubtle = Color("#0085ff".toColorInt()),
+                nonSemanticBlueBorderStrong = Color("#3061d5".toColorInt()),
+                nonSemanticBlueBorderDefault = Color("#e5eeff".toColorInt()),
+                nonSemanticBlueBackgroundSurface = Color("#fafbff".toColorInt()),
+                nonSemanticBlueBackgroundSubtle = Color("#f5f8ff".toColorInt()),
+                nonSemanticBlueBackgroundStrong = Color("#3061d5".toColorInt()),
+                nonSemanticBlueBackgroundOnSubtle = Color("#e5eeff".toColorInt()),
+                nonSemanticBlueBackgroundMuted = Color("#d6e3ff".toColorInt())
             ),
-            aquamarine = AquamarineValuesContainer(
-                nonSemanticAquamarineContentSecondary = Color(parseColor("#097b68")),
-                nonSemanticAquamarineContentPrimary = Color(parseColor("#0d4a42")),
-                nonSemanticAquamarineBorderSubtle = Color(parseColor("#bee9e4")),
-                nonSemanticAquamarineBorderStrong = Color(parseColor("#097b68")),
-                nonSemanticAquamarineBorderDefault = Color(parseColor("#daf6f3")),
-                nonSemanticAquamarineBackgroundSurface = Color(parseColor("#fbfefe")),
-                nonSemanticAquamarineBackgroundSubtle = Color(parseColor("#f0faf9")),
-                nonSemanticAquamarineBackgroundStrong = Color(parseColor("#097b68")),
-                nonSemanticAquamarineBackgroundOnSubtle = Color(parseColor("#daf6f3")),
-                nonSemanticAquamarineBackgroundMuted = Color(parseColor("#c5f2ec"))
+            aquamarine = DSAquamarine(
+                nonSemanticAquamarineContentSecondary = Color("#097b68".toColorInt()),
+                nonSemanticAquamarineContentPrimary = Color("#0d4a42".toColorInt()),
+                nonSemanticAquamarineBorderSubtle = Color("#bee9e4".toColorInt()),
+                nonSemanticAquamarineBorderStrong = Color("#097b68".toColorInt()),
+                nonSemanticAquamarineBorderDefault = Color("#daf6f3".toColorInt()),
+                nonSemanticAquamarineBackgroundSurface = Color("#fbfefe".toColorInt()),
+                nonSemanticAquamarineBackgroundSubtle = Color("#f0faf9".toColorInt()),
+                nonSemanticAquamarineBackgroundStrong = Color("#097b68".toColorInt()),
+                nonSemanticAquamarineBackgroundOnSubtle = Color("#daf6f3".toColorInt()),
+                nonSemanticAquamarineBackgroundMuted = Color("#c5f2ec".toColorInt())
             )
         ),
-        neutralGrayAlpha = NeutralGrayAlphaValuesContainer(
-            neutralGrayANegative4 = Color(parseColor("#121212ed")),
-            neutralGrayANegative3 = Color(parseColor("#0f0f0fe0")),
-            neutralGrayANegative2 = Color(parseColor("#212121db")),
-            neutralGrayANegative1 = Color(parseColor("#262626cc")),
-            neutralGrayA8 = Color(parseColor("#52525205")),
-            neutralGrayA7 = Color(parseColor("#2e2e2e0a")),
-            neutralGrayA6 = Color(parseColor("#2121210f")),
-            neutralGrayA5 = Color(parseColor("#1c1c1c17")),
-            neutralGrayA4 = Color(parseColor("#1f1f1f21")),
-            neutralGrayA3 = Color(parseColor("#2e2e2e33")),
-            neutralGrayA2 = Color(parseColor("#21212166")),
-            neutralGrayA1 = Color(parseColor("#2b2b2b8f")),
-            neutralGrayA0 = Color(parseColor("#262627bd"))
-        ),
-        neutralGray = NeutralGrayValuesContainer(
-            neutralGray8 = Color(parseColor("#fcfcfc")),
-            neutralGray7 = Color(parseColor("#f7f7f7")),
-            neutralGray6 = Color(parseColor("#f2f2f2")),
-            neutralGray5 = Color(parseColor("#ebebeb")),
-            neutralGray4 = Color(parseColor("#e3e3e3")),
-            neutralGray3 = Color(parseColor("#d6d6d6")),
-            neutralGray2 = Color(parseColor("#a6a6a6")),
-            neutralGray1 = Color(parseColor("#8a8a8a")),
-            neutralGray0 = Color(parseColor("#5e5e5e")),
-            negative4 = Color(parseColor("#212121")),
-            negative3 = Color(parseColor("#2e2e2e")),
-            negative2 = Color(parseColor("#404040")),
-            negative1 = Color(parseColor("#525252"))
-        ),
-        magenta = MagentaValuesContainer1(
-            negative4 = Color(parseColor("#410b2f")),
-            negative3 = Color(parseColor("#671e4d")),
-            negative2 = Color(parseColor("#892969")),
-            negative1 = Color(parseColor("#953274")),
-            magenta8 = Color(parseColor("#fffafd")),
-            magenta7 = Color(parseColor("#fef6fb")),
-            magenta6 = Color(parseColor("#fdedf8")),
-            magenta5 = Color(parseColor("#fde2f4")),
-            magenta4 = Color(parseColor("#fbd5ee")),
-            magenta3 = Color(parseColor("#f7cae8")),
-            magenta2 = Color(parseColor("#ec89cb")),
-            magenta1 = Color(parseColor("#de5eb3")),
-            magenta0 = Color(parseColor("#b12f86"))
-        ),
-        interaction = InteractionValuesContainer(
-            neutral = NeutralValuesContainer1(
-                interactionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
-                interactionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
-                interactionNeutralSubtleHover = Color(parseColor("#eaedf0")),
-                interactionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
-                interactionNeutralSelected = Color(parseColor("#3a424a")),
-                interactionNeutralNormal = Color(parseColor("#4a545e")),
-                interactionNeutralHover = Color(parseColor("#3a424a")),
-                interactionNeutralActive = Color(parseColor("#272e35"))
+        interaction = DSInteraction(
+            neutral = DSNeutral1(
+                interactionNeutralSubtleSelected = Color("#eaedf0".toColorInt()),
+                interactionNeutralSubtleNormal = Color("#f0f3f5".toColorInt()),
+                interactionNeutralSubtleHover = Color("#eaedf0".toColorInt()),
+                interactionNeutralSubtleActive = Color("#cfd6dd".toColorInt()),
+                interactionNeutralSelected = Color("#3a424a".toColorInt()),
+                interactionNeutralNormal = Color("#4a545e".toColorInt()),
+                interactionNeutralHover = Color("#3a424a".toColorInt()),
+                interactionNeutralActive = Color("#272e35".toColorInt())
             ),
-            inverse = InverseValuesContainer1(
-                interactionInverseSelected = Color(parseColor("#ffffffd1")),
-                interactionInverseNormal = Color(parseColor("#ffffff")),
-                interactionInverseHover = Color(parseColor("#ffffffd1")),
-                interactionInverseActive = Color(parseColor("#ffffffb8"))
+            inverse = DSInverse1(
+                interactionInverseSelected = Color("#ffffffd1".toColorInt()),
+                interactionInverseNormal = Color("#ffffff".toColorInt()),
+                interactionInverseHover = Color("#ffffffd1".toColorInt()),
+                interactionInverseActive = Color("#ffffffb8".toColorInt())
             ),
-            ghost = GhostValuesContainer1(
-                interactionGhostSelected = Color(parseColor("#022e500f")),
-                interactionGhostNormal = Color(parseColor("#ffffff00")),
-                interactionGhostInverseSelected = Color(parseColor("#ffffff1a")),
-                interactionGhostInverseNormal = Color(parseColor("#ffffff1f")),
-                interactionGhostInverseHover = Color(parseColor("#ffffff1a")),
-                interactionGhostHover = Color(parseColor("#022e500f")),
-                interactionGhostDangerSelected = Color(parseColor("#ffebeb")),
-                interactionGhostDangerNormal = Color(parseColor("#fee7e7")),
-                interactionGhostDangerHover = Color(parseColor("#ffebeb")),
-                interactionGhostActive = Color(parseColor("#10284717"))
+            ghost = DSGhost1(
+                interactionGhostSelected = Color("#022e500f".toColorInt()),
+                interactionGhostNormal = Color("#ffffff00".toColorInt()),
+                interactionGhostInverseSelected = Color("#ffffff1a".toColorInt()),
+                interactionGhostInverseNormal = Color("#ffffff1f".toColorInt()),
+                interactionGhostInverseHover = Color("#ffffff1a".toColorInt()),
+                interactionGhostHover = Color("#022e500f".toColorInt()),
+                interactionGhostDangerSelected = Color("#ffebeb".toColorInt()),
+                interactionGhostDangerNormal = Color("#fee7e7".toColorInt()),
+                interactionGhostDangerHover = Color("#ffebeb".toColorInt()),
+                interactionGhostActive = Color("#10284717".toColorInt())
             ),
-            focus = FocusValuesContainer(
-                interactionFocusDefault = Color(parseColor("#6691f4"))
+            focus = DSFocus(
+                interactionFocusDefault = Color("#6691f4".toColorInt())
             ),
-            disabled = DisabledValuesContainer(
-                interactionDisabledSubtleNormal = Color(parseColor("#eaedf0")),
-                interactionDisabledSubtleHover = Color(parseColor("#dee3e7")),
-                interactionDisabledSubtleActive = Color(parseColor("#cfd6dd")),
-                interactionDisabledNormal = Color(parseColor("#9ea8b3")),
-                interactionDisabledHover = Color(parseColor("#7e8c9a")),
-                interactionDisabledActive = Color(parseColor("#555f6d"))
+            disabled = DSDisabled(
+                interactionDisabledSubtleNormal = Color("#eaedf0".toColorInt()),
+                interactionDisabledSubtleHover = Color("#dee3e7".toColorInt()),
+                interactionDisabledSubtleActive = Color("#cfd6dd".toColorInt()),
+                interactionDisabledNormal = Color("#9ea8b3".toColorInt()),
+                interactionDisabledHover = Color("#7e8c9a".toColorInt()),
+                interactionDisabledActive = Color("#555f6d".toColorInt())
             ),
-            default = DefaultValuesContainer(
-                interactionDefaultSubtleSelected = Color(parseColor("#e5eeff")),
-                interactionDefaultSubtleNormal = Color(parseColor("#ebf0ff")),
-                interactionDefaultSubtleHover = Color(parseColor("#e5eeff")),
-                interactionDefaultSubtleActive = Color(parseColor("#ccdcff")),
-                interactionDefaultSelected = Color(parseColor("#1e4fc2")),
-                interactionDefaultNormal = Color(parseColor("#3061d5")),
-                interactionDefaultHover = Color(parseColor("#1e4fc2")),
-                interactionDefaultActive = Color(parseColor("#113997"))
+            default = DSDefault(
+                interactionDefaultSubtleSelected = Color("#e5eeff".toColorInt()),
+                interactionDefaultSubtleNormal = Color("#ebf0ff".toColorInt()),
+                interactionDefaultSubtleHover = Color("#e5eeff".toColorInt()),
+                interactionDefaultSubtleActive = Color("#0085ff".toColorInt()),
+                interactionDefaultSelected = Color("#658b6e".toColorInt()),
+                interactionDefaultNormal = Color("#3061d5".toColorInt()),
+                interactionDefaultHover = Color("#658b6e".toColorInt()),
+                interactionDefaultActive = Color("#113997".toColorInt())
             ),
-            danger = DangerValuesContainer1(
-                interactionDangerSubtleSelected = Color(parseColor("#fee7e7")),
-                interactionDangerSubtleNormal = Color(parseColor("#ffebeb")),
-                interactionDangerSubtleHover = Color(parseColor("#fee7e7")),
-                interactionDangerSubtleActive = Color(parseColor("#fccfcf")),
-                interactionDangerSelected = Color(parseColor("#952d2d")),
-                interactionDangerNormal = Color(parseColor("#c53434")),
-                interactionDangerHover = Color(parseColor("#952d2d")),
-                interactionDangerActive = Color(parseColor("#6f2020"))
+            danger = DSDanger1(
+                interactionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
+                interactionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
+                interactionDangerSubtleHover = Color("#fee7e7".toColorInt()),
+                interactionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                interactionDangerSelected = Color("#63c7c3".toColorInt()),
+                interactionDangerNormal = Color("#9e6610".toColorInt()),
+                interactionDangerHover = Color("#63c7c3".toColorInt()),
+                interactionDangerActive = Color("#30723a".toColorInt())
             ),
-            border = BorderValuesContainer1(
-                interactionBorderSelected = Color(parseColor("#3061d5")),
-                interactionBorderNormal = Color(parseColor("#8eb0fb")),
-                interactionBorderNeutralSelected = Color(parseColor("#9ea8b3")),
-                interactionBorderNeutralNormal = Color(parseColor("#cfd6dd")),
-                interactionBorderNeutralHover = Color(parseColor("#9ea8b3")),
-                interactionBorderNeutralActive = Color(parseColor("#7e8c9a")),
-                interactionBorderHover = Color(parseColor("#6691f4")),
-                interactionBorderDanger = Color(parseColor("#f26363")),
-                interactionBorderActive = Color(parseColor("#2759ce"))
+            border = DSBorder1(
+                interactionBorderSelected = Color("#3061d5".toColorInt()),
+                interactionBorderNormal = Color("#8eb0fb".toColorInt()),
+                interactionBorderNeutralSelected = Color("#9ea8b3".toColorInt()),
+                interactionBorderNeutralNormal = Color("#cfd6dd".toColorInt()),
+                interactionBorderNeutralHover = Color("#9ea8b3".toColorInt()),
+                interactionBorderNeutralActive = Color("#7e8c9a".toColorInt()),
+                interactionBorderHover = Color("#6691f4".toColorInt()),
+                interactionBorderDanger = Color("#285aa5".toColorInt()),
+                interactionBorderActive = Color("#ff9375".toColorInt())
             ),
-            background = BackgroundValuesContainer1(
-                interactionBackgroundSidepanel = Color(parseColor("#ffffff")),
-                interactionBackgroundModelessInverse = Color(parseColor("#272e35")),
-                interactionBackgroundModeless = Color(parseColor("#ffffff")),
-                interactionBackgroundModal = Color(parseColor("#ffffff")),
-                interactionBackgroundFormField = Color(parseColor("#ffffff")),
-                interactionBackgroundDimmer = Color(parseColor("#182639bd"))
+            background = DSBackground1(
+                interactionBackgroundSidepanel = Color("#ffffff".toColorInt()),
+                interactionBackgroundModelessInverse = Color("#272e35".toColorInt()),
+                interactionBackgroundModeless = Color("#ffffff".toColorInt()),
+                interactionBackgroundModal = Color("#ffffff".toColorInt()),
+                interactionBackgroundFormField = Color("#ffffff".toColorInt()),
+                interactionBackgroundDimmer = Color("#182639bd".toColorInt())
             )
         ),
-        green = GreenValuesContainer1(
-            negative4 = Color(parseColor("#0a2e0b")),
-            negative3 = Color(parseColor("#135315")),
-            negative2 = Color(parseColor("#246626")),
-            negative1 = Color(parseColor("#2f6f2f")),
-            green8 = Color(parseColor("#fbfefb")),
-            green7 = Color(parseColor("#f4fbf4")),
-            green6 = Color(parseColor("#e6f9e6")),
-            green5 = Color(parseColor("#dff6df")),
-            green4 = Color(parseColor("#cff2cf")),
-            green3 = Color(parseColor("#c6ecc6")),
-            green2 = Color(parseColor("#87c987")),
-            green1 = Color(parseColor("#55a555")),
-            green0 = Color(parseColor("#347434"))
+        content = DSContent(
+            warningSecondary = Color("#76d91c".toColorInt()),
+            warningPrimary = Color("#3f2828".toColorInt()),
+            tertiaryInverse = Color("#ffffff66".toColorInt()),
+            tertiary = Color("#7e8c9a".toColorInt()),
+            successSecondary = Color("#20b027".toColorInt()),
+            successPrimary = Color("#b3b7b0".toColorInt()),
+            secondaryInverse = Color("#ffffffa3".toColorInt()),
+            secondary = Color("#555f6d".toColorInt()),
+            primaryInverse = Color("#ffffff".toColorInt()),
+            primary = Color("#63c7c3".toColorInt()),
+            infoSecondary = Color("#3061d5".toColorInt()),
+            infoPrimary = Color("#113997".toColorInt()),
+            disabledInverse = Color("#ffffff3d".toColorInt()),
+            disabled = Color("#9ea8b3".toColorInt()),
+            dangerSecondary = Color("#9e6610".toColorInt()),
+            dangerPrimary = Color("#30723a".toColorInt()),
+            brandSecondary = Color("#3061d5".toColorInt()),
+            brandPrimary = Color("#113997".toColorInt())
         ),
-        cyan = CyanValuesContainer1(
-            negative4 = Color(parseColor("#002742")),
-            negative3 = Color(parseColor("#0c456e")),
-            negative2 = Color(parseColor("#165c8d")),
-            negative1 = Color(parseColor("#1b679d")),
-            cyan8 = Color(parseColor("#fafdff")),
-            cyan7 = Color(parseColor("#f0f9ff")),
-            cyan6 = Color(parseColor("#ebf5ff")),
-            cyan5 = Color(parseColor("#e0f1ff")),
-            cyan4 = Color(parseColor("#cce7ff")),
-            cyan3 = Color(parseColor("#c2e2ff")),
-            cyan2 = Color(parseColor("#79bcf6")),
-            cyan1 = Color(parseColor("#5699dc")),
-            cyan0 = Color(parseColor("#0870ba"))
+        border = DSBorder(
+            warningSubtle = Color("#ffd4a8".toColorInt()),
+            warningStrong = Color("#f59638".toColorInt()),
+            successSubtle = Color("#00ff10".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
+            neutralSubtle = Color("#cfd6dd".toColorInt()),
+            neutralStrong = Color("#555f6d".toColorInt()),
+            inverse = Color("#ffffff".toColorInt()),
+            infoSubtle = Color("#0085ff".toColorInt()),
+            infoStrong = Color("#3061d5".toColorInt()),
+            defaultA = Color("#10284717".toColorInt()),
+            default = Color("#eaedf0".toColorInt()),
+            dangerSubtle = Color("#76d91c".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt())
         ),
-        coolGrayAlpha = CoolGrayAlphaValuesContainer(
-            coolGrayANegative4 = Color(parseColor("#09131aed")),
-            coolGrayANegative3 = Color(parseColor("#0a121ae0")),
-            coolGrayANegative2 = Color(parseColor("#1a232ddb")),
-            coolGrayANegative1 = Color(parseColor("#1d2835cc")),
-            coolGrayA8 = Color(parseColor("#1f529e05")),
-            coolGrayA7 = Color(parseColor("#00295c0a")),
-            coolGrayA6 = Color(parseColor("#022e500f")),
-            coolGrayA5 = Color(parseColor("#10284717")),
-            coolGrayA4 = Color(parseColor("#04294321")),
-            coolGrayA3 = Color(parseColor("#10315633")),
-            coolGrayA2 = Color(parseColor("#0d253f66")),
-            coolGrayA1 = Color(parseColor("#1830498f")),
-            coolGrayA0 = Color(parseColor("#182639bd"))
+        background = DSBackground(
+            warningSurface = Color("#fffcfa".toColorInt()),
+            warningSubtle = Color("#fff5eb".toColorInt()),
+            warningStrong = Color("#f59638".toColorInt()),
+            warningOnSubtle = Color("#ffe8d1".toColorInt()),
+            warningMuted = Color("#fcdec0".toColorInt()),
+            successSurface = Color("#fbfefb".toColorInt()),
+            successSubtle = Color("#f4fbf4".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
+            successOnSubtle = Color("#dff6df".toColorInt()),
+            successMuted = Color("#cff2cf".toColorInt()),
+            neutralSurface = Color("#fcfcfd".toColorInt()),
+            neutralSubtle = Color("#f5f7f9".toColorInt()),
+            neutralStrong = Color("#555f6d".toColorInt()),
+            neutralOnSubtle = Color("#eaedf0".toColorInt()),
+            neutralMuted = Color("#dee3e7".toColorInt()),
+            inverse = Color("#272e35".toColorInt()),
+            infoSurface = Color("#fafbff".toColorInt()),
+            infoSubtle = Color("#f5f8ff".toColorInt()),
+            infoStrong = Color("#3061d5".toColorInt()),
+            infoOnSubtle = Color("#e5eeff".toColorInt()),
+            infoMuted = Color("#d6e3ff".toColorInt()),
+            default = Color("#ffffff".toColorInt()),
+            dangerSurface = Color("#fffafa".toColorInt()),
+            dangerSubtle = Color("#fef5f5".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt()),
+            dangerOnSubtle = Color("#fee7e7".toColorInt()),
+            dangerMuted = Color("#d15a5a".toColorInt()),
+            brandSurface = Color("#fafbff".toColorInt()),
+            brandSubtle = Color("#f5f8ff".toColorInt()),
+            brandStrong = Color("#3061d5".toColorInt()),
+            brandOnSubtle = Color("#e5eeff".toColorInt()),
+            brandMuted = Color("#d6e3ff".toColorInt())
         ),
-        coolGray = CoolGrayValuesContainer(
-            negative4 = Color(parseColor("#1b242c")),
-            negative3 = Color(parseColor("#272e35")),
-            negative2 = Color(parseColor("#3a424a")),
-            negative1 = Color(parseColor("#4a545e")),
-            coolGray8 = Color(parseColor("#fcfcfd")),
-            coolGray7 = Color(parseColor("#f5f7f9")),
-            coolGray6 = Color(parseColor("#f0f3f5")),
-            coolGray5 = Color(parseColor("#eaedf0")),
-            coolGray4 = Color(parseColor("#dee3e7")),
-            coolGray3 = Color(parseColor("#cfd6dd")),
-            coolGray2 = Color(parseColor("#9ea8b3")),
-            coolGray1 = Color(parseColor("#7e8c9a")),
-            coolGray0 = Color(parseColor("#555f6d"))
-        ),
-        content = ContentValuesContainer(
-            warningSecondary = Color(parseColor("#FF0000")),
-            warningPrimary = Color(parseColor("#7a4510")),
-            tertiaryInverse = Color(parseColor("#ffffff66")),
-            tertiary = Color(parseColor("#7e8c9a")),
-            successSecondary = Color(parseColor("#347434")),
-            successPrimary = Color(parseColor("#135315")),
-            secondaryInverse = Color(parseColor("#ffffffa3")),
-            secondary = Color(parseColor("#555f6d")),
-            primaryInverse = Color(parseColor("#ffffff")),
-            primary = Color(parseColor("#272e35")),
-            infoSecondary = Color(parseColor("#3061d5")),
-            infoPrimary = Color(parseColor("#113997")),
-            disabledInverse = Color(parseColor("#ffffff3d")),
-            disabled = Color(parseColor("#9ea8b3")),
-            dangerSecondary = Color(parseColor("#c53434")),
-            dangerPrimary = Color(parseColor("#6f2020")),
-            brandSecondary = Color(parseColor("#3061d5")),
-            brandPrimary = Color(parseColor("#113997"))
-        ),
-        border = BorderValuesContainer(
-            warningSubtle = Color(parseColor("#ffd4a8")),
-            warningStrong = Color(parseColor("#f59638")),
-            successSubtle = Color(parseColor("#c6ecc6")),
-            successStrong = Color(parseColor("#347434")),
-            neutralSubtle = Color(parseColor("#cfd6dd")),
-            neutralStrong = Color(parseColor("#555f6d")),
-            inverse = Color(parseColor("#ffffff")),
-            infoSubtle = Color(parseColor("#ccdcff")),
-            infoStrong = Color(parseColor("#3061d5")),
-            defaultA = Color(parseColor("#10284717")),
-            default = Color(parseColor("#eaedf0")),
-            dangerSubtle = Color(parseColor("#fccfcf")),
-            dangerStrong = Color(parseColor("#c53434"))
-        ),
-        blue = BlueValuesContainer1(
-            negative4 = Color(parseColor("#041f5d")),
-            negative3 = Color(parseColor("#113997")),
-            negative2 = Color(parseColor("#1e4fc2")),
-            negative1 = Color(parseColor("#2759ce")),
-            blue8 = Color(parseColor("#fafbff")),
-            blue7 = Color(parseColor("#f5f8ff")),
-            blue6 = Color(parseColor("#ebf0ff")),
-            blue5 = Color(parseColor("#e5eeff")),
-            blue4 = Color(parseColor("#d6e3ff")),
-            blue3 = Color(parseColor("#ccdcff")),
-            blue2 = Color(parseColor("#8eb0fb")),
-            blue1 = Color(parseColor("#6691f4")),
-            blue0 = Color(parseColor("#3061d5"))
-        ),
-        background = BackgroundValuesContainer(
-            warningSurface = Color(parseColor("#fffcfa")),
-            warningSubtle = Color(parseColor("#fff5eb")),
-            warningStrong = Color(parseColor("#f59638")),
-            warningOnSubtle = Color(parseColor("#ffe8d1")),
-            warningMuted = Color(parseColor("#fcdec0")),
-            successSurface = Color(parseColor("#fbfefb")),
-            successSubtle = Color(parseColor("#f4fbf4")),
-            successStrong = Color(parseColor("#347434")),
-            successOnSubtle = Color(parseColor("#dff6df")),
-            successMuted = Color(parseColor("#cff2cf")),
-            neutralSurface = Color(parseColor("#fcfcfd")),
-            neutralSubtle = Color(parseColor("#f5f7f9")),
-            neutralStrong = Color(parseColor("#555f6d")),
-            neutralOnSubtle = Color(parseColor("#eaedf0")),
-            neutralMuted = Color(parseColor("#dee3e7")),
-            inverse = Color(parseColor("#272e35")),
-            infoSurface = Color(parseColor("#fafbff")),
-            infoSubtle = Color(parseColor("#f5f8ff")),
-            infoStrong = Color(parseColor("#3061d5")),
-            infoOnSubtle = Color(parseColor("#e5eeff")),
-            infoMuted = Color(parseColor("#d6e3ff")),
-            default = Color(parseColor("#ffffff")),
-            dangerSurface = Color(parseColor("#fffafa")),
-            dangerSubtle = Color(parseColor("#fef5f5")),
-            dangerStrong = Color(parseColor("#c53434")),
-            dangerOnSubtle = Color(parseColor("#fee7e7")),
-            dangerMuted = Color(parseColor("#fcd9d9")),
-            brandSurface = Color(parseColor("#fafbff")),
-            brandSubtle = Color(parseColor("#f5f8ff")),
-            brandStrong = Color(parseColor("#3061d5")),
-            brandOnSubtle = Color(parseColor("#e5eeff")),
-            brandMuted = Color(parseColor("#d6e3ff"))
-        ),
-        aquamarine = AquamarineValuesContainer1(
-            negative4 = Color(parseColor("#012d26")),
-            negative3 = Color(parseColor("#0d4a42")),
-            negative2 = Color(parseColor("#15665b")),
-            negative1 = Color(parseColor("#1a7061")),
-            aquamarine8 = Color(parseColor("#fbfefe")),
-            aquamarine7 = Color(parseColor("#f0faf9")),
-            aquamarine6 = Color(parseColor("#e2f8f5")),
-            aquamarine5 = Color(parseColor("#daf6f3")),
-            aquamarine4 = Color(parseColor("#c5f2ec")),
-            aquamarine3 = Color(parseColor("#bee9e4")),
-            aquamarine2 = Color(parseColor("#6ec9bf")),
-            aquamarine1 = Color(parseColor("#3da496")),
-            aquamarine0 = Color(parseColor("#097b68"))
-        ),
-        action = ActionValuesContainer(
-            success = SuccessValuesContainer(
-                actionSuccessSubtleSelected = Color(parseColor("#dff6df")),
-                actionSuccessSubtleNormal = Color(parseColor("#e6f9e6")),
-                actionSuccessSubtleHover = Color(parseColor("#dff6df")),
-                actionSuccessSubtleActive = Color(parseColor("#c6ecc6")),
-                actionSuccessSelected = Color(parseColor("#246626")),
-                actionSuccessNormal = Color(parseColor("#347434")),
-                actionSuccessHover = Color(parseColor("#246626")),
-                actionSuccessActive = Color(parseColor("#135315"))
+        action = DSAction(
+            success = DSSuccess(
+                actionSuccessSubtleSelected = Color("#dff6df".toColorInt()),
+                actionSuccessSubtleNormal = Color("#e6f9e6".toColorInt()),
+                actionSuccessSubtleHover = Color("#dff6df".toColorInt()),
+                actionSuccessSubtleActive = Color("#00ff10".toColorInt()),
+                actionSuccessSelected = Color("#246626".toColorInt()),
+                actionSuccessNormal = Color("#3da496".toColorInt()),
+                actionSuccessHover = Color("#246626".toColorInt()),
+                actionSuccessActive = Color("#b3b7b0".toColorInt())
             ),
-            reverseInverse = ReverseInverseValuesContainer(
-                actionReverseInverseSelected = Color(parseColor("#1d2835cc")),
-                actionReverseInverseNormal = Color(parseColor("#0a121ae0")),
-                actionReverseInverseHover = Color(parseColor("#1d2835cc")),
-                actionReverseInverseActive = Color(parseColor("#182639bd"))
+            reverseInverse = DSReverseInverse(
+                actionReverseInverseSelected = Color("#1d2835cc".toColorInt()),
+                actionReverseInverseNormal = Color("#0a121ae0".toColorInt()),
+                actionReverseInverseHover = Color("#1d2835cc".toColorInt()),
+                actionReverseInverseActive = Color("#182639bd".toColorInt())
             ),
-            primary = PrimaryValuesContainer(
-                actionPrimarySubtleSelected = Color(parseColor("#e5eeff")),
-                actionPrimarySubtleNormal = Color(parseColor("#ebf0ff")),
-                actionPrimarySubtleHover = Color(parseColor("#e5eeff")),
-                actionPrimarySubtleActive = Color(parseColor("#ccdcff")),
-                actionPrimarySelected = Color(parseColor("#1e4fc2")),
-                actionPrimaryNormal = Color(parseColor("#FFFFFF")),
-                actionPrimaryHover = Color(parseColor("#1e4fc2")),
-                actionPrimaryActive = Color(parseColor("#113997"))
+            primary = DSPrimary(
+                actionPrimarySubtleSelected = Color("#e5eeff".toColorInt()),
+                actionPrimarySubtleNormal = Color("#ebf0ff".toColorInt()),
+                actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
+                actionPrimarySubtleActive = Color("#0085ff".toColorInt()),
+                actionPrimarySelected = Color("#658b6e".toColorInt()),
+                actionPrimaryNormal = Color("#3061d5".toColorInt()),
+                actionPrimaryHover = Color("#658b6e".toColorInt()),
+                actionPrimaryActive = Color("#113997".toColorInt())
             ),
-            outline = OutlineValuesContainer(
-                actionOutlineSelected = Color(parseColor("#9ea8b3")),
-                actionOutlineNormal = Color(parseColor("#cfd6dd")),
-                actionOutlineHover = Color(parseColor("#9ea8b3")),
-                actionOutlineActive = Color(parseColor("#7e8c9a"))
+            outline = DSOutline(
+                actionOutlineSelected = Color("#9ea8b3".toColorInt()),
+                actionOutlineNormal = Color("#cfd6dd".toColorInt()),
+                actionOutlineHover = Color("#9ea8b3".toColorInt()),
+                actionOutlineActive = Color("#7e8c9a".toColorInt())
             ),
-            neutral = NeutralValuesContainer(
-                actionNeutralSubtleSelected = Color(parseColor("#eaedf0")),
-                actionNeutralSubtleNormal = Color(parseColor("#f0f3f5")),
-                actionNeutralSubtleHover = Color(parseColor("#eaedf0")),
-                actionNeutralSubtleActive = Color(parseColor("#cfd6dd")),
-                actionNeutralSelected = Color(parseColor("#3a424a")),
-                actionNeutralNormal = Color(parseColor("#4a545e")),
-                actionNeutralHover = Color(parseColor("#3a424a")),
-                actionNeutralActive = Color(parseColor("#272e35"))
+            neutral = DSNeutral(
+                actionNeutralSubtleSelected = Color("#eaedf0".toColorInt()),
+                actionNeutralSubtleNormal = Color("#f0f3f5".toColorInt()),
+                actionNeutralSubtleHover = Color("#eaedf0".toColorInt()),
+                actionNeutralSubtleActive = Color("#cfd6dd".toColorInt()),
+                actionNeutralSelected = Color("#3a424a".toColorInt()),
+                actionNeutralNormal = Color("#4a545e".toColorInt()),
+                actionNeutralHover = Color("#3a424a".toColorInt()),
+                actionNeutralActive = Color("#272e35".toColorInt())
             ),
-            inverse = InverseValuesContainer(
-                actionInverseSelected = Color(parseColor("#ffffffd1")),
-                actionInverseNormal = Color(parseColor("#ffffff")),
-                actionInverseHover = Color(parseColor("#ffffffd1")),
-                actionInverseActive = Color(parseColor("#ffffffb8"))
+            inverse = DSInverse(
+                actionInverseSelected = Color("#ffffffd1".toColorInt()),
+                actionInverseNormal = Color("#ffffff".toColorInt()),
+                actionInverseHover = Color("#ffffffd1".toColorInt()),
+                actionInverseActive = Color("#ffffffb8".toColorInt())
             ),
-            ghost = GhostValuesContainer(
-                actionGhostSelected = Color(parseColor("#022e500f")),
-                actionGhostNormal = Color(parseColor("#ffffff00")),
-                actionGhostInverseSelected = Color(parseColor("#ffffff1a")),
-                actionGhostInverseHover = Color(parseColor("#ffffff1a")),
-                actionGhostInverseActive = Color(parseColor("#ffffff1f")),
-                actionGhostHover = Color(parseColor("#022e500f")),
-                actionGhostDangerSelected = Color(parseColor("#ffebeb")),
-                actionGhostDangerHover = Color(parseColor("#ffebeb")),
-                actionGhostDangerActive = Color(parseColor("#fee7e7")),
-                actionGhostActive = Color(parseColor("#10284717"))
+            ghost = DSGhost(
+                actionGhostSelected = Color("#022e500f".toColorInt()),
+                actionGhostNormal = Color("#ffffff00".toColorInt()),
+                actionGhostInverseSelected = Color("#ffffff1a".toColorInt()),
+                actionGhostInverseHover = Color("#ffffff1a".toColorInt()),
+                actionGhostInverseActive = Color("#ffffff1f".toColorInt()),
+                actionGhostHover = Color("#022e500f".toColorInt()),
+                actionGhostDangerSelected = Color("#ffebeb".toColorInt()),
+                actionGhostDangerHover = Color("#ffebeb".toColorInt()),
+                actionGhostDangerActive = Color("#fee7e7".toColorInt()),
+                actionGhostActive = Color("#10284717".toColorInt())
             ),
-            danger = DangerValuesContainer(
-                actionDangerSubtleSelected = Color(parseColor("#fee7e7")),
-                actionDangerSubtleNormal = Color(parseColor("#ffebeb")),
-                actionDangerSubtleHover = Color(parseColor("#fee7e7")),
-                actionDangerSubtleActive = Color(parseColor("#fccfcf")),
-                actionDangerSelected = Color(parseColor("#952d2d")),
-                actionDangerNormal = Color(parseColor("#c53434")),
-                actionDangerHover = Color(parseColor("#952d2d")),
-                actionDangerActive = Color(parseColor("#6f2020"))
+            danger = DSDanger(
+                actionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
+                actionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
+                actionDangerSubtleHover = Color("#fee7e7".toColorInt()),
+                actionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                actionDangerSelected = Color("#63c7c3".toColorInt()),
+                actionDangerNormal = Color("#ffebeb".toColorInt()),
+                actionDangerHover = Color("#63c7c3".toColorInt()),
+                actionDangerActive = Color("#30723a".toColorInt())
             )
         )
     ),
-    borderWidth = BorderWidthValuesContainer(
+    borderWidth = DSBorderWidth(
         xLarge = 8.0,
         small = 1.0,
         none = 0.0,
         medium = 2.0,
         large = 4.0,
-        focus = 2.0,
-        borderWidth800 = 8.0,
-        borderWidth400 = 4.0,
-        borderWidth200 = 2.0,
-        borderWidth100 = 1.0,
-        borderWidth0 = 0.0
+        focus = 0.0
     ),
-    borderRadius = BorderRadiusValuesContainer(
+    borderRadius = DSBorderRadius(
         xLarge = 12.0,
         small = 2.0,
         none = 0.0,
         medium = 4.0,
         large = 8.0,
         full = 999.0,
-        borderRadius999 = 999.0,
-        borderRadius50 = 4.0,
         borderRadius4xLarge = 24.0,
         borderRadius3xLarge = 20.0,
-        borderRadius300 = 24.0,
-        borderRadius2xLarge = 16.0,
-        borderRadius250 = 20.0,
-        borderRadius25 = 2.0,
-        borderRadius200 = 16.0,
-        borderRadius150 = 12.0,
-        borderRadius100 = 8.0,
-        borderRadius0 = 0.0
+        borderRadius2xLarge = 16.0
     ),
-    size = SizeValuesContainer(
+    size = DSSize(
         xSmall = 24.0,
         xLarge = 56.0,
         small = 32.0,
@@ -1608,8 +1045,8 @@ val designSystem = DesignSystem(
         medium = 40.0,
         large = 48.0
     ),
-    space = SpaceValuesContainer(
-        padding = PaddingValuesContainer(
+    space = DSSpace(
+        padding = DSPadding(
             xSmall = 4.0,
             small = 8.0,
             padding6xLarge = 64.0,
@@ -1622,7 +1059,7 @@ val designSystem = DesignSystem(
             medium = 12.0,
             large = 16.0
         ),
-        gap = GapValuesContainer(
+        gap = DSGap(
             xSmall = 4.0,
             xLarge = 24.0,
             small = 8.0,
@@ -1634,14 +1071,11 @@ val designSystem = DesignSystem(
             gap2xLarge = 32.0
         )
     ),
-    opacity = OpacityValuesContainer(
-        opacity50 = 0.5,
-        opacity100 = 1.0,
-        opacity0 = 0.0,
+    opacity = DSOpacity(
         disabled = 0.5
     ),
-    typography = TypographyValuesContainer(
-        utility = UtilityValuesContainer(
+    typography = DSTypography(
+        utility = DSUtility(
             typographyUtilitySmall = Typography(
                 lineHeight = 16.0,
                 letterSpacing = 0.0,
@@ -1664,7 +1098,7 @@ val designSystem = DesignSystem(
                 fontFamily = "Noto Sans"
             )
         ),
-        heading = HeadingValuesContainer(
+        heading = DSHeading(
             typographyHeadingXLarge = Typography(
                 lineHeight = 24.0,
                 letterSpacing = -0.014,
@@ -1750,7 +1184,7 @@ val designSystem = DesignSystem(
                 fontFamily = "Noto Sans"
             )
         ),
-        display = DisplayValuesContainer(
+        display = DSDisplay(
             typographyDisplayXLarge = Typography(
                 lineHeight = 92.0,
                 letterSpacing = -0.022,
@@ -1794,7 +1228,7 @@ val designSystem = DesignSystem(
                 fontFamily = "Noto Sans"
             )
         ),
-        code = CodeValuesContainer(
+        code = DSCode(
             typographyCodeSmall = Typography(
                 lineHeight = 16.0,
                 letterSpacing = 0.0,
@@ -1817,7 +1251,7 @@ val designSystem = DesignSystem(
                 fontFamily = "Noto Sans Mono"
             )
         ),
-        body = BodyValuesContainer(
+        body = DSBody(
             typographyBodySmall = Typography(
                 lineHeight = 16.0,
                 letterSpacing = 0.0,
@@ -1840,214 +1274,5 @@ val designSystem = DesignSystem(
                 fontFamily = "Noto Sans"
             )
         )
-    ),
-    dimension = DimensionValuesContainer(
-        dimension900 = 72.0,
-        dimension800 = 64.0,
-        dimension700 = 56.0,
-        dimension600 = 48.0,
-        dimension550 = 44.0,
-        dimension500 = 40.0,
-        dimension50 = 4.0,
-        dimension400 = 32.0,
-        dimension300 = 24.0,
-        dimension250 = 20.0,
-        dimension25 = 2.0,
-        dimension200 = 16.0,
-        dimension1600 = 128.0,
-        dimension1500 = 120.0,
-        dimension150 = 12.0,
-        dimension1200 = 96.0,
-        dimension1000 = 80.0,
-        dimension100 = 8.0,
-        dimension0 = 0.0
-    ),
-    elevation = ElevationValuesContainer(
-        top = TopValuesContainer(
-            elevationTop400 = listOf(
-                BoxShadow(
-                    y = -2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c0a",
-                    blur = 2.0
-                ), BoxShadow(
-                    y = -16.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -6.0,
-                    color = "#1b242c29",
-                    blur = 24.0
-                )
-            ),
-            elevationTop300 = listOf(
-                BoxShadow(
-                    y = -2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c0a",
-                    blur = 2.0
-                ), BoxShadow(
-                    y = -8.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -2.0,
-                    color = "#1b242c1f",
-                    blur = 16.0
-                )
-            ),
-            elevationTop200 = listOf(
-                BoxShadow(
-                    y = -2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c0a",
-                    blur = 2.0
-                ), BoxShadow(
-                    y = -2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c14",
-                    blur = 8.0
-                )
-            ),
-            elevationTop100 = BoxShadow(
-                y = -1.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = 0.0,
-                color = "#1b242c1f",
-                blur = 2.0
-            )
-        ),
-        bottom = BottomValuesContainer(
-            elevationBottom400 = listOf(
-                BoxShadow(
-                    y = 2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c0a",
-                    blur = 2.0
-                ), BoxShadow(
-                    y = 16.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -6.0,
-                    color = "#1b242c29",
-                    blur = 24.0
-                )
-            ),
-            elevationBottom300 = listOf(
-                BoxShadow(
-                    y = 2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c0a",
-                    blur = 2.0
-                ), BoxShadow(
-                    y = 8.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -2.0,
-                    color = "#1b242c1f",
-                    blur = 16.0
-                )
-            ),
-            elevationBottom200 = listOf(
-                BoxShadow(
-                    y = 2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c0a",
-                    blur = 2.0
-                ), BoxShadow(
-                    y = 2.0,
-                    x = 0.0,
-                    type = "dropShadow",
-                    spread = -1.0,
-                    color = "#1b242c14",
-                    blur = 8.0
-                )
-            ),
-            elevationBottom100 = BoxShadow(
-                y = 1.0,
-                x = 0.0,
-                type = "dropShadow",
-                spread = 0.0,
-                color = "#1b242c1f",
-                blur = 2.0
-            )
-        )
-    ),
-    fontFamily = FontFamilyValuesContainer(
-        serif = "Noto Serif",
-        sans = "Noto Sans",
-        mono = "Noto Sans Mono"
-    ),
-    fontSize = FontSizeValuesContainer(
-        fontSize950 = 76.0,
-        fontSize850 = 68.0,
-        fontSize750 = 60.0,
-        fontSize675 = 54.0,
-        fontSize600 = 48.0,
-        fontSize525 = 42.0,
-        fontSize450 = 36.0,
-        fontSize400 = 32.0,
-        fontSize350 = 28.0,
-        fontSize300 = 24.0,
-        fontSize250 = 20.0,
-        fontSize225 = 18.0,
-        fontSize200 = 16.0,
-        fontSize175 = 14.0,
-        fontSize150 = 12.0,
-        fontSize125 = 10.0,
-        fontSize1150 = 92.0,
-        fontSize1050 = 84.0,
-        fontSize100 = 8.0
-    ),
-    fontWeight = FontWeightValuesContainer(
-        fontWeight700 = 700.0,
-        fontWeight600 = 600.0,
-        fontWeight500 = 500.0,
-        fontWeight400 = 400.0,
-        fontWeight300 = 300.0
-    ),
-    letterSpacing = LetterSpacingValuesContainer(
-        letterSpacing700 = -0.022,
-        letterSpacing600 = -0.021,
-        letterSpacing500 = -0.019,
-        letterSpacing400 = -0.017,
-        letterSpacing300 = -0.014,
-        letterSpacing200 = -0.011,
-        letterSpacing100 = -0.006,
-        letterSpacing0 = 0.0
-    ),
-    testUnit = FontUnit.PX(30.0),
-    lineHeight = LineHeightValuesContainer(
-        value900 = 72.0,
-        value825 = 66.0,
-        value725 = 58.0,
-        value700 = 56.0,
-        value600 = 48.0,
-        value525 = 42.0,
-        value475 = 38.0,
-        value400 = 32.0,
-        value325 = 26.0,
-        value300 = 24.0,
-        value275 = 22.0,
-        value250 = 20.0,
-        value200 = 16.0,
-        value150 = 12.0,
-        value1400 = 112.0,
-        value1275 = 102.0,
-        value1150 = 92.0,
-        value1025 = 82.0
     )
 )

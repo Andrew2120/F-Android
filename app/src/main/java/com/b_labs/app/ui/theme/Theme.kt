@@ -2,7 +2,6 @@ package com.b_labs.app.ui.theme
 
 import android.app.Activity
 import android.os.Build
-import android.provider.CalendarContract.Colors
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
@@ -16,7 +15,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.b_labs.fiber_retail.retailDesignSystem
+import com.b_labs.fiber_mylo.designSystem
 import com.blabs.hicomponents.theme.HITheme
 import com.blabs.hicomponents.theme.localDesignSystem
 
@@ -80,7 +79,7 @@ fun FiberAndroid1Theme(
     }
 
     CompositionLocalProvider(
-        localDesignSystem provides retailDesignSystem,
+        localDesignSystem provides designSystem,
     ) {
         HITheme.designSystem.isDark = darkTheme
 

@@ -50,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":fiber-retail"))
+    implementation(project(":fiber-mylo"))
     implementation(project(":HIComponents"))
 
     implementation("androidx.core:core-ktx:1.9.0")
