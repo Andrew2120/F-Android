@@ -1,68 +1,9 @@
-package com.b_labs.fiber_mylo
-
+package com.blabs.hicomponents.theme
 import androidx.compose.ui.graphics.Color
 import androidx.core.graphics.toColorInt
-import com.blabs.hicomponents.theme.DSAction
-import com.blabs.hicomponents.theme.DSAquamarine
-import com.blabs.hicomponents.theme.DSBackground
-import com.blabs.hicomponents.theme.DSBackground1
-import com.blabs.hicomponents.theme.DSBlue
-import com.blabs.hicomponents.theme.DSBody
-import com.blabs.hicomponents.theme.DSBorder
-import com.blabs.hicomponents.theme.DSBorder1
-import com.blabs.hicomponents.theme.DSBorderRadius
-import com.blabs.hicomponents.theme.DSBorderWidth
-import com.blabs.hicomponents.theme.DSBrand
-import com.blabs.hicomponents.theme.DSCode
-import com.blabs.hicomponents.theme.DSColor
-import com.blabs.hicomponents.theme.DSContent
-import com.blabs.hicomponents.theme.DSCyan
-import com.blabs.hicomponents.theme.DSDanger
-import com.blabs.hicomponents.theme.DSDanger1
-import com.blabs.hicomponents.theme.DSDanger2
-import com.blabs.hicomponents.theme.DSDefault
-import com.blabs.hicomponents.theme.DSDisabled
-import com.blabs.hicomponents.theme.DSDisplay
-import com.blabs.hicomponents.theme.DSFocus
-import com.blabs.hicomponents.theme.DSGap
-import com.blabs.hicomponents.theme.DSGhost
-import com.blabs.hicomponents.theme.DSGhost1
-import com.blabs.hicomponents.theme.DSGray
-import com.blabs.hicomponents.theme.DSGreen
-import com.blabs.hicomponents.theme.DSHeading
-import com.blabs.hicomponents.theme.DSInfo
-import com.blabs.hicomponents.theme.DSInteraction
-import com.blabs.hicomponents.theme.DSInverse
-import com.blabs.hicomponents.theme.DSInverse1
-import com.blabs.hicomponents.theme.DSMagenta
-import com.blabs.hicomponents.theme.DSNeutral
-import com.blabs.hicomponents.theme.DSNeutral1
-import com.blabs.hicomponents.theme.DSNeutral2
-import com.blabs.hicomponents.theme.DSNeutralAlpha
-import com.blabs.hicomponents.theme.DSNonSemantic
-import com.blabs.hicomponents.theme.DSOpacity
-import com.blabs.hicomponents.theme.DSOrange
-import com.blabs.hicomponents.theme.DSOutline
-import com.blabs.hicomponents.theme.DSPadding
-import com.blabs.hicomponents.theme.DSPrimary
-import com.blabs.hicomponents.theme.DSPurple
-import com.blabs.hicomponents.theme.DSRed
-import com.blabs.hicomponents.theme.DSReverseInverse
-import com.blabs.hicomponents.theme.DSSemantic
-import com.blabs.hicomponents.theme.DSSize
-import com.blabs.hicomponents.theme.DSSpace
-import com.blabs.hicomponents.theme.DSSuccess
-import com.blabs.hicomponents.theme.DSSuccess1
-import com.blabs.hicomponents.theme.DSTeal
-import com.blabs.hicomponents.theme.DSTypography
-import com.blabs.hicomponents.theme.DSUtility
-import com.blabs.hicomponents.theme.DSViolet
-import com.blabs.hicomponents.theme.DSWarning
-import com.blabs.hicomponents.theme.DSWhite
-import com.blabs.hicomponents.theme.DesignSystem
-import com.blabs.hicomponents.theme.Typography
 
-val designSystem: DesignSystem = DesignSystem(
+
+internal val baseDesignSystem: DesignSystem = DesignSystem(
     colorDark = DSColor(
         semantic = DSSemantic(
             warning = DSWarning(

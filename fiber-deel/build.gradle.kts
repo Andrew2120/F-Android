@@ -58,7 +58,8 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-    implementation(project(":fiber-tokens"))
+    implementation(project(mapOf("path" to ":HIComponents")))
+
 }
 afterEvaluate {
     publishing {
