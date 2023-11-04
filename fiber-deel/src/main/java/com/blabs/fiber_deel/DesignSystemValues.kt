@@ -113,7 +113,7 @@ val designSystem: DesignSystem = DesignSystem(
                 semanticNeutralA0 = Color("#182639bd".toColorInt())
             ),
             neutral = DSNeutral2(
-                semanticNeutralNegative4 = Color("#3a4e5f".toColorInt()),
+                semanticNeutralNegative4 = Color("#55728b".toColorInt()),
                 semanticNeutralNegative3 = Color("#272e35".toColorInt()),
                 semanticNeutralNegative2 = Color("#3a424a".toColorInt()),
                 semanticNeutralNegative1 = Color("#4a545e".toColorInt()),
@@ -589,7 +589,7 @@ val designSystem: DesignSystem = DesignSystem(
                 semanticNeutralA0 = Color("#182639bd".toColorInt())
             ),
             neutral = DSNeutral2(
-                semanticNeutralNegative4 = Color("#3a4e5f".toColorInt()),
+                semanticNeutralNegative4 = Color("#55728b".toColorInt()),
                 semanticNeutralNegative3 = Color("#272e35".toColorInt()),
                 semanticNeutralNegative2 = Color("#3a424a".toColorInt()),
                 semanticNeutralNegative1 = Color("#4a545e".toColorInt()),
