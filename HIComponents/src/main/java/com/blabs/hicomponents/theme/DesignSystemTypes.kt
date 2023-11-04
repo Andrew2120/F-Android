@@ -1,5 +1,9 @@
-package com.blabs.hicomponents.theme
+package com.b_labs.fiber_tokens
+import androidx.compose.ui.unit.*
 import androidx.compose.ui.graphics.Color
+import androidx.core.graphics.toColorInt
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalDensity
 
 data class DesignSystem (
     var isDark: Boolean = false,
@@ -166,14 +170,14 @@ data class DSReverseInverse (
 )
 
 data class DSAction (
-    val success: DSSuccess,
-    val reverseInverse: DSReverseInverse,
-    val primary: DSPrimary,
-    val outline: DSOutline,
-    val neutral: DSNeutral,
-    val inverse: DSInverse,
-    val ghost: DSGhost,
-    val danger: DSDanger,
+    val success: DSSuccess, 
+    val reverseInverse: DSReverseInverse, 
+    val primary: DSPrimary, 
+    val outline: DSOutline, 
+    val neutral: DSNeutral, 
+    val inverse: DSInverse, 
+    val ghost: DSGhost, 
+    val danger: DSDanger, 
 )
 
 data class DSDefault (
@@ -264,15 +268,15 @@ data class DSFocus (
 )
 
 data class DSInteraction (
-    val neutral: DSNeutral1,
-    val inverse: DSInverse1,
-    val ghost: DSGhost1,
-    val focus: DSFocus,
-    val disabled: DSDisabled,
-    val default: DSDefault,
-    val danger: DSDanger1,
-    val border: DSBorder1,
-    val background: DSBackground1,
+    val neutral: DSNeutral1, 
+    val inverse: DSInverse1, 
+    val ghost: DSGhost1, 
+    val focus: DSFocus, 
+    val disabled: DSDisabled, 
+    val default: DSDefault, 
+    val danger: DSDanger1, 
+    val border: DSBorder1, 
+    val background: DSBackground1, 
 )
 
 data class DSGray (
@@ -432,18 +436,18 @@ data class DSOrange (
 )
 
 data class DSNonSemantic (
-    val white: DSWhite,
-    val violet: DSViolet,
-    val teal: DSTeal,
-    val red: DSRed,
-    val purple: DSPurple,
-    val orange: DSOrange,
-    val magenta: DSMagenta,
-    val green: DSGreen,
-    val gray: DSGray,
-    val cyan: DSCyan,
-    val blue: DSBlue,
-    val aquamarine: DSAquamarine,
+    val white: DSWhite, 
+    val violet: DSViolet, 
+    val teal: DSTeal, 
+    val red: DSRed, 
+    val purple: DSPurple, 
+    val orange: DSOrange, 
+    val magenta: DSMagenta, 
+    val green: DSGreen, 
+    val gray: DSGray, 
+    val cyan: DSCyan, 
+    val blue: DSBlue, 
+    val aquamarine: DSAquamarine, 
 )
 
 data class DSBrand (
@@ -559,23 +563,23 @@ data class DSDanger2 (
 )
 
 data class DSSemantic (
-    val warning: DSWarning,
-    val success: DSSuccess1,
-    val neutralAlpha: DSNeutralAlpha,
-    val neutral: DSNeutral2,
-    val info: DSInfo,
-    val danger: DSDanger2,
-    val brand: DSBrand,
+    val warning: DSWarning, 
+    val success: DSSuccess1, 
+    val neutralAlpha: DSNeutralAlpha, 
+    val neutral: DSNeutral2, 
+    val info: DSInfo, 
+    val danger: DSDanger2, 
+    val brand: DSBrand, 
 )
 
 data class DSColor (
-    val semantic: DSSemantic,
-    val nonSemantic: DSNonSemantic,
-    val interaction: DSInteraction,
-    val content: DSContent,
-    val border: DSBorder,
-    val background: DSBackground,
-    val action: DSAction,
+    val semantic: DSSemantic, 
+    val nonSemantic: DSNonSemantic, 
+    val interaction: DSInteraction, 
+    val content: DSContent, 
+    val border: DSBorder, 
+    val background: DSBackground, 
+    val action: DSAction, 
 )
 
 data class DSBorderWidth (
@@ -638,8 +642,8 @@ data class DSGap (
 )
 
 data class DSSpace (
-    val padding: DSPadding,
-    val gap: DSGap,
+    val padding: DSPadding, 
+    val gap: DSGap, 
 )
 
 data class DSOpacity (
@@ -655,51 +659,51 @@ data class Typography (
 )
 
 data class DSCode (
-    val typographyCodeSmall: Typography,
-    val typographyCodeMedium: Typography,
-    val typographyCodeLarge: Typography,
+    val typographyCodeSmall: Typography, 
+    val typographyCodeMedium: Typography, 
+    val typographyCodeLarge: Typography, 
 )
 
 data class DSUtility (
-    val typographyUtilitySmall: Typography,
-    val typographyUtilityMedium: Typography,
-    val typographyUtilityLarge: Typography,
+    val typographyUtilitySmall: Typography, 
+    val typographyUtilityMedium: Typography, 
+    val typographyUtilityLarge: Typography, 
 )
 
 data class DSBody (
-    val typographyBodySmall: Typography,
-    val typographyBodyMedium: Typography,
-    val typographyBodyLarge: Typography,
+    val typographyBodySmall: Typography, 
+    val typographyBodyMedium: Typography, 
+    val typographyBodyLarge: Typography, 
 )
 
 data class DSHeading (
-    val typographyHeadingXLarge: Typography,
-    val typographyHeadingSmall: Typography,
-    val typographyHeadingMedium: Typography,
-    val typographyHeadingLarge: Typography,
-    val typographyHeading9xLarge: Typography,
-    val typographyHeading8xLarge: Typography,
-    val typographyHeading7xLarge: Typography,
-    val typographyHeading6xLarge: Typography,
-    val typographyHeading5xLarge: Typography,
-    val typographyHeading4xLarge: Typography,
-    val typographyHeading3xLarge: Typography,
-    val typographyHeading2xLarge: Typography,
+    val typographyHeadingXLarge: Typography, 
+    val typographyHeadingSmall: Typography, 
+    val typographyHeadingMedium: Typography, 
+    val typographyHeadingLarge: Typography, 
+    val typographyHeading9xLarge: Typography, 
+    val typographyHeading8xLarge: Typography, 
+    val typographyHeading7xLarge: Typography, 
+    val typographyHeading6xLarge: Typography, 
+    val typographyHeading5xLarge: Typography, 
+    val typographyHeading4xLarge: Typography, 
+    val typographyHeading3xLarge: Typography, 
+    val typographyHeading2xLarge: Typography, 
 )
 
 data class DSDisplay (
-    val typographyDisplayXLarge: Typography,
-    val typographyDisplaySmall: Typography,
-    val typographyDisplayMedium: Typography,
-    val typographyDisplayLarge: Typography,
-    val typographyDisplay3xLarge: Typography,
-    val typographyDisplay2xLarge: Typography,
+    val typographyDisplayXLarge: Typography, 
+    val typographyDisplaySmall: Typography, 
+    val typographyDisplayMedium: Typography, 
+    val typographyDisplayLarge: Typography, 
+    val typographyDisplay3xLarge: Typography, 
+    val typographyDisplay2xLarge: Typography, 
 )
 
 data class DSTypography (
-    val utility: DSUtility,
-    val heading: DSHeading,
-    val display: DSDisplay,
-    val code: DSCode,
-    val body: DSBody,
+    val utility: DSUtility, 
+    val heading: DSHeading, 
+    val display: DSDisplay, 
+    val code: DSCode, 
+    val body: DSBody, 
 )
