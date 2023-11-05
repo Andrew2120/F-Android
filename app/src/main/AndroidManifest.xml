@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FiberAndroid1">
         <activity
-            android:name=".com.blabs.app.MainActivity"
+            android:name="com.b_labs.app.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.FiberAndroid1">
             <intent-filter>
