@@ -53,7 +53,7 @@ dependencies {
     implementation(project(":fiber-mylo"))
     implementation(project(":fiber-retail"))
     implementation(project(":fiber-deel"))
-    implementation(project(":fiber_hi_components"))
+    implementation(project(":fiber-hi-components"))
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
