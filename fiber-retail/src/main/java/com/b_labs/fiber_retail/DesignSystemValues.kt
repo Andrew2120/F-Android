@@ -491,7 +491,7 @@ val designSystem: DesignSystem = DesignSystem(
                 actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
                 actionPrimarySubtleActive = Color("#ccdcff".toColorInt()),
                 actionPrimarySelected = Color("#1e4fc2".toColorInt()),
-                actionPrimaryNormal = Color("#3061d5".toColorInt()),
+                actionPrimaryNormal = Color("#c53434".toColorInt()),
                 actionPrimaryHover = Color("#1e4fc2".toColorInt()),
                 actionPrimaryActive = Color("#113997".toColorInt())
             ),
@@ -885,7 +885,7 @@ val designSystem: DesignSystem = DesignSystem(
             secondaryInverse = Color("#ffffffa3".toColorInt()),
             secondary = Color("#555f6d".toColorInt()),
             primaryInverse = Color("#ffffff".toColorInt()),
-            primary = Color("#246626".toColorInt()),
+            primary = Color("#952d2d".toColorInt()),
             infoSecondary = Color("#3061d5".toColorInt()),
             infoPrimary = Color("#113997".toColorInt()),
             disabledInverse = Color("#ffffff3d".toColorInt()),
