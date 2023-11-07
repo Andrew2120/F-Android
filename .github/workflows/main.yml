@@ -38,8 +38,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
       - name: Run build with Gradle Wrapper
         run: ./gradlew build
-        
-      - name: Jitpack io
-        uses: badasintended/autojitpack@v1
-        with:
-          version: ${{ steps.taggerDryRun.outputs.new_tag }}
+      - name: Request release from JitPack to trigger build
+        run: |
+          JITPACK_URL="https://jitpack.io/com/example/REPOSITORY/${{ steps.taggerDryRun.outputs.new_tag }}/"
+          # timeout in 30 seconds to avoid waiting for build
+          curl -s -m 30 ${JITPACK_URL} || true
+     
