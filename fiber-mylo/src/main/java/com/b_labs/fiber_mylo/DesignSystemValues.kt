@@ -5,10 +5,11 @@ import androidx.core.graphics.toColorInt
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity
 import com.b_labs.fiber_tokens.DesignSystem
+import com.b_labs.fiber_tokens.DSPrimary
 import com.b_labs.fiber_tokens.DSContent
 import com.b_labs.fiber_tokens.DSBorder
 import com.b_labs.fiber_tokens.DSBackground
-import com.b_labs.fiber_tokens.DSPrimary
+import com.b_labs.fiber_tokens.DSPrimary1
 import com.b_labs.fiber_tokens.DSNeutral
 import com.b_labs.fiber_tokens.DSSuccess
 import com.b_labs.fiber_tokens.DSDanger
@@ -409,7 +410,11 @@ val designSystem: DesignSystem = DesignSystem(
             secondaryInverse = Color("#ffffffa3".toColorInt()),
             secondary = Color("#555f6d".toColorInt()),
             primaryInverse = Color("#ffffff".toColorInt()),
-            primary = Color("#3061d5".toColorInt()),
+            primary = DSPrimary(
+                value = "#6ec9bf",
+                type = "color",
+                description = "change"
+            ),
             infoSecondary = Color("#3061d5".toColorInt()),
             infoPrimary = Color("#113997".toColorInt()),
             disabledInverse = Color("#ffffff3d".toColorInt()),
@@ -485,7 +490,7 @@ val designSystem: DesignSystem = DesignSystem(
                 actionReverseInverseHover = Color("#1d2835cc".toColorInt()),
                 actionReverseInverseActive = Color("#182639bd".toColorInt())
             ),
-            primary = DSPrimary(
+            primary = DSPrimary1(
                 actionPrimarySubtleSelected = Color("#e5eeff".toColorInt()),
                 actionPrimarySubtleNormal = Color("#ebf0ff".toColorInt()),
                 actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
@@ -885,7 +890,11 @@ val designSystem: DesignSystem = DesignSystem(
             secondaryInverse = Color("#ffffffa3".toColorInt()),
             secondary = Color("#ffffff1a".toColorInt()),
             primaryInverse = Color("#ffffff".toColorInt()),
-            primary = Color("#077597".toColorInt()),
+            primary = DSPrimary(
+                value = "#6ec9bf",
+                type = "color",
+                description = "change"
+            ),
             infoSecondary = Color("#3061d5".toColorInt()),
             infoPrimary = Color("#113997".toColorInt()),
             disabledInverse = Color("#ffffff3d".toColorInt()),
@@ -961,7 +970,7 @@ val designSystem: DesignSystem = DesignSystem(
                 actionReverseInverseHover = Color("#1d2835cc".toColorInt()),
                 actionReverseInverseActive = Color("#182639bd".toColorInt())
             ),
-            primary = DSPrimary(
+            primary = DSPrimary1(
                 actionPrimarySubtleSelected = Color("#e5eeff".toColorInt()),
                 actionPrimarySubtleNormal = Color("#ebf0ff".toColorInt()),
                 actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
