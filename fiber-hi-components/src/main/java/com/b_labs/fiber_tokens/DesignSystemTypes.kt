@@ -19,12 +19,6 @@ data class DesignSystem (
     val color: DSColor get() = if (isDark) colorDark else colorLight
 }
 
-data class DSPrimary (
-    val `value`: String, 
-    val type: String, 
-    val description: String, 
-)
-
 data class DSContent (
     val warningSecondary: Color, 
     val warningPrimary: Color, 
@@ -35,7 +29,7 @@ data class DSContent (
     val secondaryInverse: Color, 
     val secondary: Color, 
     val primaryInverse: Color, 
-    val primary: DSPrimary, 
+    val primary: Color, 
     val infoSecondary: Color, 
     val infoPrimary: Color, 
     val disabledInverse: Color, 
@@ -97,7 +91,7 @@ data class DSBackground (
     val brandMuted: Color, 
 )
 
-data class DSPrimary1 (
+data class DSPrimary (
     val actionPrimarySubtleSelected: Color, 
     val actionPrimarySubtleNormal: Color, 
     val actionPrimarySubtleHover: Color, 
@@ -178,7 +172,7 @@ data class DSReverseInverse (
 data class DSAction (
     val success: DSSuccess, 
     val reverseInverse: DSReverseInverse, 
-    val primary: DSPrimary1, 
+    val primary: DSPrimary, 
     val outline: DSOutline, 
     val neutral: DSNeutral, 
     val inverse: DSInverse, 
