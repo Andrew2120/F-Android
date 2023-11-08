@@ -1,75 +1,15 @@
 package com.b_labs.fiber_retail
-import androidx.compose.ui.unit.*
+
 import androidx.compose.ui.graphics.Color
 import androidx.core.graphics.toColorInt
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalDensity
-import com.b_labs.fiber_tokens.DesignSystem
-import com.b_labs.fiber_tokens.DSContent
-import com.b_labs.fiber_tokens.DSBorder
-import com.b_labs.fiber_tokens.DSBackground
-import com.b_labs.fiber_tokens.DSPrimary
-import com.b_labs.fiber_tokens.DSNeutral
-import com.b_labs.fiber_tokens.DSSuccess
-import com.b_labs.fiber_tokens.DSDanger
-import com.b_labs.fiber_tokens.DSGhost
-import com.b_labs.fiber_tokens.DSOutline
-import com.b_labs.fiber_tokens.DSInverse
-import com.b_labs.fiber_tokens.DSReverseInverse
-import com.b_labs.fiber_tokens.DSAction
-import com.b_labs.fiber_tokens.DSDefault
-import com.b_labs.fiber_tokens.DSNeutral1
-import com.b_labs.fiber_tokens.DSDanger1
-import com.b_labs.fiber_tokens.DSGhost1
-import com.b_labs.fiber_tokens.DSDisabled
-import com.b_labs.fiber_tokens.DSBorder1
-import com.b_labs.fiber_tokens.DSBackground1
-import com.b_labs.fiber_tokens.DSInverse1
-import com.b_labs.fiber_tokens.DSFocus
-import com.b_labs.fiber_tokens.DSInteraction
-import com.b_labs.fiber_tokens.DSGray
-import com.b_labs.fiber_tokens.DSWhite
-import com.b_labs.fiber_tokens.DSRed
-import com.b_labs.fiber_tokens.DSMagenta
-import com.b_labs.fiber_tokens.DSPurple
-import com.b_labs.fiber_tokens.DSViolet
-import com.b_labs.fiber_tokens.DSBlue
-import com.b_labs.fiber_tokens.DSCyan
-import com.b_labs.fiber_tokens.DSTeal
-import com.b_labs.fiber_tokens.DSAquamarine
-import com.b_labs.fiber_tokens.DSGreen
-import com.b_labs.fiber_tokens.DSOrange
-import com.b_labs.fiber_tokens.DSNonSemantic
-import com.b_labs.fiber_tokens.DSBrand
-import com.b_labs.fiber_tokens.DSNeutral2
-import com.b_labs.fiber_tokens.DSNeutralAlpha
-import com.b_labs.fiber_tokens.DSInfo
-import com.b_labs.fiber_tokens.DSSuccess1
-import com.b_labs.fiber_tokens.DSWarning
-import com.b_labs.fiber_tokens.DSDanger2
-import com.b_labs.fiber_tokens.DSSemantic
-import com.b_labs.fiber_tokens.DSColor
-import com.b_labs.fiber_tokens.DSBorderWidth
-import com.b_labs.fiber_tokens.DSBorderRadius
-import com.b_labs.fiber_tokens.DSSize
-import com.b_labs.fiber_tokens.DSPadding
-import com.b_labs.fiber_tokens.DSGap
-import com.b_labs.fiber_tokens.DSSpace
-import com.b_labs.fiber_tokens.DSOpacity
-import com.b_labs.fiber_tokens.Typography
-import com.b_labs.fiber_tokens.DSCode
-import com.b_labs.fiber_tokens.DSUtility
-import com.b_labs.fiber_tokens.DSBody
-import com.b_labs.fiber_tokens.DSHeading
-import com.b_labs.fiber_tokens.DSDisplay
-import com.b_labs.fiber_tokens.DSTypography
+import com.b_labs.fiber_tokens.*
 
 val designSystem: DesignSystem = DesignSystem(
     colorDark = DSColor(
         semantic = DSSemantic(
             warning = DSWarning(
                 semanticWarningNegative4 = Color("#492909".toColorInt()),
-                semanticWarningNegative3 = Color("#7a4510".toColorInt()),
+                semanticWarningNegative3 = Color("#3f2828".toColorInt()),
                 semanticWarningNegative2 = Color("#a05c1c".toColorInt()),
                 semanticWarningNegative1 = Color("#b4610e".toColorInt()),
                 semanticWarning8 = Color("#fffcfa".toColorInt()),
@@ -84,7 +24,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             success = DSSuccess1(
                 semanticSuccessNegative4 = Color("#0a2e0b".toColorInt()),
-                semanticSuccessNegative3 = Color("#135315".toColorInt()),
+                semanticSuccessNegative3 = Color("#b3b7b0".toColorInt()),
                 semanticSuccessNegative2 = Color("#246626".toColorInt()),
                 semanticSuccessNegative1 = Color("#2f6f2f".toColorInt()),
                 semanticSuccess8 = Color("#fbfefb".toColorInt()),
@@ -92,10 +32,10 @@ val designSystem: DesignSystem = DesignSystem(
                 semanticSuccess6 = Color("#e6f9e6".toColorInt()),
                 semanticSuccess5 = Color("#dff6df".toColorInt()),
                 semanticSuccess4 = Color("#cff2cf".toColorInt()),
-                semanticSuccess3 = Color("#c6ecc6".toColorInt()),
-                semanticSuccess2 = Color("#87c987".toColorInt()),
+                semanticSuccess3 = Color("#00ff10".toColorInt()),
+                semanticSuccess2 = Color("#fdff84".toColorInt()),
                 semanticSuccess1 = Color("#55a555".toColorInt()),
-                semanticSuccess0 = Color("#347434".toColorInt())
+                semanticSuccess0 = Color("#20b027".toColorInt())
             ),
             neutralAlpha = DSNeutralAlpha(
                 semanticNeutralANegative4 = Color("#09131aed".toColorInt()),
@@ -113,7 +53,7 @@ val designSystem: DesignSystem = DesignSystem(
                 semanticNeutralA0 = Color("#182639bd".toColorInt())
             ),
             neutral = DSNeutral2(
-                semanticNeutralNegative4 = Color("#30414f".toColorInt()),
+                semanticNeutralNegative4 = Color("#1b242c".toColorInt()),
                 semanticNeutralNegative3 = Color("#272e35".toColorInt()),
                 semanticNeutralNegative2 = Color("#3a424a".toColorInt()),
                 semanticNeutralNegative1 = Color("#4a545e".toColorInt()),
@@ -130,44 +70,44 @@ val designSystem: DesignSystem = DesignSystem(
             info = DSInfo(
                 semanticInfoNegative4 = Color("#041f5d".toColorInt()),
                 semanticInfoNegative3 = Color("#113997".toColorInt()),
-                semanticInfoNegative2 = Color("#1e4fc2".toColorInt()),
-                semanticInfoNegative1 = Color("#2759ce".toColorInt()),
+                semanticInfoNegative2 = Color("#658b6e".toColorInt()),
+                semanticInfoNegative1 = Color("#9e6610".toColorInt()),
                 semanticInfo8 = Color("#fafbff".toColorInt()),
                 semanticInfo7 = Color("#f5f8ff".toColorInt()),
                 semanticInfo6 = Color("#ebf0ff".toColorInt()),
                 semanticInfo5 = Color("#e5eeff".toColorInt()),
                 semanticInfo4 = Color("#d6e3ff".toColorInt()),
-                semanticInfo3 = Color("#ccdcff".toColorInt()),
+                semanticInfo3 = Color("#0085ff".toColorInt()),
                 semanticInfo2 = Color("#8eb0fb".toColorInt()),
                 semanticInfo1 = Color("#6691f4".toColorInt()),
                 semanticInfo0 = Color("#3061d5".toColorInt())
             ),
             danger = DSDanger2(
-                semanticDangerNegative4 = Color("#c53434".toColorInt()),
-                semanticDangerNegative3 = Color("#6f2020".toColorInt()),
-                semanticDangerNegative2 = Color("#952d2d".toColorInt()),
+                semanticDangerNegative4 = Color("#4a0d0d".toColorInt()),
+                semanticDangerNegative3 = Color("#30723a".toColorInt()),
+                semanticDangerNegative2 = Color("#63c7c3".toColorInt()),
                 semanticDangerNegative1 = Color("#a13636".toColorInt()),
                 semanticDanger8 = Color("#fffafa".toColorInt()),
                 semanticDanger7 = Color("#fef5f5".toColorInt()),
                 semanticDanger6 = Color("#ffebeb".toColorInt()),
                 semanticDanger5 = Color("#fee7e7".toColorInt()),
-                semanticDanger4 = Color("#fcd9d9".toColorInt()),
-                semanticDanger3 = Color("#fccfcf".toColorInt()),
-                semanticDanger2 = Color("#f49090".toColorInt()),
-                semanticDanger1 = Color("#f26363".toColorInt()),
-                semanticDanger0 = Color("#c53434".toColorInt())
+                semanticDanger4 = Color("#d15a5a".toColorInt()),
+                semanticDanger3 = Color("#76d91c".toColorInt()),
+                semanticDanger2 = Color("#494b75".toColorInt()),
+                semanticDanger1 = Color("#285aa5".toColorInt()),
+                semanticDanger0 = Color("#9e6610".toColorInt())
             ),
             brand = DSBrand(
-                semanticBrandNegative4 = Color("#15665b".toColorInt()),
+                semanticBrandNegative4 = Color("#3061d5".toColorInt()),
                 semanticBrandNegative3 = Color("#113997".toColorInt()),
-                semanticBrandNegative2 = Color("#1e4fc2".toColorInt()),
-                semanticBrandNegative1 = Color("#2759ce".toColorInt()),
+                semanticBrandNegative2 = Color("#658b6e".toColorInt()),
+                semanticBrandNegative1 = Color("#ff9375".toColorInt()),
                 semanticBrand8 = Color("#fafbff".toColorInt()),
                 semanticBrand7 = Color("#f5f8ff".toColorInt()),
                 semanticBrand6 = Color("#ebf0ff".toColorInt()),
                 semanticBrand5 = Color("#e5eeff".toColorInt()),
                 semanticBrand4 = Color("#d6e3ff".toColorInt()),
-                semanticBrand3 = Color("#ccdcff".toColorInt()),
+                semanticBrand3 = Color("#0085ff".toColorInt()),
                 semanticBrand2 = Color("#8eb0fb".toColorInt()),
                 semanticBrand1 = Color("#6691f4".toColorInt()),
                 semanticBrand0 = Color("#3061d5".toColorInt())
@@ -189,7 +129,7 @@ val designSystem: DesignSystem = DesignSystem(
             violet = DSViolet(
                 nonSemanticVioletContentSecondary = Color("#634eca".toColorInt()),
                 nonSemanticVioletContentPrimary = Color("#39288a".toColorInt()),
-                nonSemanticVioletBorderSubtle = Color("#dcd6ff".toColorInt()),
+                nonSemanticVioletBorderSubtle = Color("#54917b".toColorInt()),
                 nonSemanticVioletBorderStrong = Color("#634eca".toColorInt()),
                 nonSemanticVioletBorderDefault = Color("#eeebff".toColorInt()),
                 nonSemanticVioletBackgroundSurface = Color("#fbfaff".toColorInt()),
@@ -200,7 +140,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             teal = DSTeal(
                 nonSemanticTealContentSecondary = Color("#077597".toColorInt()),
-                nonSemanticTealContentPrimary = Color("#0a495c".toColorInt()),
+                nonSemanticTealContentPrimary = Color("#7c4fc4".toColorInt()),
                 nonSemanticTealBorderSubtle = Color("#b8e8f5".toColorInt()),
                 nonSemanticTealBorderStrong = Color("#077597".toColorInt()),
                 nonSemanticTealBorderDefault = Color("#e0f3fa".toColorInt()),
@@ -211,21 +151,21 @@ val designSystem: DesignSystem = DesignSystem(
                 nonSemanticTealBackgroundMuted = Color("#c5ecf7".toColorInt())
             ),
             red = DSRed(
-                nonSemanticRedContentSecondary = Color("#c53434".toColorInt()),
-                nonSemanticRedContentPrimary = Color("#6f2020".toColorInt()),
-                nonSemanticRedBorderSubtle = Color("#fccfcf".toColorInt()),
-                nonSemanticRedBorderStrong = Color("#c53434".toColorInt()),
+                nonSemanticRedContentSecondary = Color("#9e6610".toColorInt()),
+                nonSemanticRedContentPrimary = Color("#30723a".toColorInt()),
+                nonSemanticRedBorderSubtle = Color("#76d91c".toColorInt()),
+                nonSemanticRedBorderStrong = Color("#9e6610".toColorInt()),
                 nonSemanticRedBorderDefault = Color("#fee7e7".toColorInt()),
                 nonSemanticRedBackgroundSurface = Color("#fffafa".toColorInt()),
                 nonSemanticRedBackgroundSubtle = Color("#fef5f5".toColorInt()),
-                nonSemanticRedBackgroundStrong = Color("#c53434".toColorInt()),
+                nonSemanticRedBackgroundStrong = Color("#9e6610".toColorInt()),
                 nonSemanticRedBackgroundOnSubtle = Color("#fee7e7".toColorInt()),
-                nonSemanticRedBackgroundMuted = Color("#fcd9d9".toColorInt())
+                nonSemanticRedBackgroundMuted = Color("#d15a5a".toColorInt())
             ),
             purple = DSPurple(
                 nonSemanticPurpleContentSecondary = Color("#9939ac".toColorInt()),
                 nonSemanticPurpleContentPrimary = Color("#5b1e67".toColorInt()),
-                nonSemanticPurpleBorderSubtle = Color("#f4caf7".toColorInt()),
+                nonSemanticPurpleBorderSubtle = Color("#c04c0d".toColorInt()),
                 nonSemanticPurpleBorderStrong = Color("#9939ac".toColorInt()),
                 nonSemanticPurpleBorderDefault = Color("#f8e2fd".toColorInt()),
                 nonSemanticPurpleBackgroundSurface = Color("#fefaff".toColorInt()),
@@ -236,7 +176,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             orange = DSOrange(
                 nonSemanticOrangeContentSecondary = Color("#f59638".toColorInt()),
-                nonSemanticOrangeContentPrimary = Color("#7a4510".toColorInt()),
+                nonSemanticOrangeContentPrimary = Color("#3f2828".toColorInt()),
                 nonSemanticOrangeBorderSubtle = Color("#ffd4a8".toColorInt()),
                 nonSemanticOrangeBorderStrong = Color("#f59638".toColorInt()),
                 nonSemanticOrangeBorderDefault = Color("#ffe8d1".toColorInt()),
@@ -247,26 +187,26 @@ val designSystem: DesignSystem = DesignSystem(
                 nonSemanticOrangeBackgroundMuted = Color("#fcdec0".toColorInt())
             ),
             magenta = DSMagenta(
-                nonSemanticMagentaContentSecondary = Color("#b12f86".toColorInt()),
+                nonSemanticMagentaContentSecondary = Color("#91ae7a".toColorInt()),
                 nonSemanticMagentaContentPrimary = Color("#671e4d".toColorInt()),
                 nonSemanticMagentaBorderSubtle = Color("#f7cae8".toColorInt()),
-                nonSemanticMagentaBorderStrong = Color("#b12f86".toColorInt()),
+                nonSemanticMagentaBorderStrong = Color("#91ae7a".toColorInt()),
                 nonSemanticMagentaBorderDefault = Color("#fde2f4".toColorInt()),
                 nonSemanticMagentaBackgroundSurface = Color("#fffafd".toColorInt()),
                 nonSemanticMagentaBackgroundSubtle = Color("#fef6fb".toColorInt()),
-                nonSemanticMagentaBackgroundStrong = Color("#b12f86".toColorInt()),
+                nonSemanticMagentaBackgroundStrong = Color("#91ae7a".toColorInt()),
                 nonSemanticMagentaBackgroundOnSubtle = Color("#fde2f4".toColorInt()),
                 nonSemanticMagentaBackgroundMuted = Color("#fbd5ee".toColorInt())
             ),
             green = DSGreen(
-                nonSemanticGreenContentSecondary = Color("#347434".toColorInt()),
-                nonSemanticGreenContentPrimary = Color("#135315".toColorInt()),
-                nonSemanticGreenBorderSubtle = Color("#c6ecc6".toColorInt()),
-                nonSemanticGreenBorderStrong = Color("#347434".toColorInt()),
+                nonSemanticGreenContentSecondary = Color("#20b027".toColorInt()),
+                nonSemanticGreenContentPrimary = Color("#b3b7b0".toColorInt()),
+                nonSemanticGreenBorderSubtle = Color("#00ff10".toColorInt()),
+                nonSemanticGreenBorderStrong = Color("#20b027".toColorInt()),
                 nonSemanticGreenBorderDefault = Color("#dff6df".toColorInt()),
                 nonSemanticGreenBackgroundSurface = Color("#fbfefb".toColorInt()),
                 nonSemanticGreenBackgroundSubtle = Color("#f4fbf4".toColorInt()),
-                nonSemanticGreenBackgroundStrong = Color("#347434".toColorInt()),
+                nonSemanticGreenBackgroundStrong = Color("#20b027".toColorInt()),
                 nonSemanticGreenBackgroundOnSubtle = Color("#dff6df".toColorInt()),
                 nonSemanticGreenBackgroundMuted = Color("#cff2cf".toColorInt())
             ),
@@ -284,7 +224,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             cyan = DSCyan(
                 nonSemanticCyanContentSecondary = Color("#0870ba".toColorInt()),
-                nonSemanticCyanContentPrimary = Color("#0c456e".toColorInt()),
+                nonSemanticCyanContentPrimary = Color("#0c636e".toColorInt()),
                 nonSemanticCyanBorderSubtle = Color("#c2e2ff".toColorInt()),
                 nonSemanticCyanBorderStrong = Color("#0870ba".toColorInt()),
                 nonSemanticCyanBorderDefault = Color("#e0f1ff".toColorInt()),
@@ -297,7 +237,7 @@ val designSystem: DesignSystem = DesignSystem(
             blue = DSBlue(
                 nonSemanticBlueContentSecondary = Color("#3061d5".toColorInt()),
                 nonSemanticBlueContentPrimary = Color("#113997".toColorInt()),
-                nonSemanticBlueBorderSubtle = Color("#ccdcff".toColorInt()),
+                nonSemanticBlueBorderSubtle = Color("#0085ff".toColorInt()),
                 nonSemanticBlueBorderStrong = Color("#3061d5".toColorInt()),
                 nonSemanticBlueBorderDefault = Color("#e5eeff".toColorInt()),
                 nonSemanticBlueBackgroundSurface = Color("#fafbff".toColorInt()),
@@ -363,21 +303,21 @@ val designSystem: DesignSystem = DesignSystem(
                 interactionDefaultSubtleSelected = Color("#e5eeff".toColorInt()),
                 interactionDefaultSubtleNormal = Color("#ebf0ff".toColorInt()),
                 interactionDefaultSubtleHover = Color("#e5eeff".toColorInt()),
-                interactionDefaultSubtleActive = Color("#ccdcff".toColorInt()),
-                interactionDefaultSelected = Color("#1e4fc2".toColorInt()),
+                interactionDefaultSubtleActive = Color("#0085ff".toColorInt()),
+                interactionDefaultSelected = Color("#658b6e".toColorInt()),
                 interactionDefaultNormal = Color("#3061d5".toColorInt()),
-                interactionDefaultHover = Color("#1e4fc2".toColorInt()),
+                interactionDefaultHover = Color("#658b6e".toColorInt()),
                 interactionDefaultActive = Color("#113997".toColorInt())
             ),
             danger = DSDanger1(
                 interactionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
                 interactionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
                 interactionDangerSubtleHover = Color("#fee7e7".toColorInt()),
-                interactionDangerSubtleActive = Color("#fccfcf".toColorInt()),
-                interactionDangerSelected = Color("#952d2d".toColorInt()),
-                interactionDangerNormal = Color("#c53434".toColorInt()),
-                interactionDangerHover = Color("#952d2d".toColorInt()),
-                interactionDangerActive = Color("#6f2020".toColorInt())
+                interactionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                interactionDangerSelected = Color("#63c7c3".toColorInt()),
+                interactionDangerNormal = Color("#9e6610".toColorInt()),
+                interactionDangerHover = Color("#63c7c3".toColorInt()),
+                interactionDangerActive = Color("#30723a".toColorInt())
             ),
             border = DSBorder1(
                 interactionBorderSelected = Color("#3061d5".toColorInt()),
@@ -387,8 +327,8 @@ val designSystem: DesignSystem = DesignSystem(
                 interactionBorderNeutralHover = Color("#9ea8b3".toColorInt()),
                 interactionBorderNeutralActive = Color("#7e8c9a".toColorInt()),
                 interactionBorderHover = Color("#6691f4".toColorInt()),
-                interactionBorderDanger = Color("#f26363".toColorInt()),
-                interactionBorderActive = Color("#2759ce".toColorInt())
+                interactionBorderDanger = Color("#285aa5".toColorInt()),
+                interactionBorderActive = Color("#ff9375".toColorInt())
             ),
             background = DSBackground1(
                 interactionBackgroundSidepanel = Color("#ffffff".toColorInt()),
@@ -401,11 +341,11 @@ val designSystem: DesignSystem = DesignSystem(
         ),
         content = DSContent(
             warningSecondary = Color("#f59638".toColorInt()),
-            warningPrimary = Color("#7a4510".toColorInt()),
+            warningPrimary = Color("#3f2828".toColorInt()),
             tertiaryInverse = Color("#ffffff66".toColorInt()),
             tertiary = Color("#7e8c9a".toColorInt()),
-            successSecondary = Color("#347434".toColorInt()),
-            successPrimary = Color("#135315".toColorInt()),
+            successSecondary = Color("#20b027".toColorInt()),
+            successPrimary = Color("#b3b7b0".toColorInt()),
             secondaryInverse = Color("#ffffffa3".toColorInt()),
             secondary = Color("#555f6d".toColorInt()),
             primaryInverse = Color("#ffffff".toColorInt()),
@@ -414,8 +354,8 @@ val designSystem: DesignSystem = DesignSystem(
             infoPrimary = Color("#113997".toColorInt()),
             disabledInverse = Color("#ffffff3d".toColorInt()),
             disabled = Color("#9ea8b3".toColorInt()),
-            dangerSecondary = Color("#c53434".toColorInt()),
-            dangerPrimary = Color("#6f2020".toColorInt()),
+            dangerSecondary = Color("#9e6610".toColorInt()),
+            dangerPrimary = Color("#30723a".toColorInt()),
             brandSecondary = Color("#3061d5".toColorInt()),
             brandPrimary = Color("#113997".toColorInt())
         ),
@@ -423,7 +363,7 @@ val designSystem: DesignSystem = DesignSystem(
             warningSubtle = Color("#fff5eb".toColorInt()),
             warningStrong = Color("#f59638".toColorInt()),
             successSubtle = Color("#f4fbf4".toColorInt()),
-            successStrong = Color("#347434".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
             neutralSubtle = Color("#f5f7f9".toColorInt()),
             neutralStrong = Color("#555f6d".toColorInt()),
             inverse = Color("#272e35".toColorInt()),
@@ -432,7 +372,7 @@ val designSystem: DesignSystem = DesignSystem(
             defaultA = Color("#10284717".toColorInt()),
             default = Color("#ffffff".toColorInt()),
             dangerSubtle = Color("#fef5f5".toColorInt()),
-            dangerStrong = Color("#c53434".toColorInt())
+            dangerStrong = Color("#9e6610".toColorInt())
         ),
         background = DSBackground(
             warningSurface = Color("#fffcfa".toColorInt()),
@@ -442,7 +382,7 @@ val designSystem: DesignSystem = DesignSystem(
             warningMuted = Color("#fcdec0".toColorInt()),
             successSurface = Color("#fbfefb".toColorInt()),
             successSubtle = Color("#f4fbf4".toColorInt()),
-            successStrong = Color("#347434".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
             successOnSubtle = Color("#dff6df".toColorInt()),
             successMuted = Color("#cff2cf".toColorInt()),
             neutralSurface = Color("#fcfcfd".toColorInt()),
@@ -459,9 +399,9 @@ val designSystem: DesignSystem = DesignSystem(
             default = Color("#ffffff".toColorInt()),
             dangerSurface = Color("#fffafa".toColorInt()),
             dangerSubtle = Color("#fef5f5".toColorInt()),
-            dangerStrong = Color("#c53434".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt()),
             dangerOnSubtle = Color("#fee7e7".toColorInt()),
-            dangerMuted = Color("#fcd9d9".toColorInt()),
+            dangerMuted = Color("#d15a5a".toColorInt()),
             brandSurface = Color("#fafbff".toColorInt()),
             brandSubtle = Color("#f5f8ff".toColorInt()),
             brandStrong = Color("#3061d5".toColorInt()),
@@ -473,11 +413,11 @@ val designSystem: DesignSystem = DesignSystem(
                 actionSuccessSubtleSelected = Color("#dff6df".toColorInt()),
                 actionSuccessSubtleNormal = Color("#e6f9e6".toColorInt()),
                 actionSuccessSubtleHover = Color("#dff6df".toColorInt()),
-                actionSuccessSubtleActive = Color("#c6ecc6".toColorInt()),
+                actionSuccessSubtleActive = Color("#00ff10".toColorInt()),
                 actionSuccessSelected = Color("#246626".toColorInt()),
-                actionSuccessNormal = Color("#347434".toColorInt()),
+                actionSuccessNormal = Color("#20b027".toColorInt()),
                 actionSuccessHover = Color("#246626".toColorInt()),
-                actionSuccessActive = Color("#135315".toColorInt())
+                actionSuccessActive = Color("#b3b7b0".toColorInt())
             ),
             reverseInverse = DSReverseInverse(
                 actionReverseInverseSelected = Color("#1d2835cc".toColorInt()),
@@ -489,10 +429,10 @@ val designSystem: DesignSystem = DesignSystem(
                 actionPrimarySubtleSelected = Color("#e5eeff".toColorInt()),
                 actionPrimarySubtleNormal = Color("#ebf0ff".toColorInt()),
                 actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
-                actionPrimarySubtleActive = Color("#ccdcff".toColorInt()),
-                actionPrimarySelected = Color("#1e4fc2".toColorInt()),
-                actionPrimaryNormal = Color("#c53434".toColorInt()),
-                actionPrimaryHover = Color("#1e4fc2".toColorInt()),
+                actionPrimarySubtleActive = Color("#0085ff".toColorInt()),
+                actionPrimarySelected = Color("#658b6e".toColorInt()),
+                actionPrimaryNormal = Color("#3061d5".toColorInt()),
+                actionPrimaryHover = Color("#658b6e".toColorInt()),
                 actionPrimaryActive = Color("#113997".toColorInt())
             ),
             outline = DSOutline(
@@ -533,11 +473,11 @@ val designSystem: DesignSystem = DesignSystem(
                 actionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
                 actionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
                 actionDangerSubtleHover = Color("#fee7e7".toColorInt()),
-                actionDangerSubtleActive = Color("#fccfcf".toColorInt()),
-                actionDangerSelected = Color("#952d2d".toColorInt()),
-                actionDangerNormal = Color("#c53434".toColorInt()),
-                actionDangerHover = Color("#952d2d".toColorInt()),
-                actionDangerActive = Color("#6f2020".toColorInt())
+                actionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                actionDangerSelected = Color("#63c7c3".toColorInt()),
+                actionDangerNormal = Color("#9e6610".toColorInt()),
+                actionDangerHover = Color("#63c7c3".toColorInt()),
+                actionDangerActive = Color("#30723a".toColorInt())
             )
         )
     ),
@@ -545,7 +485,7 @@ val designSystem: DesignSystem = DesignSystem(
         semantic = DSSemantic(
             warning = DSWarning(
                 semanticWarningNegative4 = Color("#492909".toColorInt()),
-                semanticWarningNegative3 = Color("#7a4510".toColorInt()),
+                semanticWarningNegative3 = Color("#3f2828".toColorInt()),
                 semanticWarningNegative2 = Color("#a05c1c".toColorInt()),
                 semanticWarningNegative1 = Color("#b4610e".toColorInt()),
                 semanticWarning8 = Color("#fffcfa".toColorInt()),
@@ -560,7 +500,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             success = DSSuccess1(
                 semanticSuccessNegative4 = Color("#0a2e0b".toColorInt()),
-                semanticSuccessNegative3 = Color("#135315".toColorInt()),
+                semanticSuccessNegative3 = Color("#b3b7b0".toColorInt()),
                 semanticSuccessNegative2 = Color("#246626".toColorInt()),
                 semanticSuccessNegative1 = Color("#2f6f2f".toColorInt()),
                 semanticSuccess8 = Color("#fbfefb".toColorInt()),
@@ -568,10 +508,10 @@ val designSystem: DesignSystem = DesignSystem(
                 semanticSuccess6 = Color("#e6f9e6".toColorInt()),
                 semanticSuccess5 = Color("#dff6df".toColorInt()),
                 semanticSuccess4 = Color("#cff2cf".toColorInt()),
-                semanticSuccess3 = Color("#c6ecc6".toColorInt()),
-                semanticSuccess2 = Color("#87c987".toColorInt()),
+                semanticSuccess3 = Color("#00ff10".toColorInt()),
+                semanticSuccess2 = Color("#fdff84".toColorInt()),
                 semanticSuccess1 = Color("#55a555".toColorInt()),
-                semanticSuccess0 = Color("#347434".toColorInt())
+                semanticSuccess0 = Color("#20b027".toColorInt())
             ),
             neutralAlpha = DSNeutralAlpha(
                 semanticNeutralANegative4 = Color("#09131aed".toColorInt()),
@@ -589,7 +529,7 @@ val designSystem: DesignSystem = DesignSystem(
                 semanticNeutralA0 = Color("#182639bd".toColorInt())
             ),
             neutral = DSNeutral2(
-                semanticNeutralNegative4 = Color("#30414f".toColorInt()),
+                semanticNeutralNegative4 = Color("#1b242c".toColorInt()),
                 semanticNeutralNegative3 = Color("#272e35".toColorInt()),
                 semanticNeutralNegative2 = Color("#3a424a".toColorInt()),
                 semanticNeutralNegative1 = Color("#4a545e".toColorInt()),
@@ -606,44 +546,44 @@ val designSystem: DesignSystem = DesignSystem(
             info = DSInfo(
                 semanticInfoNegative4 = Color("#041f5d".toColorInt()),
                 semanticInfoNegative3 = Color("#113997".toColorInt()),
-                semanticInfoNegative2 = Color("#1e4fc2".toColorInt()),
-                semanticInfoNegative1 = Color("#2759ce".toColorInt()),
+                semanticInfoNegative2 = Color("#658b6e".toColorInt()),
+                semanticInfoNegative1 = Color("#ffebeb".toColorInt()),
                 semanticInfo8 = Color("#fafbff".toColorInt()),
                 semanticInfo7 = Color("#f5f8ff".toColorInt()),
                 semanticInfo6 = Color("#ebf0ff".toColorInt()),
                 semanticInfo5 = Color("#e5eeff".toColorInt()),
                 semanticInfo4 = Color("#d6e3ff".toColorInt()),
-                semanticInfo3 = Color("#ccdcff".toColorInt()),
+                semanticInfo3 = Color("#0085ff".toColorInt()),
                 semanticInfo2 = Color("#8eb0fb".toColorInt()),
                 semanticInfo1 = Color("#6691f4".toColorInt()),
                 semanticInfo0 = Color("#3061d5".toColorInt())
             ),
             danger = DSDanger2(
-                semanticDangerNegative4 = Color("#c53434".toColorInt()),
-                semanticDangerNegative3 = Color("#6f2020".toColorInt()),
-                semanticDangerNegative2 = Color("#952d2d".toColorInt()),
+                semanticDangerNegative4 = Color("#4a0d0d".toColorInt()),
+                semanticDangerNegative3 = Color("#30723a".toColorInt()),
+                semanticDangerNegative2 = Color("#63c7c3".toColorInt()),
                 semanticDangerNegative1 = Color("#a13636".toColorInt()),
                 semanticDanger8 = Color("#fffafa".toColorInt()),
                 semanticDanger7 = Color("#fef5f5".toColorInt()),
                 semanticDanger6 = Color("#ffebeb".toColorInt()),
                 semanticDanger5 = Color("#fee7e7".toColorInt()),
-                semanticDanger4 = Color("#fcd9d9".toColorInt()),
-                semanticDanger3 = Color("#fccfcf".toColorInt()),
-                semanticDanger2 = Color("#f49090".toColorInt()),
-                semanticDanger1 = Color("#f26363".toColorInt()),
-                semanticDanger0 = Color("#c53434".toColorInt())
+                semanticDanger4 = Color("#d15a5a".toColorInt()),
+                semanticDanger3 = Color("#76d91c".toColorInt()),
+                semanticDanger2 = Color("#494b75".toColorInt()),
+                semanticDanger1 = Color("#285aa5".toColorInt()),
+                semanticDanger0 = Color("#9e6610".toColorInt())
             ),
             brand = DSBrand(
-                semanticBrandNegative4 = Color("#15665b".toColorInt()),
+                semanticBrandNegative4 = Color("#3061d5".toColorInt()),
                 semanticBrandNegative3 = Color("#113997".toColorInt()),
-                semanticBrandNegative2 = Color("#1e4fc2".toColorInt()),
-                semanticBrandNegative1 = Color("#2759ce".toColorInt()),
+                semanticBrandNegative2 = Color("#658b6e".toColorInt()),
+                semanticBrandNegative1 = Color("#ff9375".toColorInt()),
                 semanticBrand8 = Color("#fafbff".toColorInt()),
                 semanticBrand7 = Color("#f5f8ff".toColorInt()),
                 semanticBrand6 = Color("#ebf0ff".toColorInt()),
                 semanticBrand5 = Color("#e5eeff".toColorInt()),
                 semanticBrand4 = Color("#d6e3ff".toColorInt()),
-                semanticBrand3 = Color("#ccdcff".toColorInt()),
+                semanticBrand3 = Color("#0085ff".toColorInt()),
                 semanticBrand2 = Color("#8eb0fb".toColorInt()),
                 semanticBrand1 = Color("#6691f4".toColorInt()),
                 semanticBrand0 = Color("#3061d5".toColorInt())
@@ -665,7 +605,7 @@ val designSystem: DesignSystem = DesignSystem(
             violet = DSViolet(
                 nonSemanticVioletContentSecondary = Color("#634eca".toColorInt()),
                 nonSemanticVioletContentPrimary = Color("#39288a".toColorInt()),
-                nonSemanticVioletBorderSubtle = Color("#dcd6ff".toColorInt()),
+                nonSemanticVioletBorderSubtle = Color("#54917b".toColorInt()),
                 nonSemanticVioletBorderStrong = Color("#634eca".toColorInt()),
                 nonSemanticVioletBorderDefault = Color("#eeebff".toColorInt()),
                 nonSemanticVioletBackgroundSurface = Color("#fbfaff".toColorInt()),
@@ -676,7 +616,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             teal = DSTeal(
                 nonSemanticTealContentSecondary = Color("#077597".toColorInt()),
-                nonSemanticTealContentPrimary = Color("#0a495c".toColorInt()),
+                nonSemanticTealContentPrimary = Color("#7c4fc4".toColorInt()),
                 nonSemanticTealBorderSubtle = Color("#b8e8f5".toColorInt()),
                 nonSemanticTealBorderStrong = Color("#077597".toColorInt()),
                 nonSemanticTealBorderDefault = Color("#e0f3fa".toColorInt()),
@@ -687,21 +627,21 @@ val designSystem: DesignSystem = DesignSystem(
                 nonSemanticTealBackgroundMuted = Color("#c5ecf7".toColorInt())
             ),
             red = DSRed(
-                nonSemanticRedContentSecondary = Color("#c53434".toColorInt()),
-                nonSemanticRedContentPrimary = Color("#6f2020".toColorInt()),
-                nonSemanticRedBorderSubtle = Color("#fccfcf".toColorInt()),
-                nonSemanticRedBorderStrong = Color("#c53434".toColorInt()),
+                nonSemanticRedContentSecondary = Color("#9e6610".toColorInt()),
+                nonSemanticRedContentPrimary = Color("#30723a".toColorInt()),
+                nonSemanticRedBorderSubtle = Color("#76d91c".toColorInt()),
+                nonSemanticRedBorderStrong = Color("#9e6610".toColorInt()),
                 nonSemanticRedBorderDefault = Color("#fee7e7".toColorInt()),
                 nonSemanticRedBackgroundSurface = Color("#fffafa".toColorInt()),
                 nonSemanticRedBackgroundSubtle = Color("#fef5f5".toColorInt()),
-                nonSemanticRedBackgroundStrong = Color("#c53434".toColorInt()),
+                nonSemanticRedBackgroundStrong = Color("#9e6610".toColorInt()),
                 nonSemanticRedBackgroundOnSubtle = Color("#fee7e7".toColorInt()),
-                nonSemanticRedBackgroundMuted = Color("#fcd9d9".toColorInt())
+                nonSemanticRedBackgroundMuted = Color("#d15a5a".toColorInt())
             ),
             purple = DSPurple(
                 nonSemanticPurpleContentSecondary = Color("#9939ac".toColorInt()),
                 nonSemanticPurpleContentPrimary = Color("#5b1e67".toColorInt()),
-                nonSemanticPurpleBorderSubtle = Color("#f4caf7".toColorInt()),
+                nonSemanticPurpleBorderSubtle = Color("#c04c0d".toColorInt()),
                 nonSemanticPurpleBorderStrong = Color("#9939ac".toColorInt()),
                 nonSemanticPurpleBorderDefault = Color("#f8e2fd".toColorInt()),
                 nonSemanticPurpleBackgroundSurface = Color("#fefaff".toColorInt()),
@@ -712,7 +652,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             orange = DSOrange(
                 nonSemanticOrangeContentSecondary = Color("#f59638".toColorInt()),
-                nonSemanticOrangeContentPrimary = Color("#7a4510".toColorInt()),
+                nonSemanticOrangeContentPrimary = Color("#3f2828".toColorInt()),
                 nonSemanticOrangeBorderSubtle = Color("#ffd4a8".toColorInt()),
                 nonSemanticOrangeBorderStrong = Color("#f59638".toColorInt()),
                 nonSemanticOrangeBorderDefault = Color("#ffe8d1".toColorInt()),
@@ -723,26 +663,26 @@ val designSystem: DesignSystem = DesignSystem(
                 nonSemanticOrangeBackgroundMuted = Color("#fcdec0".toColorInt())
             ),
             magenta = DSMagenta(
-                nonSemanticMagentaContentSecondary = Color("#b12f86".toColorInt()),
+                nonSemanticMagentaContentSecondary = Color("#91ae7a".toColorInt()),
                 nonSemanticMagentaContentPrimary = Color("#671e4d".toColorInt()),
                 nonSemanticMagentaBorderSubtle = Color("#f7cae8".toColorInt()),
-                nonSemanticMagentaBorderStrong = Color("#b12f86".toColorInt()),
+                nonSemanticMagentaBorderStrong = Color("#91ae7a".toColorInt()),
                 nonSemanticMagentaBorderDefault = Color("#fde2f4".toColorInt()),
                 nonSemanticMagentaBackgroundSurface = Color("#fffafd".toColorInt()),
                 nonSemanticMagentaBackgroundSubtle = Color("#fef6fb".toColorInt()),
-                nonSemanticMagentaBackgroundStrong = Color("#b12f86".toColorInt()),
+                nonSemanticMagentaBackgroundStrong = Color("#91ae7a".toColorInt()),
                 nonSemanticMagentaBackgroundOnSubtle = Color("#fde2f4".toColorInt()),
                 nonSemanticMagentaBackgroundMuted = Color("#fbd5ee".toColorInt())
             ),
             green = DSGreen(
-                nonSemanticGreenContentSecondary = Color("#347434".toColorInt()),
-                nonSemanticGreenContentPrimary = Color("#135315".toColorInt()),
-                nonSemanticGreenBorderSubtle = Color("#c6ecc6".toColorInt()),
-                nonSemanticGreenBorderStrong = Color("#347434".toColorInt()),
+                nonSemanticGreenContentSecondary = Color("#20b027".toColorInt()),
+                nonSemanticGreenContentPrimary = Color("#b3b7b0".toColorInt()),
+                nonSemanticGreenBorderSubtle = Color("#00ff10".toColorInt()),
+                nonSemanticGreenBorderStrong = Color("#20b027".toColorInt()),
                 nonSemanticGreenBorderDefault = Color("#dff6df".toColorInt()),
                 nonSemanticGreenBackgroundSurface = Color("#fbfefb".toColorInt()),
                 nonSemanticGreenBackgroundSubtle = Color("#f4fbf4".toColorInt()),
-                nonSemanticGreenBackgroundStrong = Color("#347434".toColorInt()),
+                nonSemanticGreenBackgroundStrong = Color("#20b027".toColorInt()),
                 nonSemanticGreenBackgroundOnSubtle = Color("#dff6df".toColorInt()),
                 nonSemanticGreenBackgroundMuted = Color("#cff2cf".toColorInt())
             ),
@@ -760,7 +700,7 @@ val designSystem: DesignSystem = DesignSystem(
             ),
             cyan = DSCyan(
                 nonSemanticCyanContentSecondary = Color("#0870ba".toColorInt()),
-                nonSemanticCyanContentPrimary = Color("#0c456e".toColorInt()),
+                nonSemanticCyanContentPrimary = Color("#0c636e".toColorInt()),
                 nonSemanticCyanBorderSubtle = Color("#c2e2ff".toColorInt()),
                 nonSemanticCyanBorderStrong = Color("#0870ba".toColorInt()),
                 nonSemanticCyanBorderDefault = Color("#e0f1ff".toColorInt()),
@@ -773,7 +713,7 @@ val designSystem: DesignSystem = DesignSystem(
             blue = DSBlue(
                 nonSemanticBlueContentSecondary = Color("#3061d5".toColorInt()),
                 nonSemanticBlueContentPrimary = Color("#113997".toColorInt()),
-                nonSemanticBlueBorderSubtle = Color("#ccdcff".toColorInt()),
+                nonSemanticBlueBorderSubtle = Color("#0085ff".toColorInt()),
                 nonSemanticBlueBorderStrong = Color("#3061d5".toColorInt()),
                 nonSemanticBlueBorderDefault = Color("#e5eeff".toColorInt()),
                 nonSemanticBlueBackgroundSurface = Color("#fafbff".toColorInt()),
@@ -839,21 +779,21 @@ val designSystem: DesignSystem = DesignSystem(
                 interactionDefaultSubtleSelected = Color("#e5eeff".toColorInt()),
                 interactionDefaultSubtleNormal = Color("#ebf0ff".toColorInt()),
                 interactionDefaultSubtleHover = Color("#e5eeff".toColorInt()),
-                interactionDefaultSubtleActive = Color("#ccdcff".toColorInt()),
-                interactionDefaultSelected = Color("#1e4fc2".toColorInt()),
+                interactionDefaultSubtleActive = Color("#0085ff".toColorInt()),
+                interactionDefaultSelected = Color("#658b6e".toColorInt()),
                 interactionDefaultNormal = Color("#3061d5".toColorInt()),
-                interactionDefaultHover = Color("#1e4fc2".toColorInt()),
+                interactionDefaultHover = Color("#658b6e".toColorInt()),
                 interactionDefaultActive = Color("#113997".toColorInt())
             ),
             danger = DSDanger1(
                 interactionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
                 interactionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
                 interactionDangerSubtleHover = Color("#fee7e7".toColorInt()),
-                interactionDangerSubtleActive = Color("#fccfcf".toColorInt()),
-                interactionDangerSelected = Color("#952d2d".toColorInt()),
-                interactionDangerNormal = Color("#c53434".toColorInt()),
-                interactionDangerHover = Color("#952d2d".toColorInt()),
-                interactionDangerActive = Color("#6f2020".toColorInt())
+                interactionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                interactionDangerSelected = Color("#63c7c3".toColorInt()),
+                interactionDangerNormal = Color("#9e6610".toColorInt()),
+                interactionDangerHover = Color("#63c7c3".toColorInt()),
+                interactionDangerActive = Color("#30723a".toColorInt())
             ),
             border = DSBorder1(
                 interactionBorderSelected = Color("#3061d5".toColorInt()),
@@ -863,8 +803,8 @@ val designSystem: DesignSystem = DesignSystem(
                 interactionBorderNeutralHover = Color("#9ea8b3".toColorInt()),
                 interactionBorderNeutralActive = Color("#7e8c9a".toColorInt()),
                 interactionBorderHover = Color("#6691f4".toColorInt()),
-                interactionBorderDanger = Color("#f26363".toColorInt()),
-                interactionBorderActive = Color("#2759ce".toColorInt())
+                interactionBorderDanger = Color("#285aa5".toColorInt()),
+                interactionBorderActive = Color("#ff9375".toColorInt())
             ),
             background = DSBackground1(
                 interactionBackgroundSidepanel = Color("#ffffff".toColorInt()),
@@ -876,39 +816,39 @@ val designSystem: DesignSystem = DesignSystem(
             )
         ),
         content = DSContent(
-            warningSecondary = Color("#f59638".toColorInt()),
-            warningPrimary = Color("#7a4510".toColorInt()),
+            warningSecondary = Color("#76d91c".toColorInt()),
+            warningPrimary = Color("#3f2828".toColorInt()),
             tertiaryInverse = Color("#ffffff66".toColorInt()),
             tertiary = Color("#7e8c9a".toColorInt()),
-            successSecondary = Color("#347434".toColorInt()),
-            successPrimary = Color("#135315".toColorInt()),
+            successSecondary = Color("#20b027".toColorInt()),
+            successPrimary = Color("#b3b7b0".toColorInt()),
             secondaryInverse = Color("#ffffffa3".toColorInt()),
             secondary = Color("#555f6d".toColorInt()),
             primaryInverse = Color("#ffffff".toColorInt()),
-            primary = Color("#952d2d".toColorInt()),
+            primary = Color("#63c7c3".toColorInt()),
             infoSecondary = Color("#3061d5".toColorInt()),
             infoPrimary = Color("#113997".toColorInt()),
             disabledInverse = Color("#ffffff3d".toColorInt()),
             disabled = Color("#9ea8b3".toColorInt()),
-            dangerSecondary = Color("#c53434".toColorInt()),
-            dangerPrimary = Color("#6f2020".toColorInt()),
+            dangerSecondary = Color("#9e6610".toColorInt()),
+            dangerPrimary = Color("#30723a".toColorInt()),
             brandSecondary = Color("#3061d5".toColorInt()),
             brandPrimary = Color("#113997".toColorInt())
         ),
         border = DSBorder(
             warningSubtle = Color("#ffd4a8".toColorInt()),
             warningStrong = Color("#f59638".toColorInt()),
-            successSubtle = Color("#c6ecc6".toColorInt()),
-            successStrong = Color("#347434".toColorInt()),
+            successSubtle = Color("#00ff10".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
             neutralSubtle = Color("#cfd6dd".toColorInt()),
             neutralStrong = Color("#555f6d".toColorInt()),
             inverse = Color("#ffffff".toColorInt()),
-            infoSubtle = Color("#ccdcff".toColorInt()),
+            infoSubtle = Color("#0085ff".toColorInt()),
             infoStrong = Color("#3061d5".toColorInt()),
             defaultA = Color("#10284717".toColorInt()),
             default = Color("#eaedf0".toColorInt()),
-            dangerSubtle = Color("#fccfcf".toColorInt()),
-            dangerStrong = Color("#c53434".toColorInt())
+            dangerSubtle = Color("#76d91c".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt())
         ),
         background = DSBackground(
             warningSurface = Color("#fffcfa".toColorInt()),
@@ -918,7 +858,7 @@ val designSystem: DesignSystem = DesignSystem(
             warningMuted = Color("#fcdec0".toColorInt()),
             successSurface = Color("#fbfefb".toColorInt()),
             successSubtle = Color("#f4fbf4".toColorInt()),
-            successStrong = Color("#347434".toColorInt()),
+            successStrong = Color("#20b027".toColorInt()),
             successOnSubtle = Color("#dff6df".toColorInt()),
             successMuted = Color("#cff2cf".toColorInt()),
             neutralSurface = Color("#fcfcfd".toColorInt()),
@@ -935,9 +875,9 @@ val designSystem: DesignSystem = DesignSystem(
             default = Color("#ffffff".toColorInt()),
             dangerSurface = Color("#fffafa".toColorInt()),
             dangerSubtle = Color("#fef5f5".toColorInt()),
-            dangerStrong = Color("#c53434".toColorInt()),
+            dangerStrong = Color("#9e6610".toColorInt()),
             dangerOnSubtle = Color("#fee7e7".toColorInt()),
-            dangerMuted = Color("#fcd9d9".toColorInt()),
+            dangerMuted = Color("#d15a5a".toColorInt()),
             brandSurface = Color("#fafbff".toColorInt()),
             brandSubtle = Color("#f5f8ff".toColorInt()),
             brandStrong = Color("#3061d5".toColorInt()),
@@ -949,11 +889,11 @@ val designSystem: DesignSystem = DesignSystem(
                 actionSuccessSubtleSelected = Color("#dff6df".toColorInt()),
                 actionSuccessSubtleNormal = Color("#e6f9e6".toColorInt()),
                 actionSuccessSubtleHover = Color("#dff6df".toColorInt()),
-                actionSuccessSubtleActive = Color("#c6ecc6".toColorInt()),
+                actionSuccessSubtleActive = Color("#00ff10".toColorInt()),
                 actionSuccessSelected = Color("#246626".toColorInt()),
-                actionSuccessNormal = Color("#347434".toColorInt()),
+                actionSuccessNormal = Color("#3da496".toColorInt()),
                 actionSuccessHover = Color("#246626".toColorInt()),
-                actionSuccessActive = Color("#135315".toColorInt())
+                actionSuccessActive = Color("#b3b7b0".toColorInt())
             ),
             reverseInverse = DSReverseInverse(
                 actionReverseInverseSelected = Color("#1d2835cc".toColorInt()),
@@ -965,10 +905,10 @@ val designSystem: DesignSystem = DesignSystem(
                 actionPrimarySubtleSelected = Color("#e5eeff".toColorInt()),
                 actionPrimarySubtleNormal = Color("#ebf0ff".toColorInt()),
                 actionPrimarySubtleHover = Color("#e5eeff".toColorInt()),
-                actionPrimarySubtleActive = Color("#ccdcff".toColorInt()),
-                actionPrimarySelected = Color("#1e4fc2".toColorInt()),
+                actionPrimarySubtleActive = Color("#0085ff".toColorInt()),
+                actionPrimarySelected = Color("#658b6e".toColorInt()),
                 actionPrimaryNormal = Color("#3061d5".toColorInt()),
-                actionPrimaryHover = Color("#1e4fc2".toColorInt()),
+                actionPrimaryHover = Color("#658b6e".toColorInt()),
                 actionPrimaryActive = Color("#113997".toColorInt())
             ),
             outline = DSOutline(
@@ -1009,11 +949,11 @@ val designSystem: DesignSystem = DesignSystem(
                 actionDangerSubtleSelected = Color("#fee7e7".toColorInt()),
                 actionDangerSubtleNormal = Color("#ffebeb".toColorInt()),
                 actionDangerSubtleHover = Color("#fee7e7".toColorInt()),
-                actionDangerSubtleActive = Color("#fccfcf".toColorInt()),
-                actionDangerSelected = Color("#952d2d".toColorInt()),
-                actionDangerNormal = Color("#c53434".toColorInt()),
-                actionDangerHover = Color("#952d2d".toColorInt()),
-                actionDangerActive = Color("#6f2020".toColorInt())
+                actionDangerSubtleActive = Color("#76d91c".toColorInt()),
+                actionDangerSelected = Color("#63c7c3".toColorInt()),
+                actionDangerNormal = Color("#ffebeb".toColorInt()),
+                actionDangerHover = Color("#63c7c3".toColorInt()),
+                actionDangerActive = Color("#30723a".toColorInt())
             )
         )
     ),
@@ -1023,7 +963,7 @@ val designSystem: DesignSystem = DesignSystem(
         none = 0.0,
         medium = 2.0,
         large = 4.0,
-        focus = 2.0
+        focus = 0.0
     ),
     borderRadius = DSBorderRadius(
         xLarge = 12.0,

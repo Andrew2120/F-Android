@@ -16,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.b_labs.app.ui.theme.FiberAndroid1Theme
 import com.b_labs.fiber_tokens.components.PrimaryButton
+import com.b_labs.fiber_tokens.components.PrimaryOutlinedButton
+import com.b_labs.fiber_tokens.components.PrimaryTextField
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,8 +43,10 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(text = "hello")
-
-        PrimaryButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Login")
+        PrimaryTextField(value = "", onValueChange = {})
+        PrimaryTextField(value = "", onValueChange = {})
+        PrimaryButton(modifier = Modifier.fillMaxWidth(0.7f), text = "Login")
+        PrimaryOutlinedButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Login")
 
         PrimaryButton(modifier = Modifier.fillMaxWidth(0.5f), text = "Register")
     }

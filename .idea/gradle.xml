@@ -16,6 +16,9 @@
             <option value="$PROJECT_DIR$/fiber-hi-components" />
             <option value="$PROJECT_DIR$/fiber-mylo" />
             <option value="$PROJECT_DIR$/fiber-retail" />
+            <option value="$PROJECT_DIR$/mylo-components" />
+            <option value="$PROJECT_DIR$/mylo-components/cart" />
+            <option value="$PROJECT_DIR$/mylo-components/checkout" />
           </set>
         </option>
       </GradleProjectSettings>
